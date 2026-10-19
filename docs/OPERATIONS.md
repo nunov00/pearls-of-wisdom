@@ -8,7 +8,7 @@ Use Node 24 and `npm ci --ignore-scripts`. `npm run verify` checks types, policy
 
 ## Cloudflare
 
-The inactive `deploy/cloudflare/wrangler.jsonc` has workers_dev disabled and no custom domain. The feedback adapter is disabled and has no secrets. Do not connect a Git integration that would auto-publish draft builds. After launch approval, use an approved SITE_URL and RELEASE=1 for production, verify checks and connect least-privilege deployment access. Prefer Cloudflare’s Git integration to storing a token in GitHub where suitable. Verify preview isolation and shared free-tier quotas first. Pin Wrangler when the real deployment adapter is activated rather than using an unpinned global tool.
+The inactive `deploy/cloudflare/wrangler.jsonc` has workers_dev disabled and no custom domain. The feedback adapter is disabled and has no secrets. Do not connect a Git integration that would auto-publish draft builds. After launch approval, use an approved SITE_URL and RELEASE=1 for production, verify checks and connect least-privilege deployment access. Prefer Cloudflare’s Git integration to storing a token in GitHub where suitable. Verify preview isolation and shared free-tier quotas first. Wrangler is pinned. `npm run cf:validate` performs a local dry run; `npm run cf:deploy` requires launch authorisation acknowledgement and validated release content. See deploy/cloudflare/README.md for private-repository and credential setup.
 
 ## Backup
 
