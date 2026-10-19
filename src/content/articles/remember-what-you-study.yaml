@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 1,
+  "id": "002-study-memory",
+  "slug": "remember-what-you-study",
+  "title": "Three ways to remember what you study",
+  "description": "A short study routine built around recall, spacing and checking your mistakes.",
+  "category": "Learning",
+  "keywords": [
+    "memory",
+    "study",
+    "learning",
+    "revision",
+    "exams",
+    "retrieval",
+    "spacing"
+  ],
+  "goal": "Remember studied information for later use",
+  "audience": "Adult learners studying factual or conceptual material.",
+  "assumptions": "Not a complete method for learning every practical skill.",
+  "introduction": "A page can look familiar while the answer disappears the moment you close the book. Build your study routine around what you can bring back without looking.",
+  "publishedAt": null,
+  "revisedAt": null,
+  "lastEvidenceCheckedAt": "2026-10-19",
+  "selection": {
+    "basis": "foundations",
+    "rationale": "Retrieval and spacing have broad support; feedback is an explicit safeguard within that routine. Its partial overlap is disclosed instead of pretending complete independence.",
+    "alternatives": [
+      {
+        "candidate": "Highlighting",
+        "reason": "Can help organise reading, but the accessible synthesis supports retrieval and spacing more broadly."
+      },
+      {
+        "candidate": "Interleaving",
+        "reason": "Useful for some tasks; a later, narrower article can address when it helps."
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "id": "retrieve",
+      "heading": "Try to recall before you look",
+      "whatToDo": "Close your notes and answer a question, explain an idea or write what you remember. Then reopen the material.",
+      "whyItMatters": "Practice testing can improve later recall; it is a learning activity as well as a check.",
+      "consequence": "Relying only on rereading misses the opportunity to practise retrieving the answer.",
+      "action": "Turn one heading from your notes into a question and answer it with the page closed.",
+      "details": "Keep questions manageable. If you cannot recall anything, use a cue or review a smaller section, then try again.",
+      "claimIds": [
+        "retrieve-benefit",
+        "retrieve-consequence"
+      ]
+    },
+    {
+      "id": "space",
+      "heading": "Return on another day",
+      "whatToDo": "Spread practice across separate sessions instead of putting all your revision into one long sitting.",
+      "whyItMatters": "Distributed practice generally supports longer-term retention better than cramming the same material together.",
+      "consequence": "Cramming can help in the short term, but leaves less opportunity for durable retention.",
+      "action": "Book a short return to the same material tomorrow and another later in the week.",
+      "details": "These timings are a practical starting point, not a scientifically optimal schedule. Useful gaps depend on the material and how long you need to remember it.",
+      "claimIds": [
+        "space-benefit",
+        "space-consequence"
+      ]
+    },
+    {
+      "id": "correct",
+      "heading": "Check the answer and repair the gap",
+      "whatToDo": "Compare your attempt with a reliable answer. Correct what was missing or wrong before practising again.",
+      "whyItMatters": "Corrective feedback makes retrieval practice more useful when your first answer is wrong.",
+      "consequence": "An unchecked answer gives you no reliable way to identify what still needs work.",
+      "action": "Mark one mistake, write the correction and make it a question for your next session.",
+      "details": "Feedback is part of an effective retrieval routine, rather than a wholly independent memory technique. These three actions describe a routine, not three equally sized benefits.",
+      "claimIds": [
+        "correct-benefit",
+        "correct-consequence"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "retrieve-benefit",
+      "text": "Practice testing can improve later recall; it is a learning activity as well as a check.",
+      "kind": "benefit",
+      "basis": "causal",
+      "sourceIds": [
+        "aps",
+        "scientists"
+      ],
+      "strength": "moderate",
+      "strengthRationale": "The accessible research summary supports this practice; effects and generalisation vary by task."
+    },
+    {
+      "id": "retrieve-consequence",
+      "text": "Relying only on rereading misses the opportunity to practise retrieving the answer.",
+      "kind": "consequence",
+      "basis": "causal",
+      "sourceIds": [
+        "aps",
+        "scientists"
+      ],
+      "strength": "moderate",
+      "strengthRationale": "The accessible research summary supports this practice; effects and generalisation vary by task."
+    },
+    {
+      "id": "space-benefit",
+      "text": "Distributed practice generally supports longer-term retention better than cramming the same material together.",
+      "kind": "benefit",
+      "basis": "causal",
+      "sourceIds": [
+        "aps",
+        "scientists"
+      ],
+      "strength": "moderate",
+      "strengthRationale": "The accessible research summary supports this practice; effects and generalisation vary by task."
+    },
+    {
+      "id": "space-consequence",
+      "text": "Cramming can help in the short term, but leaves less opportunity for durable retention.",
+      "kind": "consequence",
+      "basis": "causal",
+      "sourceIds": [
+        "aps",
+        "scientists"
+      ],
+      "strength": "moderate",
+      "strengthRationale": "The accessible research summary supports this practice; effects and generalisation vary by task."
+    },
+    {
+      "id": "correct-benefit",
+      "text": "Corrective feedback makes retrieval practice more useful when your first answer is wrong.",
+      "kind": "benefit",
+      "basis": "causal",
+      "sourceIds": [
+        "scientists"
+      ],
+      "strength": "moderate",
+      "strengthRationale": "The accessible research summary supports this practice; effects and generalisation vary by task."
+    },
+    {
+      "id": "correct-consequence",
+      "text": "An unchecked answer gives you no reliable way to identify what still needs work.",
+      "kind": "consequence",
+      "basis": "causal",
+      "sourceIds": [
+        "scientists"
+      ],
+      "strength": "moderate",
+      "strengthRationale": "The accessible research summary supports this practice; effects and generalisation vary by task."
+    }
+  ],
+  "sources": [
+    {
+      "id": "aps",
+      "title": "Improving Students’ Learning With Effective Learning Techniques",
+      "organisation": "Association for Psychological Science",
+      "url": "https://www.psychologicalscience.org/publications/journals/pspi/learning-techniques.html",
+      "checkedAt": "2026-10-19",
+      "access": "checked",
+      "section": "Publisher summary, paragraphs on technique ratings",
+      "support": "Practice testing and distributed practice received high utility assessments in the reviewed research.",
+      "limitations": "Publisher summary checked. Full paper DOI fetch failed; no claim of full-text verification."
+    },
+    {
+      "id": "scientists",
+      "title": "Study strategies FAQ",
+      "organisation": "The Learning Scientists",
+      "url": "https://www.learningscientists.org/faq",
+      "checkedAt": "2026-10-19",
+      "access": "checked",
+      "section": "Spacing, retrieval formats and feedback after errors",
+      "support": "Practical application, dependence on spacing intervals and corrective feedback.",
+      "limitations": "Researcher-authored guidance checked, not every linked underlying paper."
+    }
+  ],
+  "limitations": "The evidence varies by task and learner. Recall practice cannot replace learning the material in the first place, and remembering facts is not the same as mastering a skill. These are complementary parts of a routine, not a measured ranking.",
+  "revisionHistory": [],
+  "relatedIds": [
+    "001-exercise-after-65"
+  ],
+  "summary": {
+    "title": "Three ways to remember what you study",
+    "recommendationIds": [
+      "retrieve",
+      "space",
+      "correct"
+    ]
+  }
+}

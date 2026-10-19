@@ -1,16 +1,16 @@
 # Project configuration
 
-- **Project:** [name]
-- **Purpose:** [one sentence]
-- **Owner:** [name]
+- **Project:** Pearls of Wisdom (working title)
+- **Purpose:** Concise, evidence-based practical foundations for everyday goals.
+- **Owner:** Nuno Vitoria
 - **Manager:** ChatGPT (or designated manager)
 - **Governance template:** v0.2
 - **Stage:** PoC
 - **Governance profile:** Lightweight
-- **Technology:** [stack]
-- **Tests / required checks:** [commands and CI jobs]
-- **Deployment:** [environment and release method]
-- **Material paths:** `.github/**`
+- **Technology:** Astro, TypeScript, structured YAML, portable static output; optional narrow Cloudflare feedback adapter.
+- **Tests / required checks:** `npm run verify`; `Baseline / baseline` CI. No enforcement ruleset is claimed.
+- **Deployment:** Not connected. Cloudflare Workers Static Assets proposed; no public launch authorised.
+- **Material paths:** `.github/**`, `scripts/release-*`, `deploy/**`, `editorial/automation.json`
 - **Control overrides:** None
 - **Standing delegations:** None
 
@@ -22,7 +22,7 @@ Reassess the profile before the first production deployment. Changing this file 
 
 | Date | From → to | Stage | Reason | Approved by |
 |---|---|---|---|---|
-| [date] | — → Lightweight | PoC | Project start | [Owner] |
+| 2026-10-19 | — → Lightweight | PoC | Approved implementation plan | Owner (chat) |
 
 ## Available AI and development tools
 
@@ -55,3 +55,11 @@ GitHub and Cloudflare are shared by all projects. Plan for aggregate resource us
 Current official documentation: [GitHub Actions billing](https://docs.github.com/en/billing/concepts/product-billing/github-actions), [Cloudflare Workers limits](https://developers.cloudflare.com/workers/platform/limits/), [Copilot plans](https://github.com/features/copilot/plans).
 
 **Resource policy:** Prefer efficient CI triggers, caching, static delivery when suitable and proportionate background schedules. Avoid redundant builds, deployments, polling, storage and API calls. Preserve functionality, reliability, security and user experience. Check which limits are account-wide versus per-resource, and verify current usage before significant decisions. Escalate expected capacity pressure or paid upgrades to the Owner.
+
+## Project decisions and current access
+
+- Owner approved initial implementation on 19 October 2026: “Please proceed. Don’t schedule writer/reviewer tasks for now.” Routine implementation, fixes and tests within that scope do not need repeated approval.
+- Owner created `nunov00/pearls-of-wisdom` and `nunov00/pearls-of-wisdom-feedback` and requested reader feedback like Five Minutes on 19 October 2026. Both repositories were verified private. Preserve private feedback storage.
+- GitHub source and feedback repository access is verified. Cloudflare account access, production deployment, independent article reviews and browser/Safari checks remain unverified.
+- Do not launch publicly, create recurring tasks, incur additional costs or perform destructive operations without the relevant Owner decision. Feedback remains disabled until hosting and least-privilege credentials are configured.
+- Keep the inherited governance template and active Lightweight profile. Reassess the profile before first public production deployment. No GitHub protection settings are implied by these files.

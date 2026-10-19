@@ -1,0 +1,4 @@
+import {allArticles} from '../src/lib/catalogue.ts';
+const urls=[...new Set(allArticles().flatMap(a=>a.sources.map(s=>s.url)))];let dead=0,uncertain=0;
+for(const url of urls){try{const r=await fetch(url,{method:'GET',redirect:'follow',signal:AbortSignal.timeout(15000)});await r.body?.cancel();const status=r.status===404||r.status===410?'dead':r.ok?'reachable':'uncertain';console.log(JSON.stringify({url,status,httpStatus:r.status,checkedAt:new Date().toISOString()}));if(status==='dead')dead++;if(status==='uncertain')uncertain++;}catch(e){uncertain++;console.log(JSON.stringify({url,status:'uncertain',reason:e.name}));}}
+console.log(JSON.stringify({dead,uncertain,note:'Reachability is not factual verification. Source records are not automatically changed.'}));process.exitCode=dead?1:uncertain?2:0;

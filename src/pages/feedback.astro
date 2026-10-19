@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Send feedback" description="Share a correction, report a problem or suggest an improvement."><section class="reading wrap feedback"><p class="eyebrow">Help us make this more useful</p><h1>A thought worth sharing?</h1><p class="article-intro">Tell us what could be clearer, more useful or better supported. Corrections are especially welcome.</p><p>Messages go to a private inbox for the publication owner and authorised reviewers. There is no public comment thread and we do not ask for your name or email.</p><p class="fine-print">Please leave out personal medical, financial or other sensitive details. We cannot reply individually. Cloudflare provides spam protection and GitHub stores the message; those services process requests under their own privacy policies.</p><p id="feedback-status" role="status" aria-live="polite">Feedback will be available once the site launches.</p><button id="feedback-start" class="button" type="button">Write feedback</button><noscript><p>The form needs JavaScript and spam verification. Browsing and reading articles do not.</p></noscript><form id="feedback-form" hidden><label for="feedback-category">What is it about?</label><select id="feedback-category" name="category" required><option value="content">Content or a correction</option><option value="bug">Something is not working</option><option value="enhancement">A suggestion</option><option value="other">Something else</option></select><label for="feedback-message">Your message</label><textarea id="feedback-message" name="message" rows="7" minlength="10" maxlength="2000" required aria-describedby="message-help"></textarea><p id="message-help" class="fine-print">10–2,000 characters. For a correction, include the article title and a source if you have one.</p><div class="honeypot" aria-hidden="true"><label for="feedback-website">Website</label><input id="feedback-website" name="website" type="text" tabindex="-1" autocomplete="off" maxlength="200"/></div><div id="feedback-verification"></div><button id="feedback-send" class="button" type="submit" disabled>Send privately</button></form></section></Layout>
+<script>
+type Turnstile={render:(node:HTMLElement,options:Record<string,unknown>)=>string;reset:(widget:string)=>void};
+const api=()=> (window as Window&{turnstile?:Turnstile}).turnstile;
+const start=document.querySelector<HTMLButtonElement>('#feedback-start')!,form=document.querySelector<HTMLFormElement>('#feedback-form')!,status=document.querySelector<HTMLElement>('#feedback-status')!,send=document.querySelector<HTMLButtonElement>('#feedback-send')!;
+let token='',widget='',busy=false;
+start.addEventListener('click',async()=>{
+ start.disabled=true;status.textContent='Checking feedback availability…';
+ try{const configResponse=await fetch('/api/feedback/config',{cache:'no-store',signal:AbortSignal.timeout(10000)});if(!configResponse.ok)throw new Error('not-configured');const config=await configResponse.json();if(typeof config.siteKey!=='string'||!config.siteKey)throw new Error('not-configured');
+  if(!api())await new Promise<void>((resolve,reject)=>{const script=document.createElement('script');script.src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';script.async=true;const timer=setTimeout(()=>{script.remove();reject(new Error('verification-unavailable'));},15000);script.onload=()=>{clearTimeout(timer);resolve();};script.onerror=()=>{clearTimeout(timer);script.remove();reject(new Error('verification-unavailable'));};document.head.append(script);});
+  if(!api())throw new Error('verification-unavailable');
+  form.hidden=false;start.hidden=true;status.textContent='Complete verification, then send your message.';
+  widget=api()!.render(document.querySelector<HTMLElement>('#feedback-verification')!,{sitekey:config.siteKey,action:'feedback',callback:(value:string)=>{token=value;send.disabled=busy;},'expired-callback':()=>{token='';send.disabled=true;status.textContent='Verification expired. Please verify again.';},'error-callback':()=>{token='';send.disabled=true;status.textContent='Verification could not load. Please try again later.';}});
+  document.querySelector<HTMLTextAreaElement>('#feedback-message')!.focus();
+ }catch{form.hidden=true;start.hidden=false;token='';send.disabled=true;status.textContent='Feedback is not available yet. Please try again later.';start.disabled=false;}
+});
+form.addEventListener('submit',async event=>{
+ event.preventDefault();if(busy||!token||send.disabled||!form.reportValidity())return;
+ busy=true;
+ send.disabled=true;status.textContent='Sending…';
+ const message=document.querySelector<HTMLTextAreaElement>('#feedback-message')!,category=document.querySelector<HTMLSelectElement>('#feedback-category')!,website=document.querySelector<HTMLInputElement>('#feedback-website')!;
+ try{const response=await fetch('/api/feedback',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({category:category.value,message:message.value,turnstileToken:token,website:website.value}),signal:AbortSignal.timeout(30000)});const result=await response.json().catch(()=>null);if(response.ok&&result?.ok){status.textContent='Thank you. Your message has been saved privately.';message.value='';}else{status.textContent=typeof result?.error==='string'?result.error:'The message could not be saved. Please try later.';}}
+ catch{status.textContent='Submission was interrupted. It may have arrived; please avoid resending immediately.';}
+ finally{busy=false;token='';if(widget)api()?.reset(widget);}
+});
+</script>

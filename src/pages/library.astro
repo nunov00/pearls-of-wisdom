@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';import ArticleCard from '../components/ArticleCard.astro';import {visibleArticles} from '../lib/catalogue';
+const articles=visibleArticles();const cats=[...new Set(articles.map(a=>a.category))];
+---
+<Layout title="The library" description="Browse practical, evidence-based guides by topic."><section class="wrap page-intro"><p class="eyebrow">Something worth putting into practice</p><h1>The library</h1><p>Find a useful starting point for the thing you want to improve.</p></section><section class="wrap library-body"><div class="search-panel"><label for="search">Search the library</label><input id="search" type="search" placeholder="Try strength, studying or money…" autocomplete="off"/><div class="filter-row"><label for="category">Category <select id="category"><option value="">All topics</option>{cats.map(c=><option>{c}</option>)}</select></label><label for="sort">Order <select id="sort"><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="title">Title A–Z</option></select></label></div><p id="search-status" role="status" aria-live="polite">{articles.length} {articles.length===1?'article':'articles'}</p><noscript><p>Search needs JavaScript. All articles are listed below; category pages work without it.</p></noscript></div><div class="topic-links" aria-label="Browse categories">{cats.map(c=><a href={`/categories/${c.toLowerCase().replaceAll(' ','-')}/`}>{c}</a>)}</div><div class="card-grid" id="results">{articles.map(a=><ArticleCard article={a}/>)}</div><p id="no-results" class="empty-state" hidden>No articles match. Try a broader search or another category.</p></section></Layout>
+<script>
+import {searchArticles,type SearchEntry} from '../lib/search';
+const input=document.querySelector<HTMLInputElement>('#search')!;const category=document.querySelector<HTMLSelectElement>('#category')!;const sort=document.querySelector<HTMLSelectElement>('#sort')!;
+const cards=Array.from(document.querySelectorAll<HTMLElement>('[data-search-item]'));let pending:Promise<SearchEntry[]>|null=null;let request=0;
+async function filter(){
+ const sequence=++request;
+ try{if(pending===null)pending=fetch('/search-index.json').then(async response=>{if(!response.ok)throw new Error('Search index unavailable');return await response.json();}).catch(error=>{pending=null;throw error;});
+ const data=await pending;if(sequence!==request)return;
+ const query=input.value.trim().toLowerCase();let count=0;
+ const selected=searchArticles(data,query,category.value,sort.value);
+ const ids=new Set(selected.map(a=>a.slug));for(const card of cards){const a=card.querySelector('h3 a') as HTMLAnchorElement;card.hidden=!ids.has(a.pathname.split('/').filter(Boolean).at(-1) ?? '');if(!card.hidden)count++;}
+ const container=document.querySelector('#results')!;for(const article of selected){const card=cards.find(c=>(c.querySelector('h3 a') as HTMLAnchorElement).pathname.includes('/'+article.slug+'/'));if(card)container.append(card);}
+ document.querySelector('#search-status')!.textContent=`${count} ${count===1?'article':'articles'}${query?' matching “'+input.value.trim()+'”':''}`;(document.querySelector('#no-results') as HTMLElement).hidden=count!==0;
+ }catch{document.querySelector('#search-status')!.textContent='Search is temporarily unavailable. Browse all articles below.';for(const c of cards)c.hidden=false;}
+}
+input.addEventListener('input',filter);category.addEventListener('change',filter);sort.addEventListener('change',filter);
+</script>
