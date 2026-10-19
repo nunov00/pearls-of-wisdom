@@ -33,14 +33,14 @@ test('search, category, empty state and reset agree with visible articles', asyn
   await page.getByLabel('Search the library').fill('study');
   await expect(cards).toHaveCount(1);
   await expect(cards).toContainText('three-step routine');
-  await page.getByLabel('Category', {exact: true}).selectOption('Finance');
+  await page.getByRole('combobox', {name: /^Category/}).selectOption('Finance');
   await expect(cards).toHaveCount(0);
   await expect(page.locator('#no-results')).toBeVisible();
   await page.getByLabel('Search the library').fill('');
   await expect(cards).toHaveCount(1);
   await expect(cards).toContainText('financial breathing room');
-  await page.getByLabel('Category', {exact: true}).selectOption('');
-  await page.getByLabel('Order', {exact: true}).selectOption('title');
+  await page.getByRole('combobox', {name: /^Category/}).selectOption('');
+  await page.getByRole('combobox', {name: /^Order/}).selectOption('title');
   await expect(cards).toHaveCount(3);
   await expect(cards.first()).toContainText('three-step routine');
   await expect(page.locator('#no-results')).toBeHidden();
