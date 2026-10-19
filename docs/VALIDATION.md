@@ -23,3 +23,7 @@ Create/identify the GitHub repository, transfer the prepared source via a featur
 ## Repository/feedback follow-up
 
 The two repositories now exist and are private; the source repository contains the governance template. Its GOVERNANCE.md is retained unchanged, AGENTS.md gains project-specific scope notes, and PROJECT.md is filled in without changing profile. Feedback adapter/form tests use mocked provider responses; no real reader message or GitHub token is used. Live spam protection, deployment and mobile verification remain outstanding.
+
+## Cloudflare preparation follow-up
+
+Pinned Wrangler 4.147.0 bundles the static site and feedback adapter successfully using `npm run cf:validate` (`wrangler deploy --dry-run`). This does not upload or create a Cloudflare resource. Fifteen local tests pass, including deployment-authorisation/origin refusal. The config remains workers_dev=false and FEEDBACK_ENABLED=false. Actual dashboard setup and credential provisioning are blocked by a Cloudflare login HTTP 403 in the available browser. No repository visibility changes were made.
