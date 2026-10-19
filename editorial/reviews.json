@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "id": "launch-001-20261019",
+    "articleId": "001-exercise-after-65",
+    "author": "Codex /root (OpenAI)",
+    "reviewer": "Codex /root/feedback_review (OpenAI)",
+    "reviewedCommit": "cad8990467318026816b9ad6e16a3b086be7cfb7",
+    "articleSha256": "77b0bb5c7b4c0f309128f1467206e09715e67d5d03b668ef468c1e6812f6525c",
+    "correctionRounds": 1,
+    "decision": "ready",
+    "findings": [
+      {"id": "E1", "severity": "minor", "status": "resolved", "detail": "Strength effort cue now specifies challenging final repetitions with control and adaptation to ability; no instruction to train to failure."}
+    ]
+  },
+  {
+    "id": "launch-002-20261019",
+    "articleId": "002-study-memory",
+    "author": "Codex /root (OpenAI)",
+    "reviewer": "Codex /root/feedback_review (OpenAI)",
+    "reviewedCommit": "cad8990467318026816b9ad6e16a3b086be7cfb7",
+    "articleSha256": "7ef34b0e24b5bd9a5c47f553352903cdc1c888dadb803e2e08c9e0d46517d271",
+    "correctionRounds": 1,
+    "decision": "ready",
+    "findings": [
+      {"id": "L1", "severity": "minor", "status": "resolved", "detail": "Title, introduction and summary now explicitly frame recall, correction and spacing as a connected study routine, with overlap limitations retained."}
+    ]
+  },
+  {
+    "id": "launch-003-20261019",
+    "articleId": "003-money-buffer",
+    "author": "Codex /root (OpenAI)",
+    "reviewer": "Codex /root/feedback_review (OpenAI)",
+    "reviewedCommit": "cad8990467318026816b9ad6e16a3b086be7cfb7",
+    "articleSha256": "73ae65ea0843b60033920477648df9e8b2fd5bd9127669a85bdf66693f9bc27e",
+    "correctionRounds": 1,
+    "decision": "ready",
+    "findings": [
+      {"id": "F1", "severity": "minor", "status": "resolved", "detail": "Extra repayment action now explicitly identifies high-interest ordinary unsecured debt while protecting essentials and minimums."},
+      {"id": "selection-finance-shortfall", "severity": "minor", "status": "open", "detail": "Optional improvement from separate blind recommendation challenge: provide a concrete local-support route for an ongoing essential-income shortfall. Current caveats and arrears/debt advice make this non-blocking within the article's narrower shock-focused scope."}
+    ]
+  }
+]
