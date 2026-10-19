@@ -15,7 +15,7 @@
 
 Actual iPhone Safari, screen-reader journeys and complete accessibility conformance; live public routing/metadata; live Turnstile/submission/deletion; real deployment/rollback; current aggregate account quotas; agreed durable backup destination; and unattended cross-provider publishing remain unverified. Browser emulation and mocked feedback tests do not establish those results.
 
-The Owner has chosen a public site, so Access/Zero Trust is unnecessary. See deploy/cloudflare/README.md and docs/LAUNCH-CHECKLIST.md for the remaining profile decision and Cloudflare settings. The agent has no working Cloudflare account connection; credentials must be entered directly into the relevant service, never chat. Public access is approved; the pre-production profile choice is still pending.
+The Owner has chosen a public site, so Access/Zero Trust is unnecessary. See deploy/cloudflare/README.md and docs/LAUNCH-CHECKLIST.md for the remaining Cloudflare settings. The agent has no working Cloudflare account connection; credentials must be entered directly into the relevant service, never chat. Public access is approved; the Owner confirmed Lightweight for the initial public Pilot and verified the production origin on 19 October 2026.
 
 The entries below are historical, superseded by the current state above.
 

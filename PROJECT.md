@@ -5,11 +5,11 @@
 - **Owner:** Nuno Vitoria
 - **Manager:** ChatGPT (or designated manager)
 - **Governance template:** v0.2
-- **Stage:** PoC
+- **Stage:** Pilot
 - **Governance profile:** Lightweight
 - **Technology:** Astro, TypeScript, structured YAML, portable static output; optional narrow Cloudflare feedback adapter.
 - **Tests / required checks:** `npm run verify`; `Baseline / baseline` CI. No enforcement ruleset is claimed.
-- **Deployment:** Cloudflare Git integration configured; Owner authorised public access on 19 October 2026. Release preparation is in progress; no live deployment is verified.
+- **Deployment:** Cloudflare Git integration configured; Owner authorised public access on 19 October 2026. Release preparation and CI are complete; public origin confirmed as https://pearls-of-wisdom.vitoria-nuno.workers.dev. Dashboard activation and live deployment remain unverified.
 - **Material paths:** `.github/**`, `scripts/release-*`, `deploy/**`, `editorial/automation.json`
 - **Control overrides:** None
 - **Standing delegations:** None
@@ -23,6 +23,7 @@ Reassess the profile before the first production deployment. Changing this file 
 | Date | From → to | Stage | Reason | Approved by |
 |---|---|---|---|---|
 | 2026-10-19 | — → Lightweight | PoC | Approved implementation plan | Owner (chat) |
+| 2026-10-19 | Lightweight retained | Pilot | Initial manual public site; independent editorial release gates and green checks; feedback/schedules disabled | Owner: “Lightweight confirmed for now” (chat) |
 
 ## Available AI and development tools
 
@@ -68,4 +69,4 @@ Current official documentation: [GitHub Actions billing](https://docs.github.com
 
 Owner decision, 19 October 2026: “You can make the whole site publicly accessible like five minutes, no?” This authorises a public site; it does not enable scheduled writer/reviewer tasks, paid services, public repositories or feedback credentials. The private-preview/Zero Trust detour is cancelled.
 
-Before the first real deployment, the governance checkpoint still requires the Owner's profile choice. Manager recommendation: retain Lightweight for an initial manual public Pilot, with the existing independent editorial release checks, green tests/builds, explicit launch authorisation and disabled feedback/schedules. This avoids introducing a ruleset transition before there is unattended publishing or reader storage; reassess for Standard before those are enabled. This is a proposal, not a recorded Owner profile decision. Active profile and stage above remain unchanged meanwhile.
+Owner confirmed on 19 October 2026: “Lightweight confirmed for now”. Retain Lightweight for the initial manual public Pilot, with independent editorial release checks, green tests/builds, explicit public-launch authorisation and disabled feedback/schedules. This completes the first-deployment profile assessment without a profile transition, waiver or change to approval rights. Reassess Standard before unattended publishing or reader storage. The Owner's Domains screenshot confirms https://pearls-of-wisdom.vitoria-nuno.workers.dev as the production origin.

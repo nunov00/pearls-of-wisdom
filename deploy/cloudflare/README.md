@@ -35,7 +35,7 @@ Cloudflare Git integration supplies its own deployment credential. It does not r
 
 Owner authorised the whole website to be publicly accessible on 19 October 2026 (issue #5). Zero Trust/Access is not needed for that public site; the private-preview instructions below are superseded. Do not enable account-wide protection or change other projects.
 
-Before actual deployment, complete the profile assessment in PROJECT.md. The Manager proposes retaining Lightweight for a manual public Pilot; the Owner must choose. Verify the production Worker URL under Domains. The expected URL, derived from the current Five Minutes account hostname, is `https://pearls-of-wisdom.vitoria-nuno.workers.dev`; confirm it in this project's dashboard before setting canonical metadata.
+Owner confirmed Lightweight for now on 19 October 2026; PROJECT.md records the initial manual public Pilot and completes the profile checkpoint. The Owner's Domains screenshot verifies `https://pearls-of-wisdom.vitoria-nuno.workers.dev` as the production origin. No further profile or public-launch approval is needed for this release.
 
 With the matching approved release merged and the profile choice recorded, configure:
 

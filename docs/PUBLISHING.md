@@ -15,7 +15,7 @@ A manual run record should include runId, Zurich targetDate, candidateId, PR, cu
 
 ## Honest current boundary
 
-The implementation has content/release validation, browser checks and verified manager-driven GitHub merges, not unattended research, cross-provider coordination or deployment control. The initial three articles now have matching dated editorial readiness records. This permits a valid release build; it does not prove a real deployment. Cloudflare dashboard activation and the first-deployment profile checkpoint remain Owner steps. Manual instructions do not establish an unattended service.
+The implementation has content/release validation, browser checks and verified manager-driven GitHub merges, not unattended research, cross-provider coordination or deployment control. The initial three articles now have matching dated editorial readiness records. This permits a valid release build; it does not prove a real deployment. The Owner confirmed Lightweight for the manual public Pilot and verified the origin on 19 October 2026. Cloudflare dashboard activation remains an Owner step because the agent cannot authenticate there. Manual instructions do not establish an unattended service.
 
 ## Proposed future activation
 

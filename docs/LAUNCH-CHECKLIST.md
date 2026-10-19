@@ -10,15 +10,15 @@ Public access is authorised by the Owner on 19 October 2026 (issue #5). Paid ser
 
 ## Next external dependency
 
-The Owner must confirm the pre-deployment profile choice, verify this Worker's URL under Domains and switch the dashboard build variables/deploy command as documented in deploy/cloudflare/README.md. Access/Zero Trust is unnecessary for the approved public site. The available cloud browser cannot sign in; no Cloudflare connector or usable account credential is available. Do not ask for tokens in chat.
+Owner confirmed Lightweight for now and the production Worker URL on 19 October 2026. The remaining dashboard step is to switch build variables/deploy command as documented in deploy/cloudflare/README.md. Access/Zero Trust is unnecessary for the approved public site. The available cloud browser cannot sign in; no Cloudflare connector or usable account credential is available. Do not ask for tokens in chat.
 
 Once configured: deploy the validated release, verify signed-out reading, read on actual iPhone Safari, test search/evidence/sharing and feedback-disabled messaging. Reconcile dashboard/source settings before changing commands. No feedback secrets are required for the initial reading publication.
 
 ## Pre-deployment profile decision
 
-Manager's current assessment: retain **Lightweight** for an initial manual public **Pilot**, with the existing independent editorial release gates, green tests/builds and disabled feedback/schedules; reassess **Standard** before unattended publishing or reader storage. The active profile/stage remain **Lightweight / PoC** until the Owner chooses; no protection enforcement is claimed. This recommendation supersedes the earlier generic Standard/Production suggestion in the pre-launch handoff.
+Manager's current assessment: retain **Lightweight** for an initial manual public **Pilot**, with the existing independent editorial release gates, green tests/builds and disabled feedback/schedules; reassess **Standard** before unattended publishing or reader storage. Owner confirmed this recommendation on 19 October 2026; the active profile/stage are **Lightweight / Pilot**. No protection enforcement is claimed. This recommendation supersedes the earlier generic Standard/Production suggestion in the pre-launch handoff.
 
-Public access is already authorised. Confirm the actual HTTPS origin and the profile choice, keep review hashes valid, then deploy the tested release. Do not backdate first publication if deployment slips to another day. Verify a live known-good version and rollback; inspect current shared usage and confirm durable backup retention. No paid upgrade is implicit.
+Public access is already authorised. The HTTPS origin and profile choice are confirmed; keep review hashes valid and deploy the tested release. Do not backdate first publication if deployment slips to another day. Verify a live known-good version and rollback; inspect current shared usage and confirm durable backup retention. No paid upgrade is implicit.
 
 ## Feedback activation
 
