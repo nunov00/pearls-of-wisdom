@@ -29,9 +29,10 @@ jobs:
         env:
           RELEASE: '1'
           SITE_URL: https://example.invalid
+          PLAYWRIGHT_HTML_OUTPUT_DIR: playwright-report/release
         run: |
           npm run build
-          npm run test:browser -- --grep 'release metadata'
+          npm run test:browser -- --grep 'release metadata' --output=test-results/release
       - if: always()
         uses: actions/upload-artifact@v4
         with:

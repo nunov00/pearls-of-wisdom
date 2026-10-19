@@ -27,17 +27,34 @@ npm run cf:validate
 3. Current dashboard commands: build `npm run build`, deploy `npm run cf:validate`; Node variable `NODE_VERSION=24`, path `/`. Preview builds are off. This deliberately repeats the build inside validation but is temporary setup, not the final production workflow. Leave custom domains/routes empty and the production workers.dev URL disabled. Do not substitute the default deploy command while drafts await launch.
 4. For an access-restricted hosted preview, configure and verify Cloudflare Access first; a preview URL or noindex is not privacy. Do not attach any production credentials to a branch preview.
 5. After public launch is separately approved and the initial articles pass independent review, configure the production build with `RELEASE=1` and the approved `SITE_URL`. Set the deliberate `PUBLIC_LAUNCH_APPROVED=true` acknowledgement only within that authorised deployment workflow. Build command: `npm run build`; deploy command: `npm run cf:deploy` (it revalidates). Confirm main-branch CI before enabling automated deployment.
-6. The tracked `workers_dev:false` and lack of domain/routes intentionally prevent public exposure. Any activation must be a reviewed configuration change with the appropriate Owner decision; do not assume the dashboard overrides this source file permanently.
+6. Following the Owner's public-access decision, the release branch sets `workers_dev:true` and `preview_urls:false`; feedback stays disabled and no custom domain is added. This takes effect only after a real guarded deployment. Dashboard settings alone do not replace the tracked source configuration.
 
 Cloudflare Git integration supplies its own deployment credential. It does not require storing a Cloudflare token in GitHub. Avoid adding another broad personal token for deployment.
 
-## Next Owner step: protect this project's preview
+## Public launch authorised — current next step
 
-In Workers & Pages, select **pearls-of-wisdom → Access → Protect this Worker behind Access**. Configure protection for this Worker only, with an allow policy restricted to the Owner's chosen sign-in identity. Protect all traffic during pre-launch; do not change account-wide protection or other projects. If Zero Trust needs initial setup, choose the free option; stop if payment is required. Keep preview builds off until the policy is applied.
+Owner authorised the whole website to be publicly accessible on 19 October 2026 (issue #5). Zero Trust/Access is not needed for that public site; the private-preview instructions below are superseded. Do not enable account-wide protection or change other projects.
 
-After protection is verified, the preview command must include the non-root configuration path: `npx wrangler preview --config deploy/cloudflare/wrangler.jsonc`. Worker Previews can be created before a production deployment and use the existing `previews` settings, where feedback is disabled. No production feedback secrets belong in previews. A real preview must be tested signed out (blocked/login) and as the allowed reader before it is described as private.
+Before actual deployment, complete the profile assessment in PROJECT.md. The Manager proposes retaining Lightweight for a manual public Pilot; the Owner must choose. Verify the production Worker URL under Domains. The expected URL, derived from the current Five Minutes account hostname, is `https://pearls-of-wisdom.vitoria-nuno.workers.dev`; confirm it in this project's dashboard before setting canonical metadata.
 
-Official setup references checked 19 October 2026: [Worker Access](https://developers.cloudflare.com/workers/configuration/cloudflare-access/) and [Worker Previews](https://developers.cloudflare.com/workers/previews/get-started/). Dashboard protection and live verification still require Owner action because this agent has no working Cloudflare account connection.
+With the matching approved release merged and the profile choice recorded, configure:
+
+| Dashboard setting | Value |
+| --- | --- |
+| Build command | `npm run build` |
+| Deploy command | `npm run cf:deploy` |
+| `NODE_VERSION` | `24` |
+| `RELEASE` | `1` |
+| `SITE_URL` | Exact verified HTTPS Worker origin, no trailing slash |
+| `PUBLIC_LAUNCH_APPROVED` | `true` |
+| Preview builds | Off |
+| Access / Zero Trust protection | Not required; do not apply it to the public site |
+
+These are build settings/non-secret variables; no feedback token or Turnstile secret is required while feedback stays disabled. Source now enables production `workers_dev` and explicitly disables preview URLs. The guarded command validates release records, tests and the build before uploading. A new source commit after this command is activated can update the public site; this is deployment automation, not a scheduled article writer.
+
+First release is prepared for 19 October 2026. If deployment happens later, update first-publication dates and revalidate exact review hashes before deploying. A record selected for release is not proof that it has already appeared online. After deployment, record the actual URL/version, check signed-out reading and metadata, and establish a known-good rollback version. Agent dashboard login remains unavailable; the Owner must make these dashboard changes and share the non-secret outcome.
+
+Official references checked 19 October 2026: [Worker Access](https://developers.cloudflare.com/workers/configuration/cloudflare-access/) and [Worker Previews](https://developers.cloudflare.com/workers/previews/get-started/). A future preview command needs `--config deploy/cloudflare/wrangler.jsonc`; keep branch previews disabled for this launch.
 
 ## Feedback credentials — production only
 

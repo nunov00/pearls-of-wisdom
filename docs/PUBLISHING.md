@@ -7,7 +7,7 @@ Recurring automation is disabled by Owner instruction. `editorial/automation.jso
 3. Ask a separate reviewer to assess the audience/goal independently, then inspect the draft and exact supporting evidence. Prefer a different provider when accessible. Copilot review can supplement this but cannot replace it.
 4. Address significant findings in no more than two rounds. The reviewer validates the changed content and implications; record the reviewed commit and SHA-256 of the exact final article bytes. A record declaring a different reviewer is not proof of review.
 5. Only after launch authorisation, set the real publication date, obtain review of those final bytes and add a publication record. Never backdate first publication. Reject a future date, stale hash, self-review or unresolved significant finding.
-6. In GitHub, verify the current PR head equals the reviewed commit, inspect required checks and base changes, then use an expected-head guarded merge. This remote merge step is not implemented locally yet. Do not turn on auto-merge as a substitute.
+6. In GitHub, verify the current PR head equals the final integration-review commit, inspect checks and base changes, then use an expected-head guarded merge. Article records identify the immutable article-content commit and hash; a later record-only commit does not change the reviewed article bytes. Final integration review still covers the actual PR head. The manager has verified guarded connector merges; this is not an unattended merge service. Do not turn on auto-merge as a substitute.
 7. Run a release build with `RELEASE=1 SITE_URL=<approved HTTPS origin> npm run build`. Release check failure means stop, not bypass. The preview bundle must never be used as a release bundle.
 8. Deploy through verified Cloudflare access only after approval. Record the actual commit, deployment version and live check; a merge is not proof of publication. On deployment failure reconcile the provider state before retrying.
 
@@ -15,7 +15,7 @@ A manual run record should include runId, Zurich targetDate, candidateId, PR, cu
 
 ## Honest current boundary
 
-The implementation has local content/release validation and tests, not unattended research, cross-provider coordination or remote merge/deploy control. Manual instructions do not prove those integrations work. Initial review records are empty and `npm run release:check` intentionally fails. No article is approved for publication.
+The implementation has content/release validation, browser checks and verified manager-driven GitHub merges, not unattended research, cross-provider coordination or deployment control. The initial three articles now have matching dated editorial readiness records. This permits a valid release build; it does not prove a real deployment. Cloudflare dashboard activation and the first-deployment profile checkpoint remain Owner steps. Manual instructions do not establish an unattended service.
 
 ## Proposed future activation
 
