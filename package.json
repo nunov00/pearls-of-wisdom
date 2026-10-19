@@ -15,7 +15,9 @@
     "links": "node scripts/check-links.mjs",
     "backup": "node scripts/backup.mjs",
     "release:check": "node scripts/release-check.mjs",
-    "backlog": "node scripts/backlog.mjs"
+    "backlog": "node scripts/backlog.mjs",
+    "cf:validate": "node scripts/cloudflare-validate.mjs",
+    "cf:deploy": "node scripts/cloudflare-deploy.mjs"
   },
   "dependencies": {
     "astro": "7.4.0",
@@ -25,6 +27,7 @@
   "devDependencies": {
     "@astrojs/check": "0.9.4",
     "@types/node": "24.10.0",
-    "typescript": "5.9.2"
+    "typescript": "5.9.2",
+    "wrangler": "4.147.0"
   }
 }

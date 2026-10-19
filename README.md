@@ -28,7 +28,7 @@ The default build is an editorial preview. It includes drafts, noindex metadata 
 | `npm run backup` | Source archive and checksum under ignored `backups/` |
 | `npm run release:check` | Reject missing/stale/self reviews and unresolved significant findings |
 
-No script sends content to a social platform, calls a paid model or schedules work. Deployment is deliberately not wired up.
+No script sends content to a social platform, calls a paid model or schedules work. Deployment is not connected. Pinned Wrangler and local dry-run/guarded deployment commands are available; see deploy/cloudflare/README.md.
 
 ## GitHub repositories
 
