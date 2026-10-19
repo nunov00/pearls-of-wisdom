@@ -1,0 +1,3 @@
+import {visibleArticles,categorySlug} from '../lib/catalogue';
+export const prerender=true;
+export function GET(){const origin=process.env.SITE_URL;const urls=origin?['/','/library/','/about/','/feedback/',...visibleArticles().map(a=>'/articles/'+a.slug+'/'),...[...new Set(visibleArticles().map(a=>a.category))].map(c=>'/categories/'+categorySlug(c)+'/')]:[];return new Response('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+urls.map(p=>'<url><loc>'+new URL(p,origin).href.replaceAll('&','&amp;')+'</loc></url>').join('')+'</urlset>',{headers:{'Content-Type':'application/xml'}});}

@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "id": "001-exercise-after-65",
+  "slug": "exercise-foundations-after-65",
+  "title": "Three exercise foundations for staying capable after 65",
+  "description": "Keep endurance, strength and balance in practice, with a manageable place to start.",
+  "category": "Health",
+  "keywords": [
+    "exercise",
+    "strength",
+    "balance",
+    "older adults",
+    "walking",
+    "independence"
+  ],
+  "goal": "Maintain physical capacity through exercise",
+  "audience": "Adults aged 65 and over; adapt activity to your abilities and conditions.",
+  "assumptions": "General exercise guidance, not a complete plan for healthy ageing.",
+  "introduction": "Getting out of a chair, carrying shopping and walking to the bus draw on different abilities. A useful exercise routine keeps more than one of them in practice.",
+  "publishedAt": null,
+  "revisedAt": null,
+  "lastEvidenceCheckedAt": "2026-10-19",
+  "selection": {
+    "basis": "foundations",
+    "rationale": "Three distinct training aims are supported by public guidance; no measured rank or outcome percentage is claimed.",
+    "alternatives": [
+      {
+        "candidate": "Flexibility",
+        "reason": "May matter for particular limitations; not established here as an additional equivalent training foundation."
+      },
+      {
+        "candidate": "Nutrition",
+        "reason": "Important to healthy ageing but outside this explicitly exercise-focused question."
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "id": "move",
+      "heading": "Move at a pace that makes you breathe harder",
+      "whatToDo": "Build towards 150–300 minutes of moderate activity each week, such as brisk walking or cycling. At a moderate effort, you can talk but not sing. Shorter bouts count.",
+      "whyItMatters": "Regular physical activity supports cardiovascular health and physical function.",
+      "consequence": "Doing little activity means missing some of those benefits; it does not make illness inevitable.",
+      "action": "Put a ten-minute walk, wheel or suitable alternative in your diary.",
+      "details": "Vigorous activity or a mixture is another option. The weekly target is something to build towards, not an entry requirement. Choose an activity you can do safely.",
+      "claimIds": [
+        "move-benefit",
+        "move-consequence"
+      ]
+    },
+    {
+      "id": "strength",
+      "heading": "Give your muscles something to work against",
+      "whatToDo": "Include strengthening on at least two days each week, covering the major muscle groups. Weights, resistance bands and suitable body-weight exercises can all count.",
+      "whyItMatters": "Stronger muscles help with everyday activities and independence.",
+      "consequence": "Walking alone does not fulfil the separate strengthening recommendation.",
+      "action": "Choose two days for a short strength session. If you are unsure how to begin, arrange an introductory session with a qualified instructor.",
+      "details": "Use suitable resistance and movements. A walk may work your muscles, but an exercise routine still needs deliberate strengthening.",
+      "claimIds": [
+        "strength-benefit",
+        "strength-consequence"
+      ]
+    },
+    {
+      "id": "balance",
+      "heading": "Practise balance as well as endurance",
+      "whatToDo": "Include activities that challenge balance safely. WHO recommends varied activity emphasising balance and strength on at least three days a week for older adults.",
+      "whyItMatters": "Balance-focused activity helps reduce falls.",
+      "consequence": "Leaving it out misses a specific part of fall prevention, even if you already walk regularly.",
+      "action": "Find a suitable balance class or a professionally guided home routine.",
+      "details": "Some activities combine endurance, strength and balance. Judge what the activity involves rather than assuming that every class covers all three.",
+      "claimIds": [
+        "balance-benefit",
+        "balance-consequence"
+      ],
+      "safety": "If you are unsteady, seek support rather than practising unsupported."
+    }
+  ],
+  "claims": [
+    {
+      "id": "move-benefit",
+      "text": "Regular physical activity supports cardiovascular health and physical function.",
+      "kind": "benefit",
+      "basis": "guideline",
+      "sourceIds": [
+        "who",
+        "cdc-activity"
+      ],
+      "strength": "consensus-based",
+      "strengthRationale": "Public guidance recommends this practice; this label is an informal editorial judgement, not a formal evidence grade."
+    },
+    {
+      "id": "move-consequence",
+      "text": "Doing little activity means missing some of those benefits; it does not make illness inevitable.",
+      "kind": "consequence",
+      "basis": "guideline",
+      "sourceIds": [
+        "who",
+        "cdc-activity"
+      ],
+      "strength": "consensus-based",
+      "strengthRationale": "Public guidance recommends this practice; this label is an informal editorial judgement, not a formal evidence grade."
+    },
+    {
+      "id": "strength-benefit",
+      "text": "Stronger muscles help with everyday activities and independence.",
+      "kind": "benefit",
+      "basis": "guideline",
+      "sourceIds": [
+        "cdc-overview"
+      ],
+      "strength": "consensus-based",
+      "strengthRationale": "Public guidance recommends this practice; this label is an informal editorial judgement, not a formal evidence grade."
+    },
+    {
+      "id": "strength-consequence",
+      "text": "Walking alone does not fulfil the separate strengthening recommendation.",
+      "kind": "consequence",
+      "basis": "guideline",
+      "sourceIds": [
+        "cdc-overview"
+      ],
+      "strength": "consensus-based",
+      "strengthRationale": "Public guidance recommends this practice; this label is an informal editorial judgement, not a formal evidence grade."
+    },
+    {
+      "id": "balance-benefit",
+      "text": "Balance-focused activity helps reduce falls.",
+      "kind": "benefit",
+      "basis": "guideline",
+      "sourceIds": [
+        "who",
+        "cdc-activity"
+      ],
+      "strength": "consensus-based",
+      "strengthRationale": "Public guidance recommends this practice; this label is an informal editorial judgement, not a formal evidence grade."
+    },
+    {
+      "id": "balance-consequence",
+      "text": "Leaving it out misses a specific part of fall prevention, even if you already walk regularly.",
+      "kind": "consequence",
+      "basis": "guideline",
+      "sourceIds": [
+        "who",
+        "cdc-activity"
+      ],
+      "strength": "consensus-based",
+      "strengthRationale": "Public guidance recommends this practice; this label is an informal editorial judgement, not a formal evidence grade."
+    }
+  ],
+  "sources": [
+    {
+      "id": "who",
+      "title": "Physical activity recommendations",
+      "organisation": "World Health Organization",
+      "url": "https://www.who.int/europe/news-room/fact-sheets/item/physical-activity",
+      "checkedAt": "2026-10-19",
+      "access": "checked",
+      "section": "Physical activity recommendations: adults 65 and older",
+      "support": "Weekly aerobic, strengthening and multicomponent balance recommendations.",
+      "limitations": "Guidance supports the stated claim, not a universal top-three ranking."
+    },
+    {
+      "id": "cdc-overview",
+      "title": "Older Adult Activity: An Overview",
+      "organisation": "CDC",
+      "url": "https://www.cdc.gov/physical-activity-basics/guidelines/older-adults.html",
+      "checkedAt": "2026-10-19",
+      "access": "checked",
+      "section": "Recommendations and benefits",
+      "support": "Separate strengthening requirement and support for daily activities.",
+      "limitations": "Guidance supports the stated claim, not a universal top-three ranking."
+    },
+    {
+      "id": "cdc-activity",
+      "title": "What Counts as Physical Activity for Older Adults",
+      "organisation": "CDC",
+      "url": "https://www.cdc.gov/physical-activity-basics/adding-older-adults/what-counts.html",
+      "checkedAt": "2026-10-19",
+      "access": "checked",
+      "section": "Measuring intensity; muscle strengthening; balance",
+      "support": "Talk test, activity examples and fall-prevention guidance.",
+      "limitations": "Guidance supports the stated claim, not a universal top-three ranking."
+    }
+  ],
+  "limitations": "These are exercise foundations, not a personalised prescription or a guarantee against falls. Adapt activity to your abilities and conditions; seek professional guidance if those affect what is safe for you. Nutrition, illness management and home hazards also matter to broader independence.",
+  "revisionHistory": [],
+  "relatedIds": [
+    "002-study-memory"
+  ],
+  "summary": {
+    "title": "Three exercise foundations for staying capable after 65",
+    "recommendationIds": [
+      "move",
+      "strength",
+      "balance"
+    ]
+  }
+}
