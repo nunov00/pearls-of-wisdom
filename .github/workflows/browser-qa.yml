@@ -25,6 +25,13 @@ jobs:
       - run: npx playwright install --with-deps chromium webkit
       - run: npm run build
       - run: npm run test:browser
+      - name: Verify release metadata
+        env:
+          RELEASE: '1'
+          SITE_URL: https://example.invalid
+        run: |
+          npm run build
+          npm run test:browser -- --grep 'release metadata'
       - if: always()
         uses: actions/upload-artifact@v4
         with:

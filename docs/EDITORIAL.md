@@ -14,4 +14,4 @@ Preserve original dates on revision. Show the latest meaningful revised date. Re
 
 Health and finance are general education: visible audience and exceptions, no personalised recommendations. Financial guidance must identify jurisdiction assumptions; debt priority is not determined solely by interest rate. Medical contraindications must not be hidden in expansions. A disclaimer cannot make unsafe content acceptable.
 
-Current drafts: exercise after 65, remembering study material, financial breathing room. Sources have been inspected as documented. No independent content review has yet been completed. Learning feedback partly overlaps retrieval; the draft discloses this and the reviewer must challenge whether the format remains justified.
+Initial articles: exercise after 65, remembering study material, financial breathing room. Sources, recommendation selection and minor corrections have independent same-provider reviews in docs/reviews/. Learning explicitly presents a connected study routine because feedback overlaps retrieval. Final dated article bytes require matching release records; review completion is not proof of deployment.
