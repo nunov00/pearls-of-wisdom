@@ -9,7 +9,7 @@
 - **Governance profile:** Lightweight
 - **Technology:** Astro, TypeScript, structured YAML, portable static output; optional narrow Cloudflare feedback adapter.
 - **Tests / required checks:** `npm run verify`; `Baseline / baseline` CI. No enforcement ruleset is claimed.
-- **Deployment:** Cloudflare Git integration configured by Owner; successful dry-run build observed. No site deployment or public launch authorised.
+- **Deployment:** Cloudflare Git integration configured; Owner authorised public access on 19 October 2026. Release preparation is in progress; no live deployment is verified.
 - **Material paths:** `.github/**`, `scripts/release-*`, `deploy/**`, `editorial/automation.json`
 - **Control overrides:** None
 - **Standing delegations:** None
@@ -63,3 +63,9 @@ Current official documentation: [GitHub Actions billing](https://docs.github.com
 - GitHub source and feedback repository access is verified. Owner's Cloudflare build screenshot confirms successful static generation and Wrangler dry run, not deployment permissions. Initial independent source and blind recommendation reviews are recorded in docs/reviews/; they are separate OpenAI agents, not different providers. Public deployment and actual iPhone Safari remain unverified.
 - Do not launch publicly, create recurring tasks, incur additional costs or perform destructive operations without the relevant Owner decision. Feedback remains disabled until hosting and least-privilege credentials are configured.
 - Keep the inherited governance template and active Lightweight profile. Reassess the profile before first public production deployment. No GitHub protection settings are implied by these files.
+
+## Public launch decision and profile assessment
+
+Owner decision, 19 October 2026: “You can make the whole site publicly accessible like five minutes, no?” This authorises a public site; it does not enable scheduled writer/reviewer tasks, paid services, public repositories or feedback credentials. The private-preview/Zero Trust detour is cancelled.
+
+Before the first real deployment, the governance checkpoint still requires the Owner's profile choice. Manager recommendation: retain Lightweight for an initial manual public Pilot, with the existing independent editorial release checks, green tests/builds, explicit launch authorisation and disabled feedback/schedules. This avoids introducing a ruleset transition before there is unattended publishing or reader storage; reassess for Standard before those are enabled. This is a proposal, not a recorded Owner profile decision. Active profile and stage above remain unchanged meanwhile.
