@@ -1,0 +1,14 @@
+---
+import '../styles/global.css';
+const {title='A little clarity. A useful next step.',description='Evidence-based foundations for everyday life.',article}=Astro.props;
+const release=process.env.RELEASE==='1';
+const origin=process.env.SITE_URL;
+const canonical=origin?new URL(Astro.url.pathname,origin).href:undefined;
+const current=Astro.url.pathname;
+const jsonLd=article&&canonical?JSON.stringify({'@context':'https://schema.org','@type':'Article',headline:article.title,description:article.description,datePublished:article.publishedAt,dateModified:article.revisedAt||article.publishedAt,mainEntityOfPage:canonical,inLanguage:'en-GB',publisher:{'@type':'Organization',name:'Pearls of Wisdom'}}).replace(/</g,'\u003c'):null;
+---
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="description" content={description}/><meta name="theme-color" content="#f6f4ed"/><title>{title} — Pearls of Wisdom</title><link rel="icon" href="/favicon.svg" type="image/svg+xml"/>{!release&&<meta name="robots" content="noindex,nofollow"/>}{canonical&&<link rel="canonical" href={canonical}/>}<meta property="og:title" content={title}/><meta property="og:description" content={description}/><meta property="og:type" content={article?'article':'website'}/>{canonical&&<meta property="og:url" content={canonical}/>}<meta name="twitter:card" content="summary"/>{jsonLd&&<script type="application/ld+json" set:html={jsonLd}/>}</head>
+<body><a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header wrap"><a class="wordmark" href="/" aria-label="Pearls of Wisdom home"><span class="pearl" aria-hidden="true"></span><span>Pearls of Wisdom<small>Small ideas. Meaningful change.</small></span></a><nav aria-label="Main navigation"><a href="/" aria-current={current==='/'?'page':undefined}>Today</a><a href="/library/" aria-current={current.startsWith('/library')||current.startsWith('/categories')?'page':undefined}>Library</a><a href="/about/" aria-current={current.startsWith('/about')?'page':undefined}>About</a></nav></header>
+{!release&&<div class="preview-banner">Editorial preview · Articles are drafts awaiting independent review.</div>}
+<main id="main"><slot/></main><footer class="site-footer wrap"><a class="wordmark" href="/">Pearls of Wisdom</a><p>What matters. Why it matters. Where to start.</p><a href="/about/#method">Our evidence standards</a><a href="/feedback/">Send feedback</a><p class="fine-print">General education, with sources and limits made clear.</p></footer></body></html>

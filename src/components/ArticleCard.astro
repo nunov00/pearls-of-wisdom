@@ -1,0 +1,10 @@
+---
+import type { Article } from '../lib/schema';
+import { categorySlug,formatDate } from '../lib/catalogue';
+const {article:a}=Astro.props as {article:Article};
+---
+<article class="article-card" data-search-item data-title={a.title.toLowerCase()} data-category={a.category}>
+ <p class="eyebrow"><a href={`/categories/${categorySlug(a.category)}/`}>{a.category}</a> <span>· {formatDate(a.publishedAt)}</span></p>
+ <h3><a href={`/articles/${a.slug}/`}>{a.title}</a></h3><p>{a.description}</p>
+ <div class="card-bottom"><span>{a.recommendations.length} practical foundations</span><a href={`/articles/${a.slug}/`} aria-label={`Read ${a.title}`}>Read article <span aria-hidden="true">↗</span></a></div>
+</article>

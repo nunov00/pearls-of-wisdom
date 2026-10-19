@@ -1,0 +1,30 @@
+{
+  "name": "pearls-of-wisdom",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "dev": "astro dev --host 0.0.0.0",
+    "build": "node scripts/validate-content.mjs && astro build && node scripts/verify-build.mjs",
+    "check": "astro check",
+    "test": "node --test tests/*.test.mjs",
+    "verify": "npm run check && npm test && npm run build",
+    "links": "node scripts/check-links.mjs",
+    "backup": "node scripts/backup.mjs",
+    "release:check": "node scripts/release-check.mjs",
+    "backlog": "node scripts/backlog.mjs"
+  },
+  "dependencies": {
+    "astro": "7.4.0",
+    "yaml": "2.9.1",
+    "zod": "4.1.12"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.4",
+    "@types/node": "24.10.0",
+    "typescript": "5.9.2"
+  }
+}

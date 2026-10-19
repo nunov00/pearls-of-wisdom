@@ -1,0 +1,23 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "pearls-of-wisdom",
+  "compatibility_date": "2026-10-19",
+  "workers_dev": false,
+  "assets": {
+    "directory": "../../dist",
+    "not_found_handling": "404-page",
+    "binding": "ASSETS",
+    "run_worker_first": [
+      "/api/*"
+    ]
+  },
+  "main": "feedback-worker.ts",
+  "vars": {
+    "FEEDBACK_ENABLED": "false"
+  },
+  "previews": {
+    "vars": {
+      "FEEDBACK_ENABLED": "false"
+    }
+  }
+}
