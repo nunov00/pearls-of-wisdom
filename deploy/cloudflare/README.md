@@ -4,7 +4,9 @@ The source repository and private feedback repository do **not** need to be publ
 
 ## Current state
 
-No Cloudflare account configuration, Worker, widget, credentials or public deployment has been created by the agent. An attempted secure dashboard sign-in on 19 October 2026 was rejected with HTTP 403 in the available cloud browser. This is a browser-specific sign-in failure, not evidence that the user's password was wrong or the site is down.
+The Owner connected the private GitHub source repository in the Cloudflare dashboard on 19 October 2026, selected a dedicated build token and Node 24, and ran a successful build/dry run. The screenshot shows `--dry-run: exiting now`; it does not prove upload permission, Access protection, a live site or working feedback. No credentials were shared with the agent.
+
+The agent's earlier secure dashboard sign-in returned HTTP 403. The Owner's separate browser session is not available to the agent. No widget, runtime secret or public deployment has been configured by the agent.
 
 The repository contains pinned Wrangler, a local dry-run command, a guarded production deployment command and disabled feedback configuration. No recurring tasks are present.
 
@@ -22,12 +24,20 @@ npm run cf:validate
 
 1. In Workers & Pages, import the existing GitHub repository. Grant the Cloudflare GitHub App access to **only** `nunov00/pearls-of-wisdom` for this project; retain unrelated existing project permissions. Do not make either repository public. The Cloudflare Git integration does not need access to the feedback repository.
 2. Worker name: `pearls-of-wisdom`; repository root: `/`; Node version: `24`.
-3. Initially use build command `npm run cf:validate`. Do **not** enable automatic deployment or public branch-preview URLs while the articles are drafts. Leave custom domains/routes empty and the production workers.dev URL disabled. If the import wizard requires an immediate deployment, stop until a private test setup or launch is authorised rather than selecting the default public deployment.
+3. Current dashboard commands: build `npm run build`, deploy `npm run cf:validate`; Node variable `NODE_VERSION=24`, path `/`. Preview builds are off. This deliberately repeats the build inside validation but is temporary setup, not the final production workflow. Leave custom domains/routes empty and the production workers.dev URL disabled. Do not substitute the default deploy command while drafts await launch.
 4. For an access-restricted hosted preview, configure and verify Cloudflare Access first; a preview URL or noindex is not privacy. Do not attach any production credentials to a branch preview.
 5. After public launch is separately approved and the initial articles pass independent review, configure the production build with `RELEASE=1` and the approved `SITE_URL`. Set the deliberate `PUBLIC_LAUNCH_APPROVED=true` acknowledgement only within that authorised deployment workflow. Build command: `npm run build`; deploy command: `npm run cf:deploy` (it revalidates). Confirm main-branch CI before enabling automated deployment.
 6. The tracked `workers_dev:false` and lack of domain/routes intentionally prevent public exposure. Any activation must be a reviewed configuration change with the appropriate Owner decision; do not assume the dashboard overrides this source file permanently.
 
 Cloudflare Git integration supplies its own deployment credential. It does not require storing a Cloudflare token in GitHub. Avoid adding another broad personal token for deployment.
+
+## Next Owner step: protect this project's preview
+
+In Workers & Pages, select **pearls-of-wisdom → Access → Protect this Worker behind Access**. Configure protection for this Worker only, with an allow policy restricted to the Owner's chosen sign-in identity. Protect all traffic during pre-launch; do not change account-wide protection or other projects. If Zero Trust needs initial setup, choose the free option; stop if payment is required. Keep preview builds off until the policy is applied.
+
+After protection is verified, the preview command must include the non-root configuration path: `npx wrangler preview --config deploy/cloudflare/wrangler.jsonc`. Worker Previews can be created before a production deployment and use the existing `previews` settings, where feedback is disabled. No production feedback secrets belong in previews. A real preview must be tested signed out (blocked/login) and as the allowed reader before it is described as private.
+
+Official setup references checked 19 October 2026: [Worker Access](https://developers.cloudflare.com/workers/configuration/cloudflare-access/) and [Worker Previews](https://developers.cloudflare.com/workers/previews/get-started/). Dashboard protection and live verification still require Owner action because this agent has no working Cloudflare account connection.
 
 ## Feedback credentials — production only
 
