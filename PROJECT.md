@@ -9,7 +9,7 @@
 - **Governance profile:** Lightweight
 - **Technology:** Astro, TypeScript, structured YAML, portable static output; optional narrow Cloudflare feedback adapter.
 - **Tests / required checks:** `npm run verify`; `Baseline / baseline` CI. No enforcement ruleset is claimed.
-- **Deployment:** Not connected. Cloudflare Workers Static Assets proposed; no public launch authorised.
+- **Deployment:** Cloudflare Git integration configured by Owner; successful dry-run build observed. No site deployment or public launch authorised.
 - **Material paths:** `.github/**`, `scripts/release-*`, `deploy/**`, `editorial/automation.json`
 - **Control overrides:** None
 - **Standing delegations:** None
@@ -60,6 +60,6 @@ Current official documentation: [GitHub Actions billing](https://docs.github.com
 
 - Owner approved initial implementation on 19 October 2026: “Please proceed. Don’t schedule writer/reviewer tasks for now.” Routine implementation, fixes and tests within that scope do not need repeated approval.
 - Owner created `nunov00/pearls-of-wisdom` and `nunov00/pearls-of-wisdom-feedback` and requested reader feedback like Five Minutes on 19 October 2026. Both repositories were verified private. Preserve private feedback storage.
-- GitHub source and feedback repository access is verified. Cloudflare account access, production deployment, independent article reviews and browser/Safari checks remain unverified.
+- GitHub source and feedback repository access is verified. Owner's Cloudflare build screenshot confirms successful static generation and Wrangler dry run, not deployment permissions. Initial independent source and blind recommendation reviews are recorded in docs/reviews/; they are separate OpenAI agents, not different providers. Public deployment and actual iPhone Safari remain unverified.
 - Do not launch publicly, create recurring tasks, incur additional costs or perform destructive operations without the relevant Owner decision. Feedback remains disabled until hosting and least-privilege credentials are configured.
 - Keep the inherited governance template and active Lightweight profile. Reassess the profile before first public production deployment. No GitHub protection settings are implied by these files.

@@ -51,11 +51,11 @@
     {
       "id": "strength",
       "heading": "Give your muscles something to work against",
-      "whatToDo": "Include strengthening on at least two days each week, covering the major muscle groups. Weights, resistance bands and suitable body-weight exercises can all count.",
+      "whatToDo": "Include strengthening on at least two days each week, covering the major muscle groups. Choose resistance that makes the final repetitions challenging while you keep control, adjusted to your ability.",
       "whyItMatters": "Stronger muscles help with everyday activities and independence.",
       "consequence": "Walking alone does not fulfil the separate strengthening recommendation.",
       "action": "Choose two days for a short strength session. If you are unsure how to begin, arrange an introductory session with a qualified instructor.",
-      "details": "Use suitable resistance and movements. A walk may work your muscles, but an exercise routine still needs deliberate strengthening.",
+      "details": "Weights, resistance bands and suitable body-weight exercises can all count. A walk may work your muscles, but an exercise routine still needs deliberate strengthening. You do not need to push to the point where you cannot complete another repetition.",
       "claimIds": [
         "strength-benefit",
         "strength-consequence"

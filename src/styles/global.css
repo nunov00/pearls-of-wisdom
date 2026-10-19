@@ -6,3 +6,5 @@
 .article-figure{margin:32px 0}.article-figure img{max-width:100%;height:auto}.article-figure figcaption{font-size:13px;color:var(--muted)}
 
 .feedback form>label{display:block;margin:22px 0 8px;font-size:14px;font-weight:bold}.feedback textarea,.feedback select{display:block;width:100%;padding:12px;border:1px solid #a6b2a3;border-radius:9px;background:var(--white);color:var(--ink);font:inherit}.feedback textarea:focus-visible{outline:3px solid #9b4a26;outline-offset:4px}.feedback .button{margin-top:20px}.feedback button:disabled{opacity:.55;cursor:not-allowed}.honeypot{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+
+.site-header nav a{display:inline-flex;align-items:center;min-height:44px}.footer-links{display:flex;flex-wrap:wrap;gap:8px 24px}.footer-links a{display:inline-flex;align-items:center;min-height:44px}main:focus{outline:none}
