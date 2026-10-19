@@ -10,7 +10,7 @@ Browser QA uses pinned development-only Playwright/axe dependencies. In a suppor
 
 ## Cloudflare
 
-The inactive `deploy/cloudflare/wrangler.jsonc` has workers_dev disabled and no custom domain. The feedback adapter is disabled and has no secrets. Do not connect a Git integration that would auto-publish draft builds. After launch approval, use an approved SITE_URL and RELEASE=1 for production, verify checks and connect least-privilege deployment access. Prefer Cloudflare’s Git integration to storing a token in GitHub where suitable. Verify preview isolation and shared free-tier quotas first. Wrangler is pinned. `npm run cf:validate` performs a local dry run; `npm run cf:deploy` requires launch authorisation acknowledgement and validated release content. See deploy/cloudflare/README.md for private-repository and credential setup.
+The release configuration enables public workers_dev routing, explicitly disables preview URLs and adds no custom domain, following the Owner's public-access decision. The feedback adapter stays disabled and has no secrets. Cloudflare is still using the dry-run command until the Owner completes the documented launch handoff. Production needs the verified SITE_URL, RELEASE=1, launch acknowledgement and valid editorial release records. Prefer Cloudflare’s Git integration to storing another token in GitHub. Wrangler is pinned. `npm run cf:validate` is a dry run; `npm run cf:deploy` validates before upload. Once the dashboard deploy command is activated, future merges can update the public site; scheduled writing remains disabled. See deploy/cloudflare/README.md.
 
 ## Backup
 

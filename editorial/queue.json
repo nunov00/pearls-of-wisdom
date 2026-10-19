@@ -10,7 +10,7 @@
     "preliminaryEvidence": "Guidelines checked",
     "priority": 1,
     "type": "new",
-    "status": "draft",
+    "status": "release-ready",
     "articleId": "001-exercise-after-65",
     "history": [
       {
@@ -21,7 +21,7 @@
   },
   {
     "id": "topic-02",
-    "title": "Three ways to remember what you study",
+    "title": "A three-step routine for remembering what you study",
     "description": "Use study time more effectively",
     "category": "Learning",
     "usefulness": "Use study time more effectively",
@@ -30,7 +30,7 @@
     "preliminaryEvidence": "Research summaries checked",
     "priority": 2,
     "type": "new",
-    "status": "draft",
+    "status": "release-ready",
     "articleId": "002-study-memory",
     "history": [
       {
@@ -50,7 +50,7 @@
     "preliminaryEvidence": "Public guidance checked",
     "priority": 3,
     "type": "new",
-    "status": "draft",
+    "status": "release-ready",
     "articleId": "003-money-buffer",
     "history": [
       {
@@ -238,5 +238,20 @@
         "event": "Initial candidate; priority is an editorial estimate, not measured audience demand."
       }
     ]
+  },
+  {
+    "id": "topic-13",
+    "title": "Three foundations for protecting your teeth and gums",
+    "description": "Compare fluoride, cleaning technique and professional prevention for adults.",
+    "category": "Health",
+    "usefulness": "Common daily decisions with lasting consequences for oral health.",
+    "audienceInterest": "high",
+    "practicalImpact": "high",
+    "preliminaryEvidence": "Public dental and professional guidance expected; substantive source verification still required.",
+    "priority": 13,
+    "type": "new",
+    "status": "idea",
+    "articleId": null,
+    "history": [{"date":"2026-10-19","event":"Added during launch preparation so ten future candidates remain after the first three articles publish; priority remains provisional."}]
   }
 ]

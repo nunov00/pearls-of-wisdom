@@ -2,6 +2,7 @@ import {test, expect} from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
 const routes = ['/', '/library/', '/about/', '/feedback/', '/articles/exercise-foundations-after-65/', '/articles/remember-what-you-study/', '/articles/financial-breathing-room/'];
+const release = process.env.RELEASE === '1';
 
 test('pages have accessible structure, no serious automated findings, and no phone overflow', async ({page}, testInfo) => {
   const errors: string[] = [];
@@ -10,7 +11,8 @@ test('pages have accessible structure, no serious automated findings, and no pho
     await page.goto(route);
     await expect(page.locator('h1')).toHaveCount(1);
     await expect(page.locator('html')).toHaveAttribute('lang', 'en-GB');
-    await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex,nofollow');
+    if (release) await expect(page.locator('meta[name="robots"]')).toHaveCount(0);
+    else await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex,nofollow');
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
     const results = await new AxeBuilder({page}).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
     expect(results.violations.filter(v => ['serious', 'critical'].includes(v.impact || '')), JSON.stringify(results.violations)).toEqual([]);
@@ -83,4 +85,20 @@ test('core reading and category navigation work without JavaScript', async ({bro
   await page.locator('.recommendation summary').first().click();
   await expect(page.locator('.recommendation details').first()).toHaveAttribute('open', '');
   await context.close();
+});
+
+test('release metadata shows approved dated articles without draft labels', async ({page}) => {
+  test.skip(!release, 'Run after an explicit release build');
+  await page.goto('/');
+  await expect(page.locator('.preview-banner')).toHaveCount(0);
+  await expect(page.locator('.featured-top')).toContainText('Latest article');
+  for (const route of routes.filter(path => path.startsWith('/articles/'))) {
+    await page.goto(route);
+    await expect(page.locator('.article-meta time')).toHaveAttribute('datetime', '2026-10-19');
+    await expect(page.locator('.article-meta')).not.toContainText('draft');
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', new URL(route, process.env.SITE_URL).href);
+    const article = JSON.parse(await page.locator('script[type="application/ld+json"]').textContent() || '{}');
+    expect(article.datePublished).toBe('2026-10-19');
+    expect(article.mainEntityOfPage).toBe(new URL(route, process.env.SITE_URL).href);
+  }
 });

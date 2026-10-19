@@ -1,10 +1,10 @@
 # Pearls of Wisdom
 
-A small, evidence-based practical publication. Working identity; pre-launch.
+A small, evidence-based practical publication. Working identity; public release preparation.
 
 ## Current status
 
-The local MVP includes Today, Library search and filters, category pages, article evidence panels, sharing, About, content validation, publication safeguards and backup tooling. Three sourced example articles are **drafts awaiting independent review**. The repositories now exist; no public site or scheduled writer/reviewer exists. The Owner approved implementation on 19 October 2026 and explicitly excluded scheduling.
+The MVP includes Today, Library search and filters, category pages, article evidence panels, sharing, About, validated content/release records and backup tooling. Three sourced initial articles have independent same-provider source/selection reviews and correction validation. The Owner authorised public access on 19 October 2026; actual deployment is not yet verified. Writer/reviewer scheduling remains explicitly disabled.
 
 ## Run locally
 
@@ -16,7 +16,7 @@ npm run verify
 npm run dev
 ```
 
-The default build is an editorial preview. It includes drafts, noindex metadata and a visible preview banner. This is **not access control**: do not upload the preview publicly. `dist/` is portable static output.
+The default build is an editorial preview with noindex metadata and a visible draft banner. Production must use `RELEASE=1` and the verified HTTPS `SITE_URL`; its build rejects invalid release/review records. `dist/` is portable static output. Use the guarded production command rather than uploading a preview build as the live publication.
 
 ## Commands
 
@@ -28,11 +28,11 @@ The default build is an editorial preview. It includes drafts, noindex metadata 
 | `npm run backup` | Source archive and checksum under ignored `backups/` |
 | `npm run release:check` | Reject missing/stale/self reviews and unresolved significant findings |
 
-No script sends content to a social platform, calls a paid model or schedules work. Deployment is not connected. Pinned Wrangler and local dry-run/guarded deployment commands are available; see deploy/cloudflare/README.md.
+No script sends content to a social platform, calls a paid model or schedules work. Cloudflare Git builds are connected and dry-run validation passed. Pinned Wrangler and guarded deployment commands are available; see deploy/cloudflare/README.md. A successful merge/build is not proof of a live deployment.
 
 ## GitHub repositories
 
-Source: `nunov00/pearls-of-wisdom`. Private feedback: `nunov00/pearls-of-wisdom-feedback`. The inherited governance template is retained. Initial implementation is transferred via a feature PR; no public deployment or recurring task is configured. CI runs only for PRs and main pushes.
+Source: `nunov00/pearls-of-wisdom`. Private feedback: `nunov00/pearls-of-wisdom-feedback`. Both repositories remain private; public website access does not require public source. The inherited governance template is retained. Baseline CI runs for PRs/main pushes; browser QA runs for harness changes or on demand. No scheduled writer/reviewer exists.
 
 Feedback has a page and a narrow Cloudflare adapter, disabled by default. It stores only category/message in the private repository after server-side spam verification and a runtime repository-privacy check. See [docs/FEEDBACK.md](docs/FEEDBACK.md) for setup and limitations.
 

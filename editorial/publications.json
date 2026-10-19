@@ -1,1 +1,5 @@
-[]
+[
+  {"articleId":"001-exercise-after-65","state":"published","publishedAt":"2026-10-19","reviewId":"launch-001-20261019"},
+  {"articleId":"002-study-memory","state":"published","publishedAt":"2026-10-19","reviewId":"launch-002-20261019"},
+  {"articleId":"003-money-buffer","state":"published","publishedAt":"2026-10-19","reviewId":"launch-003-20261019"}
+]
