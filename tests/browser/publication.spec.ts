@@ -30,7 +30,7 @@ test('search, category, empty state and reset agree with visible articles', asyn
   await page.goto('/library/');
   const cards = page.locator('[data-search-item]:visible');
   await expect(cards).toHaveCount(3);
-  await page.getByLabel('Search the library').fill('studying');
+  await page.getByLabel('Search the library').fill('study');
   await expect(cards).toHaveCount(1);
   await expect(cards).toContainText('three-step routine');
   await page.getByLabel('Category', {exact: true}).selectOption('Finance');
@@ -50,10 +50,10 @@ test('search fetch failure leaves readable articles and recovers on retry', asyn
   let failures = 1;
   await page.route('**/search-index.json', route => failures-- > 0 ? route.abort() : route.continue());
   await page.goto('/library/');
-  await page.getByLabel('Search the library').fill('study');
+  await page.getByLabel('Search the library').fill('learning');
   await expect(page.locator('#search-status')).toContainText('temporarily unavailable');
   await expect(page.locator('[data-search-item]:visible')).toHaveCount(3);
-  await page.getByLabel('Search the library').fill('studying');
+  await page.getByLabel('Search the library').fill('study');
   await expect(page.locator('[data-search-item]:visible')).toHaveCount(1);
 });
 

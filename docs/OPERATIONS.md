@@ -2,9 +2,11 @@
 
 ## Initial setup
 
-Both GitHub repositories exist and are private. No Cloudflare resource, domain or scheduled task has been configured by this implementation. CI has only PR/push triggers. Credentials are not included.
+Both GitHub repositories exist and are private. The Owner connected Cloudflare Git builds and observed successful dry-run validation; no site upload, public endpoint, custom domain or scheduled task is verified. CI uses PR/push triggers plus optional manual browser QA. Credentials are not included.
 
 Use Node 24 and `npm ci --ignore-scripts`. `npm run verify` checks types, policy tests, validated generation, H1/language/noindex rules, internal links and file size/count. Core content needs no JavaScript. Browser visual QA, accessibility automation, WebKit and actual iPhone Safari checks remain required before launch; they were not available in the initial environment.
+
+Browser QA uses pinned development-only Playwright/axe dependencies. In a supported test environment run `npx playwright install --with-deps chromium webkit`, `npm run build`, then `npm run test:browser`. GitHub's Browser QA workflow runs on browser-harness changes or manual dispatch, with no schedule, read-only permissions, a 12-minute ceiling and three-day private reports/screenshots. It checks the three-draft preview, not a released catalogue or real Turnstile submissions. Actual device, screen-reader and live hosted checks remain separate. Avoid running it for every editorial change; rerun when relevant UI changes justify it.
 
 ## Cloudflare
 
