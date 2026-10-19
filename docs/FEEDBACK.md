@@ -22,7 +22,7 @@ After the site's public launch is authorised and hosting is ready:
 
 1. Use a Turnstile widget restricted to the real production hostname. Set `TURNSTILE_SITE_KEY` and production-only `TURNSTILE_SECRET_KEY`.
 2. Create a fine-grained GitHub credential restricted to **only** `pearls-of-wisdom-feedback`, with Issues read/write and Metadata read. No source repository write permission or broad account token. Store as production-only `FEEDBACK_GITHUB_TOKEN`; never commit or paste it into a PR/chat.
-3. Set `FEEDBACK_ALLOWED_HOSTNAME` to the exact production hostname and `FEEDBACK_ENABLED=true`. Its default and preview value are false. The destination repository is not visitor- or environment-selectable.
+3. Set `FEEDBACK_ALLOWED_HOSTNAME` to the exact production hostname. For durable activation, change the production source configuration to `FEEDBACK_ENABLED=true` in a reviewed PR; retain false in previews. Dashboard-only edits to source-managed variables may be overwritten at deployment. The destination repository is not visitor- or environment-selectable.
 4. Keep all production secrets out of branch previews. A hostname guard cannot protect secrets deliberately provided to modified preview code.
 5. Verify a test submission in private storage, error states, message deletion, actual iPhone Safari/Turnstile behaviour and provider quotas before announcing availability.
 

@@ -4,3 +4,5 @@ dist/
 .env*
 backups/
 *.log
+.wrangler/
+.dev.vars*
