@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "002-study-memory",
   "slug": "remember-what-you-study",
-  "title": "Three ways to remember what you study",
+  "title": "A three-step routine for remembering what you study",
   "description": "A short study routine built around recall, spacing and checking your mistakes.",
   "category": "Learning",
   "keywords": [
@@ -17,7 +17,7 @@
   "goal": "Remember studied information for later use",
   "audience": "Adult learners studying factual or conceptual material.",
   "assumptions": "Not a complete method for learning every practical skill.",
-  "introduction": "A page can look familiar while the answer disappears the moment you close the book. Build your study routine around what you can bring back without looking.",
+  "introduction": "A page can look familiar while the answer disappears the moment you close the book. These three connected steps combine recall, correction and spaced practice in one study routine.",
   "publishedAt": null,
   "revisedAt": null,
   "lastEvidenceCheckedAt": "2026-10-19",
@@ -178,7 +178,7 @@
     "001-exercise-after-65"
   ],
   "summary": {
-    "title": "Three ways to remember what you study",
+    "title": "A three-step routine for remembering what you study",
     "recommendationIds": [
       "retrieve",
       "space",

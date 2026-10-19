@@ -1,0 +1,35 @@
+name: Browser QA
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'tests/browser/**'
+      - 'playwright.config.ts'
+      - '.github/workflows/browser-qa.yml'
+permissions:
+  contents: read
+concurrency:
+  group: browser-qa-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npx playwright install --with-deps chromium webkit
+      - run: npm run build
+      - run: npm run test:browser
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-qa
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 3

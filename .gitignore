@@ -6,3 +6,6 @@ backups/
 *.log
 .wrangler/
 .dev.vars*
+.playwright/
+playwright-report/
+test-results/
