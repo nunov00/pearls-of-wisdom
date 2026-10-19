@@ -4,7 +4,7 @@
 - **Purpose:** Concise, evidence-based practical foundations for everyday goals.
 - **Owner:** Nuno Vitoria
 - **Manager:** ChatGPT (or designated manager)
-- **Governance template:** v0.2
+- **Governance template:** v0.3
 - **Stage:** Pilot
 - **Governance profile:** Lightweight
 - **Technology:** Astro, TypeScript, structured YAML, portable static output; optional narrow Cloudflare feedback adapter.
