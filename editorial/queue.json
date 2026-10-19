@@ -1,0 +1,242 @@
+[
+  {
+    "id": "topic-01",
+    "title": "Three exercise foundations for staying capable after 65",
+    "description": "Maintain everyday physical function",
+    "category": "Health",
+    "usefulness": "Maintain everyday physical function",
+    "audienceInterest": "high",
+    "practicalImpact": "high",
+    "preliminaryEvidence": "Guidelines checked",
+    "priority": 1,
+    "type": "new",
+    "status": "draft",
+    "articleId": "001-exercise-after-65",
+    "history": [
+      {
+        "date": "2026-10-19",
+        "event": "Initial candidate; priority is an editorial estimate, not measured audience demand."
+      }
+    ]
+  },
+  {
+    "id": "topic-02",
+    "title": "Three ways to remember what you study",
+    "description": "Use study time more effectively",
+    "category": "Learning",
+    "usefulness": "Use study time more effectively",
+    "audienceInterest": "high",
+    "practicalImpact": "high",
+    "preliminaryEvidence": "Research summaries checked",
+    "priority": 2,
+    "type": "new",
+    "status": "draft",
+    "articleId": "002-study-memory",
+    "history": [
+      {
+        "date": "2026-10-19",
+        "event": "Initial candidate; priority is an editorial estimate, not measured audience demand."
+      }
+    ]
+  },
+  {
+    "id": "topic-03",
+    "title": "Three foundations for more financial breathing room",
+    "description": "Reduce vulnerability to shocks",
+    "category": "Finance",
+    "usefulness": "Reduce vulnerability to shocks",
+    "audienceInterest": "high",
+    "practicalImpact": "high",
+    "preliminaryEvidence": "Public guidance checked",
+    "priority": 3,
+    "type": "new",
+    "status": "draft",
+    "articleId": "003-money-buffer",
+    "history": [
+      {
+        "date": "2026-10-19",
+        "event": "Initial candidate; priority is an editorial estimate, not measured audience demand."
+      }
+    ]
+  },
+  {
+    "id": "topic-04",
+    "title": "Three foundations for better sleep",
+    "description": "Distinguish everyday habits from persistent insomnia",
+    "category": "Wellbeing",
+    "usefulness": "Distinguish everyday habits from persistent insomnia",
+    "audienceInterest": "high",
+    "practicalImpact": "high",
+    "preliminaryEvidence": "Guidelines expected",
+    "priority": 4,
+    "type": "new",
+    "status": "idea",
+    "articleId": null,
+    "history": [
+      {
+        "date": "2026-10-19",
+        "event": "Initial candidate; priority is an editorial estimate, not measured audience demand."
+      }
+    ]
+  },
+  {
+    "id": "topic-05",
+    "title": "Three ways to protect focused work",
+    "description": "Reduce interruptions and clarify tasks",
+    "category": "Productivity",
+    "usefulness": "Reduce interruptions and clarify tasks",
+    "audienceInterest": "high",
+    "practicalImpact": "high",
+    "preliminaryEvidence": "Mixed evidence expected",
+    "priority": 5,
+    "type": "new",
+    "status": "idea",
+    "articleId": null,
+    "history": [
+      {
+        "date": "2026-10-19",
+        "event": "Initial candidate; priority is an editorial estimate, not measured audience demand."
+      }
+    ]
+  },
+  {
+    "id": "topic-06",
+    "title": "Three ways to reduce everyday stress",
+    "description": "Choose realistic interventions",
+    "category": "Wellbeing",
+    "usefulness": "Choose realistic interventions",
+    "audienceInterest": "high",
+    "practicalImpact": "high",
+    "preliminaryEvidence": "Reviews expected",
+    "priority": 6,
+    "type": "new",
+    "status": "idea",
+    "articleId": null,
+    "history": [
+      {
+        "date": "2026-10-19",
+        "event": "Initial candidate; priority is an editorial estimate, not measured audience demand."
+      }
+    ]
+  },
+  {
+    "id": "topic-07",
+    "title": "Three foundations for safer online accounts",
+    "description": "Compare passkeys, MFA and unique passwords",
+    "category": "Everyday life",
+    "usefulness": "Compare passkeys, MFA and unique passwords",
+    "audienceInterest": "high",
+    "practicalImpact": "high",
+    "preliminaryEvidence": "Security guidance expected",
+    "priority": 7,
+    "type": "new",
+    "status": "idea",
+    "articleId": null,
+    "history": [
+      {
+        "date": "2026-10-19",
+        "event": "Initial candidate; priority is an editorial estimate, not measured audience demand."
+      }
+    ]
+  },
+  {
+    "id": "topic-08",
+    "title": "Three foundations of a healthier everyday diet",
+    "description": "Make useful food substitutions",
+    "category": "Health",
+    "usefulness": "Make useful food substitutions",
+    "audienceInterest": "high",
+    "practicalImpact": "high",
+    "preliminaryEvidence": "Dietary guidance expected",
+    "priority": 8,
+    "type": "new",
+    "status": "idea",
+    "articleId": null,
+    "history": [
+      {
+        "date": "2026-10-19",
+        "event": "Initial candidate; priority is an editorial estimate, not measured audience demand."
+      }
+    ]
+  },
+  {
+    "id": "topic-09",
+    "title": "Three ways to handle disagreements better",
+    "description": "Improve conflict in safe relationships",
+    "category": "Relationships",
+    "usefulness": "Improve conflict in safe relationships",
+    "audienceInterest": "high",
+    "practicalImpact": "medium",
+    "preliminaryEvidence": "Intervention studies expected",
+    "priority": 9,
+    "type": "new",
+    "status": "idea",
+    "articleId": null,
+    "history": [
+      {
+        "date": "2026-10-19",
+        "event": "Initial candidate; priority is an editorial estimate, not measured audience demand."
+      }
+    ]
+  },
+  {
+    "id": "topic-10",
+    "title": "Three ways to help a child build a study routine",
+    "description": "Specify age and parent role",
+    "category": "Parenting",
+    "usefulness": "Specify age and parent role",
+    "audienceInterest": "high",
+    "practicalImpact": "medium",
+    "preliminaryEvidence": "Education research expected",
+    "priority": 10,
+    "type": "new",
+    "status": "idea",
+    "articleId": null,
+    "history": [
+      {
+        "date": "2026-10-19",
+        "event": "Initial candidate; priority is an editorial estimate, not measured audience demand."
+      }
+    ]
+  },
+  {
+    "id": "topic-11",
+    "title": "Three ways to make an exercise habit last",
+    "description": "Reduce barriers to consistency",
+    "category": "Wellbeing",
+    "usefulness": "Reduce barriers to consistency",
+    "audienceInterest": "high",
+    "practicalImpact": "medium",
+    "preliminaryEvidence": "Behaviour-change reviews expected",
+    "priority": 11,
+    "type": "new",
+    "status": "idea",
+    "articleId": null,
+    "history": [
+      {
+        "date": "2026-10-19",
+        "event": "Initial candidate; priority is an editorial estimate, not measured audience demand."
+      }
+    ]
+  },
+  {
+    "id": "topic-12",
+    "title": "Three ways to reduce household energy waste",
+    "description": "Find useful low-cost changes",
+    "category": "Everyday life",
+    "usefulness": "Find useful low-cost changes",
+    "audienceInterest": "medium",
+    "practicalImpact": "medium",
+    "preliminaryEvidence": "Energy guidance expected",
+    "priority": 12,
+    "type": "new",
+    "status": "idea",
+    "articleId": null,
+    "history": [
+      {
+        "date": "2026-10-19",
+        "event": "Initial candidate; priority is an editorial estimate, not measured audience demand."
+      }
+    ]
+  }
+]

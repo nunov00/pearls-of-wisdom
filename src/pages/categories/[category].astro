@@ -1,0 +1,6 @@
+---
+import Layout from '../../layouts/Layout.astro';import ArticleCard from '../../components/ArticleCard.astro';import {visibleArticles,categorySlug} from '../../lib/catalogue';
+export function getStaticPaths(){return [...new Set(visibleArticles().map(a=>a.category))].map(c=>({params:{category:categorySlug(c)},props:{category:c}}));}
+const {category}=Astro.props;const articles=visibleArticles().filter(a=>a.category===category);
+---
+<Layout title={category}><section class="wrap page-intro"><a class="eyebrow" href="/library/">← The library</a><h1>{category}</h1><p>Practical foundations, with the reasoning and evidence close at hand.</p></section><section class="wrap section-space"><div class="card-grid">{articles.map(a=><ArticleCard article={a}/>)}</div></section></Layout>

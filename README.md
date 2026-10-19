@@ -1,51 +1,39 @@
-# Project Governance
+# Pearls of Wisdom
 
-A small, reusable governance template for projects developed with human and AI contributors. It scales from a PoC with no review gates to production with mandatory approvals, and the Owner can bypass or waive gates when needed.
+A small, evidence-based practical publication. Working identity; pre-launch.
 
-## Start a new project
+## Current status
 
-1. In GitHub, select **Use this template → Create a new repository**.
-2. Edit **[PROJECT.md](PROJECT.md)**: name, purpose, owner, stage, technology, checks, deployment and available tools/budget. **Lightweight** is the default.
-3. Ask your AI manager or developer to read **[AGENTS.md](AGENTS.md)** and **[GOVERNANCE.md](GOVERNANCE.md)** before making changes.
-4. Optionally enable **automatic GitHub Copilot code reviews** (Settings → Rules → Rulesets, or the Copilot code-review settings). It is advisory in every profile.
-5. Apply the GitHub settings for your profile ([GOVERNANCE.md → GitHub settings per profile](GOVERNANCE.md#github-settings-per-profile)). **Template files do not copy rulesets or enable Copilot.**
+The local MVP includes Today, Library search and filters, category pages, article evidence panels, sharing, About, content validation, publication safeguards and backup tooling. Three sourced example articles are **drafts awaiting independent review**. The repositories now exist; no public site or scheduled writer/reviewer exists. The Owner approved implementation on 19 October 2026 and explicitly excluded scheduling.
 
-**Suggested starting prompt:**
+## Run locally
 
-> Read PROJECT.md, AGENTS.md and GOVERNANCE.md. Help me initialise this project with Lightweight governance unless the risks justify more. Identify only essential missing decisions, propose minimal checks and GitHub protections, and proceed within the agreed scope.
+Use Node 24 and the committed lockfile:
 
-## Adopt in an existing project
+```sh
+npm ci --ignore-scripts
+npm run verify
+npm run dev
+```
 
-1. Copy `PROJECT.md`, `AGENTS.md`, `GOVERNANCE.md` and `templates/` into the repository.
-2. Fill in `PROJECT.md`, choosing the profile that matches the protections the repository **actually has today**, not the one you want.
-3. Ask the Manager to list the gaps to the target profile, then close them in one profile-transition PR.
+The default build is an editorial preview. It includes drafts, noindex metadata and a visible preview banner. This is **not access control**: do not upload the preview publicly. `dist/` is portable static output.
 
-## Choose a profile
+## Commands
 
-| Profile | Typical stage | Approvals |
-| --- | --- | --- |
-| **Lightweight (default)** | PoC, experiments, early pilot | None required |
-| **Standard** | Pilot, normal production | Required for material changes |
-| **Strict** | Sensitive, high-risk or regulated production | Required for every PR |
+| Command | Purpose |
+|---|---|
+| `npm run verify` | Type/markup diagnostics, focused policy tests, validated build, internal-link checks |
+| `npm run links` | Source reachability report; 1 = dead link, 2 = uncertain, 0 = reachable |
+| `npm run backlog -- <article-id> <reason>` | Return an existing article to the revision queue without changing its dates |
+| `npm run backup` | Source archive and checksum under ignored `backups/` |
+| `npm run release:check` | Reject missing/stale/self reviews and unresolved significant findings |
 
-The full list of controls per profile is in [GOVERNANCE.md](GOVERNANCE.md#profiles-and-controls). Agents must stop and propose a profile assessment before the first production deployment; the Owner decides whether to change profile. Individual controls can be overridden in `PROJECT.md` with a reason.
+No script sends content to a social platform, calls a paid model or schedules work. Deployment is deliberately not wired up.
 
-## Approvals, bypasses and waivers
+## GitHub repositories
 
-AI agents usually act through the Owner's GitHub account, so GitHub's own approvals can't be used. Instead, a reviewing agent (different from the author) posts an `APPROVED · …` comment naming the head commit. Copilot comments are advisory and never count as approvals. For Standard and Strict, copy the approval check in [`templates/github/`](templates/github/README.md) to enforce this.
+Source: `nunov00/pearls-of-wisdom`. Private feedback: `nunov00/pearls-of-wisdom-feedback`. The inherited governance template is retained. Initial implementation is transferred via a feature PR; no public deployment or recurring task is configured. CI runs only for PRs and main pushes.
 
-The Owner approves, bypasses and grants waivers in chat; the agent records each one on GitHub. A bypass covers one PR; a **review waiver** issue covers a whole feature and PRs reference it. Details are in [GOVERNANCE.md → Waivers and bypasses](GOVERNANCE.md#waivers-and-bypasses).
+Feedback has a page and a narrow Cloudflare adapter, disabled by default. It stores only category/message in the private repository after server-side spam verification and a runtime repository-privacy check. See [docs/FEEDBACK.md](docs/FEEDBACK.md) for setup and limitations.
 
-## What the files do
-
-- **[PROJECT.md](PROJECT.md)**: editable settings, stage, active profile, overrides and profile history.
-- **[AGENTS.md](AGENTS.md)**: short instructions for AI contributors.
-- **[GOVERNANCE.md](GOVERNANCE.md)**: roles, controls per profile, change classes, approvals, waivers and GitHub settings.
-- **[templates/github/](templates/github/README.md)**: the approval check workflow, inactive until copied into `.github/workflows/`.
-- **README.md**: this quick-start guide.
-
-## Working principles
-
-Favour fast experiments, cohesive feature delivery and autonomous refinements within approved objectives. Escalate genuinely new scope or risk, not every implementation choice. Use existing AI subscriptions and free infrastructure first; verify limits and obtain approval before introducing costs. Keep important decisions in GitHub rather than relying on chat history.
-
-This is a **starting framework, not a preconfigured CI/security solution**. Adapt it as the project grows; avoid adding process without a concrete reason.
+See [PROJECT.md](PROJECT.md), [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), [docs/EDITORIAL.md](docs/EDITORIAL.md), [docs/PUBLISHING.md](docs/PUBLISHING.md) and [docs/OPERATIONS.md](docs/OPERATIONS.md).
