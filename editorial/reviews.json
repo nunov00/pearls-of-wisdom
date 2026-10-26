@@ -76,5 +76,23 @@
         "detail": "Inherited reference title Physical activity recommendations differs from visible WHO title Physical activity; correct linked guidance and claim support, optional exact-title polish."
       }
     ]
+  },
+  {
+    "id": "reading-polish-20261026",
+    "articleId": "001-exercise-after-65",
+    "author": "Codex /root (OpenAI)",
+    "reviewer": "Codex /root/editorial_review (OpenAI)",
+    "reviewedCommit": "22945ff206b0de4b1e1ee4fae5fc4eabd9a0a34c",
+    "articleSha256": "2796e344059be98efb89d214358f5f58b7d5bd64160419f73e39ad8afe23200f",
+    "correctionRounds": 0,
+    "decision": "ready",
+    "findings": [
+      {
+        "id": "source-title-who",
+        "severity": "minor",
+        "status": "resolved",
+        "detail": "WHO reference title now matches the checked page title Physical activity."
+      }
+    ]
   }
 ]

@@ -59,7 +59,7 @@ test('search fetch failure leaves readable articles and recovers on retry', asyn
   await expect(page.locator('[data-search-item]:visible')).toHaveCount(1);
 });
 
-test('skip link, recommendation anchors and evidence controls work', async ({page}) => {
+test('overview, references and return control work with accessible reading', async ({page}, testInfo) => {
   await page.goto('/articles/exercise-foundations-after-65/');
   await page.keyboard.press('Tab');
   await expect(page.getByRole('link', {name: 'Skip to content'})).toBeFocused();
@@ -69,17 +69,21 @@ test('skip link, recommendation anchors and evidence controls work', async ({pag
   await expect(page.locator('.idea-overview>li')).toHaveCount(3);
   await expect(page.locator('.overview-safety')).toBeVisible();
   await page.locator('.full-guide>summary').click();
-  await page.getByRole('navigation', {name: 'Recommendations'}).getByRole('link').nth(1).click();
-  await expect(page).toHaveURL(/#strength$/);
+  await expect(page.getByRole('navigation', {name: 'Recommendations'})).toHaveCount(0);
   const strength = page.locator('#strength');
-  await strength.locator('summary').click();
-  await expect(strength.locator('details')).toHaveAttribute('open', '');
-  await expect(strength.locator('.claim a').first()).toHaveAttribute('href', /^https:\/\//);
-  await expect(strength.locator('details')).toContainText('keep the movement controlled');
+  await expect(strength.getByRole('heading')).toHaveText('Build strength');
+  await expect(strength).toContainText('keep the movement controlled');
+  await expect(strength.locator('details')).toHaveCount(0);
+  await page.screenshot({path: testInfo.outputPath('exercise-expanded.png'), fullPage: true});
   await strength.locator('.footnote').first().click();
   await expect(page).toHaveURL(/#reference-cdc-overview$/);
   await page.locator('#reference-cdc-overview .reference-returns a').first().click();
   await expect(page).toHaveURL(/#cite-strength-cdc-overview$/);
+  await page.locator('.evidence-notes>summary').click();
+  await expect(page.locator('.evidence-notes')).toContainText('consensus based');
+  await page.getByRole('link', {name:'Back to the three ideas'}).click();
+  await expect(page.locator('.full-guide')).not.toHaveAttribute('open', '');
+  await expect(page.locator('.full-guide>summary')).toBeFocused();
   await page.goto('/articles/exercise-foundations-after-65/#balance');
   await expect(page.locator('.full-guide')).toHaveAttribute('open', '');
   await expect(page.locator('#balance')).toBeVisible();
@@ -91,11 +95,13 @@ test('core reading and category navigation work without JavaScript', async ({bro
   await page.goto('/library/');
   await expect(page.locator('[data-search-item]')).toHaveCount(3);
   await page.locator('.topic-links').getByRole('link', {name: 'Health', exact: true}).click();
-  await page.getByRole('link', {name: 'Stay strong, steady and active after 65', exact: true}).click();
+  await page.getByRole('link', {name: 'Stay strong, steady and active as you get older', exact: true}).click();
   await expect(page.locator('.recommendation')).toHaveCount(3);
   await page.locator('.full-guide>summary').click();
-  await page.locator('.recommendation summary').first().click();
-  await expect(page.locator('.recommendation details').first()).toHaveAttribute('open', '');
+  await expect(page.locator('#strength')).toBeVisible();
+  await expect(page.locator('#strength')).toContainText('keep the movement controlled');
+  await page.getByRole('link', {name:'Back to the three ideas'}).click();
+  await expect(page.locator('.idea-overview')).toBeVisible();
   await context.close();
 });
 
