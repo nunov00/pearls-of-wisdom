@@ -67,8 +67,11 @@ test('overview, references and return control work with accessible reading', asy
   await expect(page.locator('#main')).toBeFocused();
   await expect(page.locator('.full-guide')).not.toHaveAttribute('open', '');
   await expect(page.locator('.idea-overview>li')).toHaveCount(3);
-  await expect(page.locator('.overview-safety')).toBeVisible();
+  await expect(page.locator('.guide-scope')).toBeHidden();
+  await expect(page.locator('.safety-note')).toBeHidden();
   await page.locator('.full-guide>summary').click();
+  await expect(page.locator('.guide-scope')).toBeVisible();
+  await expect(page.locator('.safety-note')).toBeVisible();
   await expect(page.getByRole('navigation', {name: 'Recommendations'})).toHaveCount(0);
   const strength = page.locator('#strength');
   await expect(strength.getByRole('heading')).toHaveText('Build strength');
