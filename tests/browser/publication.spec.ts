@@ -65,13 +65,24 @@ test('skip link, recommendation anchors and evidence controls work', async ({pag
   await expect(page.getByRole('link', {name: 'Skip to content'})).toBeFocused();
   await page.keyboard.press('Enter');
   await expect(page.locator('#main')).toBeFocused();
+  await expect(page.locator('.full-guide')).not.toHaveAttribute('open', '');
+  await expect(page.locator('.idea-overview>li')).toHaveCount(3);
+  await expect(page.locator('.overview-safety')).toBeVisible();
+  await page.locator('.full-guide>summary').click();
   await page.getByRole('navigation', {name: 'Recommendations'}).getByRole('link').nth(1).click();
   await expect(page).toHaveURL(/#strength$/);
   const strength = page.locator('#strength');
   await strength.locator('summary').click();
   await expect(strength.locator('details')).toHaveAttribute('open', '');
   await expect(strength.locator('.claim a').first()).toHaveAttribute('href', /^https:\/\//);
-  await expect(strength.locator('details')).toContainText('You do not need to push');
+  await expect(strength.locator('details')).toContainText('keep the movement controlled');
+  await strength.locator('.footnote').first().click();
+  await expect(page).toHaveURL(/#reference-cdc-overview$/);
+  await page.locator('#reference-cdc-overview .reference-returns a').first().click();
+  await expect(page).toHaveURL(/#cite-strength-cdc-overview$/);
+  await page.goto('/articles/exercise-foundations-after-65/#balance');
+  await expect(page.locator('.full-guide')).toHaveAttribute('open', '');
+  await expect(page.locator('#balance')).toBeVisible();
 });
 
 test('core reading and category navigation work without JavaScript', async ({browser, baseURL}) => {
@@ -80,8 +91,9 @@ test('core reading and category navigation work without JavaScript', async ({bro
   await page.goto('/library/');
   await expect(page.locator('[data-search-item]')).toHaveCount(3);
   await page.locator('.topic-links').getByRole('link', {name: 'Health', exact: true}).click();
-  await page.getByRole('link', {name: 'Three exercise foundations for staying capable after 65', exact: true}).click();
+  await page.getByRole('link', {name: 'Stay strong, steady and active after 65', exact: true}).click();
   await expect(page.locator('.recommendation')).toHaveCount(3);
+  await page.locator('.full-guide>summary').click();
   await page.locator('.recommendation summary').first().click();
   await expect(page.locator('.recommendation details').first()).toHaveAttribute('open', '');
   await context.close();
@@ -91,10 +103,12 @@ test('release metadata shows approved dated articles without draft labels', asyn
   test.skip(!release, 'Run after an explicit release build');
   await page.goto('/');
   await expect(page.locator('.preview-banner')).toHaveCount(0);
-  await expect(page.locator('.featured-top')).toContainText('Latest article');
+  await expect(page.locator('.idea-overview>li')).toHaveCount(3);
+  await expect(page.locator('.full-guide')).not.toHaveAttribute('open', '');
   for (const route of routes.filter(path => path.startsWith('/articles/'))) {
     await page.goto(route);
-    await expect(page.locator('.article-meta time')).toHaveAttribute('datetime', '2026-10-19');
+    await page.locator('.full-guide>summary').click();
+    await expect(page.locator('.article-meta time').first()).toHaveAttribute('datetime', '2026-10-19');
     await expect(page.locator('.article-meta')).not.toContainText('draft');
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', new URL(route, process.env.SITE_URL).href);
     const article = JSON.parse(await page.locator('script[type="application/ld+json"]').textContent() || '{}');
