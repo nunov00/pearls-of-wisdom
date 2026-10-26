@@ -9,11 +9,11 @@ const recommendationSources=(claimIds:string[])=>[...new Set(a.claims.filter(c=>
 <article class="reading wrap compact-article">
   <header class="article-header">
     <a class="eyebrow" href={`/categories/${categorySlug(a.category)}/`}>{a.category} · Three foundations</a>
-    <h1>{a.title}</h1>
+    <h1 id="article-title">{a.title}</h1>
   </header>
   <ol class="idea-overview" aria-label="Three ideas at a glance">
     {a.recommendations.map((r,i)=><li id={`idea-${r.id}`}>
-      {r.overview?.image?<img src={r.overview.image.src} alt={r.overview.image.alt} width="104" height="104"/>:<span class="idea-number" aria-hidden="true">{String(i+1).padStart(2,'0')}</span>}
+      {r.overview?.image?<img src={r.overview.image.src} alt={r.overview.image.alt} width="144" height="144"/>:<span class="idea-number" aria-hidden="true">{String(i+1).padStart(2,'0')}</span>}
       <div><h2>{r.overview?.heading??r.heading}</h2><p>{r.overview?.description??r.whyItMatters}</p></div>
     </li>)}
   </ol>
@@ -24,34 +24,39 @@ const recommendationSources=(claimIds:string[])=>[...new Set(a.claims.filter(c=>
     <div class="guide-body">
       <p class="article-intro">{a.introduction}</p>
       <p class="article-meta">{a.publishedAt?<time datetime={a.publishedAt}>Published {formatDate(a.publishedAt)}</time>:<span>Unpublished editorial draft</span>}{a.revisedAt&&<span> · Revised <time datetime={a.revisedAt}>{formatDate(a.revisedAt)}</time></span>}</p>
-      <nav class="on-this-page" aria-label="Recommendations"><ol>{a.recommendations.map(r=><li><a href={`#${r.id}`}>{r.overview?.heading??r.heading}</a></li>)}</ol></nav>
+
       {a.figure&&<figure class="article-figure"><img src={a.figure.src} alt={a.figure.alt} loading="lazy"/><figcaption>{a.figure.caption}</figcaption><details><summary>Figure explanation</summary><p>{a.figure.description}</p></details></figure>}
       <div class="recommendations">{a.recommendations.map((r,i)=><section class="recommendation" id={r.id}>
-        <div class="recommendation-title"><span class="number" aria-hidden="true">{String(i+1).padStart(2,'0')}</span><h2>{r.heading}</h2></div>
+        <div class="recommendation-title"><span class="number" aria-hidden="true">{String(i+1).padStart(2,'0')}</span><h2>{r.overview?.heading??r.heading}</h2></div>
         <p class="what">{r.whatToDo} <span class="citation-group">{recommendationSources(r.claimIds).map(id=><a class="footnote" id={`cite-${r.id}-${id}`} href={`#reference-${id}`} aria-label={`Reference ${sourceNumber(id)}: ${a.sources.find(s=>s.id===id)!.organisation}`}>[{sourceNumber(id)}]</a>)}</span></p>
         <p>{r.whyItMatters}</p>
         {r.safety&&<p class="safety-note">{r.safety}</p>}
         <div class="action"><span class="eyebrow">Your first step</span><p>{r.action}</p></div>
-        <details><summary>A little more detail &amp; evidence</summary><div class="expanded"><p>{r.details}</p><p>{r.consequence}</p>{a.claims.filter(c=>r.claimIds.includes(c.id)).map(c=><div class="claim"><span class="evidence-tag">{c.strength.replaceAll('-',' ')} · {c.basis}</span><p>{c.text}</p><p class="fine-print">{c.strengthRationale}</p><ul>{c.sourceIds.map(id=>{const s=a.sources.find(s=>s.id===id)!;return <li><a href={s.url} target="_blank" rel="noopener noreferrer">{s.organisation}: {s.title} ↗</a></li>;})}</ul></div>)}</div></details>
+        <p class="supporting-detail">{r.details}</p>
       </section>)}</div>
       <aside class="limitations"><h2>What to keep in mind</h2><p>{a.limitations}</p><p class="fine-print">Evidence last checked {formatDate(a.lastEvidenceCheckedAt)}. {a.selection.basis==='foundations'?'These are complementary foundations, not a scientifically measured ranking.':'The order reflects the evidence and audience described here.'}</p></aside>
       <section class="references" aria-labelledby="references-title">
-        <h2 id="references-title">References</h2><p class="reference-intro">The sources behind the recommendations. Each entry explains what was checked and what it supports.</p>
+        <h2 id="references-title">References</h2><p class="reference-intro">The sources behind the recommendations. Follow a reference to read the original guidance.</p>
         <ol>{a.sources.map(s=><li id={`reference-${s.id}`}>
           <p><strong>{s.organisation}{s.publicationYear&&` · ${s.publicationYear}`}</strong><br/><a href={s.url} target="_blank" rel="noopener noreferrer">{s.title} ↗</a></p>
           <p>{s.support}</p>
-          <p class="fine-print">{s.access==='checked'?'Page checked':s.access==='partial'?'Partially accessible':'Not accessible'} {formatDate(s.checkedAt)} · Section: {s.section}</p>
-          <details><summary>Source limits</summary><p>{s.limitations}</p></details>
           <div class="reference-returns">{a.recommendations.filter(r=>recommendationSources(r.claimIds).includes(s.id)).map(r=><a href={`#cite-${r.id}-${s.id}`}>↩ {r.overview?.heading??r.heading}</a>)}</div>
         </li>)}</ol>
       </section>
+      <details class="evidence-notes"><summary>How the evidence was checked</summary>
+        <p>These notes explain the source checks and the limits of the evidence.</p>
+        {a.sources.map(s=><div class="verification-note"><h3>{s.organisation}: {s.title}</h3><p>{s.access==='checked'?'Page checked':s.access==='partial'?'Partially accessible':'Not accessible'} {formatDate(s.checkedAt)} · Section: {s.section}</p><p>{s.limitations}</p></div>)}
+        {a.claims.map(c=><div class="verification-note"><p>{c.text}</p><p class="fine-print">{c.strength.replaceAll('-',' ')} · {c.basis}. {c.strengthRationale}</p><p class="fine-print">References: {c.sourceIds.map(sourceNumber).join(', ')}</p></div>)}
+      </details>
+      <a class="return-overview" href="#article-title">Back to the three ideas ↑</a>
     </div>
   </details>
-  <div class="share-row"><button id="share" class="button" type="button" data-share-url={`/articles/${a.slug}/`}>Share this article ↗</button><span id="share-status" role="status"></span><a href="/library/">Back to the library →</a></div>
+  <div class="share-row"><button id="share" class="button button-secondary" type="button" data-share-url={`/articles/${a.slug}/`}>Share this article ↗</button><span id="share-status" role="status"></span><a href="/library/">Browse the library →</a></div>
 </article>
 <script>
 const guide=document.querySelector<HTMLDetailsElement>('.full-guide');
-function revealAnchor(){const id=decodeURIComponent(location.hash.slice(1));const target=id?document.getElementById(id):null;if(guide&&target&&guide.contains(target)&&target!==guide){guide.open=true;requestAnimationFrame(()=>target.scrollIntoView());}}
+function revealAnchor(){let id;try{id=decodeURIComponent(location.hash.slice(1));}catch{return;}const target=id?document.getElementById(id):null;if(guide&&id==='article-title')guide.open=false;else if(guide&&target&&guide.contains(target)&&target!==guide)guide.open=true;if(target)requestAnimationFrame(()=>target.scrollIntoView());}
 revealAnchor();window.addEventListener('hashchange',revealAnchor);
+document.querySelector('.return-overview')?.addEventListener('click',()=>{if(guide){guide.open=false;guide.querySelector('summary')?.focus({preventScroll:true});}});
 document.querySelector<HTMLButtonElement>('#share')?.addEventListener('click',async(event)=>{const button=event.currentTarget as HTMLButtonElement;const status=document.querySelector('#share-status')!;const url=new URL(button.dataset.shareUrl!,location.origin).href;try{if(navigator.share)await navigator.share({title:document.title,url});else if(navigator.clipboard){await navigator.clipboard.writeText(url);status.textContent='Link copied';}else status.textContent='Copy the address from your browser to share this article.';}catch(e){if((e as Error).name!=='AbortError')status.textContent='Copy the address from your browser to share this article.';}});
 </script>

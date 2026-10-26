@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "001-exercise-after-65",
   "slug": "exercise-foundations-after-65",
-  "title": "Stay strong, steady and active after 65",
+  "title": "Stay strong, steady and active as you get older",
   "description": "Keep endurance, strength and balance in practice, with a manageable place to start.",
   "category": "Health",
   "keywords": [
@@ -14,7 +14,7 @@
     "independence"
   ],
   "goal": "Maintain physical capacity through exercise",
-  "audience": "Adults aged 65 and over; adapt activity to your abilities and conditions.",
+  "audience": "For older adults; exercise targets follow guidance for ages 65+. Adapt activity to your abilities and health.",
   "assumptions": "General exercise guidance, not a complete plan for healthy ageing.",
   "introduction": "Getting out of a chair, carrying shopping and walking to the bus draw on different abilities. A useful exercise routine keeps more than one of them in practice.",
   "publishedAt": "2026-10-19",
@@ -37,12 +37,12 @@
   "recommendations": [
     {
       "id": "move",
-      "heading": "Move a little more briskly",
+      "heading": "Keep moving",
       "whatToDo": "Build towards 150–300 minutes of moderate activity each week, such as brisk walking, cycling or wheeling. At a moderate effort, you can talk but not sing. Short bouts count.",
       "whyItMatters": "Regular physical activity supports cardiovascular health and physical function.",
       "consequence": "Doing little activity means missing some of those benefits; it does not make illness inevitable.",
       "action": "Put a ten-minute walk, wheel or suitable alternative in your diary. Choose a pace that suits your current ability.",
-      "details": "Vigorous activity or a mixture is another option. The weekly target is something to build towards, not an entry requirement. Choose an activity you can do safely.",
+      "details": "Vigorous activity, or a mix of moderate and vigorous activity, is another option. The weekly target is something to build towards, not an entry requirement. Choose an activity you can do safely.",
       "claimIds": [
         "move-benefit",
         "move-consequence"
@@ -58,7 +58,7 @@
     },
     {
       "id": "strength",
-      "heading": "Give your muscles a challenge",
+      "heading": "Build strength",
       "whatToDo": "Include strengthening on at least two days each week, covering the major muscle groups. Weights, resistance bands and suitable body-weight exercises can all count.",
       "whyItMatters": "Stronger muscles help with everyday activities and independence.",
       "consequence": "Walking alone does not fulfil the separate strengthening recommendation.",
@@ -80,12 +80,12 @@
     },
     {
       "id": "balance",
-      "heading": "Make room for balance",
-      "whatToDo": "Include varied activity that challenges balance and builds strength at an effort suited to your ability. WHO recommends multicomponent activity emphasising balance and strength at moderate or greater intensity on at least three days a week.",
+      "heading": "Practise balance",
+      "whatToDo": "Include activities that combine balance practice and strength work. WHO recommends this varied activity at moderate or greater effort on at least three days a week for adults aged 65 and over. Choose activities suited to your abilities.",
       "whyItMatters": "Balance-focused activity helps reduce falls.",
       "consequence": "Leaving it out misses a specific part of fall prevention, even if you already walk regularly.",
       "action": "Find a balance class or ask a qualified professional for a home routine suited to you.",
-      "details": "Some activities combine endurance, strength and balance. Judge what the activity involves rather than assuming that every class covers all three.",
+      "details": "Some activities train endurance, strength and balance together. Check what a class involves rather than assuming it covers all three.",
       "claimIds": [
         "balance-benefit",
         "balance-consequence"
@@ -96,7 +96,7 @@
         "description": "Improve steadiness and help reduce falls.",
         "image": {
           "src": "/figures/exercise-balance.webp",
-          "alt": "Illustration of an older woman standing beside a counter with one hand resting on it."
+          "alt": "Illustration of an older woman standing steadily with one hand resting on a sturdy chair."
         }
       }
     }
@@ -187,7 +187,7 @@
   "sources": [
     {
       "id": "who",
-      "title": "Physical activity recommendations",
+      "title": "Physical activity",
       "organisation": "World Health Organization",
       "url": "https://www.who.int/europe/news-room/fact-sheets/item/physical-activity",
       "checkedAt": "2026-10-26",
@@ -226,14 +226,14 @@
   "revisionHistory": [
     {
       "date": "2026-10-26",
-      "reason": "Clearer overview, practical wording, consistent illustrations and numbered references; exercise foundations unchanged."
+      "reason": "Introduced the illustrated three-idea overview and numbered references, then refined the age-inclusive title, consistent headings, practical wording and source notes."
     }
   ],
   "relatedIds": [
     "002-study-memory"
   ],
   "summary": {
-    "title": "Stay strong, steady and active after 65",
+    "title": "Stay strong, steady and active as you get older",
     "recommendationIds": [
       "move",
       "strength",
