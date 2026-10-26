@@ -9,9 +9,9 @@ export const articleSchema=z.object({
  schemaVersion:z.literal(1), id,slug:id,title:text,description:text,category:z.enum(categories),keywords:z.array(text).min(1),goal:text,audience:text,assumptions:text,introduction:text,
  publishedAt:day.nullable(),revisedAt:day.nullable(),lastEvidenceCheckedAt:day,
  selection:z.object({basis:z.enum(['foundations','ranked']),rationale:text,alternatives:z.array(z.object({candidate:text,reason:text}).strict()).min(1),extraRationale:text.optional()}).strict(),
- recommendations:z.array(z.object({id,heading:text,whatToDo:text,whyItMatters:text,consequence:text,action:text,details:text,safety:text.optional(),claimIds:z.array(id).min(1)}).strict()).min(3),
+ recommendations:z.array(z.object({id,heading:text,whatToDo:text,whyItMatters:text,consequence:text,action:text,details:text,safety:text.optional(),overview:z.object({heading:text,description:text,image:z.object({src:z.string().regex(/^\/figures\/[a-z0-9-]+\.(png|jpg|webp)$/),alt:text}).strict().optional()}).strict().optional(),claimIds:z.array(id).min(1)}).strict()).min(3),
  claims:z.array(claim).min(1),
- sources:z.array(z.object({id,title:text,organisation:text,url,checkedAt:day,access:z.enum(['checked','partial','unavailable']),section:text,support:text,limitations:text}).strict()).min(1),
+ sources:z.array(z.object({id,title:text,organisation:text,publicationYear:z.number().int().min(1900).max(2100).optional(),url,checkedAt:day,access:z.enum(['checked','partial','unavailable']),section:text,support:text,limitations:text}).strict()).min(1),
  figure:z.object({src:z.string().regex(/^\/figures\/[a-z0-9-]+\.(svg|png|jpg|webp)$/),alt:text,caption:text,description:text}).strict().optional(),
  limitations:text,revisionHistory:z.array(z.object({date:day,reason:text}).strict()),relatedIds:z.array(id),summary:z.object({title:text,recommendationIds:z.array(id).min(3)}).strict()
 }).strict().superRefine((a,ctx)=>{

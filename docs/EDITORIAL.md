@@ -15,3 +15,7 @@ Preserve original dates on revision. Show the latest meaningful revised date. Re
 Health and finance are general education: visible audience and exceptions, no personalised recommendations. Financial guidance must identify jurisdiction assumptions; debt priority is not determined solely by interest rate. Medical contraindications must not be hidden in expansions. A disclaimer cannot make unsafe content acceptable.
 
 Initial articles: exercise after 65, remembering study material, financial breathing room. Sources, recommendation selection and minor corrections have independent same-provider reviews in docs/reviews/. Learning explicitly presents a connected study routine because feedback overlaps retrieval. Final dated article bytes require matching release records; review completion is not proof of deployment.
+
+## Reading layers
+
+Owner-approved design, 26 October 2026: open with the three core ideas and a short explanation for each. Keep audience and essential safety visible. Place the full guide, detailed evidence and numbered references behind a single “Read the full guide” disclosure. References link to checked sources and back to the recommendation. Illustrations should remain clear at phone thumbnail sizes and must not imply unsupported exercise instructions.

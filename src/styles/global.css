@@ -8,3 +8,52 @@
 .feedback form>label{display:block;margin:22px 0 8px;font-size:14px;font-weight:bold}.feedback textarea,.feedback select{display:block;width:100%;padding:12px;border:1px solid #a6b2a3;border-radius:9px;background:var(--white);color:var(--ink);font:inherit}.feedback textarea:focus-visible{outline:3px solid #9b4a26;outline-offset:4px}.feedback .button{margin-top:20px}.feedback button:disabled{opacity:.55;cursor:not-allowed}.honeypot{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
 
 .site-header nav a{display:inline-flex;align-items:center;min-height:44px}.footer-links{display:flex;flex-wrap:wrap;gap:8px 24px}.footer-links a{display:inline-flex;align-items:center;min-height:44px}main:focus{outline:none}
+
+/* Compact article: the three ideas come first; long-form reading is opt-in. */
+.compact-article{max-width:800px;padding-block:36px;font-size:20px;line-height:1.65;color:var(--ink);color-scheme:light}
+.compact-article h1{font-size:clamp(34px,5vw,48px);margin:14px 0 24px}
+.compact-article .eyebrow{font-size:15px;color:#97472e}
+.idea-overview{list-style:none;margin:0 0 20px;padding:0}
+.idea-overview li{display:flex;align-items:center;gap:20px;padding:16px 0;border-bottom:1px solid var(--line)}
+.idea-overview img{width:104px;height:104px;object-fit:contain;flex:0 0 104px;border-radius:8px}
+.idea-overview li>div{min-width:0}
+.idea-overview h2{font-size:28px;margin:0 0 6px}
+.idea-overview p{font-size:20px;line-height:1.45;margin:0}
+.idea-number{font:28px Georgia,serif;color:#97472e;min-width:34px}
+.overview-scope{font-size:15px;color:var(--muted);margin:18px 0 12px}
+.overview-safety{font-size:16px;border-left:3px solid #97472e;padding-left:12px;margin:12px 0 20px}
+.full-guide>summary{display:block;list-style:none;background:var(--ink);color:var(--white);border-radius:8px;padding:15px 22px;text-align:center;font-size:19px;font-weight:normal;min-height:54px}
+.full-guide>summary::-webkit-details-marker{display:none}
+.full-guide .when-open{display:none}
+.full-guide[open] .when-closed{display:none}
+.full-guide[open] .when-open{display:inline}
+.guide-body{padding-top:24px}
+.compact-article .article-intro{font-size:21px;color:var(--ink)}
+.compact-article .article-meta,.compact-article .fine-print{font-size:15px;color:var(--muted)}
+.compact-article .on-this-page{margin:22px 0 0;padding:12px 22px}
+.compact-article .on-this-page ol{margin:0;padding-left:22px}
+.compact-article .on-this-page a{display:inline-block;min-height:44px;padding:8px 0;font-size:17px}
+.compact-article .recommendation{padding-block:30px}
+.compact-article .recommendation h2{font-size:32px}
+.compact-article .recommendation .what{font-size:20px;margin-top:18px}
+.compact-article .recommendation details,.compact-article summary{font-size:17px}
+.compact-article .evidence-tag{font-size:15px}
+.compact-article .safety-note{font-size:18px;background:#f0e5d6;border-radius:5px;padding:16px 18px}
+.compact-article .action{border-left:3px solid #97472e;border-radius:0;background:transparent;padding:3px 0 3px 20px}
+.compact-article .limitations h2,.compact-article .references h2{font-size:29px}
+.citation-group{white-space:nowrap}
+.footnote{display:inline-flex;align-items:center;justify-content:center;min-width:36px;min-height:44px;vertical-align:super;font-size:16px;color:#97472e;scroll-margin-top:20px}
+.references{border-top:1px solid var(--line);padding-top:24px}
+.reference-intro{font-size:17px;color:var(--muted)}
+.references ol{padding-left:24px}
+.references li{padding:12px 0 20px 6px;border-bottom:1px solid var(--line);font-size:17px;scroll-margin-top:20px}
+.references li p{margin:8px 0}
+.references li:target{background:#e8ede2;border-radius:6px}
+.references summary{font-size:16px;font-weight:normal}
+.reference-returns{display:flex;flex-wrap:wrap;gap:0 20px}
+.reference-returns a{display:inline-flex;align-items:center;min-height:44px;font-size:16px}
+.compact-article .share-row{font-size:16px;margin-top:20px}
+.compact-article .share-row .button{font-size:16px}
+.compact-article .share-row>a{display:inline-flex;align-items:center;min-height:44px}
+@media(max-width:720px){.compact-article{padding-block:28px}.compact-article h1{font-size:36px}.idea-overview li{gap:12px;padding:14px 0}.idea-overview img{width:84px;height:96px;flex-basis:84px}.idea-overview h2{font-size:25px}.idea-overview p{font-size:19px}.compact-article .recommendation h2{font-size:29px}.compact-article .article-intro{font-size:20px}}
+@media(max-width:370px){.compact-article h1{font-size:32px}.idea-overview img{width:70px;flex-basis:70px;height:90px}.idea-overview h2{font-size:23px}}

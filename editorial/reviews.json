@@ -9,7 +9,12 @@
     "correctionRounds": 1,
     "decision": "ready",
     "findings": [
-      {"id": "E1", "severity": "minor", "status": "resolved", "detail": "Strength effort cue now specifies challenging final repetitions with control and adaptation to ability; no instruction to train to failure."}
+      {
+        "id": "E1",
+        "severity": "minor",
+        "status": "resolved",
+        "detail": "Strength effort cue now specifies challenging final repetitions with control and adaptation to ability; no instruction to train to failure."
+      }
     ]
   },
   {
@@ -22,7 +27,12 @@
     "correctionRounds": 1,
     "decision": "ready",
     "findings": [
-      {"id": "L1", "severity": "minor", "status": "resolved", "detail": "Title, introduction and summary now explicitly frame recall, correction and spacing as a connected study routine, with overlap limitations retained."}
+      {
+        "id": "L1",
+        "severity": "minor",
+        "status": "resolved",
+        "detail": "Title, introduction and summary now explicitly frame recall, correction and spacing as a connected study routine, with overlap limitations retained."
+      }
     ]
   },
   {
@@ -35,8 +45,36 @@
     "correctionRounds": 1,
     "decision": "ready",
     "findings": [
-      {"id": "F1", "severity": "minor", "status": "resolved", "detail": "Extra repayment action now explicitly identifies high-interest ordinary unsecured debt while protecting essentials and minimums."},
-      {"id": "selection-finance-shortfall", "severity": "minor", "status": "open", "detail": "Optional improvement from separate blind recommendation challenge: provide a concrete local-support route for an ongoing essential-income shortfall. Current caveats and arrears/debt advice make this non-blocking within the article's narrower shock-focused scope."}
+      {
+        "id": "F1",
+        "severity": "minor",
+        "status": "resolved",
+        "detail": "Extra repayment action now explicitly identifies high-interest ordinary unsecured debt while protecting essentials and minimums."
+      },
+      {
+        "id": "selection-finance-shortfall",
+        "severity": "minor",
+        "status": "open",
+        "detail": "Optional improvement from separate blind recommendation challenge: provide a concrete local-support route for an ongoing essential-income shortfall. Current caveats and arrears/debt advice make this non-blocking within the article's narrower shock-focused scope."
+      }
+    ]
+  },
+  {
+    "id": "exercise-redesign-20261026",
+    "articleId": "001-exercise-after-65",
+    "author": "Codex /root (OpenAI)",
+    "reviewer": "Codex /root/editorial_review (OpenAI)",
+    "reviewedCommit": "3fe13b53ef36b64acf57dad8a565c57cfb165867",
+    "articleSha256": "d2543bd999fead74a4a7effb2ae2292b64af9eef62fe91630b285d4f063f36b4",
+    "correctionRounds": 0,
+    "decision": "ready",
+    "findings": [
+      {
+        "id": "source-title-who",
+        "severity": "minor",
+        "status": "open",
+        "detail": "Inherited reference title Physical activity recommendations differs from visible WHO title Physical activity; correct linked guidance and claim support, optional exact-title polish."
+      }
     ]
   }
 ]
