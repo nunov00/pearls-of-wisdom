@@ -38,3 +38,6 @@ New built-in image-generation asset briefs, delivered as local 600px transparent
 - `public/figures/exercise-balance-v2.webp`: older woman standing with both feet down and one hand on a sturdy four-legged chair, coral top; represents supported steadiness without prescribing a technique.
 
 All six briefs use natural anatomy, generous margins and genuine transparent backgrounds, with no vintage paper texture, visible background box, logos or text. One walking variant with a halo was discarded. Main reading uses plain explanations; scientific qualifications and checked source records remain available in the details and evidence notes.
+
+
+Reader scope clarification, 27 October 2026: these references demonstrate articles for a broad readership, including people helping someone else. The exercise pilot's 65+ guidance concerns the person doing the activity, not the age of its reader. The study illustration is appropriate for the site's mixed-age readership; no older replacement or further image enlargement is required on that basis. Expanded sections use their names without decorative numbers; source references remain numbered.
