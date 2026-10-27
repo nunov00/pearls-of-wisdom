@@ -16,8 +16,8 @@ test('pages have accessible structure, no serious automated findings, and no pho
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
     const results = await new AxeBuilder({page}).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
     expect(results.violations.filter(v => ['serious', 'critical'].includes(v.impact || '')), JSON.stringify(results.violations)).toEqual([]);
-    if (route === '/' || route === '/articles/remember-what-you-study/') {
-      await page.screenshot({path: testInfo.outputPath(route === '/' ? 'home.png' : 'article.png'), fullPage: true});
+    if (route === '/' || route === '/articles/remember-what-you-study/' || route === '/articles/financial-breathing-room/') {
+      await page.screenshot({path: testInfo.outputPath(route === '/' ? 'home.png' : route.includes('financial-') ? 'finance-overview.png' : 'article.png'), fullPage: true});
     }
   }
   expect(errors).toEqual([]);
@@ -40,11 +40,11 @@ test('search, category, empty state and reset agree with visible articles', asyn
   await expect(page.locator('#no-results')).toBeVisible();
   await page.getByLabel('Search the library').fill('');
   await expect(cards).toHaveCount(1);
-  await expect(cards).toContainText('financial breathing room');
+  await expect(cards).toContainText('Give your money more breathing room');
   await page.getByRole('combobox', {name: /^Category/}).selectOption('');
   await page.getByRole('combobox', {name: /^Order/}).selectOption('title');
   await expect(cards).toHaveCount(3);
-  await expect(cards.first()).toContainText('Remember more of what you study');
+  await expect(cards.first()).toContainText('Give your money more breathing room');
   await expect(page.locator('#no-results')).toBeHidden();
 });
 
@@ -164,4 +164,54 @@ test('study pilot connects the illustrated ideas to a usable routine', async ({p
   expect(await page.locator('.site-header .wordmark small').evaluate(e => parseFloat(getComputedStyle(e).fontSize))).toBeGreaterThanOrEqual(15);
   expect(await page.locator('.article-card .card-bottom').first().evaluate(e => parseFloat(getComputedStyle(e).fontSize))).toBeGreaterThanOrEqual(15);
   await page.screenshot({path: testInfo.outputPath('study-expanded.png'), fullPage: true});
+});
+
+
+test('finance pilot keeps priorities clear and its illustrated guide usable', async ({page}, testInfo) => {
+  await page.goto('/articles/financial-breathing-room/');
+  await expect(page.locator('.full-guide')).not.toHaveAttribute('open', '');
+  await expect(page.locator('.idea-overview h2')).toHaveText(['See what is due', 'Keep a little in reserve', 'Reduce borrowing costs']);
+  await expect(page.locator('.idea-overview')).toContainText('Keep essentials covered');
+  await expect(page.locator('.idea-overview img')).toHaveCount(3);
+  for (const image of await page.locator('.idea-overview img').all()) {
+    await expect(image).toBeVisible();
+    await expect.poll(() => image.evaluate(e => (e as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+  }
+  await page.locator('.full-guide>summary').click();
+  await expect(page.locator('.action')).toHaveCount(3);
+  await expect(page.locator('#debt .what')).toContainText('local rules');
+  await expect(page.locator('#debt .safety-note')).toContainText('independent local debt advice');
+  await expect(page.locator('#buffer')).toContainText('without missing essentials or required debt payments');
+  await expect(page.locator('.guide-scope')).toContainText('first wage');
+  await expect(page.locator('.guide-scope')).toContainText('borrowing guidance concerns adults');
+  await expect(page.locator('#cash-flow')).toContainText('phone bill');
+  await expect(page.locator('#debt .what')).toContainText('court fines');
+  for (const id of ['cash-flow', 'buffer', 'debt']) {
+    await expect(page.locator(`#${id} .supporting-detail`).first()).toContainText('In the repair example:');
+    expect(await page.locator(`#${id} .supporting-detail`).count()).toBeGreaterThan(1);
+  }
+  await expect(page.locator('#debt .help-links a')).toHaveCount(2);
+  await expect(page.locator('#debt .help-links a').first()).toHaveAttribute('href', 'https://www.moneyhelper.org.uk/en/money-troubles/dealing-with-debt/debt-advice-locator');
+  await expect(page.locator('#debt .help-links a').last()).toHaveAttribute('href', 'https://www.consumerfinance.gov/ask-cfpb/what-is-credit-counseling-en-1451/');
+  const readingMetrics = await page.locator('#debt').evaluate(section => {
+    const citation = section.querySelector('.footnote')!;
+    return {
+      mainTextPx: parseFloat(getComputedStyle(section.querySelector('.what')!).fontSize),
+      supportingTextPx: parseFloat(getComputedStyle(section.querySelector('.supporting-detail')!).fontSize),
+      citationGlyphHeightPx: citation.getBoundingClientRect().height,
+      citationHitAreaHeightPx: parseFloat(getComputedStyle(citation, '::after').height),
+      helpLinkHeightsPx: Array.from(section.querySelectorAll('.help-links a')).map(a => a.getBoundingClientRect().height),
+    };
+  });
+  expect(readingMetrics.mainTextPx).toBeGreaterThanOrEqual(20);
+  expect(readingMetrics.supportingTextPx).toBeGreaterThanOrEqual(18);
+  expect(readingMetrics.citationHitAreaHeightPx).toBeGreaterThanOrEqual(24);
+  expect(readingMetrics.helpLinkHeightsPx.every(height => height >= 44)).toBe(true);
+  await testInfo.attach('finance-reading-metrics', {body: JSON.stringify(readingMetrics), contentType: 'application/json'});
+
+  await page.screenshot({path: testInfo.outputPath('finance-expanded.png'), fullPage: true});
+  await page.locator('#debt .footnote').first().click();
+  await expect(page.locator(':target')).toHaveAttribute('id', /^reference-/);
+  await page.getByRole('link', {name: 'Back to the three ideas'}).click();
+  await expect(page.locator('.full-guide')).not.toHaveAttribute('open', '');
 });
