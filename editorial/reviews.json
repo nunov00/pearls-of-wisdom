@@ -94,5 +94,23 @@
         "detail": "WHO reference title now matches the checked page title Physical activity."
       }
     ]
+  },
+  {
+    "id": "study-pilot-20261027",
+    "articleId": "002-study-memory",
+    "author": "Codex /root (OpenAI)",
+    "reviewer": "Codex /root/study_review (OpenAI)",
+    "reviewedCommit": "8caf952d95978e4d339be1b88307b0aaf75c0f0b",
+    "articleSha256": "758aaccba1f6209dc8c97c056f07709c7b2e9651cff65a0b9e721e2557b0af8c",
+    "correctionRounds": 1,
+    "decision": "ready",
+    "findings": [
+      {
+        "id": "study-consequence-basis",
+        "severity": "minor",
+        "status": "resolved",
+        "detail": "Missed-practice and unchecked-answer consequences are now labelled editorial inferences rather than separately measured causal effects."
+      }
+    ]
   }
 ]
