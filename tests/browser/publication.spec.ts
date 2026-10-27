@@ -16,8 +16,8 @@ test('pages have accessible structure, no serious automated findings, and no pho
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
     const results = await new AxeBuilder({page}).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
     expect(results.violations.filter(v => ['serious', 'critical'].includes(v.impact || '')), JSON.stringify(results.violations)).toEqual([]);
-    if (route === '/' || route === '/articles/remember-what-you-study/') {
-      await page.screenshot({path: testInfo.outputPath(route === '/' ? 'home.png' : 'article.png'), fullPage: true});
+    if (route === '/' || route === '/articles/remember-what-you-study/' || route === '/articles/financial-breathing-room/') {
+      await page.screenshot({path: testInfo.outputPath(route === '/' ? 'home.png' : route.includes('financial-') ? 'finance-overview.png' : 'article.png'), fullPage: true});
     }
   }
   expect(errors).toEqual([]);
@@ -164,4 +164,27 @@ test('study pilot connects the illustrated ideas to a usable routine', async ({p
   expect(await page.locator('.site-header .wordmark small').evaluate(e => parseFloat(getComputedStyle(e).fontSize))).toBeGreaterThanOrEqual(15);
   expect(await page.locator('.article-card .card-bottom').first().evaluate(e => parseFloat(getComputedStyle(e).fontSize))).toBeGreaterThanOrEqual(15);
   await page.screenshot({path: testInfo.outputPath('study-expanded.png'), fullPage: true});
+});
+
+
+test('finance pilot keeps priorities clear and its illustrated guide usable', async ({page}, testInfo) => {
+  await page.goto('/articles/financial-breathing-room/');
+  await expect(page.locator('.full-guide')).not.toHaveAttribute('open', '');
+  await expect(page.locator('.idea-overview h2')).toHaveText(['See what is due', 'Keep a little in reserve', 'Tackle debt, essentials first']);
+  await expect(page.locator('.idea-overview')).toContainText('Protect priority payments');
+  await expect(page.locator('.idea-overview img')).toHaveCount(3);
+  for (const image of await page.locator('.idea-overview img').all()) {
+    await expect(image).toBeVisible();
+    await expect.poll(() => image.evaluate(e => (e as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+  }
+  await page.locator('.full-guide>summary').click();
+  await expect(page.locator('.action')).toHaveCount(3);
+  await expect(page.locator('#debt .safety-note')).toContainText('local rules');
+  await expect(page.locator('#buffer')).toContainText('without missing essentials or debt minimums');
+  await expect(page.locator('.guide-scope')).toContainText('helping someone');
+  await page.screenshot({path: testInfo.outputPath('finance-expanded.png'), fullPage: true});
+  await page.locator('#debt .footnote').first().click();
+  await expect(page.locator(':target')).toHaveAttribute('id', /^reference-/);
+  await page.getByRole('link', {name: 'Back to the three ideas'}).click();
+  await expect(page.locator('.full-guide')).not.toHaveAttribute('open', '');
 });
