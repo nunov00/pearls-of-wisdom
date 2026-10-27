@@ -192,6 +192,22 @@ test('finance pilot keeps priorities clear and its illustrated guide usable', as
   await expect(page.locator('#debt .help-links a')).toHaveCount(2);
   await expect(page.locator('#debt .help-links a').first()).toHaveAttribute('href', 'https://www.moneyhelper.org.uk/en/money-troubles/dealing-with-debt/debt-advice-locator');
   await expect(page.locator('#debt .help-links a').last()).toHaveAttribute('href', 'https://www.consumerfinance.gov/ask-cfpb/what-is-credit-counseling-en-1451/');
+  const readingMetrics = await page.locator('#debt').evaluate(section => {
+    const citation = section.querySelector('.footnote')!;
+    return {
+      mainTextPx: parseFloat(getComputedStyle(section.querySelector('.what')!).fontSize),
+      supportingTextPx: parseFloat(getComputedStyle(section.querySelector('.supporting-detail')!).fontSize),
+      citationGlyphHeightPx: citation.getBoundingClientRect().height,
+      citationHitAreaHeightPx: parseFloat(getComputedStyle(citation, '::after').height),
+      helpLinkHeightsPx: Array.from(section.querySelectorAll('.help-links a')).map(a => a.getBoundingClientRect().height),
+    };
+  });
+  expect(readingMetrics.mainTextPx).toBeGreaterThanOrEqual(20);
+  expect(readingMetrics.supportingTextPx).toBeGreaterThanOrEqual(18);
+  expect(readingMetrics.citationHitAreaHeightPx).toBeGreaterThanOrEqual(24);
+  expect(readingMetrics.helpLinkHeightsPx.every(height => height >= 44)).toBe(true);
+  await testInfo.attach('finance-reading-metrics', {body: JSON.stringify(readingMetrics), contentType: 'application/json'});
+
   await page.screenshot({path: testInfo.outputPath('finance-expanded.png'), fullPage: true});
   await page.locator('#debt .footnote').first().click();
   await expect(page.locator(':target')).toHaveAttribute('id', /^reference-/);

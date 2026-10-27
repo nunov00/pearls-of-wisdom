@@ -163,5 +163,53 @@
         "detail": "Debt section is necessarily denser; compact grouping could improve pace if rendered review finds it tiring, while retaining essential qualifications."
       }
     ]
+  },
+  {
+    "id": "finance-pilot-cycle2-20261027",
+    "articleId": "003-money-buffer",
+    "author": "Codex /root (OpenAI)",
+    "reviewer": "Codex /root/finance_source_review (OpenAI)",
+    "reviewedCommit": "0369f0702c5b470c463654a425ba562d92245db9",
+    "articleSha256": "eb4e836d1f07784bb75fbd0de87c03d31bb09f10695f69b35d41dbdcf5c157bd",
+    "correctionRounds": 1,
+    "decision": "ready",
+    "findings": [
+      {
+        "id": "finance-younger-entry",
+        "severity": "important",
+        "status": "resolved",
+        "detail": "First-wage and everyday payment examples broaden entry while borrowing advice remains explicitly adult-scoped."
+      },
+      {
+        "id": "finance-priority-language",
+        "severity": "important",
+        "status": "resolved",
+        "detail": "Priority payments are explained with consequences and examples on first use, required minimums and unsecured borrowing are explained, and local-rule limits remain."
+      },
+      {
+        "id": "finance-repair-paragraphs",
+        "severity": "important",
+        "status": "resolved",
+        "detail": "Separate semantic paragraphs distinguish repair examples from caveats and shorten debt context without hiding essential advice."
+      },
+      {
+        "id": "finance-us-support",
+        "severity": "important",
+        "status": "resolved",
+        "detail": "Checked CFPB guidance provides a US counselling route with reputation and non-profit fee qualifications; UK and other-country limits remain."
+      },
+      {
+        "id": "finance-direct-help-links",
+        "severity": "minor",
+        "status": "resolved",
+        "detail": "Validated source IDs render direct checked UK/US support links beside debt context."
+      },
+      {
+        "id": "finance-debt-density",
+        "severity": "minor",
+        "status": "open",
+        "detail": "Paragraph breaks improve pace; debt remains the densest topic. Further shortening is optional and must retain priorities and help routes."
+      }
+    ]
   }
 ]
