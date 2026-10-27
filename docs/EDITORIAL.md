@@ -29,7 +29,7 @@ Owner-approved refinement, 27 October 2026: judge the page as an inviting entry 
 Before considering an article ready, inspect the rendered page on a phone and desktop, both collapsed and expanded. Content checks alone do not establish visual quality. Use this checklist alongside factual review:
 
 - Three distinct ideas are understandable at a glance, with consistent names in the overview and guide. Avoid repeating the same list or title as another summary.
-- Illustrations form a coherent, warm set, read clearly at phone size and fit the page background without visible boxes or accidental cropping. They must represent the idea without implying unsafe technique.
+- Illustrations form a coherent, contemporary set, read clearly at phone size and fit the page background without visible boxes or accidental cropping. They must represent the idea without implying unsafe technique.
 - Keep readable contrast and generous spacing: article body text around 20px, overview text at least 19px, and supporting text at least 15px. Check narrow phones at 320px and browser zoom; do not shrink text to force a layout.
 - Use the shared typography, currently locally hosted Source Serif 4 headings and Source Sans 3 body text with readable fallbacks. A new typeface needs visual comparison, not an assumption that a different font is better.
 - Give expansion one clear primary control with a concrete benefit, currently “See how to start”. Keep Share secondary. Opening, closing, reference links and returning to the overview must work with keyboard input and without JavaScript.
@@ -40,3 +40,6 @@ Record what was actually checked and unresolved findings. Fix confusing reading 
 ## Reference articles
 
 Use the accepted examples and status notes in [REFERENCE-ARTICLES.md](REFERENCE-ARTICLES.md) alongside this standard. The exercise article is the current design benchmark; the study revision is a candidate for Owner review, and finance is the next pilot. Candidates become reference examples only after acceptance is recorded. Borrow the clarity, useful detail and quality checks; adapt the presentation to the subject and verify its own evidence.
+
+
+Owner direction, 27 October 2026: refresh the nostalgic cream/green/rust treatment. Use clean off-white, dark ink and restrained blue controls; illustration colours may vary across subjects. Prefer simple contemporary compositions that remain distinct on phones, with no tiny prop carrying the whole meaning. Main reading explains research in plain language; technical terms and effect-size distinctions belong in evidence notes where needed. Everyday adult examples should fit the audience. Keep supporting text readable across related cards and the header too. Screenshots with cut-off text were browser pinch-zoom, confirmed by the Owner, not an established layout defect.

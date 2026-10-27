@@ -15,7 +15,7 @@
     "spacing"
   ],
   "goal": "Remember studied information for later use",
-  "audience": "Adult learners studying factual or conceptual material.",
+  "audience": "For adults learning new facts and ideas, whether for work, a course or personal interest.",
   "assumptions": "Not a complete method for learning every practical skill.",
   "introduction": "It makes sense while the page is open. Then someone asks you to explain it, and the answer has gone. Try changing what you do after reading: recall a little, check it, and return to it later. Here is one simple way to begin.",
   "publishedAt": "2026-10-19",
@@ -40,20 +40,20 @@
       "id": "retrieve",
       "heading": "Try from memory",
       "whatToDo": "After learning a small section, close your notes. Answer a question, explain the idea aloud or write what you remember. Then check your attempt.",
-      "whyItMatters": "Practice testing can improve later recall; it is a learning activity as well as a check.",
+      "whyItMatters": "Trying to answer from memory can help you remember the material for longer.",
       "consequence": "Relying only on rereading misses the opportunity to practise retrieving the answer.",
       "action": "Pick one idea from your next reading session. Turn it into a question and try answering with the page closed.",
-      "details": "For example, after reading about evaporation, ask: “What happens to a liquid when it evaporates?” Give your own answer before looking. This is practice, not a judgement of your ability. If you draw a blank, use a cue or study a smaller part, then try again.",
+      "details": "For example, you are learning a few Spanish words for a trip. After studying how to say “thank you”, cover the answer and try to say or write it. This is practice, not a judgement of your ability. If you draw a blank, use a cue or study a smaller part, then try again.",
       "claimIds": [
         "retrieve-benefit",
         "retrieve-consequence"
       ],
       "overview": {
         "heading": "Try from memory",
-        "description": "Find out what you can bring back without looking.",
+        "description": "Practise remembering, rather than just rereading.",
         "image": {
-          "src": "/figures/study-recall.webp",
-          "alt": "A learner writes in a notebook with her reference book closed."
+          "src": "/figures/study-recall-v2.webp",
+          "alt": "A learner thinks with her reference book closed."
         }
       }
     },
@@ -61,10 +61,10 @@
       "id": "correct",
       "heading": "Check what you missed",
       "whatToDo": "Compare your attempt with a reliable source or worked answer. Correct missing or mistaken parts before you practise again.",
-      "whyItMatters": "Corrective feedback makes retrieval practice more useful when your first answer is wrong.",
+      "whyItMatters": "Checking and correcting a wrong answer can help you learn from the attempt.",
       "consequence": "An unchecked answer gives you no reliable way to identify what still needs work.",
       "action": "Choose one gap in your answer. Write the correction in your own words, then keep the question for another attempt.",
-      "details": "In the evaporation example, “the liquid disappears” misses the change of state. A fuller answer is that the liquid changes into a gas. Check the explanation in your learning material rather than judging by how familiar your answer sounds. Feedback is part of recall practice, not a separate technique with an equal-sized benefit.",
+      "details": "In the Spanish example, compare your attempt with the answer: “gracias”. If you forgot part of the word or mixed it up, write the correct version and try it again later. Check your learning material rather than judging by how familiar your answer sounds. Checking belongs with the memory practice; the steps work together.",
       "claimIds": [
         "correct-benefit",
         "correct-consequence"
@@ -73,8 +73,8 @@
         "heading": "Check what you missed",
         "description": "Turn a wrong or incomplete answer into useful practice.",
         "image": {
-          "src": "/figures/study-check.webp",
-          "alt": "The learner compares an open reference book with her notebook and adds a correction."
+          "src": "/figures/study-check-v2.webp",
+          "alt": "The learner checks an open book against an answer card."
         }
       }
     },
@@ -82,10 +82,10 @@
       "id": "space",
       "heading": "Come back later",
       "whatToDo": "Return to the same material in separate sessions. Try answering from memory again, then check, instead of doing all your practice in one sitting.",
-      "whyItMatters": "Distributed practice generally supports longer-term retention better than cramming the same material together.",
+      "whyItMatters": "Spreading the same amount of practice over time generally helps you remember for longer than doing it all at once.",
       "consequence": "Cramming can help in the short term, but leaves less opportunity for durable retention.",
       "action": "Put the same question in your diary for tomorrow and again later in the week. Start those sessions with the page closed.",
-      "details": "Use your evaporation question again and check whether your answer now includes the change into a gas. Tomorrow and later in the week are practical starting points, not an optimal formula. Useful gaps depend on the material and how long you need to remember it. If you have forgotten too much, shorten the gap or review a smaller part.",
+      "details": "Try your Spanish question again before uncovering the answer: “gracias”. Tomorrow and later in the week are practical starting points, not an optimal formula. Useful gaps depend on the material and how long you need to remember it. If you have forgotten too much, shorten the gap or review a smaller part.",
       "claimIds": [
         "space-benefit",
         "space-consequence"
@@ -94,8 +94,8 @@
         "heading": "Come back later",
         "description": "Give yourself another chance to recall it on a different day.",
         "image": {
-          "src": "/figures/study-return.webp",
-          "alt": "The learner returns to her study desk, where a small calendar stands."
+          "src": "/figures/study-return-v2.webp",
+          "alt": "The learner holds her book beside a large calendar."
         }
       }
     }
@@ -103,7 +103,7 @@
   "claims": [
     {
       "id": "retrieve-benefit",
-      "text": "Practice testing can improve later recall; it is a learning activity as well as a check.",
+      "text": "Trying to answer from memory can help you remember the material for longer.",
       "kind": "benefit",
       "basis": "causal",
       "sourceIds": [
@@ -127,7 +127,7 @@
     },
     {
       "id": "space-benefit",
-      "text": "Distributed practice generally supports longer-term retention better than cramming the same material together.",
+      "text": "Spreading the same amount of practice over time generally helps you remember for longer than doing it all at once.",
       "kind": "benefit",
       "basis": "causal",
       "sourceIds": [
@@ -151,7 +151,7 @@
     },
     {
       "id": "correct-benefit",
-      "text": "Corrective feedback makes retrieval practice more useful when your first answer is wrong.",
+      "text": "Checking and correcting a wrong answer can help you learn from the attempt.",
       "kind": "benefit",
       "basis": "causal",
       "sourceIds": [
@@ -197,11 +197,19 @@
       "limitations": "Researcher-authored guidance checked, not every linked underlying paper."
     }
   ],
-  "limitations": "The evidence varies by task and learner. Recall practice cannot replace learning the material in the first place, and remembering facts is not the same as mastering a skill. These are complementary parts of a routine, not a measured ranking.",
+  "limitations": "What works varies by task and learner. You need to learn the material before trying to recall it, and remembering facts is not the same as mastering a practical skill.",
   "revisionHistory": [
     {
       "date": "2026-10-27",
       "reason": "Study pilot: illustrated overview, clearer recall-check-return sequence, connected example and refreshed source checks; original publication date retained."
+    },
+    {
+      "date": "2026-10-27",
+      "reason": "Simplified the main explanations and audience wording, replaced the school example with an everyday Spanish phrase, strengthened the first overview benefit and removed a repeated ranking qualification."
+    },
+    {
+      "date": "2026-10-27",
+      "reason": "Fresh illustration treatment and reader feedback refinements; original publication date retained."
     }
   ],
   "relatedIds": [

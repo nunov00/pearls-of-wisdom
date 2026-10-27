@@ -18,7 +18,7 @@
   "assumptions": "General exercise guidance, not a complete plan for healthy ageing.",
   "introduction": "Getting out of a chair, carrying shopping and walking to the bus draw on different abilities. A useful exercise routine keeps more than one of them in practice.",
   "publishedAt": "2026-10-19",
-  "revisedAt": "2026-10-26",
+  "revisedAt": "2026-10-27",
   "lastEvidenceCheckedAt": "2026-10-26",
   "selection": {
     "basis": "foundations",
@@ -51,7 +51,7 @@
         "heading": "Keep moving",
         "description": "Build endurance for everyday activities.",
         "image": {
-          "src": "/figures/exercise-moving.webp",
+          "src": "/figures/exercise-moving-v2.webp",
           "alt": "Illustration of an older woman walking purposefully."
         }
       }
@@ -73,7 +73,7 @@
         "heading": "Build strength",
         "description": "Make lifting, carrying and getting up easier.",
         "image": {
-          "src": "/figures/exercise-strength.webp",
+          "src": "/figures/exercise-strength-v2.webp",
           "alt": "Illustration of an older man carrying shopping bags."
         }
       }
@@ -95,7 +95,7 @@
         "heading": "Practise balance",
         "description": "Improve steadiness and help reduce falls.",
         "image": {
-          "src": "/figures/exercise-balance.webp",
+          "src": "/figures/exercise-balance-v2.webp",
           "alt": "Illustration of an older woman standing steadily with one hand resting on a sturdy chair."
         }
       }
@@ -227,6 +227,10 @@
     {
       "date": "2026-10-26",
       "reason": "Introduced the illustrated three-idea overview and numbered references, then refined the age-inclusive title, consistent headings, practical wording and source notes."
+    },
+    {
+      "date": "2026-10-27",
+      "reason": "Fresh illustration treatment and reader feedback refinements; original publication date retained."
     }
   ],
   "relatedIds": [
