@@ -67,6 +67,7 @@ test('overview, references and return control work with accessible reading', asy
   await expect(page.locator('#main')).toBeFocused();
   await expect(page.locator('.full-guide')).not.toHaveAttribute('open', '');
   await expect(page.locator('.idea-overview>li')).toHaveCount(3);
+  await expect(page.locator('.full-guide>summary')).toHaveText('See how to start ↓Close the full guide ↑');
   await expect(page.locator('.guide-scope')).toBeHidden();
   await expect(page.locator('.safety-note')).toBeHidden();
   await page.locator('.full-guide>summary').click();
@@ -123,5 +124,26 @@ test('release metadata shows approved dated articles without draft labels', asyn
     const article = JSON.parse(await page.locator('script[type="application/ld+json"]').textContent() || '{}');
     expect(article.datePublished).toBe('2026-10-19');
     expect(article.mainEntityOfPage).toBe(new URL(route, process.env.SITE_URL).href);
+  }
+});
+
+
+test('citations stay with the preceding word at phone and desktop widths', async ({page}) => {
+  for (const width of [320, 390, 1280]) {
+    await page.setViewportSize({width, height: 900});
+    for (const route of routes.filter(path => path.startsWith('/articles/'))) {
+      await page.goto(route);
+      await page.locator('.full-guide>summary').click();
+      await page.evaluate(() => document.fonts.ready);
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+      const attached = await page.locator('.citation-tail').evaluateAll(tails => tails.every(tail => {
+        const word = tail.querySelector('.citation-word')!.getBoundingClientRect();
+        return Array.from(tail.querySelectorAll('.footnote')).every(link => {
+          const rect = link.getBoundingClientRect();
+          return rect.bottom >= word.top && rect.top <= word.bottom;
+        });
+      }));
+      expect(attached).toBe(true);
+    }
   }
 });
