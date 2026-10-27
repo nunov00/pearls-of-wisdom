@@ -179,7 +179,8 @@ test('finance pilot keeps priorities clear and its illustrated guide usable', as
   }
   await page.locator('.full-guide>summary').click();
   await expect(page.locator('.action')).toHaveCount(3);
-  await expect(page.locator('#debt .safety-note')).toContainText('local rules');
+  await expect(page.locator('#debt .what')).toContainText('local rules');
+  await expect(page.locator('#debt .safety-note')).toContainText('independent local debt advice');
   await expect(page.locator('#buffer')).toContainText('without missing essentials or required debt payments');
   await expect(page.locator('.guide-scope')).toContainText('first wage');
   await expect(page.locator('.guide-scope')).toContainText('borrowing guidance concerns adults');
