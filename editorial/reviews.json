@@ -134,5 +134,16 @@
     "correctionRounds": 0,
     "decision": "ready",
     "findings": []
+  },
+  {
+    "id": "inclusive-study-20261027",
+    "articleId": "002-study-memory",
+    "author": "Codex /root (OpenAI)",
+    "reviewer": "Codex /root/inclusive_study_review (OpenAI)",
+    "reviewedCommit": "62f49c3a2410b737638ae8125a64282978c961f5",
+    "articleSha256": "d7027eef8f1fc1cb92c04db90e017678ebd044b2da383a08d5d9a98de3a489b6",
+    "correctionRounds": 0,
+    "decision": "ready",
+    "findings": []
   }
 ]
