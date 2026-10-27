@@ -2,7 +2,7 @@
 
 Define a practical goal, audience and assumptions. Choose three strong foundations by likely impact (40%), evidence (30%), applicability (20%) and independence (10%). These are internal heuristics, not scientific scores. Record rejected alternatives. Add an essential recommendation when needed, with a qualitative rationale; the approximate 20% guideline is not a measured outcome share. Do not force an unsupported universal rank.
 
-Each recommendation states what to do, why, a proportionate consequence of omission, and a realistic first step. Explain benefits without inventing a separate harm. Default reading should take roughly 60–120 seconds; detail is expandable, essential safety is visible.
+Each recommendation states what to do, why, a proportionate consequence of omission, and a realistic first step. Explain benefits without inventing a separate harm. The collapsed overview should be understandable in about five seconds: three ideas with one short benefit each. The expanded guide supplies the practical reading; essential safety stays visible beside the advice it qualifies.
 
 Use British English and concrete language. Sources must support the exact material claim. Distinguish guidelines, causal evidence and associations. Strong/moderate/limited/consensus-based labels are informal editorial judgements with reasons, not formal GRADE ratings. Publisher reputation alone does not establish certainty.
 
@@ -18,6 +18,21 @@ Initial articles: exercise after 65, remembering study material, financial breat
 
 ## Reading layers
 
-Owner-approved design, 26 October 2026: open with the three core ideas and a short explanation for each. Keep the audience clear in the expanded guide and essential safety visible beside the advice it qualifies. Place the full guide, detailed evidence and numbered references behind a single “Read the full guide” disclosure. References link to checked sources and back to the recommendation. Illustrations should remain clear at phone thumbnail sizes and must not imply unsupported exercise instructions.
+Owner-approved design, 26 October 2026: open with the three core ideas and a short explanation for each. Keep the audience clear in the expanded guide and essential safety visible beside the advice it qualifies. Place the full guide, detailed evidence and numbered references behind a single inviting disclosure (currently “See how to start”). References link to checked sources and back to the recommendation. Illustrations should remain clear at phone thumbnail sizes and must not imply unsupported exercise instructions.
 
 Owner refinement, 26 October 2026: the collapsed overview should create curiosity through the three ideas, their illustrations and the expansion control. Keep numerical targets and audience context in the expanded guide. General precautions belong beside the relevant detailed advice, before its practical first step; avoid duplicate warning blocks in the overview. The overview must not introduce specific exercise instructions that depend on precautions hidden in the guide. This does not remove contraindications or qualify unsafe advice through a disclaimer.
+
+## Reader experience and visual review
+
+Owner-approved refinement, 27 October 2026: judge the page as an inviting entry point with optional depth. Do not fill the overview with numerical targets, duplicate summaries, audience small print or general warning blocks. A summary must remain accurate on its own; retain any exception needed to avoid a misleading or unsafe claim in that same reading layer. Detailed advice includes what to do, why, a realistic first step, its limits and checked references.
+
+Before considering an article ready, inspect the rendered page on a phone and desktop, both collapsed and expanded. Content checks alone do not establish visual quality. Use this checklist alongside factual review:
+
+- Three distinct ideas are understandable at a glance, with consistent names in the overview and guide. Avoid repeating the same list or title as another summary.
+- Illustrations form a coherent, warm set, read clearly at phone size and fit the page background without visible boxes or accidental cropping. They must represent the idea without implying unsafe technique.
+- Keep readable contrast and generous spacing: article body text around 20px, overview text at least 19px, and supporting text at least 15px. Check narrow phones at 320px and browser zoom; do not shrink text to force a layout.
+- Use the shared typography, currently locally hosted Source Serif 4 headings and Source Sans 3 body text with readable fallbacks. A new typeface needs visual comparison, not an assumption that a different font is better.
+- Give expansion one clear primary control with a concrete benefit, currently “See how to start”. Keep Share secondary. Opening, closing, reference links and returning to the overview must work with keyboard input and without JavaScript.
+- Balance title lines, keep navigation tidy, and check the expanded guide for overflow. Keep small numbered references attached to the preceding word without changing line spacing, and retain usable reference links and backlinks.
+
+Record what was actually checked and unresolved findings. Fix confusing reading order, unreadable text and broken controls before publication; visual polish alone is not evidence of factual quality. These are editorial acceptance criteria, not a promise that every article will earn a particular score. Existing source verification, independent review, exact-content validation and publication safeguards still apply.

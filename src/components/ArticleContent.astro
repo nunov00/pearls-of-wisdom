@@ -3,6 +3,8 @@ import {formatDate,categorySlug} from '../lib/catalogue';
 import type {Article} from '../lib/schema';
 interface Props {article:Article}
 const {article:a}=Astro.props;
+const lastWord=(text:string)=>text.trim().split(/\s+/).at(-1)!;
+const beforeLastWord=(text:string)=>text.trim().slice(0,-lastWord(text).length);
 const sourceNumber=(id:string)=>a.sources.findIndex(s=>s.id===id)+1;
 const recommendationSources=(claimIds:string[])=>[...new Set(a.claims.filter(c=>claimIds.includes(c.id)).flatMap(c=>c.sourceIds))];
 ---
@@ -18,7 +20,7 @@ const recommendationSources=(claimIds:string[])=>[...new Set(a.claims.filter(c=>
     </li>)}
   </ol>
   <details class="full-guide" id="full-guide">
-    <summary><span class="when-closed">Read the full guide <span aria-hidden="true">↓</span></span><span class="when-open">Close the full guide <span aria-hidden="true">↑</span></span></summary>
+    <summary><span class="when-closed">See how to start <span aria-hidden="true">↓</span></span><span class="when-open">Close the full guide <span aria-hidden="true">↑</span></span></summary>
     <div class="guide-body">
       <p class="article-intro">{a.introduction}</p>
       <p class="guide-scope">{a.audience}</p>
@@ -27,7 +29,7 @@ const recommendationSources=(claimIds:string[])=>[...new Set(a.claims.filter(c=>
       {a.figure&&<figure class="article-figure"><img src={a.figure.src} alt={a.figure.alt} loading="lazy"/><figcaption>{a.figure.caption}</figcaption><details><summary>Figure explanation</summary><p>{a.figure.description}</p></details></figure>}
       <div class="recommendations">{a.recommendations.map((r,i)=><section class="recommendation" id={r.id}>
         <div class="recommendation-title"><span class="number" aria-hidden="true">{String(i+1).padStart(2,'0')}</span><h2>{r.overview?.heading??r.heading}</h2></div>
-        <p class="what">{r.whatToDo} <span class="citation-group">{recommendationSources(r.claimIds).map(id=><a class="footnote" id={`cite-${r.id}-${id}`} href={`#reference-${id}`} aria-label={`Reference ${sourceNumber(id)}: ${a.sources.find(s=>s.id===id)!.organisation}`}>[{sourceNumber(id)}]</a>)}</span></p>
+        <p class="what">{beforeLastWord(r.whatToDo)}<span class="citation-tail"><span class="citation-word">{lastWord(r.whatToDo)}</span>{"\u00a0"}<span class="citation-group">{recommendationSources(r.claimIds).map(id=><a class="footnote" id={`cite-${r.id}-${id}`} href={`#reference-${id}`} aria-label={`Reference ${sourceNumber(id)}: ${a.sources.find(s=>s.id===id)!.organisation}`}>[{sourceNumber(id)}]</a>)}</span></span></p>
         <p>{r.whyItMatters}</p>
         {r.safety&&<p class="safety-note">{r.safety}</p>}
         <div class="action"><span class="eyebrow">Your first step</span><p>{r.action}</p></div>
