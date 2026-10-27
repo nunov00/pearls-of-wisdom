@@ -1,6 +1,6 @@
 # Editorial standard
 
-Define a practical goal, audience and assumptions. Choose three strong foundations by likely impact (40%), evidence (30%), applicability (20%) and independence (10%). These are internal heuristics, not scientific scores. Record rejected alternatives. Add an essential recommendation when needed, with a qualitative rationale; the approximate 20% guideline is not a measured outcome share. Do not force an unsupported universal rank.
+Define a practical goal, intended readers, the people or situations the guidance concerns, and assumptions. Choose three strong foundations by likely impact (40%), evidence (30%), applicability (20%) and independence (10%). These are internal heuristics, not scientific scores. Record rejected alternatives. Add an essential recommendation when needed, with a qualitative rationale; the approximate 20% guideline is not a measured outcome share. Do not force an unsupported universal rank.
 
 Each recommendation states what to do, why, a proportionate consequence of omission, and a realistic first step. Explain benefits without inventing a separate harm. The collapsed overview should be understandable in about five seconds: three ideas with one short benefit each. The expanded guide supplies the practical reading; essential safety stays visible beside the advice it qualifies.
 
@@ -43,3 +43,12 @@ Use the accepted examples and status notes in [REFERENCE-ARTICLES.md](REFERENCE-
 
 
 Owner direction, 27 October 2026: refresh the nostalgic cream/green/rust treatment. Use clean off-white, dark ink and restrained blue controls; illustration colours may vary across subjects. Prefer simple contemporary compositions that remain distinct on phones, with no tiny prop carrying the whole meaning. Main reading explains research in plain language; technical terms and effect-size distinctions belong in evidence notes where needed. Everyday adult examples should fit the audience. Keep supporting text readable across related cards and the header too. Screenshots with cut-off text were browser pinch-zoom, confirmed by the Owner, not an established layout defect.
+
+
+## Readers and people the guidance concerns
+
+Owner clarification, 27 October 2026: Pearls of Wisdom is for mature teenagers through to older adults. Readers may apply an idea themselves or use it to support family, friends or someone they care for. Never infer a site-wide reader age from an article's subject or evidence population.
+
+Distinguish who reads an article from who its advice applies to. Exercise guidance based on recommendations for adults aged 65+ may be read by younger relatives or friends helping an older person. Retain the exact applicability and evidence limits of that guidance without assuming the reader is 65+. The current article audience field describes applicability; it is not a restriction on readership. Adult-scoped advice is not automatically advice for teenagers.
+
+Write accessible, respectful language across ages. Use a natural range of ages in illustrations across publications; the pictured person's age need not match every reader. Readable typography benefits everyone. Reviewer handoffs must carry this distinction explicitly. Named sections provide structure in the expanded guide; omit decorative 01–03 labels. Keep numbered source references and their links.

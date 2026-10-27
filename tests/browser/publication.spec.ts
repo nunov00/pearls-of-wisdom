@@ -76,6 +76,7 @@ test('overview, references and return control work with accessible reading', asy
   await expect(page.getByRole('navigation', {name: 'Recommendations'})).toHaveCount(0);
   const strength = page.locator('#strength');
   await expect(strength.getByRole('heading')).toHaveText('Build strength');
+  await expect(page.locator('.recommendation-title .number')).toHaveCount(0);
   await expect(strength).toContainText('keep the movement controlled');
   await expect(strength.locator('details')).toHaveCount(0);
   await page.screenshot({path: testInfo.outputPath('exercise-expanded.png'), fullPage: true});

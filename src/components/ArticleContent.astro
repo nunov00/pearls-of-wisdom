@@ -27,8 +27,8 @@ const recommendationSources=(claimIds:string[])=>[...new Set(a.claims.filter(c=>
       <p class="article-meta">{a.publishedAt?<time datetime={a.publishedAt}>Published {formatDate(a.publishedAt)}</time>:<span>Unpublished editorial draft</span>}{a.revisedAt&&<span> · Revised <time datetime={a.revisedAt}>{formatDate(a.revisedAt)}</time></span>}</p>
 
       {a.figure&&<figure class="article-figure"><img src={a.figure.src} alt={a.figure.alt} loading="lazy"/><figcaption>{a.figure.caption}</figcaption><details><summary>Figure explanation</summary><p>{a.figure.description}</p></details></figure>}
-      <div class="recommendations">{a.recommendations.map((r,i)=><section class="recommendation" id={r.id}>
-        <div class="recommendation-title"><span class="number" aria-hidden="true">{String(i+1).padStart(2,'0')}</span><h2>{r.overview?.heading??r.heading}</h2></div>
+      <div class="recommendations">{a.recommendations.map(r=><section class="recommendation" id={r.id}>
+        <div class="recommendation-title"><h2>{r.overview?.heading??r.heading}</h2></div>
         <p class="what">{beforeLastWord(r.whatToDo)}<span class="citation-tail"><span class="citation-word">{lastWord(r.whatToDo)}</span>{"\u00a0"}<span class="citation-group">{recommendationSources(r.claimIds).map(id=><a class="footnote" id={`cite-${r.id}-${id}`} href={`#reference-${id}`} aria-label={`Reference ${sourceNumber(id)}: ${a.sources.find(s=>s.id===id)!.organisation}`}>[{sourceNumber(id)}]</a>)}</span></span></p>
         <p>{r.whyItMatters}</p>
         {r.safety&&<p class="safety-note">{r.safety}</p>}
