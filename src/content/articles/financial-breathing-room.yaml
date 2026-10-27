@@ -14,7 +14,7 @@
     "financial security"
   ],
   "goal": "Reduce vulnerability to everyday financial shocks",
-  "audience": "For anyone managing adult household finances or helping someone who does. What is possible depends on income, commitments and local rules.",
+  "audience": "For anyone managing money, from a first wage to household bills, or helping someone else. The borrowing guidance concerns adults; agreements, support and legal protections depend on local rules.",
   "assumptions": "General education drawn from US and UK public guidance. Debt priorities, support services and account protections depend on your country; this is not individual financial advice.",
   "introduction": "An unexpected repair can become two problems: the bill itself and the borrowing needed to pay it. Seeing what is due, keeping a reserve when possible and reducing costly debt can give you more room to respond.",
   "publishedAt": "2026-10-19",
@@ -38,11 +38,11 @@
     {
       "id": "cash-flow",
       "heading": "See what is due",
-      "whatToDo": "Put income dates, essential spending and bill due dates in one place. Check what must be paid before the next money comes in, including any debt minimums.",
+      "whatToDo": "Put income dates, essential spending and bill due dates in one place. Check what must be paid before the next money comes in, including the minimum payment required on any debt.",
       "whyItMatters": "Seeing payment dates together can help you spot a gap before a bill is due.",
       "consequence": "A month can balance on paper while you still run short between income dates.",
-      "action": "Mark your next income date and the next three essential bills on a calendar. Add the amounts and check what will be left after paying them.",
-      "details": "For example, a repair bill arrives before payday. A calendar shows which bills already need the money in your account. You can ask a provider about changing a due date, but they must agree. If income cannot cover essentials, tracking alone will not fix the gap: ask a local public advice service about benefits, emergency help or payment support. In the UK, MoneyHelper can connect you with free debt advice and help checking entitlements.",
+      "action": "Mark your next income date and the next three payments you need to make. Add the amounts and check what will be left after paying them.",
+      "details": "In the repair example: the bill arrives before payday. Your calendar shows which bills already need the money in your account.\n\nStarting with your first wage? Include a phone bill, travel costs or a subscription renewal, even if you do not run a household.\n\nYou can ask a provider about changing a due date, but they must agree. If income cannot cover essentials, tracking alone will not fix the gap: ask a local public advice service about benefits, emergency help or payment support. In the UK, MoneyHelper can connect you with free debt advice and help checking entitlements.",
       "claimIds": [
         "cash-flow-benefit",
         "cash-flow-consequence",
@@ -63,8 +63,8 @@
       "whatToDo": "If you can afford to save, set aside a manageable amount for unexpected expenses in a safe place you can access when needed. Keep money for routine bills separate.",
       "whyItMatters": "A reserve can help cover an unexpected bill without borrowing for the whole amount.",
       "consequence": "An unexpected expense paid with credit can grow through interest and fees.",
-      "action": "Think of one unexpected cost you have faced, such as a repair. Choose a first savings target towards it and an amount you can set aside without missing essentials or debt minimums.",
-      "details": "In the repair example, the reserve pays some or all of the bill. Using it for that purpose is the point; rebuild it when you can. There is no single right target for everyone. If you automate savings, check the timing and balance so the transfer does not cause an overdraft. Account fees, withdrawal rules and protection against provider failure vary, so check local terms.",
+      "action": "Think of one unexpected cost you have faced, such as a repair. Choose a first savings target towards it and an amount you can set aside without missing essentials or required debt payments.",
+      "details": "In the repair example: the reserve pays some or all of the bill. That is what it is for; rebuild it when you can.\n\nThere is no single right target for everyone. If you automate savings, check the timing and balance so the transfer does not cause an overdraft. Check account fees, withdrawal rules and local protection if the provider fails.",
       "claimIds": [
         "buffer-benefit",
         "buffer-consequence"
@@ -80,28 +80,33 @@
     },
     {
       "id": "debt",
-      "heading": "Tackle debt, essentials first",
-      "whatToDo": "Cover essential living costs, priority obligations and required debt minimums before making extra repayments. If money remains, paying extra towards the highest-interest unsecured debt can reduce interest costs. Unsecured means the borrowing is not backed by a specific asset such as your home or car.",
-      "whyItMatters": "Once priority payments are protected, paying extra towards higher-interest debt can save interest compared with starting with cheaper debt.",
+      "heading": "Reduce borrowing costs",
+      "whatToDo": "Protect food, housing and other essentials. Give priority to bills with serious consequences if missed, such as energy bills or court fines; the order depends on local rules. Keep up the minimum payments required by your lenders before making extra repayments. If money remains, paying extra towards the highest-interest unsecured debt can reduce interest costs. Unsecured borrowing is not backed by a specific asset such as your home or car.",
+      "whyItMatters": "With priority payments protected, paying extra towards higher-interest debt can save interest compared with starting with cheaper debt.",
       "consequence": "Leaving expensive borrowing outstanding can mean paying more interest over time.",
       "action": "List each debt, its balance, interest rate and minimum payment. Flag overdue amounts and any payments with serious consequences if missed before choosing where extra money goes.",
-      "details": "If the repair has already gone on a credit card, compare its rate with other borrowing after protecting essential payments. Check fees, early-repayment charges and changing rates too. Starting with the smallest balance may feel more rewarding, but can cost more interest. Saving and extra repayments are competing uses of spare money; these three ideas are not a rule to finish building a reserve before tackling debt.",
+      "details": "In the repair example: if the bill has gone on a credit card, compare its rate with your other borrowing after protecting essential payments.\n\nCheck fees, early-repayment charges and changing rates too. Starting with the smallest balance may feel more rewarding, but can cost more interest. Saving and extra repayments compete for spare money; you do not have to finish building a reserve before tackling debt.",
       "claimIds": [
         "debt-benefit",
         "debt-consequence",
         "debt-priority-qualification",
         "debt-terms-qualification",
-        "support-qualification"
+        "support-qualification",
+        "us-support-qualification"
       ],
-      "safety": "Interest rate is not the only priority. Missed housing, utility or other priority payments can have more serious consequences; the order depends on local rules. If you are behind or cannot cover essentials and minimums, seek free, independent local debt advice before deciding repayment amounts. In the UK, use MoneyHelper’s Debt Advice Locator, linked in the references. Seek urgent advice if your home, essential services or a court deadline is at risk.",
+      "safety": "If you are behind or cannot cover essentials and required debt payments, seek independent local debt advice before choosing repayment amounts. Seek urgent advice if your home, essential services or a court deadline is at risk.\n\nIn the UK, MoneyHelper offers a free Debt Advice Locator. In the US, the CFPB explains how to find and check a non-profit credit counsellor. Ask about fees: non-profit does not always mean free. Readers elsewhere should check local public advice services.",
       "overview": {
-        "heading": "Tackle debt, essentials first",
-        "description": "Protect priority payments while cutting borrowing costs.",
+        "heading": "Reduce borrowing costs",
+        "description": "Keep essentials covered before paying extra towards debt.",
         "image": {
           "src": "/figures/finance-debt.webp",
           "alt": "An adult man comparing two debt statements."
         }
-      }
+      },
+      "helpSourceIds": [
+        "moneyhelper-help",
+        "cfpb-help"
+      ]
     }
   ],
   "claims": [
@@ -204,6 +209,17 @@
       ],
       "strength": "consensus-based",
       "strengthRationale": "Current UK guidance supports the definition and existence of early-repayment charges; no UK charge limit or universal legal rule is applied internationally."
+    },
+    {
+      "id": "us-support-qualification",
+      "text": "In the US, CFPB guidance explains how to find and check a credit counsellor. Non-profit counsellors can charge fees; readers should check services, reputation and written costs.",
+      "kind": "qualification",
+      "basis": "guideline",
+      "sourceIds": [
+        "cfpb-help"
+      ],
+      "strength": "consensus-based",
+      "strengthRationale": "Checked US public guidance describes routes to counselling and fee/reputation checks; this does not certify a particular adviser or imply every service is free."
     }
   ],
   "sources": [
@@ -262,6 +278,17 @@
       "section": "What is a personal loan?; Repaying a personal loan off early",
       "support": "Plain-language definition of unsecured loans and the need to check early-repayment charges.",
       "limitations": "UK guidance. Used only for the definition and possibility of charges, not UK loan terms, thresholds, product suitability or legal rights elsewhere."
+    },
+    {
+      "id": "cfpb-help",
+      "title": "What is credit counseling?",
+      "organisation": "Consumer Financial Protection Bureau",
+      "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-credit-counseling-en-1451/",
+      "checkedAt": "2026-10-27",
+      "access": "checked",
+      "section": "How to find a credit counselor; How to find the credit counselor that’s right for you",
+      "support": "US routes to finding credit counsellors, checking reputation and qualifications, and asking about services and written fees, including charges by non-profit providers.",
+      "limitations": "US public guidance last reviewed 2 August 2023; checked for this revision. The linked guidance was read, not individual advisers assessed or certified. It does not establish access or protections outside the US."
     }
   ],
   "limitations": "These are starting points, not a complete financial plan or a promise that budgeting will create spare money. Low income or unavoidable costs can prevent saving; that is not a failure of discipline. Local debt priorities, benefits, account protections and legal remedies need local checking. Insurance, pensions and longer-term saving also matter, but require their own assessment.",
@@ -269,9 +296,14 @@
     {
       "date": "2026-10-27",
       "reason": "Reworked as the third illustrated pilot: three brief opening ideas, practical repair example, broad-reader context with adult-household applicability, clearer debt priorities and checked UK support routes."
+    },
+    {
+      "date": "2026-10-27",
+      "reason": "Cycle 2 after independent Claude review: include a first-wage example while retaining adult borrowing scope, explain priority payments, separate repair examples from caveats, add checked US counselling guidance and direct help links."
     }
   ],
   "relatedIds": [
+    "002-study-memory",
     "001-exercise-after-65"
   ],
   "summary": {

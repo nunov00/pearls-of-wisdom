@@ -19,8 +19,22 @@ Score honestly out of ten. Report blocker/important/minor findings with concrete
 
 ## Cycle log
 
-- Cycle 1: initial finance pilot prepared. Exact commit, Codex rating and test evidence will be recorded in a PR comment after posting. Claude: pending.
-- Corrections: none yet. Consolidation: pending both reviews.
+- Cycle 1, commit `66d0d0ef4efa440034d75b1b55be68d71c6603d6`: Codex **9/10** ([review](https://github.com/nunov00/pearls-of-wisdom/pull/22#issuecomment-6455114604)); Claude **8/10** ([review](https://github.com/nunov00/pearls-of-wisdom/pull/22#issuecomment-6455214250)). Claude checked local rendered views at 1280/390/360, both CFPB sources, and reported MoneyHelper access blocked. The prior source reviewer and root separately accessed those UK pages; Claude's limitation remains explicit.
+- Correction round 1 / cycle 2: address Claude's four important findings and shared density concern. Exact head, new author score and rendered checks will be recorded on the PR after posting. Claude re-review: pending.
+
+### Consolidated decisions for cycle 2
+
+- Important 1: introduce first-wage, phone/travel/renewal examples and a broader money-management audience. Retain adult borrowing scope; broad readership does not remove applicability limits.
+- Important 2: replace unexplained priority obligations with examples on first use, spell out required minimum payments, retain the unsecured definition.
+- Important 3 / Codex density note: separate each repair example from caveats using semantic paragraphs. Split debt help into shorter context paragraphs. Do not hide necessary qualifications or add three more warning boxes.
+- Important 4: add directly checked CFPB guidance on finding and checking a US credit counsellor. Non-profit does not guarantee free service. Retain UK and local-country limits; no universal claim that every fee-charging service is fraudulent.
+- Minor 5: direct links to the checked UK locator and US guidance appear beside the debt context, using optional source IDs validated against the existing source list. This is additive structured content, not raw HTML or a markdown parser.
+- Minor 6: rename the third idea “Reduce borrowing costs”; its overview explanation still protects essentials before extra repayments.
+- Minor 7: include the study article alongside exercise in related reading.
+- Minor 8: retain the coherent three-image set for this pilot. Natural age/gender variation across future articles is already in the editorial standard; replacing people is not required for a broad readership.
+- Minor 9 / Codex illustration/header polish: retain current shared phone image sizes and header layout in this bounded correction. Citation links already have expanded pseudo-element hit areas; the glyph rectangle alone does not measure the complete target. Fresh browser checks will test the revised reading and citations. No claim of a physical-device tap-target audit.
+
+The initial author score did not give enough weight to younger-reader entry examples and detailed reading pace. The score is not averaged with Claude's. Cycle 2 must be assessed afresh on its exact head.
 
 ## Illustration production record
 

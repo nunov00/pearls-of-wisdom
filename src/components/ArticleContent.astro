@@ -31,9 +31,12 @@ const recommendationSources=(claimIds:string[])=>[...new Set(a.claims.filter(c=>
         <div class="recommendation-title"><h2>{r.overview?.heading??r.heading}</h2></div>
         <p class="what">{beforeLastWord(r.whatToDo)}<span class="citation-tail"><span class="citation-word">{lastWord(r.whatToDo)}</span>{"\u00a0"}<span class="citation-group">{recommendationSources(r.claimIds).map(id=><a class="footnote" id={`cite-${r.id}-${id}`} href={`#reference-${id}`} aria-label={`Reference ${sourceNumber(id)}: ${a.sources.find(s=>s.id===id)!.organisation}`}>[{sourceNumber(id)}]</a>)}</span></span></p>
         <p>{r.whyItMatters}</p>
-        {r.safety&&<p class="safety-note">{r.safety}</p>}
+        {r.safety&&<aside class="safety-note" aria-label="Important context">
+          {r.safety.split(/\n\s*\n/).map(paragraph=><p>{paragraph}</p>)}
+          {r.helpSourceIds?.length&&<ul class="help-links">{r.helpSourceIds.map(id=>{const source=a.sources.find(s=>s.id===id)!;return <li><a href={source.url} target="_blank" rel="noopener noreferrer">{source.title} ↗</a></li>;})}</ul>}
+        </aside>}
         <div class="action"><span class="eyebrow">Your first step</span><p>{r.action}</p></div>
-        <p class="supporting-detail">{r.details}</p>
+        {r.details.split(/\n\s*\n/).map(paragraph=><p class="supporting-detail">{paragraph}</p>)}
       </section>)}</div>
       <aside class="limitations"><h2>What to keep in mind</h2><p>{a.limitations}</p><p class="fine-print">Evidence last checked {formatDate(a.lastEvidenceCheckedAt)}. {a.selection.basis==='foundations'?'These are complementary foundations, not a scientifically measured ranking.':'The order reflects the evidence and audience described here.'}</p></aside>
       <section class="references" aria-labelledby="references-title">

@@ -9,7 +9,7 @@ export const articleSchema=z.object({
  schemaVersion:z.literal(1), id,slug:id,title:text,description:text,category:z.enum(categories),keywords:z.array(text).min(1),goal:text,audience:text,assumptions:text,introduction:text,
  publishedAt:day.nullable(),revisedAt:day.nullable(),lastEvidenceCheckedAt:day,
  selection:z.object({basis:z.enum(['foundations','ranked']),rationale:text,alternatives:z.array(z.object({candidate:text,reason:text}).strict()).min(1),extraRationale:text.optional()}).strict(),
- recommendations:z.array(z.object({id,heading:text,whatToDo:text,whyItMatters:text,consequence:text,action:text,details:text,safety:text.optional(),overview:z.object({heading:text,description:text,image:z.object({src:z.string().regex(/^\/figures\/[a-z0-9-]+\.(png|jpg|webp)$/),alt:text}).strict().optional()}).strict().optional(),claimIds:z.array(id).min(1)}).strict()).min(3),
+ recommendations:z.array(z.object({id,heading:text,whatToDo:text,whyItMatters:text,consequence:text,action:text,details:text,safety:text.optional(),helpSourceIds:z.array(id).optional(),overview:z.object({heading:text,description:text,image:z.object({src:z.string().regex(/^\/figures\/[a-z0-9-]+\.(png|jpg|webp)$/),alt:text}).strict().optional()}).strict().optional(),claimIds:z.array(id).min(1)}).strict()).min(3),
  claims:z.array(claim).min(1),
  sources:z.array(z.object({id,title:text,organisation:text,publicationYear:z.number().int().min(1900).max(2100).optional(),url,checkedAt:day,access:z.enum(['checked','partial','unavailable']),section:text,support:text,limitations:text}).strict()).min(1),
  figure:z.object({src:z.string().regex(/^\/figures\/[a-z0-9-]+\.(svg|png|jpg|webp)$/),alt:text,caption:text,description:text}).strict().optional(),
@@ -21,6 +21,7 @@ export const articleSchema=z.object({
  const cs=new Map(a.claims.map(x=>[x.id,x])),ss=new Map(a.sources.map(x=>[x.id,x]));
  for(const r of a.recommendations){
   for(const c of r.claimIds)if(!cs.has(c))issue(`Unknown claim ${c}`);
+  for(const s of r.helpSourceIds??[])if(!ss.has(s))issue(`Unknown help source ${s}`);
   if(!r.claimIds.some(c=>cs.get(c)?.kind==='benefit'))issue(`Missing benefit evidence for ${r.id}`);
   if(!r.claimIds.some(c=>cs.get(c)?.kind==='consequence'))issue(`Missing consequence evidence for ${r.id}`);
  }

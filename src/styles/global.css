@@ -95,3 +95,9 @@
 .idea-overview img{border-radius:0}
 @media(max-width:720px){.idea-overview img{width:104px;flex-basis:104px;height:112px}.idea-overview h2{font-size:24px}.site-header .wordmark small{font-size:15px;letter-spacing:0}}
 @media(max-width:370px){.idea-overview img{width:88px;flex-basis:88px;height:100px}.idea-overview h2{font-size:23px}.site-header .wordmark small{display:none}}
+
+/* Short supporting paragraphs and checked help links keep detailed advice usable. */
+.compact-article .safety-note p{margin:0 0 12px}
+.compact-article .safety-note p:last-child{margin-bottom:0}
+.help-links{margin:12px 0 0;padding-left:20px}
+.help-links a{display:inline-block;min-height:44px;padding-block:8px}

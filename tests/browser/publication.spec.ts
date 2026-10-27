@@ -170,8 +170,8 @@ test('study pilot connects the illustrated ideas to a usable routine', async ({p
 test('finance pilot keeps priorities clear and its illustrated guide usable', async ({page}, testInfo) => {
   await page.goto('/articles/financial-breathing-room/');
   await expect(page.locator('.full-guide')).not.toHaveAttribute('open', '');
-  await expect(page.locator('.idea-overview h2')).toHaveText(['See what is due', 'Keep a little in reserve', 'Tackle debt, essentials first']);
-  await expect(page.locator('.idea-overview')).toContainText('Protect priority payments');
+  await expect(page.locator('.idea-overview h2')).toHaveText(['See what is due', 'Keep a little in reserve', 'Reduce borrowing costs']);
+  await expect(page.locator('.idea-overview')).toContainText('Keep essentials covered');
   await expect(page.locator('.idea-overview img')).toHaveCount(3);
   for (const image of await page.locator('.idea-overview img').all()) {
     await expect(image).toBeVisible();
@@ -180,8 +180,18 @@ test('finance pilot keeps priorities clear and its illustrated guide usable', as
   await page.locator('.full-guide>summary').click();
   await expect(page.locator('.action')).toHaveCount(3);
   await expect(page.locator('#debt .safety-note')).toContainText('local rules');
-  await expect(page.locator('#buffer')).toContainText('without missing essentials or debt minimums');
-  await expect(page.locator('.guide-scope')).toContainText('helping someone');
+  await expect(page.locator('#buffer')).toContainText('without missing essentials or required debt payments');
+  await expect(page.locator('.guide-scope')).toContainText('first wage');
+  await expect(page.locator('.guide-scope')).toContainText('borrowing guidance concerns adults');
+  await expect(page.locator('#cash-flow')).toContainText('phone bill');
+  await expect(page.locator('#debt .what')).toContainText('court fines');
+  for (const id of ['cash-flow', 'buffer', 'debt']) {
+    await expect(page.locator(`#${id} .supporting-detail`).first()).toContainText('In the repair example:');
+    expect(await page.locator(`#${id} .supporting-detail`).count()).toBeGreaterThan(1);
+  }
+  await expect(page.locator('#debt .help-links a')).toHaveCount(2);
+  await expect(page.locator('#debt .help-links a').first()).toHaveAttribute('href', 'https://www.moneyhelper.org.uk/en/money-troubles/dealing-with-debt/debt-advice-locator');
+  await expect(page.locator('#debt .help-links a').last()).toHaveAttribute('href', 'https://www.consumerfinance.gov/ask-cfpb/what-is-credit-counseling-en-1451/');
   await page.screenshot({path: testInfo.outputPath('finance-expanded.png'), fullPage: true});
   await page.locator('#debt .footnote').first().click();
   await expect(page.locator(':target')).toHaveAttribute('id', /^reference-/);
