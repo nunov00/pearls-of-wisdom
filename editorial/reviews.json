@@ -145,5 +145,23 @@
     "correctionRounds": 0,
     "decision": "ready",
     "findings": []
+  },
+  {
+    "id": "finance-pilot-20261027",
+    "articleId": "003-money-buffer",
+    "author": "Codex /root (OpenAI)",
+    "reviewer": "Codex /root/finance_source_review (OpenAI)",
+    "reviewedCommit": "a6e9a9148b6a94fc88225b03ebfdf1bf5e57bd44",
+    "articleSha256": "ea8061a5af5e53da15fdf407b34b4c4ec19f69b1a6ff46b1ed0a706c7f63af93",
+    "correctionRounds": 0,
+    "decision": "ready",
+    "findings": [
+      {
+        "id": "finance-debt-density",
+        "severity": "minor",
+        "status": "open",
+        "detail": "Debt section is necessarily denser; compact grouping could improve pace if rendered review finds it tiring, while retaining essential qualifications."
+      }
+    ]
   }
 ]

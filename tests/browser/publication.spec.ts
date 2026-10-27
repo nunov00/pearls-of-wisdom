@@ -40,11 +40,11 @@ test('search, category, empty state and reset agree with visible articles', asyn
   await expect(page.locator('#no-results')).toBeVisible();
   await page.getByLabel('Search the library').fill('');
   await expect(cards).toHaveCount(1);
-  await expect(cards).toContainText('financial breathing room');
+  await expect(cards).toContainText('Give your money more breathing room');
   await page.getByRole('combobox', {name: /^Category/}).selectOption('');
   await page.getByRole('combobox', {name: /^Order/}).selectOption('title');
   await expect(cards).toHaveCount(3);
-  await expect(cards.first()).toContainText('Remember more of what you study');
+  await expect(cards.first()).toContainText('Give your money more breathing room');
   await expect(page.locator('#no-results')).toBeHidden();
 });
 

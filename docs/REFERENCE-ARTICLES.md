@@ -6,7 +6,7 @@ Owner direction, 27 October 2026: refine two more pilots after exercise, startin
 | --- | --- | --- |
 | Exercise foundations | Established benchmark from the Owner's iterative design review | Three clear illustrated ideas; inviting expansion; practical targets and contextual precautions beside the detailed advice; linked references. |
 | Remember more of what you study | Candidate — awaiting Owner review of this revision | A connected routine, with recall followed by correction and a later attempt; one worked example carried through the guide; illustrations that distinguish the three actions; honest limits on timing and overlap. |
-| Financial breathing room | Next pilot — refinement not started | Planned test of clear priorities and sensitive qualifications within the same reading structure. |
+| Financial breathing room | Candidate — manual Codex/Claude PR review cycles in progress | Three illustrated ideas; a repair-bill example; essential debt priorities preserved in the overview; practical steps and checked support routes in the expanded guide. |
 
 ## Using the examples
 
@@ -44,3 +44,6 @@ Reader scope clarification, 27 October 2026: these references demonstrate articl
 
 
 Quality target, 27 October 2026: every pilot and future article aims for at least 9/10 under EDITORIAL.md. Reference candidates need a justified whole-article review and recorded Owner acceptance before being marked accepted. Existing informal scores do not silently change candidate status or certify the unrefined finance article.
+
+
+Finance pilot, 27 October 2026: the revision is being evaluated in a held PR under [the manual cycle protocol](pilots/finance-review-cycles.md). It is not yet an accepted reference. Review scores and exact commits belong on that PR; no scheduled writer/reviewer handoff is enabled.
