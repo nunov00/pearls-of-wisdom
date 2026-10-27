@@ -35,7 +35,7 @@ Before considering an article ready, inspect the rendered page on a phone and de
 - Give expansion one clear primary control with a concrete benefit, currently “See how to start”. Keep Share secondary. Opening, closing, reference links and returning to the overview must work with keyboard input and without JavaScript.
 - Balance title lines, keep navigation tidy, and check the expanded guide for overflow. Keep small numbered references attached to the preceding word without changing line spacing, and retain usable reference links and backlinks.
 
-Record what was actually checked and unresolved findings. Fix confusing reading order, unreadable text and broken controls before publication; visual polish alone is not evidence of factual quality. These are editorial acceptance criteria, not a promise that every article will earn a particular score. Existing source verification, independent review, exact-content validation and publication safeguards still apply.
+Record what was actually checked and unresolved findings. Fix confusing reading order, unreadable text and broken controls before publication; visual polish alone is not evidence of factual quality. These criteria underpin the 9+ quality target below; a score must be justified by the actual article and checks performed. Existing source verification, independent review, exact-content validation and publication safeguards still apply.
 
 ## Reference articles
 
@@ -52,3 +52,19 @@ Owner clarification, 27 October 2026: Pearls of Wisdom is for mature teenagers t
 Distinguish who reads an article from who its advice applies to. Exercise guidance based on recommendations for adults aged 65+ may be read by younger relatives or friends helping an older person. Retain the exact applicability and evidence limits of that guidance without assuming the reader is 65+. The current article audience field describes applicability; it is not a restriction on readership. Adult-scoped advice is not automatically advice for teenagers.
 
 Write accessible, respectful language across ages. Use a natural range of ages in illustrations across publications; the pictured person's age need not match every reader. Readable typography benefits everyone. Reviewer handoffs must carry this distinction explicitly. Named sections provide structure in the expanded guide; omit decorative 01–03 labels. Keep numbered source references and their links.
+
+
+## Quality target: 9/10 or higher
+
+Owner direction, 27 October 2026: “The target for all should be 9+, so let’s aim for that.” Apply this target to every new article, meaningful revision and reference pilot. Assess the whole article, including both the opening and expanded guide. A strong opening alone does not establish a 9+ result.
+
+The author self-reviews, then a separate reviewer records an overall score out of ten with concise reasons, remaining weaknesses and the checks actually performed. In the review report or PR, address:
+
+- Accuracy and evidence: material claims match checked sources, with honest scope, applicability and uncertainty.
+- Clarity and usefulness: plain language, three clear ideas, practical first steps and relevant examples for the broad readership, including people helping others.
+- Reading experience: an inviting brief opening and an expanded guide that earns the reader's time, with no unnecessary repetition or research jargon in the main prose.
+- Presentation and access: coherent illustrations, readable typography and contrast, phone/desktop layout, usable controls and references in both reading layers.
+
+A 9 means strong across these areas, with only minor polish remaining. Below 9, identify concrete improvements, revise and re-review within the existing correction-round limit; defer work that still falls short rather than lower the target. Do not round 8.5 up to 9, inflate scores after cosmetic edits or average away a significant weakness. Ratings are reasoned editorial judgements, not scientific measurements or a guarantee of reader response.
+
+Accuracy, safety, applicability, readability and functional blockers must be resolved regardless of the overall score. The target supplements existing independent source/content review, exact-byte release validation and publication checks. It is a manual editorial criterion recorded in review notes; no automated score gate or new schema field is claimed. Earlier informal chat scores do not retroactively certify every existing article or constitute Owner acceptance of a reference candidate. Apply the target at its next review; finance remains the next pilot.

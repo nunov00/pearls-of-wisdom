@@ -41,3 +41,6 @@ All six briefs use natural anatomy, generous margins and genuine transparent bac
 
 
 Reader scope clarification, 27 October 2026: these references demonstrate articles for a broad readership, including people helping someone else. The exercise pilot's 65+ guidance concerns the person doing the activity, not the age of its reader. The study illustration is appropriate for the site's mixed-age readership; no older replacement or further image enlargement is required on that basis. Expanded sections use their names without decorative numbers; source references remain numbered.
+
+
+Quality target, 27 October 2026: every pilot and future article aims for at least 9/10 under EDITORIAL.md. Reference candidates need a justified whole-article review and recorded Owner acceptance before being marked accepted. Existing informal scores do not silently change candidate status or certify the unrefined finance article.
