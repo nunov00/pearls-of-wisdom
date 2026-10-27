@@ -34,7 +34,7 @@ test('search, category, empty state and reset agree with visible articles', asyn
   await expect(cards).toHaveCount(3);
   await page.getByLabel('Search the library').fill('study');
   await expect(cards).toHaveCount(1);
-  await expect(cards).toContainText('three-step routine');
+  await expect(cards).toContainText('Remember more of what you study');
   await page.getByRole('combobox', {name: /^Category/}).selectOption('Finance');
   await expect(cards).toHaveCount(0);
   await expect(page.locator('#no-results')).toBeVisible();
@@ -44,7 +44,7 @@ test('search, category, empty state and reset agree with visible articles', asyn
   await page.getByRole('combobox', {name: /^Category/}).selectOption('');
   await page.getByRole('combobox', {name: /^Order/}).selectOption('title');
   await expect(cards).toHaveCount(3);
-  await expect(cards.first()).toContainText('three-step routine');
+  await expect(cards.first()).toContainText('Remember more of what you study');
   await expect(page.locator('#no-results')).toBeHidden();
 });
 
@@ -146,4 +146,19 @@ test('citations stay with the preceding word at phone and desktop widths', async
       expect(attached).toBe(true);
     }
   }
+});
+
+
+test('study pilot connects the illustrated ideas to a usable routine', async ({page}, testInfo) => {
+  await page.goto('/articles/remember-what-you-study/');
+  await expect(page.locator('.full-guide')).not.toHaveAttribute('open', '');
+  await expect(page.locator('.idea-overview h2')).toHaveText(['Try from memory', 'Check what you missed', 'Come back later']);
+  await expect(page.locator('.idea-overview img')).toHaveCount(3);
+  expect(await page.locator('.idea-overview img').evaluateAll(images => images.every(image => (image as HTMLImageElement).complete && (image as HTMLImageElement).naturalWidth > 0))).toBe(true);
+  await page.locator('.full-guide>summary').click();
+  await expect(page.locator('.recommendation h2')).toHaveText(['Try from memory', 'Check what you missed', 'Come back later']);
+  await expect(page.locator('#retrieve')).toContainText('evaporation');
+  await expect(page.locator('#correct')).toContainText('liquid changes into a gas');
+  await expect(page.locator('#space')).toContainText('not an optimal formula');
+  await page.screenshot({path: testInfo.outputPath('study-expanded.png'), fullPage: true});
 });

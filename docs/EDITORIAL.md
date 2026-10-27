@@ -36,3 +36,7 @@ Before considering an article ready, inspect the rendered page on a phone and de
 - Balance title lines, keep navigation tidy, and check the expanded guide for overflow. Keep small numbered references attached to the preceding word without changing line spacing, and retain usable reference links and backlinks.
 
 Record what was actually checked and unresolved findings. Fix confusing reading order, unreadable text and broken controls before publication; visual polish alone is not evidence of factual quality. These are editorial acceptance criteria, not a promise that every article will earn a particular score. Existing source verification, independent review, exact-content validation and publication safeguards still apply.
+
+## Reference articles
+
+Use the accepted examples and status notes in [REFERENCE-ARTICLES.md](REFERENCE-ARTICLES.md) alongside this standard. The exercise article is the current design benchmark; the study revision is a candidate for Owner review, and finance is the next pilot. Candidates become reference examples only after acceptance is recorded. Borrow the clarity, useful detail and quality checks; adapt the presentation to the subject and verify its own evidence.

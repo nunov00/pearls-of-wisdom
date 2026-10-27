@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "id": "002-study-memory",
   "slug": "remember-what-you-study",
-  "title": "A three-step routine for remembering what you study",
-  "description": "A short study routine built around recall, spacing and checking your mistakes.",
+  "title": "Remember more of what you study",
+  "description": "Three connected habits: try from memory, check what you missed and come back later.",
   "category": "Learning",
   "keywords": [
     "memory",
@@ -17,10 +17,10 @@
   "goal": "Remember studied information for later use",
   "audience": "Adult learners studying factual or conceptual material.",
   "assumptions": "Not a complete method for learning every practical skill.",
-  "introduction": "A page can look familiar while the answer disappears the moment you close the book. These three connected steps combine recall, correction and spaced practice in one study routine.",
+  "introduction": "It makes sense while the page is open. Then someone asks you to explain it, and the answer has gone. Try changing what you do after reading: recall a little, check it, and return to it later. Here is one simple way to begin.",
   "publishedAt": "2026-10-19",
-  "revisedAt": null,
-  "lastEvidenceCheckedAt": "2026-10-19",
+  "revisedAt": "2026-10-27",
+  "lastEvidenceCheckedAt": "2026-10-27",
   "selection": {
     "basis": "foundations",
     "rationale": "Retrieval and spacing have broad support; feedback is an explicit safeguard within that routine. Its partial overlap is disclosed instead of pretending complete independence.",
@@ -38,42 +38,66 @@
   "recommendations": [
     {
       "id": "retrieve",
-      "heading": "Try to recall before you look",
-      "whatToDo": "Close your notes and answer a question, explain an idea or write what you remember. Then reopen the material.",
+      "heading": "Try from memory",
+      "whatToDo": "After learning a small section, close your notes. Answer a question, explain the idea aloud or write what you remember. Then check your attempt.",
       "whyItMatters": "Practice testing can improve later recall; it is a learning activity as well as a check.",
       "consequence": "Relying only on rereading misses the opportunity to practise retrieving the answer.",
-      "action": "Turn one heading from your notes into a question and answer it with the page closed.",
-      "details": "Keep questions manageable. If you cannot recall anything, use a cue or review a smaller section, then try again.",
+      "action": "Pick one idea from your next reading session. Turn it into a question and try answering with the page closed.",
+      "details": "For example, after reading about evaporation, ask: “What happens to a liquid when it evaporates?” Give your own answer before looking. This is practice, not a judgement of your ability. If you draw a blank, use a cue or study a smaller part, then try again.",
       "claimIds": [
         "retrieve-benefit",
         "retrieve-consequence"
-      ]
-    },
-    {
-      "id": "space",
-      "heading": "Return on another day",
-      "whatToDo": "Spread practice across separate sessions instead of putting all your revision into one long sitting.",
-      "whyItMatters": "Distributed practice generally supports longer-term retention better than cramming the same material together.",
-      "consequence": "Cramming can help in the short term, but leaves less opportunity for durable retention.",
-      "action": "Book a short return to the same material tomorrow and another later in the week.",
-      "details": "These timings are a practical starting point, not a scientifically optimal schedule. Useful gaps depend on the material and how long you need to remember it.",
-      "claimIds": [
-        "space-benefit",
-        "space-consequence"
-      ]
+      ],
+      "overview": {
+        "heading": "Try from memory",
+        "description": "Find out what you can bring back without looking.",
+        "image": {
+          "src": "/figures/study-recall.webp",
+          "alt": "A learner writes in a notebook with her reference book closed."
+        }
+      }
     },
     {
       "id": "correct",
-      "heading": "Check the answer and repair the gap",
-      "whatToDo": "Compare your attempt with a reliable answer. Correct what was missing or wrong before practising again.",
+      "heading": "Check what you missed",
+      "whatToDo": "Compare your attempt with a reliable source or worked answer. Correct missing or mistaken parts before you practise again.",
       "whyItMatters": "Corrective feedback makes retrieval practice more useful when your first answer is wrong.",
       "consequence": "An unchecked answer gives you no reliable way to identify what still needs work.",
-      "action": "Mark one mistake, write the correction and make it a question for your next session.",
-      "details": "Feedback is part of an effective retrieval routine, rather than a wholly independent memory technique. These three actions describe a routine, not three equally sized benefits.",
+      "action": "Choose one gap in your answer. Write the correction in your own words, then keep the question for another attempt.",
+      "details": "In the evaporation example, “the liquid disappears” misses the change of state. A fuller answer is that the liquid changes into a gas. Check the explanation in your learning material rather than judging by how familiar your answer sounds. Feedback is part of recall practice, not a separate technique with an equal-sized benefit.",
       "claimIds": [
         "correct-benefit",
         "correct-consequence"
-      ]
+      ],
+      "overview": {
+        "heading": "Check what you missed",
+        "description": "Turn a wrong or incomplete answer into useful practice.",
+        "image": {
+          "src": "/figures/study-check.webp",
+          "alt": "The learner compares an open reference book with her notebook and adds a correction."
+        }
+      }
+    },
+    {
+      "id": "space",
+      "heading": "Come back later",
+      "whatToDo": "Return to the same material in separate sessions. Try answering from memory again, then check, instead of doing all your practice in one sitting.",
+      "whyItMatters": "Distributed practice generally supports longer-term retention better than cramming the same material together.",
+      "consequence": "Cramming can help in the short term, but leaves less opportunity for durable retention.",
+      "action": "Put the same question in your diary for tomorrow and again later in the week. Start those sessions with the page closed.",
+      "details": "Use your evaporation question again and check whether your answer now includes the change into a gas. Tomorrow and later in the week are practical starting points, not an optimal formula. Useful gaps depend on the material and how long you need to remember it. If you have forgotten too much, shorten the gap or review a smaller part.",
+      "claimIds": [
+        "space-benefit",
+        "space-consequence"
+      ],
+      "overview": {
+        "heading": "Come back later",
+        "description": "Give yourself another chance to recall it on a different day.",
+        "image": {
+          "src": "/figures/study-return.webp",
+          "alt": "The learner returns to her study desk, where a small calendar stands."
+        }
+      }
     }
   ],
   "claims": [
@@ -93,13 +117,13 @@
       "id": "retrieve-consequence",
       "text": "Relying only on rereading misses the opportunity to practise retrieving the answer.",
       "kind": "consequence",
-      "basis": "causal",
+      "basis": "editorial",
       "sourceIds": [
         "aps",
         "scientists"
       ],
       "strength": "moderate",
-      "strengthRationale": "The accessible research summary supports this practice; effects and generalisation vary by task."
+      "strengthRationale": "A practical inference about the opportunity lost when recall or answer-checking is omitted, informed by the cited guidance; not a separately measured effect."
     },
     {
       "id": "space-benefit",
@@ -140,49 +164,55 @@
       "id": "correct-consequence",
       "text": "An unchecked answer gives you no reliable way to identify what still needs work.",
       "kind": "consequence",
-      "basis": "causal",
+      "basis": "editorial",
       "sourceIds": [
         "scientists"
       ],
       "strength": "moderate",
-      "strengthRationale": "The accessible research summary supports this practice; effects and generalisation vary by task."
+      "strengthRationale": "A practical inference about the opportunity lost when recall or answer-checking is omitted, informed by the cited guidance; not a separately measured effect."
     }
   ],
   "sources": [
     {
       "id": "aps",
-      "title": "Improving Students’ Learning With Effective Learning Techniques",
+      "title": "Improving Students’ Learning With Effective Learning Techniques: Promising Directions From Cognitive and Educational Psychology",
       "organisation": "Association for Psychological Science",
       "url": "https://www.psychologicalscience.org/publications/journals/pspi/learning-techniques.html",
-      "checkedAt": "2026-10-19",
+      "checkedAt": "2026-10-27",
       "access": "checked",
-      "section": "Publisher summary, paragraphs on technique ratings",
+      "section": "Publisher summary: technique ratings and practice testing/distributed practice across ages and tasks",
       "support": "Practice testing and distributed practice received high utility assessments in the reviewed research.",
-      "limitations": "Publisher summary checked. Full paper DOI fetch failed; no claim of full-text verification."
+      "limitations": "Publisher summary checked. Linked full-text PDF was inaccessible; no claim of full-paper verification.",
+      "publicationYear": 2013
     },
     {
       "id": "scientists",
-      "title": "Study strategies FAQ",
+      "title": "Our Answers to Frequently Asked Questions",
       "organisation": "The Learning Scientists",
       "url": "https://www.learningscientists.org/faq",
-      "checkedAt": "2026-10-19",
+      "checkedAt": "2026-10-27",
       "access": "checked",
-      "section": "Spacing, retrieval formats and feedback after errors",
+      "section": "Combining strategies; optimal lag; retrieval formats; feedback after incorrect answers; scaffolding when recall is too difficult",
       "support": "Practical application, dependence on spacing intervals and corrective feedback.",
       "limitations": "Researcher-authored guidance checked, not every linked underlying paper."
     }
   ],
   "limitations": "The evidence varies by task and learner. Recall practice cannot replace learning the material in the first place, and remembering facts is not the same as mastering a skill. These are complementary parts of a routine, not a measured ranking.",
-  "revisionHistory": [],
+  "revisionHistory": [
+    {
+      "date": "2026-10-27",
+      "reason": "Study pilot: illustrated overview, clearer recall-check-return sequence, connected example and refreshed source checks; original publication date retained."
+    }
+  ],
   "relatedIds": [
     "001-exercise-after-65"
   ],
   "summary": {
-    "title": "A three-step routine for remembering what you study",
+    "title": "Remember more of what you study",
     "recommendationIds": [
       "retrieve",
-      "space",
-      "correct"
+      "correct",
+      "space"
     ]
   }
 }
