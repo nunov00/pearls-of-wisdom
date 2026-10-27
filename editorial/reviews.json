@@ -112,5 +112,27 @@
         "detail": "Missed-practice and unchecked-answer consequences are now labelled editorial inferences rather than separately measured causal effects."
       }
     ]
+  },
+  {
+    "id": "fresh-direction-001-20261027",
+    "articleId": "001-exercise-after-65",
+    "author": "Codex /root (OpenAI)",
+    "reviewer": "Codex /root/fresh_review (OpenAI)",
+    "reviewedCommit": "44c9b2322535738a7975d74321b3793ac9d34ff0",
+    "articleSha256": "91a07be2e168ea638325661e4af1de082ca2675a8d49500f208a025b9433898e",
+    "correctionRounds": 0,
+    "decision": "ready",
+    "findings": []
+  },
+  {
+    "id": "fresh-direction-002-20261027",
+    "articleId": "002-study-memory",
+    "author": "Codex /root (OpenAI)",
+    "reviewer": "Codex /root/fresh_review (OpenAI)",
+    "reviewedCommit": "44c9b2322535738a7975d74321b3793ac9d34ff0",
+    "articleSha256": "7c0ff00b32a91f749994d2732f1d5c9babac274f5df4eb37dd8289d606565a06",
+    "correctionRounds": 0,
+    "decision": "ready",
+    "findings": []
   }
 ]

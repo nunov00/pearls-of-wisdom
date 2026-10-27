@@ -157,8 +157,10 @@ test('study pilot connects the illustrated ideas to a usable routine', async ({p
   expect(await page.locator('.idea-overview img').evaluateAll(images => images.every(image => (image as HTMLImageElement).complete && (image as HTMLImageElement).naturalWidth > 0))).toBe(true);
   await page.locator('.full-guide>summary').click();
   await expect(page.locator('.recommendation h2')).toHaveText(['Try from memory', 'Check what you missed', 'Come back later']);
-  await expect(page.locator('#retrieve')).toContainText('evaporation');
-  await expect(page.locator('#correct')).toContainText('liquid changes into a gas');
+  await expect(page.locator('#retrieve')).toContainText('Spanish');
+  await expect(page.locator('#correct')).toContainText('gracias');
   await expect(page.locator('#space')).toContainText('not an optimal formula');
+  expect(await page.locator('.site-header .wordmark small').evaluate(e => parseFloat(getComputedStyle(e).fontSize))).toBeGreaterThanOrEqual(15);
+  expect(await page.locator('.article-card .card-bottom').first().evaluate(e => parseFloat(getComputedStyle(e).fontSize))).toBeGreaterThanOrEqual(15);
   await page.screenshot({path: testInfo.outputPath('study-expanded.png'), fullPage: true});
 });
