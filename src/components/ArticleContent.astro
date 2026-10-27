@@ -17,12 +17,11 @@ const recommendationSources=(claimIds:string[])=>[...new Set(a.claims.filter(c=>
       <div><h2>{r.overview?.heading??r.heading}</h2><p>{r.overview?.description??r.whyItMatters}</p></div>
     </li>)}
   </ol>
-  <p class="overview-scope">{a.audience}</p>
-  {a.recommendations.filter(r=>r.safety).map(r=><p class="overview-safety">{r.safety}</p>)}
   <details class="full-guide" id="full-guide">
     <summary><span class="when-closed">Read the full guide <span aria-hidden="true">↓</span></span><span class="when-open">Close the full guide <span aria-hidden="true">↑</span></span></summary>
     <div class="guide-body">
       <p class="article-intro">{a.introduction}</p>
+      <p class="guide-scope">{a.audience}</p>
       <p class="article-meta">{a.publishedAt?<time datetime={a.publishedAt}>Published {formatDate(a.publishedAt)}</time>:<span>Unpublished editorial draft</span>}{a.revisedAt&&<span> · Revised <time datetime={a.revisedAt}>{formatDate(a.revisedAt)}</time></span>}</p>
 
       {a.figure&&<figure class="article-figure"><img src={a.figure.src} alt={a.figure.alt} loading="lazy"/><figcaption>{a.figure.caption}</figcaption><details><summary>Figure explanation</summary><p>{a.figure.description}</p></details></figure>}
