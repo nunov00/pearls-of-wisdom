@@ -7,7 +7,7 @@ Owner direction, 28 October 2026: work on idea generation and review before form
 - `editorial/queue.json` remains the canonical idea pool: stable IDs, new work and revisions, existing article links, priority and append-only history.
 - Dated files in `docs/ideas/` hold the longer candidate briefs, source-screen limits, author assessments and review outcomes. The queue points to them.
 - Queue priority is provisional merit order, not approval to write or publish. Existing linked articles remain separate from uncommissioned ideas; a stale queue label is not proof of current publication status.
-- The first [shortlist](ideas/2026-10-28-shortlist.md) has eight proposed candidates and four retained alternatives. Claude's initial review is consolidated there; amendments await focused re-review.
+- The first [shortlist](ideas/2026-10-28-shortlist.md) has eight proposed candidates and four retained alternatives. Claude's initial review and focused re-review are consolidated there, with remaining research gaps and dispositions.
 
 Keep the existing queue field layout. This pilot adds no executable schema, score gate, scheduler, runtime dependency or cross-repository link. The current validator checks basic queue fields, history and unique IDs/priorities; it does not enforce this editorial process.
 
