@@ -74,3 +74,5 @@ Owner confirmed on 19 October 2026: “Lightweight confirmed for now”. Retain 
 ## One-off weekly trial decision — 28 October 2026
 
 Owner decision: “Ok, proceed”, following accepted PR #25 plan and proposed one-off activation. Authorises only the dated preflights and preparation/review tasks in docs/pilots/2026-11-06-activation.md, tracked in issue #26. This narrow decision supersedes the earlier scheduling prohibition only within that trial. Recurring tasks, trial extensions, costs and unattended publication remain unauthorised. Lightweight/Pilot remains unchanged. Both scheduled preflights must be verified before author/reviewer stage tasks are created; missing slots pause rather than roll forward. Configuration records authorisation, not proof tasks exist.
+
+Preflight evidence clarification: each scheduled preflight may append exactly one keyed results comment to issue #26 and re-fetch it, testing the required comment path. This is the sole write exception to the otherwise repository-read-only preflight. The Manager verifies those retrievable results before marking the both-provider gate passed. No repository or publication write is authorised by preflight.
