@@ -22,7 +22,7 @@ Timezone: Europe/Zurich, including daylight-saving changes. Morning/afternoon ar
 | Friday morning | Claude | Fresh-session final review, informed by Wednesday's findings and score, of the actual current head, affected evidence, presentation and implications. Record score and readiness; never merge. |
 | Friday after review | Manager, manual | Reconcile both assessments, current head/base, dates, hashes and CI; release only through existing guarded process and verify live deployment. |
 
-If Monday's topic review is missing or not Develop by Tuesday, pause: accept that this trial may miss its publication week. Do not draft just because Tuesday arrived. A usage-limit failure is a missing review, not consent. The Manager must arrange an explicit replacement invocation after reconciling the checkpoint; no hidden automatic catch-up. If Thursday changes need another round, Friday is not an automatic publication deadline. One active article carries over, with a revised target date; do not start a duplicate next Monday.
+If Monday's topic review is missing or not Develop by Tuesday, pause: accept that this trial may miss its publication week. Do not draft just because Tuesday arrived. A usage-limit failure is a missing review, not consent. The Manager prepares an explicit replacement request after reconciling the checkpoint; the Owner then starts Claude as specified below. There is no hidden automatic catch-up. If Thursday changes need another round, Friday is not an automatic publication deadline. One active article carries over, with a revised target date; do not start a duplicate next Monday.
 
 ## Durable checkpoint
 
@@ -47,12 +47,22 @@ Missing material evidence, review, tool access or required checks pauses the run
 
 ## Exact inputs, duplicate protection and drift
 
-Each Manager-issued stage request names runId, stage, attempt, input and prerequisite evidence in the tracking issue. For topic, input is the immutable brief commit SHA or brief comment ID; author ratings are in a separate comment, opened only after initial judgement. For article/final, input is the full PR head SHA plus article path. The Manager assigns attempt 1 initially and increments it only after explicitly reconciling a pause or drift and recording changed prerequisites.
+Each Manager-issued stage request names runId, stage, attempt, input and prerequisite evidence in the tracking issue. For topic, prefer the brief file at its full Git commit SHA. If using a GitHub comment, input is comment ID plus SHA-256 of its exact UTF-8 body; a comment ID alone is not immutable. Read and verify that body hash at the start and end; author ratings are in a separate comment, opened only after initial judgement. For article/final, input is the full PR head SHA plus article path. The Manager assigns attempt 1 initially and increments it only after explicitly reconciling a pause or drift and recording changed prerequisites.
+
+If no Manager-issued request exists for this task's stage, post nothing on GitHub; report the missing request to the Owner in the task's run summary/notification. Do not invent an attempt or act on an older cycle.
+
+For the scheduled task's run and stage, select the highest-numbered Manager-issued attempt. Act only if it has no Claude comment with that exact key. If it already has a comment, stop; never fall back to an older unanswered attempt or resurrect a superseded input. Duplicate/ambiguous requests pause without GitHub posting and report the blocker in the run summary.
 
 Each Claude review comment begins:
 `Claude <topic|article|final> review · run <runId> · input <immutable input> · attempt <N>`
 
-Before reviewing, search all issue and PR comments for that exact key. If one exists, stop without reposting, including if its outcome was Paused. A later permitted retry needs a new Manager-issued attempt. A new head is a new input. This avoids both duplicate comments and permanently trapping a recovered run behind an old pause marker.
+Before reviewing, search all issue and PR comments for that exact key. If one exists, stop without reposting, including if its outcome was Paused. A later permitted retry needs a new Manager-issued attempt. A new head is a new input. This prevents duplicate comments while allowing a recovered run to use a new attempt. It does not cause that replacement attempt to execute.
+
+### Replacement execution
+
+ChatGPT cannot launch Claude from this session. The three trial review tasks are one-off; they do not retry themselves. After a pause, missing request, usage-limit miss, head drift or changed release date, the Manager reconciles the issue and posts a new attempt with exact input/prerequisites, then gives the Owner a paste-ready prompt naming that issue, run, stage, attempt and input.
+
+The Owner asks Claude directly to execute that replacement request in a fresh session under these same read/check/comment-only rules. No additional scheduled task, paid API or assumed on-demand scheduler capability is required. Until the Owner starts it and a genuine review is posted, the run stays paused. Record each such handoff as a manual intervention; if no replacement occurs, defer the week. A new invocation must revalidate policy and select the highest attempt rather than blindly follow the pasted identifiers.
 
 Post one comment per key with Outcome, checked commit/input, actual checks, findings, source access, score exposure, and article SHA-256 where applicable. Missing prerequisites produce Paused, not a passing assessment. Reviews do not edit the tracking summary. The Manager reconciles a lost-comment response before authorising another attempt.
 
@@ -62,9 +72,9 @@ Re-read the requested input and current PR head before posting. If they moved, p
 
 Thursday sets the new article's publishedAt to the target Friday before its final content review. A future draft date is permissible in the article schema; do not add a future-dated publication record or attempt a release build selecting it before that date. Use the editorial preview for layout. Existing articles' original dates remain unchanged.
 
-Friday's reviewer hashes the exact article file bytes at the reviewed immutable commit and records the full commit and SHA-256. The Manager copies the actual review identity, decision, hash, commit, correction count and findings into the release records; it never creates a review it did not receive.
+Article and final reviewers hash the exact article file bytes at the reviewed immutable commit and record the full commit and SHA-256. They also resolve every referenced illustration (overview images and any figure), record its repository path and SHA-256 of the raw file bytes, and flag missing or unresolved assets. Deduplicate repeated paths. This asset manifest supplements articleSha256; it does not change the release-record schema. The Manager copies the actual review identity, decision, hash, commit, correction count and findings into the release records; it never creates a review it did not receive.
 
-A later record-only commit changes the PR head. Before merging, the manual Manager performs and records final integration review of that actual head: compare article bytes/hash with the reviewed commit, inspect the record-only diff and base changes, and require green checks plus the release build. This integration check is not falsely attributed to Claude. Any substantive article/asset change goes back to the separate reviewer.
+A later record-only commit changes the PR head. Before merging, the manual Manager performs and records final integration review of that actual head: mechanically compare article bytes/hash and every referenced image path/hash against the reviewer manifest, inspect the record-only diff and base changes, and require green checks plus the release build. This integration check is not falsely attributed to Claude. Any substantive article/asset change goes back to the separate reviewer.
 
 On Friday, publishedAt must equal the intended actual first-release date, match publication records, and not be in the future. If release slips to another calendar day, update the first-release date and obtain renewed separate review and hash validation before release. No implicit date-only waiver or backdating. Preserve dates of already published articles on revision.
 
@@ -74,7 +84,7 @@ A 403/paywall is not verifiable by this reviewer, not proof of a broken source. 
 
 Claude reported shared Pro usage limits and existing heavy work. Verify actual task windows in its environment and avoid overlap; dates/times in the first review were proposals, not configured schedules. Missing review by the next dependent author stage pauses the run. Record usage-limit misses, handoff failures and manual interventions in the outcome.
 
-Use the repository's Node 24 runtime for required checks; Claude's successful Node 22 smoke test is not proof of the required runtime. Scheduled checkout/access must pass a read-only preflight before trial activation. Do not run npm lifecycle scripts unnecessarily.
+Use the repository's Node 24 runtime for required checks. Claude's re-review verified Node v24.22.1 and the full npm run verify in its interactive environment. Use the reported working command: `npx -y -p node@24 -c 'npm ci --ignore-scripts && npm run verify'`. This command may fetch Node from npm; it does not install a model API or prove scheduled-environment availability. Scheduled checkout/access must pass a read-only preflight before trial activation. Do not run npm lifecycle scripts unnecessarily.
 
 Rendered QA is a local editorial preview build in Playwright Chromium at 320, 390 and 1440px, collapsed and expanded, with actual screenshot inspection. The preview banner is expected. This is not a release bundle, WebKit, real iPhone Safari or proof of complete accessibility. Missing required rendering/check access pauses readiness; record platform limits accurately.
 
@@ -100,5 +110,9 @@ Claude reviewed `de5318534600e71769d5bd25a0babee439da8398`: [review](https://git
 Decisions: retain the existing two-round topic limit separately from two article rounds; choose three one-off Claude tasks and accept a missed Monday rather than add a catch-up schedule; use Manager-issued attempts so a Paused marker does not prevent an explicit recovered retry; require renewed separate review after a changed release date; keep manual final integration and release distinct from Claude's content review. No publication safeguards are weakened.
 
 For re-review, read the exact amended head and compare with your I1–I5/M1–M7. Check the preview/release-date path against schema.ts and release-policy.mjs, marker/attempt behaviour for duplicate, paused and drifted inputs, missed-Monday handling, source-access limits, separate correction budgets, Manager-only summary edits, Node/runtime requirements and mandatory activation boundary. Rate the revised plan honestly and identify remaining blockers/important/minor issues. Do not schedule, edit, merge or publish.
+
+Claude's re-review of `868a66f9723504097f723fd12c9522624180dc2f` ([review](https://github.com/nunov00/pearls-of-wisdom/pull/25#issuecomment-6473971829)) rated the plan 8/10, confirmed the earlier findings resolved and verified full npm run verify under Node 24. Correction round 2 closes R1–R4: no-request notification behaviour, highest-attempt selection, explicit Owner-started replacements, hashed comment inputs, image manifests and the verified runtime command. The PR description is updated for R5.
+
+Focused re-review now targets R1–R5, especially whether the explicit Owner handoff removes the execution gap without inventing a capability. Verify no-request/duplicate/superseded attempts, mutable topic comments and image changes at integration. Score the actual amended head. No scheduling or activation.
 
 The final activation prompts must be self-contained copies of these stage rules, with actual issue/PR/run IDs, approved dates/windows and task identities. Do not use unexpanded COMMON placeholders. Prepare them after this re-review; the earlier review's prompts need the attempt-key, drift, date and source clarifications here. Existing scheduling remains disabled.
