@@ -9,3 +9,7 @@ Queue: `editorial/queue.json`. At least ten candidates with title, description, 
 Publication and review records are separate from article prose. A publication record has articleId, state (published or withdrawn), original publishedAt, reviewId and optional withdrawalReason. A review has id, articleId, author/reviewer execution identities, reviewedCommit, articleSha256, correctionRounds, decision and findings. Reviewers create truthful records only after performing the review; never paste invented values from an example. The code verifies structure, distinct declared identities, content integrity and significant findings. It cannot establish whether a purported reviewer actually performed the work; repository permissions and honest review remain necessary.
 
 No social distribution records are implemented. Summary data is ready for future caption/card generation without rewriting articles.
+
+## Idea queue trial — 28 October 2026
+
+The pool now contains 15 entries: three linked initial articles and 12 future ideas. See [IDEAS.md](IDEAS.md) and the [reviewed comparison](ideas/2026-10-28-shortlist.md) for the manual process, merit order and candidate dispositions. No schema or publication gate changes.

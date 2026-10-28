@@ -60,14 +60,14 @@
     ]
   },
   {
-    "id": "topic-04",
-    "title": "Three foundations for better sleep",
-    "description": "Distinguish everyday habits from persistent insomnia",
-    "category": "Wellbeing",
-    "usefulness": "Distinguish everyday habits from persistent insomnia",
+    "id": "topic-07",
+    "title": "Protect your main email account without locking yourself out",
+    "description": "Secure a main email account while keeping a workable recovery route.",
+    "category": "Everyday life",
+    "usefulness": "A concrete, bounded account-security task rather than a tour of every security feature.",
     "audienceInterest": "high",
     "practicalImpact": "high",
-    "preliminaryEvidence": "Guidelines expected",
+    "preliminaryEvidence": "Initial author screen, 2026-10-28: https://www.ncsc.gov.uk/passkeys. Official guidance supports investigating passkeys and password/2SV alternatives; it does not verify individual providers' recovery behaviour. See docs/ideas/2026-10-28-shortlist.md. Claude re-review completed on e008403; see the shortlist review log for checks and remaining research gaps.",
     "priority": 4,
     "type": "new",
     "status": "idea",
@@ -76,19 +76,87 @@
       {
         "date": "2026-10-19",
         "event": "Initial candidate; priority is an editorial estimate, not measured audience demand."
+      },
+      {
+        "date": "2026-10-28",
+        "event": "Proposed shortlist rank 1; author assessment only. Existing qualitative interest/impact estimates are not measured demand. Detailed scope, sources and gaps in docs/ideas/2026-10-28-shortlist.md; Claude review pending."
+      },
+      {
+        "date": "2026-10-28",
+        "event": "Retitled from 'Three foundations for safer online accounts'; previous description: 'Compare passkeys, MFA and unique passwords'. Scope refined to: 'Secure a main email account while keeping a workable recovery route.'."
+      },
+      {
+        "date": "2026-10-28",
+        "event": "Claude review consolidated: merit rank 1; Develop. Amended brief awaits re-review; no commission."
       }
     ]
   },
   {
-    "id": "topic-05",
-    "title": "Three ways to protect focused work",
-    "description": "Reduce interruptions and clarify tasks",
-    "category": "Productivity",
-    "usefulness": "Reduce interruptions and clarify tasks",
+    "id": "topic-15",
+    "title": "Keep leftovers useful, not forgotten",
+    "description": "Make a repeatable plan for cooling, storing and using cooked leftovers.",
+    "category": "Everyday life",
+    "usefulness": "A small household routine with a visible next action and less guesswork.",
+    "audienceInterest": "unassessed",
+    "practicalImpact": "unassessed",
+    "preliminaryEvidence": "Initial author screen, 2026-10-28: https://www.gov.uk/government/publications/how-to-chill-freeze-and-defrost-food-safely/how-to-chill-freeze-and-defrost-food-safely. FSA guidance covers chilling and freezing; it is labelled for England, Northern Ireland and Wales. International applicability and food-specific exceptions remain open. See docs/ideas/2026-10-28-shortlist.md. Claude re-review completed on e008403; see the shortlist review log for checks and remaining research gaps.",
+    "priority": 5,
+    "type": "new",
+    "status": "idea",
+    "articleId": null,
+    "history": [
+      {
+        "date": "2026-10-28",
+        "event": "New candidate proposed by Codex during manual idea-queue trial; not reader feedback or independent review."
+      },
+      {
+        "date": "2026-10-28",
+        "event": "Proposed shortlist rank 4; author assessment only. Existing qualitative interest/impact estimates are not measured demand. Detailed scope, sources and gaps in docs/ideas/2026-10-28-shortlist.md; Claude review pending."
+      },
+      {
+        "date": "2026-10-28",
+        "event": "Claude review consolidated: merit rank 2; Develop; check food-specific exceptions and Scottish guidance. Amended brief awaits re-review; no commission."
+      }
+    ]
+  },
+  {
+    "id": "topic-14",
+    "title": "Could you recover your photos if your phone disappeared?",
+    "description": "Check that valued personal files can actually be recovered after loss or deletion.",
+    "category": "Everyday life",
+    "usefulness": "A concrete recovery check rather than a promise that a cloud logo means everything is protected.",
+    "audienceInterest": "unassessed",
+    "practicalImpact": "unassessed",
+    "preliminaryEvidence": "Initial author screen, 2026-10-28: https://www.ncsc.gov.uk/collection/small-organisations-guide-to-cyber-security/backing-up-your-data. NCSC guidance discusses separate copies and checking restoration. It links to consumer backup/restore guides; their service-specific behaviour still needs verification. See docs/ideas/2026-10-28-shortlist.md. Claude re-review completed on e008403; see the shortlist review log for checks and remaining research gaps.",
+    "priority": 6,
+    "type": "new",
+    "status": "idea",
+    "articleId": null,
+    "history": [
+      {
+        "date": "2026-10-28",
+        "event": "New candidate proposed by Codex during manual idea-queue trial; not reader feedback or independent review."
+      },
+      {
+        "date": "2026-10-28",
+        "event": "Proposed shortlist rank 7; author assessment only. Existing qualitative interest/impact estimates are not measured demand. Detailed scope, sources and gaps in docs/ideas/2026-10-28-shortlist.md; Claude review pending."
+      },
+      {
+        "date": "2026-10-28",
+        "event": "Claude review consolidated: merit rank 3; Develop; verify consumer service behaviour. Amended brief awaits re-review; no commission."
+      }
+    ]
+  },
+  {
+    "id": "topic-04",
+    "title": "Make room for sleep without chasing a perfect night",
+    "description": "Identify manageable changes for occasional sleep difficulty and recognise when self-help is insufficient.",
+    "category": "Wellbeing",
+    "usefulness": "A realistic first experiment rather than a rigid optimisation checklist.",
     "audienceInterest": "high",
     "practicalImpact": "high",
-    "preliminaryEvidence": "Mixed evidence expected",
-    "priority": 5,
+    "preliminaryEvidence": "Initial author screen, 2026-10-28: https://www.nhs.uk/conditions/insomnia/. NHS guidance identifies everyday habits and possible underlying conditions. Research on treatments and competing foundations still needs checking. See docs/ideas/2026-10-28-shortlist.md. Claude re-review completed on e008403; see the shortlist review log for checks and remaining research gaps.",
+    "priority": 7,
     "type": "new",
     "status": "idea",
     "articleId": null,
@@ -96,6 +164,146 @@
       {
         "date": "2026-10-19",
         "event": "Initial candidate; priority is an editorial estimate, not measured audience demand."
+      },
+      {
+        "date": "2026-10-28",
+        "event": "Proposed shortlist rank 3; author assessment only. Existing qualitative interest/impact estimates are not measured demand. Detailed scope, sources and gaps in docs/ideas/2026-10-28-shortlist.md; Claude review pending."
+      },
+      {
+        "date": "2026-10-28",
+        "event": "Retitled from 'Three foundations for better sleep'; previous description: 'Distinguish everyday habits from persistent insomnia'. Scope refined to: 'Identify manageable changes for occasional sleep difficulty and recognise when self-help is insufficient.'."
+      },
+      {
+        "date": "2026-10-28",
+        "event": "Claude review consolidated: merit rank 4; Develop with narrowed scope. Amended brief awaits re-review; no commission."
+      }
+    ]
+  },
+  {
+    "id": "topic-13",
+    "title": "A daily routine that protects your teeth and gums",
+    "description": "Choose useful daily oral-care actions without buying an elaborate collection of products.",
+    "category": "Health",
+    "usefulness": "A familiar routine with specific decisions a reader can check today.",
+    "audienceInterest": "high",
+    "practicalImpact": "high",
+    "preliminaryEvidence": "Initial author screen, 2026-10-28: https://www.nhs.uk/live-well/healthy-teeth-and-gums/how-to-keep-your-teeth-clean/. Public guidance gives a practical starting point on fluoride and cleaning. It does not establish a comparative ranking of all candidate actions. See docs/ideas/2026-10-28-shortlist.md. Claude re-review completed on e008403; see the shortlist review log for checks and remaining research gaps.",
+    "priority": 8,
+    "type": "new",
+    "status": "idea",
+    "articleId": null,
+    "history": [
+      {
+        "date": "2026-10-19",
+        "event": "Added during launch preparation so ten future candidates remain after the first three articles publish; priority remains provisional."
+      },
+      {
+        "date": "2026-10-28",
+        "event": "Proposed shortlist rank 2; author assessment only. Existing qualitative interest/impact estimates are not measured demand. Detailed scope, sources and gaps in docs/ideas/2026-10-28-shortlist.md; Claude review pending."
+      },
+      {
+        "date": "2026-10-28",
+        "event": "Retitled from 'Three foundations for protecting your teeth and gums'; previous description: 'Compare fluoride, cleaning technique and professional prevention for adults.'. Scope refined to: 'Choose useful daily oral-care actions without buying an elaborate collection of products.'."
+      },
+      {
+        "date": "2026-10-28",
+        "event": "Claude review consolidated: merit rank 5; Revise hook around a useful misconception. Amended brief awaits re-review; no commission."
+      }
+    ]
+  },
+  {
+    "id": "topic-05",
+    "title": "Finish one important task in a day full of interruptions",
+    "description": "Create a realistic opportunity to progress one task despite interruptions.",
+    "category": "Productivity",
+    "usefulness": "A bounded experiment readers can judge against their actual responsibilities.",
+    "audienceInterest": "high",
+    "practicalImpact": "high",
+    "preliminaryEvidence": "Initial author screen, 2026-10-28: https://www.microsoft.com/en-us/research/publication/notifications-and-awareness-a-field-study-of-alert-usage-and-preferences/. A 2010 workplace field-study abstract reports differing responses to removing alerts. It is a caution against universal advice, not sufficient evidence for the proposed routine. See docs/ideas/2026-10-28-shortlist.md. Claude re-review completed on e008403; see the shortlist review log for checks and remaining research gaps.",
+    "priority": 9,
+    "type": "new",
+    "status": "idea",
+    "articleId": null,
+    "history": [
+      {
+        "date": "2026-10-19",
+        "event": "Initial candidate; priority is an editorial estimate, not measured audience demand."
+      },
+      {
+        "date": "2026-10-28",
+        "event": "Proposed shortlist rank 5; author assessment only. Existing qualitative interest/impact estimates are not measured demand. Detailed scope, sources and gaps in docs/ideas/2026-10-28-shortlist.md; Claude review pending."
+      },
+      {
+        "date": "2026-10-28",
+        "event": "Retitled from 'Three ways to protect focused work'; previous description: 'Reduce interruptions and clarify tasks'. Scope refined to: 'Create a realistic opportunity to progress one task despite interruptions.'."
+      },
+      {
+        "date": "2026-10-28",
+        "event": "Claude review consolidated: merit rank 6; Revise evidence before commissioning. Amended brief awaits re-review; no commission."
+      }
+    ]
+  },
+  {
+    "id": "topic-08",
+    "title": "Improve everyday meals with changes you can keep",
+    "description": "Find affordable, culturally adaptable food changes within an existing routine.",
+    "category": "Health",
+    "usefulness": "Examples based on ordinary food, time and budget rather than supplements or perfection.",
+    "audienceInterest": "high",
+    "practicalImpact": "high",
+    "preliminaryEvidence": "Initial author screen, 2026-10-28: https://www.who.int/news-room/fact-sheets/detail/healthy-diet. WHO population guidance provides a starting framework, with individual and cultural variation. The three most useful practical changes are not established by this screen. See docs/ideas/2026-10-28-shortlist.md. Claude re-review completed on e008403; see the shortlist review log for checks and remaining research gaps.",
+    "priority": 10,
+    "type": "new",
+    "status": "idea",
+    "articleId": null,
+    "history": [
+      {
+        "date": "2026-10-19",
+        "event": "Initial candidate; priority is an editorial estimate, not measured audience demand."
+      },
+      {
+        "date": "2026-10-28",
+        "event": "Proposed shortlist rank 8; author assessment only. Existing qualitative interest/impact estimates are not measured demand. Detailed scope, sources and gaps in docs/ideas/2026-10-28-shortlist.md; Claude review pending."
+      },
+      {
+        "date": "2026-10-28",
+        "event": "Retitled from 'Three foundations of a healthier everyday diet'; previous description: 'Make useful food substitutions'. Scope refined to: 'Find affordable, culturally adaptable food changes within an existing routine.'."
+      },
+      {
+        "date": "2026-10-28",
+        "event": "Claude review consolidated: merit rank 7; Park until a distinctive angle exists. Amended brief awaits re-review; no commission."
+      }
+    ]
+  },
+  {
+    "id": "topic-12",
+    "title": "Cut avoidable home energy use without making life harder",
+    "description": "Find low-cost changes relevant to a household's real energy uses.",
+    "category": "Everyday life",
+    "usefulness": "An adaptable decision guide rather than a list of UK cash-saving estimates.",
+    "audienceInterest": "medium",
+    "practicalImpact": "medium",
+    "preliminaryEvidence": "Initial author screen, 2026-10-28: https://energysavingtrust.org.uk/advice/draught-proofing/. Direct guidance distinguishes unwanted draughts from necessary ventilation. Other energy uses and cross-country economics need additional sources. See docs/ideas/2026-10-28-shortlist.md. Claude re-review completed on e008403; see the shortlist review log for checks and remaining research gaps.",
+    "priority": 11,
+    "type": "new",
+    "status": "idea",
+    "articleId": null,
+    "history": [
+      {
+        "date": "2026-10-19",
+        "event": "Initial candidate; priority is an editorial estimate, not measured audience demand."
+      },
+      {
+        "date": "2026-10-28",
+        "event": "Proposed shortlist rank 6; author assessment only. Existing qualitative interest/impact estimates are not measured demand. Detailed scope, sources and gaps in docs/ideas/2026-10-28-shortlist.md; Claude review pending."
+      },
+      {
+        "date": "2026-10-28",
+        "event": "Retitled from 'Three ways to reduce household energy waste'; previous description: 'Find useful low-cost changes'. Scope refined to: 'Find low-cost changes relevant to a household's real energy uses.'."
+      },
+      {
+        "date": "2026-10-28",
+        "event": "Claude review consolidated: merit rank 8; Park/revise scope and evidence. Amended brief awaits re-review; no commission."
       }
     ]
   },
@@ -108,7 +316,7 @@
     "audienceInterest": "high",
     "practicalImpact": "high",
     "preliminaryEvidence": "Reviews expected",
-    "priority": 6,
+    "priority": 12,
     "type": "new",
     "status": "idea",
     "articleId": null,
@@ -116,46 +324,10 @@
       {
         "date": "2026-10-19",
         "event": "Initial candidate; priority is an editorial estimate, not measured audience demand."
-      }
-    ]
-  },
-  {
-    "id": "topic-07",
-    "title": "Three foundations for safer online accounts",
-    "description": "Compare passkeys, MFA and unique passwords",
-    "category": "Everyday life",
-    "usefulness": "Compare passkeys, MFA and unique passwords",
-    "audienceInterest": "high",
-    "practicalImpact": "high",
-    "preliminaryEvidence": "Security guidance expected",
-    "priority": 7,
-    "type": "new",
-    "status": "idea",
-    "articleId": null,
-    "history": [
+      },
       {
-        "date": "2026-10-19",
-        "event": "Initial candidate; priority is an editorial estimate, not measured audience demand."
-      }
-    ]
-  },
-  {
-    "id": "topic-08",
-    "title": "Three foundations of a healthier everyday diet",
-    "description": "Make useful food substitutions",
-    "category": "Health",
-    "usefulness": "Make useful food substitutions",
-    "audienceInterest": "high",
-    "practicalImpact": "high",
-    "preliminaryEvidence": "Dietary guidance expected",
-    "priority": 8,
-    "type": "new",
-    "status": "idea",
-    "articleId": null,
-    "history": [
-      {
-        "date": "2026-10-19",
-        "event": "Initial candidate; priority is an editorial estimate, not measured audience demand."
+        "date": "2026-10-28",
+        "event": "Refine: everyday stress is too broad and overlaps sleep and focused-work ideas. Identify one decision, applicability and evidence route before shortlisting. Retained in the idea pool; no independent rejection."
       }
     ]
   },
@@ -168,7 +340,7 @@
     "audienceInterest": "high",
     "practicalImpact": "medium",
     "preliminaryEvidence": "Intervention studies expected",
-    "priority": 9,
+    "priority": 13,
     "type": "new",
     "status": "idea",
     "articleId": null,
@@ -176,6 +348,10 @@
       {
         "date": "2026-10-19",
         "event": "Initial candidate; priority is an editorial estimate, not measured audience demand."
+      },
+      {
+        "date": "2026-10-28",
+        "event": "Park for scope research: define safe everyday disagreement; distinguish conflict from coercion or abuse and check evidence before drafting. Retained in the idea pool; no independent rejection."
       }
     ]
   },
@@ -188,7 +364,7 @@
     "audienceInterest": "high",
     "practicalImpact": "medium",
     "preliminaryEvidence": "Education research expected",
-    "priority": 10,
+    "priority": 14,
     "type": "new",
     "status": "idea",
     "articleId": null,
@@ -196,6 +372,10 @@
       {
         "date": "2026-10-19",
         "event": "Initial candidate; priority is an editorial estimate, not measured audience demand."
+      },
+      {
+        "date": "2026-10-28",
+        "event": "Park for differentiation: compare with existing study-memory article, specify learner age and helpful parent role; avoid repackaging the same routine. Retained in the idea pool; no independent rejection."
       }
     ]
   },
@@ -208,7 +388,7 @@
     "audienceInterest": "high",
     "practicalImpact": "medium",
     "preliminaryEvidence": "Behaviour-change reviews expected",
-    "priority": 11,
+    "priority": 15,
     "type": "new",
     "status": "idea",
     "articleId": null,
@@ -216,42 +396,11 @@
       {
         "date": "2026-10-19",
         "event": "Initial candidate; priority is an editorial estimate, not measured audience demand."
-      }
-    ]
-  },
-  {
-    "id": "topic-12",
-    "title": "Three ways to reduce household energy waste",
-    "description": "Find useful low-cost changes",
-    "category": "Everyday life",
-    "usefulness": "Find useful low-cost changes",
-    "audienceInterest": "medium",
-    "practicalImpact": "medium",
-    "preliminaryEvidence": "Energy guidance expected",
-    "priority": 12,
-    "type": "new",
-    "status": "idea",
-    "articleId": null,
-    "history": [
+      },
       {
-        "date": "2026-10-19",
-        "event": "Initial candidate; priority is an editorial estimate, not measured audience demand."
+        "date": "2026-10-28",
+        "event": "Park for differentiation: distinguish adherence barriers from existing exercise foundations and check behavioural evidence; existing coverage does not force rejection. Retained in the idea pool; no independent rejection."
       }
     ]
-  },
-  {
-    "id": "topic-13",
-    "title": "Three foundations for protecting your teeth and gums",
-    "description": "Compare fluoride, cleaning technique and professional prevention for adults.",
-    "category": "Health",
-    "usefulness": "Common daily decisions with lasting consequences for oral health.",
-    "audienceInterest": "high",
-    "practicalImpact": "high",
-    "preliminaryEvidence": "Public dental and professional guidance expected; substantive source verification still required.",
-    "priority": 13,
-    "type": "new",
-    "status": "idea",
-    "articleId": null,
-    "history": [{"date":"2026-10-19","event":"Added during launch preparation so ten future candidates remain after the first three articles publish; priority remains provisional."}]
   }
 ]
