@@ -61,3 +61,7 @@ Idea readiness means worth developing. It does not approve advice, certify an ar
 ## Trial completion
 
 Use the first shortlist to test whether independent review changes hooks, exclusions or ordering in useful ways. Record accepted/revised/parked counts and the reason for selecting the first article. Refine this lightweight process from the actual results before considering automation. No changes to Five Minutes are part of this work.
+
+## Recorded pilot outcome
+
+The [28 October outcome](pilots/2026-10-28-idea-queue-outcome.md) records the completed queue trial, review evidence, dispositions, limits and handoff to automation design. The queue consolidation is complete; first commissioning and automated execution were not tested.
