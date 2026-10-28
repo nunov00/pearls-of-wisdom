@@ -1,5 +1,13 @@
 {
-  "enabled": false,
-  "mode": "manual-only",
-  "reason": "Owner instruction on 19 October 2026: do not schedule writer/reviewer tasks."
+  "enabled": true,
+  "mode": "one-off-trial",
+  "reason": "Owner: Ok, proceed (2026-10-28), bounded weekly preparation/review trial; manual publication only.",
+  "runId": "Pearls-2026-11-06",
+  "issue": 26,
+  "timezone": "Europe/Zurich",
+  "startsAt": "2026-10-30T08:13:00Z",
+  "endsAt": "2026-11-06T17:00:00Z",
+  "recurring": false,
+  "publication": "manual",
+  "preflightRequired": true
 }

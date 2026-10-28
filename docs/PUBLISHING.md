@@ -1,6 +1,6 @@
 # Manual publication workflow
 
-Recurring automation is disabled by Owner instruction. `editorial/automation.json` is a disabled-state record, not an executable scheduler. No scheduled workflow is present.
+Recurring automation remains disabled. The sole preparation/review exception is the bounded one-off trial in [the activation record](pilots/2026-11-06-activation.md), with verified preflights and manual publication. `editorial/automation.json` records that authorisation; it is not an executable scheduler or proof of installed tasks.
 
 1. Reconcile open work and choose one candidate from the queue/revision backlog. Never duplicate an existing article to revise it.
 2. Research competing recommendations, check sources, draft and self-edit. Update the same candidate branch and run validation. Keep content PRs from modifying workflow code, permissions or release safeguards.
