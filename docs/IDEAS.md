@@ -65,3 +65,7 @@ Use the first shortlist to test whether independent review changes hooks, exclus
 ## Recorded pilot outcome
 
 The [28 October outcome](pilots/2026-10-28-idea-queue-outcome.md) records the completed queue trial, review evidence, dispositions, limits and handoff to automation design. The queue consolidation is complete; first commissioning and automated execution were not tested.
+
+## Bounded scheduled preparation/review exception
+
+The manual-pilot history above remains unchanged. The Owner authorised one dated weekly trial on 28 October 2026; [the activation record](pilots/2026-11-06-activation.md) defines the sole scheduling exception, verified preflights and manual publication. No recurring idea generation or writing is authorised.

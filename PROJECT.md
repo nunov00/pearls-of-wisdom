@@ -12,7 +12,7 @@
 - **Deployment:** Cloudflare Git integration configured; Owner authorised public access on 19 October 2026. Release preparation and CI are complete; public origin confirmed as https://pearls-of-wisdom.vitoria-nuno.workers.dev. Dashboard activation and live deployment remain unverified.
 - **Material paths:** `.github/**`, `scripts/release-*`, `deploy/**`, `editorial/automation.json`
 - **Control overrides:** None
-- **Standing delegations:** None
+- **Standing delegations:** Bounded one-off preparation/review trial only; see docs/pilots/2026-11-06-activation.md. No unattended publication.
 
 Stage is one of PoC, Pilot or Production; profile is Lightweight, Standard or Strict (see `GOVERNANCE.md` → Profiles and controls). Keep the profile word first on its line: the approval check reads it. Material paths are backtick-quoted globs that always make a PR material. Control overrides are lasting changes to one control of the profile, for example: "Release approval: as in Strict (Owner, 2026-10-17, customer-facing launch)". An override does not change any check by itself; the same PR must make the matching CI or GitHub settings change (see `GOVERNANCE.md` → Profiles and controls). Temporary exemptions, such as no approvals for one feature, are review waivers (GitHub issues labelled `review-waiver`), not entries here.
 
@@ -70,3 +70,9 @@ Current official documentation: [GitHub Actions billing](https://docs.github.com
 Owner decision, 19 October 2026: “You can make the whole site publicly accessible like five minutes, no?” This authorises a public site; it does not enable scheduled writer/reviewer tasks, paid services, public repositories or feedback credentials. The private-preview/Zero Trust detour is cancelled.
 
 Owner confirmed on 19 October 2026: “Lightweight confirmed for now”. Retain Lightweight for the initial manual public Pilot, with independent editorial release checks, green tests/builds, explicit public-launch authorisation and disabled feedback/schedules. This completes the first-deployment profile assessment without a profile transition, waiver or change to approval rights. Reassess Standard before unattended publishing or reader storage. The Owner's Domains screenshot confirms https://pearls-of-wisdom.vitoria-nuno.workers.dev as the production origin.
+
+## One-off weekly trial decision — 28 October 2026
+
+Owner decision: “Ok, proceed”, following accepted PR #25 plan and proposed one-off activation. Authorises only the dated preflights and preparation/review tasks in docs/pilots/2026-11-06-activation.md, tracked in issue #26. This narrow decision supersedes the earlier scheduling prohibition only within that trial. Recurring tasks, trial extensions, costs and unattended publication remain unauthorised. Lightweight/Pilot remains unchanged. Both scheduled preflights must be verified before author/reviewer stage tasks are created; missing slots pause rather than roll forward. Configuration records authorisation, not proof tasks exist.
+
+Preflight evidence clarification: each scheduled preflight may append exactly one keyed results comment to issue #26 and re-fetch it, testing the required comment path. This is the sole write exception to the otherwise repository-read-only preflight. The Manager verifies those retrievable results before marking the both-provider gate passed. No repository or publication write is authorised by preflight.
