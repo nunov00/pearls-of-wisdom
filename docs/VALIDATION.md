@@ -1,6 +1,6 @@
 # Validation record — 19 October 2026
 
-## Current verified state
+## Verified state on 19 October 2026
 
 - Astro/TypeScript diagnostics have zero errors, warnings or hints. Sixteen local tests pass, covering content/release policy, search, private-feedback boundaries, deployment refusal and source-backup exclusions.
 - Three initial articles and thirteen queue entries validate, leaving ten future candidates after first release. Preview and release builds produce eleven HTML pages and seventeen static files; internal references resolve, with one H1 and British-English metadata per page. Preview noindex stays separate from public release metadata.
@@ -48,3 +48,7 @@ The two repositories now exist and are private; the source repository contains t
 ## Cloudflare preparation follow-up
 
 Pinned Wrangler 4.147.0 bundles the static site and feedback adapter successfully using `npm run cf:validate` (`wrangler deploy --dry-run`). This does not upload or create a Cloudflare resource. Fifteen local tests pass, including deployment-authorisation/origin refusal. The config remains workers_dev=false and FEEDBACK_ENABLED=false. Actual dashboard setup and credential provisioning are blocked by a Cloudflare login HTTP 403 in the available browser. No repository visibility changes were made.
+
+## Idea queue update — 28 October 2026
+
+The historical 13-entry validation above is unchanged. The idea trial now contains 15 entries, including 12 future ideas. PR #23's initial head passed Baseline and Privacy check; amendments require fresh CI. Queue checks and independent-review limits are recorded on that PR. This update makes no new deployment or article-validation claim.

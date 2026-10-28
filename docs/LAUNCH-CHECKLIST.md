@@ -2,7 +2,7 @@
 
 Public access is authorised by the Owner on 19 October 2026 (issue #5). Paid services and recurring writer/reviewer tasks remain unauthorised. The working identity and private source/feedback repositories remain unchanged.
 
-## Prepared for release
+## Prepared for release — 19 October 2026 record
 
 - Three sourced initial articles and thirteen queue entries validate, leaving ten future candidates after the initial three publish. Independent source review plus a goals-only recommendation challenge are in docs/reviews/. Minor corrections were independently rechecked. Same-provider review is disclosed; no Claude review is claimed.
 - Static builds, release policy tests and private-feedback mocks pass locally. The initial 19 October dates have matching independent exact-byte review records; a release build passes. Release selection is not proof of live publication.
@@ -23,3 +23,7 @@ Public access is already authorised. The HTTPS origin and profile choice are con
 ## Feedback activation
 
 After the final hostname is settled, the Owner creates a hostname-restricted Turnstile widget and a fine-grained GitHub token for the private feedback repository only. Store secrets directly in production Cloudflare settings, never build variables, previews or chat. The agent can then prepare the reviewed source activation and run the documented live submission/error/deletion checks with authorised access. Keep feedback disabled until those conditions are met. It need not block the initial public reading site.
+
+## Queue update — 28 October 2026
+
+The initial 13-entry count above is historical. The pool now has 15 entries, with 12 future ideas. See [IDEAS.md](IDEAS.md) for the manual trial; queue ranking does not commission or approve an article for release.

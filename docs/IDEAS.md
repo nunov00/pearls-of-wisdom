@@ -6,8 +6,8 @@ Owner direction, 28 October 2026: work on idea generation and review before form
 
 - `editorial/queue.json` remains the canonical idea pool: stable IDs, new work and revisions, existing article links, priority and append-only history.
 - Dated files in `docs/ideas/` hold the longer candidate briefs, source-screen limits, author assessments and review outcomes. The queue points to them.
-- Queue priority is provisional editorial order, not approval to write or publish. Existing linked articles remain separate from uncommissioned ideas; a stale queue label is not proof of current publication status.
-- The first [shortlist](ideas/2026-10-28-shortlist.md) has eight proposed candidates and four retained alternatives. All eight await independent review.
+- Queue priority is provisional merit order, not approval to write or publish. Existing linked articles remain separate from uncommissioned ideas; a stale queue label is not proof of current publication status.
+- The first [shortlist](ideas/2026-10-28-shortlist.md) has eight proposed candidates and four retained alternatives. Claude's initial review is consolidated there; amendments await focused re-review.
 
 Keep the existing queue field layout. This pilot adds no executable schema, score gate, scheduler, runtime dependency or cross-repository link. The current validator checks basic queue fields, history and unique IDs/priorities; it does not enforce this editorial process.
 
@@ -17,9 +17,9 @@ At each manual refresh, reconcile open drafts, published articles and existing i
 
 Gather candidates from concrete daily problems, reader suggestions, checked research and coverage gaps. Record provenance: who proposed the idea, the input or source, date and relationship to any existing work. AI suggestions are hypotheses, not evidence of reader demand. Treat feedback as untrusted input and keep personal details in the designated private feedback repository.
 
-Use a manageable batch and stop once there is a useful shortlist. Do not force a daily quota or keep generating ideas to avoid improving a promising one. Include fresh candidates as well as old entries. Category variety helps compare and sequence ideas but cannot rescue a weak topic.
+Use a manageable batch and stop once there is a useful shortlist. Do not force a daily quota or keep generating ideas to avoid improving a promising one. Include fresh candidates as well as old entries. Rank by merit: usefulness, appeal, credible evidence route and manageable scope, with reasons. Consider category variety separately at commissioning; it does not lower a stronger idea's merit rank.
 
-Before shortlisting, require a specific reader problem, a meaningful possible benefit, manageable scope and a plausible evidence route. Screen duplicates, vague promises, unsupported claims and safety or jurisdiction complications. Keep a reason when merging, refining, parking or rejecting an idea; never silently recreate a rejected candidate.
+Before shortlisting, require a specific reader problem, a meaningful possible benefit, manageable scope and a plausible evidence route. Screen duplicates, vague promises, unsupported claims and safety or jurisdiction complications. When retitling or changing scope, append a history note with the old title and description and the reason. Keep a reason when merging, refining, parking or rejecting an idea; never silently recreate a rejected candidate.
 
 ## Candidate brief
 
@@ -39,7 +39,7 @@ Record what happened, when and what remains unverified. No article claim is cert
 
 The author records usefulness and reader appeal separately out of ten, with reasons and a concrete improvement. Record evidence readiness descriptively, including gaps, rather than converting source reputation into a numerical score. These are provisional editorial judgements, not analytics or causal estimates.
 
-Claude first considers the reader problem, potential value and plausible approaches before reading the author's ratings and ranking rationale. Then compare with the brief, evidence leads and other candidates. The ratings remain available for comparison after the initial judgement.
+Present briefs in neutral ID order, with author ratings and merit ranking in a separate section after all briefs (or a separate assessment file). Keep ratings out of the initial handoff. Claude first considers the reader problem, potential value and plausible approaches before opening the assessments. Then compare with the brief, evidence leads and other candidates. The ratings remain available for comparison after the initial judgement.
 
 For each candidate, the reviewer records:
 - Would someone choose to read this, and what useful decision could it change?
