@@ -20,3 +20,7 @@ The implementation has content/release validation, browser checks and verified m
 ## Proposed future activation
 
 After separate approval, verify available task slots and execution capabilities before choosing one coordinator or separate writer/reviewer entry points. Test the real scheduled environment, interruptions, correction handoff and independent review. A subscription is not an API. Do not add paid model calls, remove another project’s task or assume a reviewer can launch another provider.
+
+## Single-task packaging — 30 October 2026
+
+Owner decision: “Ok, do it please” (30 October 2026), consolidating the two ChatGPT tasks. One finite combined task now packages exactly the same six invocations: 1–5 November 09:13 Zurich and Sunday 1 November 19:13 Zurich. The existing current-main dispatcher chooses only the due author or queue role; both complete action bodies are retained. Its weekly rule uses WKST=SU and BYSETPOS=1,2,3,5,7,9 with COUNT=6, producing only those six dates. The standalone queue task is retired/disabled. Claude’s five one-offs and complete reviewer prompt are unchanged. No invocation, authority, review budget, prerequisite, quality gate, policy window or publication permission is added. PR #30’s independent approval and VERIFIED v2 provider evidence remain required. This is a material scheduler-packaging change under the existing Lightweight profile, which requires no additional independent approval; no waiver or bypass is introduced. Stored scheduler configuration is verified separately from future delivery.
