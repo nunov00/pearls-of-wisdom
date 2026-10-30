@@ -12,7 +12,7 @@ export function validateRelease({articles,publications,reviews,bytesById,today})
   if(!review||review.articleId!==a.id||review.decision!=='ready')throw new Error('Independent review required');
   if(!review.author||!review.reviewer||review.author===review.reviewer)throw new Error('Self-review cannot authorise publication');
   if(!/^[a-f0-9]{40}$/.test(review.reviewedCommit??''))throw new Error('Reviewed Git commit required');
-  if(!Number.isInteger(review.correctionRounds)||review.correctionRounds<0||review.correctionRounds>2)throw new Error('Invalid correction count');
+  if(!Number.isInteger(review.correctionRounds)||review.correctionRounds<0||review.correctionRounds>3)throw new Error('Invalid correction count');
   if(!Array.isArray(review.findings)||review.findings.some(f=>!['blocker','important','minor'].includes(f.severity)||!['open','resolved'].includes(f.status)||(f.severity!=='minor'&&f.status!=='resolved')))throw new Error('Unresolved or invalid review findings');
   if(review.articleSha256!==digest(bytesById[a.id]))throw new Error('Article changed after review');
   const cited=new Set(a.claims.flatMap(c=>c.sourceIds));

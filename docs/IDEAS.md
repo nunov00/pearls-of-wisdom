@@ -69,3 +69,6 @@ The [28 October outcome](pilots/2026-10-28-idea-queue-outcome.md) records the co
 ## Bounded scheduled preparation/review exception
 
 The manual-pilot history above remains unchanged. The Owner authorised one dated weekly trial on 28 October 2026; [the activation record](pilots/2026-11-06-activation.md) defines the sole scheduling exception, verified preflights and manual publication. No recurring idea generation or writing is authorised.
+
+
+Sunday workflow amendment, 30 October 2026: within the same bounded trial, prepare neutral leading-candidate briefs Sunday morning, obtain Claude's actual usefulness/appeal/evidence/scope review and proposed ranking Sunday afternoon, then have the Manager update queue merit order and append ranking history Sunday evening before selecting one reviewed Develop candidate for Monday. Preserve IDs, prior article records and unique priorities. Missing/unfinished topic review or ranking pauses drafting; no candidate is auto-approved. Topic correction budget stays at two, separately from the article's three-round budget. No ongoing weekly idea-generation authority is added.

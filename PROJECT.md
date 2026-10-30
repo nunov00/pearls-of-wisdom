@@ -10,7 +10,7 @@
 - **Technology:** Astro, TypeScript, structured YAML, portable static output; optional narrow Cloudflare feedback adapter.
 - **Tests / required checks:** `npm run verify`; `Baseline / baseline` CI. No enforcement ruleset is claimed.
 - **Deployment:** Cloudflare Git integration configured; Owner authorised public access on 19 October 2026. Release preparation and CI are complete; public origin confirmed as https://pearls-of-wisdom.vitoria-nuno.workers.dev. Dashboard activation and live deployment remain unverified.
-- **Material paths:** `.github/**`, `scripts/release-*`, `deploy/**`, `editorial/automation.json`
+- **Material paths:** `.github/**`, `scripts/release-*`, `scripts/trial-schedule.mjs`, `deploy/**`, `editorial/automation.json`
 - **Control overrides:** None
 - **Standing delegations:** Bounded one-off preparation/review trial only; see docs/pilots/2026-11-06-activation.md. No unattended publication.
 
@@ -77,4 +77,7 @@ Owner decision: “Ok, proceed”, following accepted PR #25 plan and proposed o
 
 Preflight evidence clarification: each scheduled preflight may append exactly one keyed results comment to issue #26 and re-fetch it, testing the required comment path. This is the sole write exception to the otherwise repository-read-only preflight. The Manager verifies those retrievable results before marking the both-provider gate passed. No repository or publication write is authorised by preflight.
 
-Combined author-task decision, 30 October 2026: “Ok please combine them then”. Authorises packaging only the existing 2/3/5 November author invocations into one finite COUNT=3 scheduler task, per the reviewed activation amendment. This is not ongoing recurring operation; editorial/automation.json remains unchanged and expires at the existing time. All Claude reviews, quality gates, setup checks and manual publication remain required.
+Historical combined author-task decision (superseded by the Sunday amendment below), 30 October 2026: “Ok please combine them then”. Authorises packaging only the existing 2/3/5 November author invocations into one finite COUNT=3 scheduler task, per the reviewed activation amendment. This is not ongoing recurring operation; editorial/automation.json remains unchanged and expires at the existing time. All Claude reviews, quality gates, setup checks and manual publication remain required.
+
+
+Sunday four-review amendment, Owner decision 30 October 2026: “Ok, do you want to implement the trial with the new schedule?” following “An article should only be published if it’s rated 9+ by you and Claude, otherwise it goes back to the backlog.” Supersedes the earlier 2/3/5 November COUNT=3 packaging only for the same run/expiry. New finite schedule: Sunday 1 November topic selection/review and evening ranked-queue consolidation; Monday–Thursday up to four article reviews with three correction rounds; Friday manual publish only with both final scores >=9 and all safeguards, otherwise backlog. One COUNT=5 daily author task, one Sunday evening one-off queue task and one COUNT=5 Claude reviewer task, no ongoing recurrence or unattended publication. Topic correction budget remains two; activate only after independent review/merge and verified replacement of old tasks. See the current activation record.
