@@ -55,6 +55,16 @@ Every PR into `main` states its class in the description (`Review class: routine
 
 Staged inactive scaffolding may be classified at the point it is activated (the integration PR), provided it has no effect until then.
 
+## Review criteria across the project
+
+Owner clarification, 30 October 2026: numerical scores are for content quality. Apply this distinction to every review in this repository: author self-reviews, independent reviews, PR descriptions/comments, handoffs and scheduled task instructions.
+
+- **Editorial content:** finished articles retain the 9/10-or-higher quality target and all evidence, visual and publication requirements in docs/EDITORIAL.md. Idea proposals retain the separate usefulness/appeal assessments in docs/IDEAS.md; do not impose the finished-article target on topic proposals.
+- **Technical, workflow and governance changes:** do not request a numerical score or apply a numerical release/approval threshold. Assess the agreed requirements and report blocker/important/minor findings, actual checks performed, checks not performed and material limits. Give a clear outcome: Approved, Changes requested or Paused. An independent approval must identify the exact reviewed commit using the format below. Relevant checks must pass and blocker/important findings must be resolved before approval.
+- **Mixed changes:** assess editorial content and technical requirements separately. A content score cannot compensate for unresolved technical findings, failed checks or missing approval.
+
+This applies beyond any individual PR and supersedes older requests for numerical scores on technical/workflow reviews. Preserve historical scores as review history; do not rewrite another reviewer's conclusions. Existing profile/classification, independent-review, Owner-decision, CI, trial and publication gates remain unchanged. Self-review never supplies the independent approval required by those gates.
+
 ## Approvals
 GitHub does not let you approve your own PR, and AI agents usually act through the Owner's account, so approvals are recorded as **PR comments in a fixed format**:
 
