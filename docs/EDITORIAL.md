@@ -8,7 +8,7 @@ Use British English and concrete language. Sources must support the exact materi
 
 Record source URL, checked date, inspected section, support and limits. Reading a publisher summary does not mean the full paper was checked. Link-check success is not factual verification. Do not publish a material claim that depends on inaccessible, unverified evidence without accessible substantiation.
 
-Independent review: first consider plausible leading recommendations without seeing the writer’s rationale; then inspect the draft, exclusions, sources, consequences, scope and accessibility. Record blocker/important/minor findings. Blockers and important findings prevent publication; minor polish does not. Allow no more than two correction rounds, then defer. A changed article hash needs updated validation. Never label self-review independent.
+Independent review: first consider plausible leading recommendations without seeing the writer’s rationale; then inspect the draft, exclusions, sources, consequences, scope and accessibility. Record blocker/important/minor findings. Blockers and important findings prevent publication; minor polish does not. Allow an initial article review plus no more than three substantive correction rounds (up to four reviews), then return work that remains below the publication standard to backlog with its findings. Topic corrections retain their separate limit in IDEAS.md. A changed article hash needs updated validation. Never label self-review independent.
 
 Preserve original dates on revision. Show the latest meaningful revised date. Return weak articles to backlog; withdraw materially misleading advice immediately with a reason. The queue combines revisions and new work; urgent corrections take precedence, otherwise choose by merit.
 
@@ -58,7 +58,7 @@ Write accessible, respectful language across ages. Use a natural range of ages i
 
 Owner direction, 27 October 2026: “The target for all should be 9+, so let’s aim for that.” Apply this target to every new article, meaningful revision and reference pilot. Assess the whole article, including both the opening and expanded guide. A strong opening alone does not establish a 9+ result.
 
-The author self-reviews, then a separate reviewer records an overall score out of ten with concise reasons, remaining weaknesses and the checks actually performed. In the review report or PR, address:
+The author self-reviews, then a separate reviewer records an overall score out of ten with concise reasons, remaining weaknesses and the checks actually performed. Publication requires BOTH the author and independent reviewer to score at least 9 on the same exact final article and illustration bytes. The required Pearls review pair is Codex author and Claude independent reviewer, including manual work after the trial unless the Owner explicitly changes that pair. Do not average the scores; a high score from one cannot compensate for a below-9 score from the other. In the review report or PR, address:
 
 - Accuracy and evidence: material claims match checked sources, with honest scope, applicability and uncertainty.
 - Clarity and usefulness: plain language, three clear ideas, practical first steps and relevant examples for the broad readership, including people helping others.
@@ -68,3 +68,5 @@ The author self-reviews, then a separate reviewer records an overall score out o
 A 9 means strong across these areas, with only minor polish remaining. Below 9, identify concrete improvements, revise and re-review within the existing correction-round limit; defer work that still falls short rather than lower the target. Do not round 8.5 up to 9, inflate scores after cosmetic edits or average away a significant weakness. Ratings are reasoned editorial judgements, not scientific measurements or a guarantee of reader response.
 
 Accuracy, safety, applicability, readability and functional blockers must be resolved regardless of the overall score. The target supplements existing independent source/content review, exact-byte release validation and publication checks. It is a manual editorial criterion recorded in review notes; no automated score gate or new schema field is claimed. Earlier informal chat scores do not retroactively certify every existing article or constitute Owner acceptance of a reference candidate. Apply the target at its next review; finance remains the next pilot.
+
+Scope clarification, 30 October 2026: the author-and-independent-reviewer 9+ requirement and initial-plus-three-corrections limit apply to ongoing manual editorial work too. They do not expire with the trial. Only the dated task/runtime authorisation expires; topic corrections retain their separate two-round limit.
