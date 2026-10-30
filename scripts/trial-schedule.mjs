@@ -1,5 +1,13 @@
 // Finite Pearls-2026-11-06 trial. Ongoing weekly operation is not authorised.
-export function trialSlot(role, now) {
+// Completed numbers must come from reconciled genuine reviewer comments, not labels.
+export function nextArticleReview(completed) {
+  if (!Array.isArray(completed) || completed.length > 4 ||
+      completed.some((r, i) => !r || !Number.isInteger(r.reviewNumber) || r.reviewNumber !== i + 1 ||
+        !['2026-11-02','2026-11-03','2026-11-04','2026-11-05'].includes(r.slotDate) ||
+        (i > 0 && r.slotDate <= completed[i-1].slotDate))) return null;
+  return completed.length < 4 ? completed.length + 1 : null;
+}
+export function trialSlot(role, now, {completedReviews} = {}) {
   const at = new Date(now);
   if (!Number.isFinite(at.getTime())) return null;
   const p = Object.fromEntries(new Intl.DateTimeFormat('en-CA', {
@@ -11,15 +19,18 @@ export function trialSlot(role, now) {
   const day = dates.indexOf(date);
   if (day < 0) return null;
   if (role === 'queue') return day === 0 && time >= '19:13'
-    ? {date, stage:'select', action:'rank', reviewNumber:0, correctionRounds:0} : null;
-  if (role === 'author' && time >= '09:13' && time < '14:17') return {
-    date, stage:day === 0 ? 'select' : day === 1 ? 'draft' : 'revise',
-    action:day === 0 ? 'select' : day === 1 ? 'draft' : 'revise',
-    reviewNumber:day, correctionRounds:Math.max(0, day - 1)
+    ? {date, stage:'select', action:'rank', slotNumber:0, reviewNumber:0, correctionRounds:0} : null;
+  const author = role === 'author' && time >= '09:13' && time < '14:17';
+  const reviewer = role === 'reviewer' && time >= '14:17' && (day !== 0 || time < '19:13');
+  if (!author && !reviewer) return null;
+  if (day === 0) return {date, stage:author?'select':'topic', action:author?'select':'topic', slotNumber:0, reviewNumber:0, correctionRounds:0};
+  const number = nextArticleReview(completedReviews);
+  // One genuine result at most per dated opportunity; numbers cannot leap ahead.
+  if (number === null || number > day || completedReviews.some(r => r.slotDate >= date)) return null;
+  return {
+    date, stage:reviewer?'article':number===1?'draft':'revise',
+    action:reviewer?'review':number===1?'draft':'revise',
+    slotNumber:day, reviewNumber:number, correctionRounds:number-1,
+    lastArticleSlot:day===4
   };
-  if (role === 'reviewer' && time >= '14:17' && (day !== 0 || time < '19:13')) return {
-    date, stage:day === 0 ? 'topic' : 'article', action:day === 0 ? 'topic' : 'review',
-    reviewNumber:day, correctionRounds:Math.max(0, day - 1)
-  };
-  return null;
 }
