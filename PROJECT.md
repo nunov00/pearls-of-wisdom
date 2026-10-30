@@ -77,5 +77,4 @@ Owner decision: “Ok, proceed”, following accepted PR #25 plan and proposed o
 
 Preflight evidence clarification: each scheduled preflight may append exactly one keyed results comment to issue #26 and re-fetch it, testing the required comment path. This is the sole write exception to the otherwise repository-read-only preflight. The Manager verifies those retrievable results before marking the both-provider gate passed. No repository or publication write is authorised by preflight.
 
-
 Combined author-task decision, 30 October 2026: “Ok please combine them then”. Authorises packaging only the existing 2/3/5 November author invocations into one finite COUNT=3 scheduler task, per the reviewed activation amendment. This is not ongoing recurring operation; editorial/automation.json remains unchanged and expires at the existing time. All Claude reviews, quality gates, setup checks and manual publication remain required.
