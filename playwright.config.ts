@@ -1,4 +1,7 @@
 import {defineConfig, devices} from '@playwright/test';
+import {prepareBrowser} from './scripts/browser-runtime.mjs';
+
+const chromiumOptions = await prepareBrowser();
 
 export default defineConfig({
   testDir: './tests/browser',
@@ -13,7 +16,7 @@ export default defineConfig({
     reuseExistingServer: false,
   },
   projects: [
-    {name: 'chromium-desktop', use: {...devices['Desktop Chrome']}},
+    {name: 'chromium-desktop', use: {...devices['Desktop Chrome'], launchOptions: chromiumOptions}},
     {name: 'webkit-phone', use: {...devices['iPhone 13']}},
   ],
 });

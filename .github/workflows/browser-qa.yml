@@ -5,6 +5,11 @@ on:
     paths:
       - 'tests/browser/**'
       - 'playwright.config.ts'
+      - 'scripts/browser-runtime.mjs'
+      - 'scripts/article-qa.mjs'
+      - 'tests/browser-runtime.test.mjs'
+      - 'package.json'
+      - 'package-lock.json'
       - '.github/workflows/browser-qa.yml'
 permissions:
   contents: read
@@ -22,7 +27,8 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci --ignore-scripts
-      - run: npx playwright install --with-deps chromium webkit
+      # Chromium comes from the exact npm package; retain WebKit coverage separately.
+      - run: npx playwright install --with-deps webkit
       - run: npm run build
       - run: npm run test:browser
       - name: Verify release metadata
