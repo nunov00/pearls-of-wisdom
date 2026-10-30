@@ -10,7 +10,7 @@ Use the [completed queue pilot](pilots/2026-10-28-idea-queue-outcome.md), [idea 
 
 ## Proposed schedule
 
-Timezone: Europe/Zurich, including daylight-saving changes. Morning/afternoon are proposed windows, not configured task times. Use one-off tasks for one controlled weekly cycle, then assess before any recurring activation. Three Claude review tasks only; no catch-up task in the first trial. Set push notifications on for every scheduled trial task, including the read-only preflight, and record the actual notification setting with task IDs in the activation record. Report if the provider cannot confirm it; a missing notification must not be treated as proof a run succeeded. Dates and exact times are settled in the activation change, not assumed from the review's placeholder week.
+Timezone: Europe/Zurich, including daylight-saving changes. Morning/afternoon are proposed windows, not configured task times. Use the finite dated tasks in the activation record for one controlled weekly cycle, then assess before any ongoing recurring activation. The Owner-approved 30 October amendment packages three ChatGPT author invocations into one COUNT=3 task; it does not change stage dates, prerequisites or the trial expiry. Three Claude review tasks only; no catch-up task in the first trial. Set push notifications on for every scheduled trial task, including the read-only preflight, and record the actual notification setting with task IDs in the activation record. Report if the provider cannot confirm it; a missing notification must not be treated as proof a run succeeded. Dates and exact times are settled in the activation change, not assumed from the review's placeholder week.
 
 | Window | Agent | Work and completion evidence |
 | --- | --- | --- |
