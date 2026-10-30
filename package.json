@@ -18,7 +18,8 @@
     "release:check": "node scripts/release-check.mjs",
     "backlog": "node scripts/backlog.mjs",
     "cf:validate": "node scripts/cloudflare-validate.mjs",
-    "cf:deploy": "node scripts/cloudflare-deploy.mjs"
+    "cf:deploy": "node scripts/cloudflare-deploy.mjs",
+    "qa:article": "node scripts/article-qa.mjs"
   },
   "dependencies": {
     "astro": "7.4.0",
@@ -29,6 +30,7 @@
     "@astrojs/check": "0.9.4",
     "@axe-core/playwright": "4.14.0",
     "@playwright/test": "1.64.1",
+    "@sparticuz/chromium": "153.0.0",
     "@types/node": "24.10.0",
     "typescript": "5.9.2",
     "wrangler": "4.151.2"
