@@ -178,6 +178,17 @@ test('citations stay with the preceding word at phone and desktop widths', async
 });
 
 
+test('article lists show compact rows with the main image as a thumbnail', async ({page}) => {
+  await page.goto('/library/');
+  const cards = page.locator('.article-card');
+  await expect(cards).toHaveCount(3);
+  await expect(page.locator('.article-card .card-thumb')).toHaveCount(3);
+  await expect(page.locator('.article-card .card-thumb').first()).toHaveAttribute('alt', '');
+  await expect(cards.first().locator('.card-meta')).toContainText('October 2026');
+  const box = await page.locator('.article-card .card-thumb').first().boundingBox();
+  expect(box!.width).toBeLessThanOrEqual(160);
+});
+
 test('study pilot connects text-only ideas to a usable routine', async ({page}, testInfo) => {
   await page.goto('/articles/remember-what-you-study/');
   await expect(page.locator('.full-guide')).not.toHaveAttribute('open', '');
@@ -190,7 +201,7 @@ test('study pilot connects text-only ideas to a usable routine', async ({page}, 
   await expect(page.locator('#correct')).toContainText('gracias');
   await expect(page.locator('#space')).toContainText('not an optimal formula');
   expect(await page.locator('.site-header .wordmark small').evaluate(e => parseFloat(getComputedStyle(e).fontSize))).toBeGreaterThanOrEqual(15);
-  expect(await page.locator('.article-card .card-bottom').first().evaluate(e => parseFloat(getComputedStyle(e).fontSize))).toBeGreaterThanOrEqual(15);
+  expect(await page.locator('.article-card .card-meta').first().evaluate(e => parseFloat(getComputedStyle(e).fontSize))).toBeGreaterThanOrEqual(15);
   await page.screenshot({path: testInfo.outputPath('study-expanded.png'), fullPage: true});
 });
 
