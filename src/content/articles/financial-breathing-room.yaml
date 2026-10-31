@@ -52,8 +52,8 @@
         "heading": "See what is due",
         "description": "Spot gaps before the next bill arrives.",
         "image": {
-          "src": "/figures/finance-plan.webp",
-          "alt": "An adult man checking bills against a calendar."
+          "src": "/figures/finance-plan-v2.webp",
+          "alt": "An adult compares a household bill with a calendar."
         }
       }
     },
@@ -73,8 +73,8 @@
         "heading": "Keep a little in reserve",
         "description": "Give unexpected costs somewhere to land.",
         "image": {
-          "src": "/figures/finance-buffer.webp",
-          "alt": "A savings jar representing money set aside for unexpected costs."
+          "src": "/figures/finance-buffer-v2.webp",
+          "alt": "An adult puts a coin into a jar holding a modest reserve."
         }
       }
     },
@@ -99,8 +99,8 @@
         "heading": "Reduce borrowing costs",
         "description": "Keep essentials covered before paying extra towards debt.",
         "image": {
-          "src": "/figures/finance-debt.webp",
-          "alt": "An adult man comparing two debt statements."
+          "src": "/figures/finance-debt-v2.webp",
+          "alt": "An adult compares two statements with a calculator nearby."
         }
       },
       "helpSourceIds": [
@@ -304,6 +304,10 @@
     {
       "date": "2026-10-31",
       "reason": "Added an article main image and matching share-preview image; article guidance unchanged."
+    },
+    {
+      "date": "2026-10-31",
+      "reason": "Replaced the three idea illustrations with painterly vignettes matching the main image; guidance unchanged."
     }
   ],
   "relatedIds": [

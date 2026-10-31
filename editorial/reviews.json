@@ -313,5 +313,107 @@
         "detail": "Study and finance share blue-shirt sunlit-table compositions; vary settings in future work."
       }
     ]
+  },
+  {
+    "id": "painterly-ideas-001-exercise-after-65-20261031",
+    "articleId": "001-exercise-after-65",
+    "author": "Codex (OpenAI)",
+    "reviewer": "Claude (Anthropic)",
+    "reviewedCommit": "aeddb890bd42dd26263ef3ab5b582e6859298993",
+    "articleSha256": "c2d9779da5ee0f9143ab8b6ce2a27dd603e54ae20b609ea82effb64c3cef7123",
+    "correctionRounds": 0,
+    "decision": "ready",
+    "authorScore": 9,
+    "reviewerScore": 9,
+    "reviewUrl": "https://github.com/nunov00/pearls-of-wisdom/pull/39#issuecomment-6549455924",
+    "illustrationSha256": {
+      "public/figures/exercise-balance-v3.webp": "61529c628bc8bd15c168b7c081298982eee68e7919ee157433c54769a9abcf7d",
+      "public/figures/exercise-main-v1.jpg": "b454c18e6407d601739c825c314f8bf2b734071a9990d16db2e1fd6455e59cea",
+      "public/figures/exercise-main-v1.webp": "82265d4b509745cf2a9ae9852f388f60fa0d343f69ea117b67b724317f7ee26c",
+      "public/figures/exercise-moving-v3.webp": "a8da86a3eb212d96688e048b4ae03702bad2a5a0a3ba2938a25ad9e7d0f693d9",
+      "public/figures/exercise-strength-v3.webp": "8a8c06753f89c4fb914113199eaf1e76477696746c5c2f4d71dbc067fbb53c40"
+    },
+    "findings": [
+      {
+        "id": "cobalt-this-set-only",
+        "severity": "minor",
+        "status": "resolved",
+        "detail": "Reviewer follow-up confirms these assets match the accepted main images. Cobalt is not a required house palette for future articles."
+      },
+      {
+        "id": "full-figure-faces",
+        "severity": "minor",
+        "status": "open",
+        "detail": "Full-length exercise figures make faces small at thumbnail size; action remains clear. Optional future crop refinement."
+      }
+    ]
+  },
+  {
+    "id": "painterly-ideas-003-money-buffer-20261031",
+    "articleId": "003-money-buffer",
+    "author": "Codex (OpenAI)",
+    "reviewer": "Claude (Anthropic)",
+    "reviewedCommit": "aeddb890bd42dd26263ef3ab5b582e6859298993",
+    "articleSha256": "768fd4f2d42a2b52b03278a1cc3da28aa07973cfdcef9c16aa706749df8a777d",
+    "correctionRounds": 0,
+    "decision": "ready",
+    "authorScore": 9,
+    "reviewerScore": 9,
+    "reviewUrl": "https://github.com/nunov00/pearls-of-wisdom/pull/39#issuecomment-6549455924",
+    "illustrationSha256": {
+      "public/figures/finance-buffer-v2.webp": "34138017b700f3098fefc8bf6a00eb1c8c79ac00e170bd19be7575cc53d687e4",
+      "public/figures/finance-debt-v2.webp": "ba301b0ddf09a05bb496e09630ea43e5b333c6843b86db70fcf3523f36b895ed",
+      "public/figures/finance-main-v1.jpg": "b41a374c38265060616ad93de5ec89c6bebca1cf35cd9079c2f3439e0263d0c9",
+      "public/figures/finance-main-v1.webp": "6d57792d5c15fa21ea12b49dffa3191b6248ebfdebcbad194538d3ef8f38d3b9",
+      "public/figures/finance-plan-v2.webp": "724568b37f50745840861438dea66e347ef447f0c4a298eb94c042b5ce8d6c85"
+    },
+    "findings": [
+      {
+        "id": "cobalt-this-set-only",
+        "severity": "minor",
+        "status": "resolved",
+        "detail": "Reviewer follow-up confirms these assets match the accepted main images. Cobalt is not a required house palette for future articles."
+      },
+      {
+        "id": "reserve-vignette-edge",
+        "severity": "minor",
+        "status": "open",
+        "detail": "Ochre reserve vignette edge is heavier on dark backgrounds but has no halo or box; acceptable."
+      },
+      {
+        "id": "alt-pronoun-style",
+        "severity": "minor",
+        "status": "open",
+        "detail": "Finance alt wording is gender-neutral while study uses her; harmless stylistic variation."
+      }
+    ]
+  },
+  {
+    "id": "painterly-ideas-002-study-memory-20261031",
+    "articleId": "002-study-memory",
+    "author": "Codex (OpenAI)",
+    "reviewer": "Claude (Anthropic)",
+    "reviewedCommit": "aeddb890bd42dd26263ef3ab5b582e6859298993",
+    "articleSha256": "c8cf460548b4f622780e37c72f5b8a062779a37494635f4f0581585e51d85480",
+    "correctionRounds": 0,
+    "decision": "ready",
+    "authorScore": 9,
+    "reviewerScore": 9,
+    "reviewUrl": "https://github.com/nunov00/pearls-of-wisdom/pull/39#issuecomment-6549455924",
+    "illustrationSha256": {
+      "public/figures/study-check-v3.webp": "9109754c193080488ea62a38cfbd603b8aebc4509846d5fbf06e457b9902b9e3",
+      "public/figures/study-main-v1.jpg": "e63decf8958910f8f5cc3163a5b05b9e0c9318f2990aef4782ba23361583d568",
+      "public/figures/study-main-v1.webp": "4a6f6ca03b7d7c312bc4556618cf51177cc7ada3080b922606b9123ebff7e07b",
+      "public/figures/study-recall-v3.webp": "afc28c6d27eb405fd174f98ae22605e80496ef9eedfbea5aa9698db91fdb594a",
+      "public/figures/study-return-v3.webp": "feba82725bff9c7a1f992f05e9804bec927a2694a053a181210c02b0918a79f9"
+    },
+    "findings": [
+      {
+        "id": "cobalt-this-set-only",
+        "severity": "minor",
+        "status": "resolved",
+        "detail": "Reviewer follow-up confirms these assets match the accepted main images. Cobalt is not a required house palette for future articles."
+      }
+    ]
   }
 ]
