@@ -1,0 +1,44 @@
+{
+  "tool": "Built-in image generation",
+  "transparentBackground": true,
+  "note": "Condensed production prompt directions; not a verbatim API transcript.",
+  "commonStyle": "Create ONE square editorial illustration for a small article idea tile, 1:1 composition. Match the site's accepted main images: realistic finely drawn people, premium painterly gouache, subtle natural texture, clean contours, lovely luminous daylight, cobalt blue clothing, restrained green and warm amber accents. More painterly and lifelike than a flat cartoon, not glossy 3D. The subject and key object must read immediately at 90–144 pixels. Crop close, fill most of the square, simple silhouette, minimal supporting environment. TRANSPARENT BACKGROUND with a softly irregular painterly vignette around the subject and a little local grounding; no rectangular scenic backdrop, no frame, no lettering, no numbers, no logos, no watermark. Natural correct hands/anatomy. Topic:",
+  "prompts": [
+    {
+      "name": "exercise-moving-v3",
+      "direction": "Older silver-haired woman walking comfortably on a level park path; cobalt overshirt, charcoal trousers, safe ordinary stride, minimal foliage."
+    },
+    {
+      "name": "exercise-strength-v3",
+      "direction": "Older silver-haired man carrying two modest shopping bags, upright posture, navy jumper, no exaggerated loads."
+    },
+    {
+      "name": "exercise-balance-v3",
+      "direction": "Older silver-haired woman with both feet planted and one hand on a sturdy four-legged wooden chair; no unsupported balancing."
+    },
+    {
+      "name": "study-recall-v3",
+      "direction": "Dark wavy-haired adult learner with pen over answer card, looking away thoughtfully, closed blue reference book."
+    },
+    {
+      "name": "study-check-v3",
+      "direction": "Same learner looking down, comparing answer card with large open reference book, pen in other hand."
+    },
+    {
+      "name": "study-return-v3",
+      "direction": "Same learner holding closed book beside a blank calendar with two separated dot markers; no text."
+    },
+    {
+      "name": "finance-plan-v2",
+      "direction": "Adult man with dark hair and medium-brown skin comparing a bill with a blank calendar grid and dot markers."
+    },
+    {
+      "name": "finance-buffer-v2",
+      "direction": "Same man adding one coin to a small clear jar holding a modest reserve."
+    },
+    {
+      "name": "finance-debt-v2",
+      "direction": "Same man comparing two plain statements with an unbranded calculator below; no readable amounts."
+    }
+  ]
+}

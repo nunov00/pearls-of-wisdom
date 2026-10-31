@@ -51,8 +51,8 @@
         "heading": "Keep moving",
         "description": "Build endurance for everyday activities.",
         "image": {
-          "src": "/figures/exercise-moving-v2.webp",
-          "alt": "Illustration of an older woman walking purposefully."
+          "src": "/figures/exercise-moving-v3.webp",
+          "alt": "An older woman walking along a level park path."
         }
       }
     },
@@ -73,8 +73,8 @@
         "heading": "Build strength",
         "description": "Make lifting, carrying and getting up easier.",
         "image": {
-          "src": "/figures/exercise-strength-v2.webp",
-          "alt": "Illustration of an older man carrying shopping bags."
+          "src": "/figures/exercise-strength-v3.webp",
+          "alt": "An older man carrying two modest shopping bags."
         }
       }
     },
@@ -95,8 +95,8 @@
         "heading": "Practise balance",
         "description": "Improve steadiness and help reduce falls.",
         "image": {
-          "src": "/figures/exercise-balance-v2.webp",
-          "alt": "Illustration of an older woman standing steadily with one hand resting on a sturdy chair."
+          "src": "/figures/exercise-balance-v3.webp",
+          "alt": "An older woman standing with both feet on the floor and one hand on a sturdy chair."
         }
       }
     }
@@ -235,6 +235,10 @@
     {
       "date": "2026-10-31",
       "reason": "Added an article main image and matching share-preview image; article guidance unchanged."
+    },
+    {
+      "date": "2026-10-31",
+      "reason": "Replaced the three idea illustrations with painterly vignettes matching the main image; guidance unchanged."
     }
   ],
   "relatedIds": [

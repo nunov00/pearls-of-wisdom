@@ -52,8 +52,8 @@
         "heading": "Try from memory",
         "description": "Practise remembering, rather than just rereading.",
         "image": {
-          "src": "/figures/study-recall-v2.webp",
-          "alt": "A learner thinks with her reference book closed."
+          "src": "/figures/study-recall-v3.webp",
+          "alt": "A learner recalls an answer with a closed reference book beside her."
         }
       }
     },
@@ -73,8 +73,8 @@
         "heading": "Check what you missed",
         "description": "Turn a wrong or incomplete answer into useful practice.",
         "image": {
-          "src": "/figures/study-check-v2.webp",
-          "alt": "The learner checks an open book against an answer card."
+          "src": "/figures/study-check-v3.webp",
+          "alt": "A learner compares an answer card with an open reference book."
         }
       }
     },
@@ -94,8 +94,8 @@
         "heading": "Come back later",
         "description": "Give yourself another chance to recall it on a different day.",
         "image": {
-          "src": "/figures/study-return-v2.webp",
-          "alt": "The learner holds her book beside a large calendar."
+          "src": "/figures/study-return-v3.webp",
+          "alt": "A learner holds a closed book beside a calendar marked on separated days."
         }
       }
     }
@@ -214,6 +214,10 @@
     {
       "date": "2026-10-31",
       "reason": "Added an article main image and matching share-preview image; article guidance unchanged."
+    },
+    {
+      "date": "2026-10-31",
+      "reason": "Replaced the three idea illustrations with painterly vignettes matching the main image; guidance unchanged."
     }
   ],
   "relatedIds": [
