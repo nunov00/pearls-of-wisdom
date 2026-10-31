@@ -19,7 +19,7 @@
   "assumptions": "Not a complete method for learning every practical skill.",
   "introduction": "It makes sense while the page is open. Then someone asks you to explain it, and the answer has gone. Try changing what you do after reading: recall a little, check it, and return to it later. Here is one simple way to begin.",
   "publishedAt": "2026-10-19",
-  "revisedAt": "2026-10-27",
+  "revisedAt": "2026-10-31",
   "lastEvidenceCheckedAt": "2026-10-27",
   "selection": {
     "basis": "foundations",
@@ -210,6 +210,10 @@
     {
       "date": "2026-10-27",
       "reason": "Fresh illustration treatment and reader feedback refinements; original publication date retained."
+    },
+    {
+      "date": "2026-10-31",
+      "reason": "Added an article main image and matching share-preview image; article guidance unchanged."
     }
   ],
   "relatedIds": [
@@ -222,5 +226,10 @@
       "correct",
       "space"
     ]
+  },
+  "mainImage": {
+    "src": "/figures/study-main-v1.webp",
+    "shareSrc": "/figures/study-main-v1.jpg",
+    "alt": "A learner pauses to recall an answer with her reference book closed beside her."
   }
 }
