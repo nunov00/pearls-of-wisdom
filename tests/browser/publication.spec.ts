@@ -76,6 +76,7 @@ test('overview, references and return control work with accessible reading', asy
   await expect(page.locator('.full-guide')).toHaveAttribute('open', '');
   await expect(page.locator('.full-guide>summary')).toBeFocused();
   await expect(page.locator('.full-guide>summary')).toBeInViewport();
+  await expect(page.locator('.article-intro')).toBeInViewport();
   await page.locator('.full-guide>summary').click();
   await expect(page.locator('.full-guide')).not.toHaveAttribute('open', '');
   await page.locator('.full-guide>summary').focus();
@@ -102,6 +103,20 @@ test('overview, references and return control work with accessible reading', asy
   await page.goto('/articles/exercise-foundations-after-65/#balance');
   await expect(page.locator('.full-guide')).toHaveAttribute('open', '');
   await expect(page.locator('#balance')).toBeVisible();
+});
+
+test('opening from the overview card on the home page reveals the guide on a phone', async ({browser, baseURL}) => {
+  const context = await browser.newContext({baseURL, viewport: {width: 390, height: 844}, hasTouch: true, isMobile: true});
+  const page = await context.newPage();
+  await page.goto('/');
+  await expect(page.locator('.article-intro')).toBeHidden();
+  await page.locator('.hero-card .idea-overview h2').first().tap();
+  await expect(page.locator('.full-guide')).toHaveAttribute('open', '');
+  await expect(page.locator('.full-guide>summary')).toBeFocused();
+  await expect(page.locator('.full-guide>summary')).toHaveText(/Show less/);
+  await expect(page.locator('.full-guide>summary')).toBeInViewport();
+  await expect(page.locator('.article-intro')).toBeInViewport();
+  await context.close();
 });
 
 test('core reading and category navigation work without JavaScript', async ({browser, baseURL}) => {

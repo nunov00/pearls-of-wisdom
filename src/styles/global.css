@@ -112,5 +112,4 @@
 .hero-card:active,.compact-article:has(.hero-card:active) .full-guide>summary,.compact-article .full-guide>summary:active{background:var(--cream)}
 .compact-article .full-guide>summary:focus-visible{outline-offset:-3px}
 .share-row a{display:inline-flex;align-items:center;min-height:44px}
-@media(max-width:720px){.hero-card{padding:20px 16px 0}.compact-article .full-guide>summary{padding-inline:16px}.hero-card .idea-overview img{width:88px;flex-basis:88px;height:100px}}
-@media(max-width:370px){.hero-card .idea-overview img{width:72px;flex-basis:72px;height:88px}}
+@media(max-width:720px){.hero-card{padding:20px 16px 0}.compact-article .full-guide>summary{padding-inline:16px}}
