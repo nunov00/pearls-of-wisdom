@@ -211,5 +211,107 @@
         "detail": "Paragraph breaks improve pace; debt remains the densest topic. Further shortening is optional and must retain priorities and help routes."
       }
     ]
+  },
+  {
+    "id": "main-images-001-exercise-after-65-20261031",
+    "articleId": "001-exercise-after-65",
+    "author": "Codex (OpenAI)",
+    "reviewer": "Claude (Anthropic)",
+    "reviewedCommit": "b9b55a9574bc3778d66915382b67f76aff80b69c",
+    "articleSha256": "686f9c59e66282dae5424e69e8b2b6d544063d169215084b442e0a745831102f",
+    "correctionRounds": 0,
+    "decision": "ready",
+    "authorScore": 9,
+    "reviewerScore": 9,
+    "reviewUrl": "https://github.com/nunov00/pearls-of-wisdom/pull/37#issuecomment-6549170794",
+    "illustrationSha256": {
+      "public/figures/exercise-balance-v2.webp": "ce95cd40415c3e72471092276b0295d83c8dfed005f6ec0000ec110dbdcc5b99",
+      "public/figures/exercise-main-v1.jpg": "b454c18e6407d601739c825c314f8bf2b734071a9990d16db2e1fd6455e59cea",
+      "public/figures/exercise-main-v1.webp": "82265d4b509745cf2a9ae9852f388f60fa0d343f69ea117b67b724317f7ee26c",
+      "public/figures/exercise-moving-v2.webp": "c977d91eb21c31e924aec106eb4bfb0edad8da70f3557d73c5e524279e9e5cce",
+      "public/figures/exercise-strength-v2.webp": "8e8826e4eaee9c6a43d3022b0eac3b629cb93703d0c99a5ab824a14fa13d9a70"
+    },
+    "findings": [
+      {
+        "id": "hero-tile-style",
+        "severity": "minor",
+        "status": "open",
+        "detail": "Painterly scenic main images differ from cut-out idea tiles. Owner accepted the exercise direction; retained for this set."
+      },
+      {
+        "id": "exercise-apparent-age",
+        "severity": "minor",
+        "status": "open",
+        "detail": "Couple may appear younger than the 65+ evidence population; optional visual refinement, no change requested by reviewer."
+      }
+    ]
+  },
+  {
+    "id": "main-images-003-money-buffer-20261031",
+    "articleId": "003-money-buffer",
+    "author": "Codex (OpenAI)",
+    "reviewer": "Claude (Anthropic)",
+    "reviewedCommit": "b9b55a9574bc3778d66915382b67f76aff80b69c",
+    "articleSha256": "5477d5ef774c21b04991fed45725f587eaf2e420b91027d245d1ee991873dc54",
+    "correctionRounds": 0,
+    "decision": "ready",
+    "authorScore": 9,
+    "reviewerScore": 9,
+    "reviewUrl": "https://github.com/nunov00/pearls-of-wisdom/pull/37#issuecomment-6549170794",
+    "illustrationSha256": {
+      "public/figures/finance-buffer.webp": "a10a6d062e716ea5d59071debd1c5652a026272a127b75e341dd7df6c69d60d1",
+      "public/figures/finance-debt.webp": "c87315fa67cbcde9ef52937f9b040c0342a4489308a615bf61c63211d20010ed",
+      "public/figures/finance-main-v1.jpg": "b41a374c38265060616ad93de5ec89c6bebca1cf35cd9079c2f3439e0263d0c9",
+      "public/figures/finance-main-v1.webp": "6d57792d5c15fa21ea12b49dffa3191b6248ebfdebcbad194538d3ef8f38d3b9",
+      "public/figures/finance-plan.webp": "394ee27aa6bbcfe6262e070102bf2994c1688e8ff6a56e048ebae7add9f6181a"
+    },
+    "findings": [
+      {
+        "id": "hero-tile-style",
+        "severity": "minor",
+        "status": "open",
+        "detail": "Painterly scenic main images differ from cut-out idea tiles. Owner accepted the exercise direction; retained for this set."
+      },
+      {
+        "id": "similar-interior-scenes",
+        "severity": "minor",
+        "status": "open",
+        "detail": "Study and finance share blue-shirt sunlit-table compositions; vary settings in future work."
+      }
+    ]
+  },
+  {
+    "id": "main-images-002-study-memory-20261031",
+    "articleId": "002-study-memory",
+    "author": "Codex (OpenAI)",
+    "reviewer": "Claude (Anthropic)",
+    "reviewedCommit": "b9b55a9574bc3778d66915382b67f76aff80b69c",
+    "articleSha256": "12faed94bea830952321d9d9c9649620e09587dff1f9e053e5adf838eef26edb",
+    "correctionRounds": 0,
+    "decision": "ready",
+    "authorScore": 9,
+    "reviewerScore": 9,
+    "reviewUrl": "https://github.com/nunov00/pearls-of-wisdom/pull/37#issuecomment-6549170794",
+    "illustrationSha256": {
+      "public/figures/study-check-v2.webp": "c1b62f870540dd91cd98467ce6094d83ae88ecaf9e24f4db970e897eb24a66e8",
+      "public/figures/study-main-v1.jpg": "e63decf8958910f8f5cc3163a5b05b9e0c9318f2990aef4782ba23361583d568",
+      "public/figures/study-main-v1.webp": "4a6f6ca03b7d7c312bc4556618cf51177cc7ada3080b922606b9123ebff7e07b",
+      "public/figures/study-recall-v2.webp": "1af0f0056cbd1f241afd9901f799de0a5b7ff8c2530c2fc8ccb56f020e2ade51",
+      "public/figures/study-return-v2.webp": "6351f2c4e396149d2e86ee4481b479616d2374aa47371ad874922564faa9ffc4"
+    },
+    "findings": [
+      {
+        "id": "hero-tile-style",
+        "severity": "minor",
+        "status": "open",
+        "detail": "Painterly scenic main images differ from cut-out idea tiles. Owner accepted the exercise direction; retained for this set."
+      },
+      {
+        "id": "similar-interior-scenes",
+        "severity": "minor",
+        "status": "open",
+        "detail": "Study and finance share blue-shirt sunlit-table compositions; vary settings in future work."
+      }
+    ]
   }
 ]
