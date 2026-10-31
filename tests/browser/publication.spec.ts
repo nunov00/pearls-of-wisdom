@@ -67,10 +67,21 @@ test('overview, references and return control work with accessible reading', asy
   await expect(page.locator('#main')).toBeFocused();
   await expect(page.locator('.full-guide')).not.toHaveAttribute('open', '');
   await expect(page.locator('.idea-overview>li')).toHaveCount(3);
-  await expect(page.locator('.full-guide>summary')).toHaveText('See how to start ↓Close the full guide ↑');
+  await expect(page.locator('.full-guide>summary')).toHaveText('Read more ↓Show less ↑');
+  await expect(page.locator('.article-header .eyebrow')).toHaveCount(0);
+  await expect(page.locator('.share-row').getByRole('link', {name: 'More in Health →'})).toHaveAttribute('href', '/categories/health/');
   await expect(page.locator('.guide-scope')).toBeHidden();
   await expect(page.locator('.safety-note')).toBeHidden();
+  await page.locator('.hero-card .idea-overview h2').first().click();
+  await expect(page.locator('.full-guide')).toHaveAttribute('open', '');
+  await expect(page.locator('.full-guide>summary')).toBeFocused();
+  await expect(page.locator('.full-guide>summary')).toBeInViewport();
+  await expect(page.locator('.article-intro')).toBeInViewport();
   await page.locator('.full-guide>summary').click();
+  await expect(page.locator('.full-guide')).not.toHaveAttribute('open', '');
+  await page.locator('.full-guide>summary').focus();
+  await page.keyboard.press('Enter');
+  await expect(page.locator('.full-guide')).toHaveAttribute('open', '');
   await expect(page.locator('.guide-scope')).toBeVisible();
   await expect(page.locator('.safety-note')).toBeVisible();
   await expect(page.getByRole('navigation', {name: 'Recommendations'})).toHaveCount(0);
@@ -92,6 +103,23 @@ test('overview, references and return control work with accessible reading', asy
   await page.goto('/articles/exercise-foundations-after-65/#balance');
   await expect(page.locator('.full-guide')).toHaveAttribute('open', '');
   await expect(page.locator('#balance')).toBeVisible();
+});
+
+test('opening from the overview card on the home page reveals the guide on a phone', async ({browser, baseURL}) => {
+  const context = await browser.newContext({baseURL, viewport: {width: 390, height: 844}, hasTouch: true, isMobile: true});
+  const page = await context.newPage();
+  await page.goto('/');
+  await expect(page.locator('.article-intro')).toBeHidden();
+  await page.locator('.hero-card .idea-overview h2').first().tap();
+  await expect(page.locator('.full-guide')).toHaveAttribute('open', '');
+  await expect(page.locator('.full-guide>summary')).toBeFocused();
+  await expect(page.locator('.full-guide>summary')).toHaveText(/Show less/);
+  await expect(page.locator('.full-guide>summary')).toBeInViewport();
+  await expect(page.locator('.article-intro')).toBeInViewport();
+  await page.locator('.full-guide>summary').tap();
+  await expect(page.locator('.full-guide')).not.toHaveAttribute('open', '');
+  await expect(page.locator('#article-title')).toBeInViewport();
+  await context.close();
 });
 
 test('core reading and category navigation work without JavaScript', async ({browser, baseURL}) => {
