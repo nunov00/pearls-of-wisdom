@@ -9,8 +9,8 @@ const sourceNumber=(id:string)=>a.sources.findIndex(s=>s.id===id)+1;
 const recommendationSources=(claimIds:string[])=>[...new Set(a.claims.filter(c=>claimIds.includes(c.id)).flatMap(c=>c.sourceIds))];
 ---
 <article class="reading wrap compact-article">
+  <div class="hero-card" data-hero-card>
   <header class="article-header">
-    <a class="eyebrow" href={`/categories/${categorySlug(a.category)}/`}>{a.category} · Three foundations</a>
     <h1 id="article-title">{a.title}</h1>
   </header>
   <ol class="idea-overview" aria-label="Three ideas at a glance">
@@ -19,8 +19,9 @@ const recommendationSources=(claimIds:string[])=>[...new Set(a.claims.filter(c=>
       <div><h2>{r.overview?.heading??r.heading}</h2><p>{r.overview?.description??r.whyItMatters}</p></div>
     </li>)}
   </ol>
+  </div>
   <details class="full-guide" id="full-guide">
-    <summary><span class="when-closed">See how to start <span aria-hidden="true">↓</span></span><span class="when-open">Close the full guide <span aria-hidden="true">↑</span></span></summary>
+    <summary><span class="when-closed">Read more <span aria-hidden="true">↓</span></span><span class="when-open">Show less <span aria-hidden="true">↑</span></span></summary>
     <div class="guide-body">
       <p class="article-intro">{a.introduction}</p>
       <p class="guide-scope">{a.audience}</p>
@@ -55,12 +56,15 @@ const recommendationSources=(claimIds:string[])=>[...new Set(a.claims.filter(c=>
       <a class="return-overview" href="#article-title">Back to the three ideas ↑</a>
     </div>
   </details>
-  <div class="share-row"><button id="share" class="button button-secondary" type="button" data-share-url={`/articles/${a.slug}/`}>Share this article ↗</button><span id="share-status" role="status"></span><a href="/library/">Browse the library →</a></div>
+  <div class="share-row"><button id="share" class="button button-secondary" type="button" data-share-url={`/articles/${a.slug}/`}>Share this article ↗</button><span id="share-status" role="status"></span><a href={`/categories/${categorySlug(a.category)}/`}>More in {a.category} →</a><a href="/library/">Browse the library →</a></div>
 </article>
 <script>
 const guide=document.querySelector<HTMLDetailsElement>('.full-guide');
 function revealAnchor(){let id;try{id=decodeURIComponent(location.hash.slice(1));}catch{return;}const target=id?document.getElementById(id):null;if(guide&&id==='article-title')guide.open=false;else if(guide&&target&&guide.contains(target)&&target!==guide)guide.open=true;if(target)requestAnimationFrame(()=>target.scrollIntoView());}
 revealAnchor();window.addEventListener('hashchange',revealAnchor);
 document.querySelector('.return-overview')?.addEventListener('click',(event)=>{if(!guide)return;event.preventDefault();guide.open=false;history.pushState(null,'','#article-title');guide.querySelector('summary')?.focus({preventScroll:true});document.getElementById('article-title')?.scrollIntoView();});
+// The whole overview card opens and closes the guide. The summary stays the one
+// keyboard and screen-reader control; this only widens the pointer target.
+document.querySelector('[data-hero-card]')?.addEventListener('click',(event)=>{if(!guide)return;if((event.target as Element).closest('a,button,summary'))return;if(window.getSelection()?.toString())return;guide.open=!guide.open;});
 document.querySelector<HTMLButtonElement>('#share')?.addEventListener('click',async(event)=>{const button=event.currentTarget as HTMLButtonElement;const status=document.querySelector('#share-status')!;const url=new URL(button.dataset.shareUrl!,location.origin).href;try{if(navigator.share)await navigator.share({title:document.title,url});else if(navigator.clipboard){await navigator.clipboard.writeText(url);status.textContent='Link copied';}else status.textContent='Copy the address from your browser to share this article.';}catch(e){if((e as Error).name!=='AbortError')status.textContent='Copy the address from your browser to share this article.';}});
 </script>
