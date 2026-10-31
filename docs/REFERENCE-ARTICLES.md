@@ -2,7 +2,7 @@
 
 Owner direction, 27 October 2026: refine two more pilots after exercise, starting with study memory, then financial breathing room. Once accepted, use all three as concrete examples alongside EDITORIAL.md. Preserve subject-specific judgement rather than copying every sentence or illustration layout.
 
-Current presentation, 31 October 2026: use one strong main image, followed by three text-only tinted idea cards. Optional guide imagery must explain something useful. Historical asset briefs below describe earlier iterations, not a current quota of three small images or a default colour palette. Follow EDITORIAL.md for the current image-quality and review requirements.
+Current presentation, 31 October 2026: use one strong main image, followed by the three ideas as a text-only numbered list with thin dividers. Optional guide imagery must explain something useful. Historical asset briefs below describe earlier iterations, not a current quota of three small images or a default colour palette. Follow EDITORIAL.md for the current image-quality and review requirements.
 
 | Article | Reference status | What it demonstrates |
 | --- | --- | --- |
