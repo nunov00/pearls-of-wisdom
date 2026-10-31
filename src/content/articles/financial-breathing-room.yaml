@@ -18,7 +18,7 @@
   "assumptions": "General education drawn from US and UK public guidance. Debt priorities, support services and account protections depend on your country; this is not individual financial advice.",
   "introduction": "An unexpected repair can become two problems: the bill itself and the borrowing needed to pay it. Seeing what is due, keeping a reserve when possible and reducing costly debt can give you more room to respond.",
   "publishedAt": "2026-10-19",
-  "revisedAt": "2026-10-27",
+  "revisedAt": "2026-10-31",
   "lastEvidenceCheckedAt": "2026-10-27",
   "selection": {
     "basis": "foundations",
@@ -300,6 +300,10 @@
     {
       "date": "2026-10-27",
       "reason": "Cycle 2 after independent Claude review: include a first-wage example while retaining adult borrowing scope, explain priority payments, separate repair examples from caveats, add checked US counselling guidance and direct help links."
+    },
+    {
+      "date": "2026-10-31",
+      "reason": "Added an article main image and matching share-preview image; article guidance unchanged."
     }
   ],
   "relatedIds": [
@@ -313,5 +317,10 @@
       "buffer",
       "debt"
     ]
+  },
+  "mainImage": {
+    "src": "/figures/finance-main-v1.webp",
+    "shareSrc": "/figures/finance-main-v1.jpg",
+    "alt": "An adult organises household papers at a table beside a modest savings jar."
   }
 }
