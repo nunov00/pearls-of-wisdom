@@ -18,7 +18,7 @@
   "assumptions": "General exercise guidance, not a complete plan for healthy ageing.",
   "introduction": "Getting out of a chair, carrying shopping and walking to the bus draw on different abilities. A useful exercise routine keeps more than one of them in practice.",
   "publishedAt": "2026-10-19",
-  "revisedAt": "2026-10-27",
+  "revisedAt": "2026-10-31",
   "lastEvidenceCheckedAt": "2026-10-26",
   "selection": {
     "basis": "foundations",
@@ -231,6 +231,10 @@
     {
       "date": "2026-10-27",
       "reason": "Fresh illustration treatment and reader feedback refinements; original publication date retained."
+    },
+    {
+      "date": "2026-10-31",
+      "reason": "Added an article main image and matching share-preview image; article guidance unchanged."
     }
   ],
   "relatedIds": [
@@ -243,5 +247,10 @@
       "strength",
       "balance"
     ]
+  },
+  "mainImage": {
+    "src": "/figures/exercise-main-v1.webp",
+    "shareSrc": "/figures/exercise-main-v1.jpg",
+    "alt": "Two older adults walking along a sunlit park path, one carrying a shopping bag."
   }
 }
