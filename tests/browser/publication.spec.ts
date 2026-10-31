@@ -116,6 +116,9 @@ test('opening from the overview card on the home page reveals the guide on a pho
   await expect(page.locator('.full-guide>summary')).toHaveText(/Show less/);
   await expect(page.locator('.full-guide>summary')).toBeInViewport();
   await expect(page.locator('.article-intro')).toBeInViewport();
+  await page.locator('.full-guide>summary').tap();
+  await expect(page.locator('.full-guide')).not.toHaveAttribute('open', '');
+  await expect(page.locator('#article-title')).toBeInViewport();
   await context.close();
 });
 
