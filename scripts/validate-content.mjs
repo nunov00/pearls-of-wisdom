@@ -1,8 +1,9 @@
 import {allArticles} from '../src/lib/catalogue.ts';
 import fs from 'node:fs';
+import {imageSize} from './image-size.mjs';
 import {validateAutomation} from './automation-policy.mjs';
 const articles=allArticles();
-for(const a of articles)if(a.mainImage)for(const src of [a.mainImage.src,a.mainImage.shareSrc]){if(!fs.existsSync('public'+src))throw new Error('Missing main image public'+src);}
+for(const a of articles)if(a.mainImage)for(const src of [a.mainImage.src,a.mainImage.shareSrc]){const file='public'+src;if(!fs.existsSync(file))throw new Error('Missing main image '+file);const {width,height}=imageSize(file);if(width!==1200||height!==630)throw new Error(`Main image ${file} is ${width}x${height}; it must be 1200x630`);}
 for(const a of articles)if(a.figure){const file='public'+a.figure.src;if(!fs.existsSync(file))throw new Error('Missing figure '+file);if(file.endsWith('.svg')){const svg=fs.readFileSync(file,'utf8');if(/<script|<foreignObject|on[a-z]+\s*=|(?:href|src)\s*=\s*["'](?!#)|url\s*\(|<!ENTITY/i.test(svg))throw new Error('Unsafe SVG '+file);}}
 
 const queue=JSON.parse(fs.readFileSync('editorial/queue.json','utf8'));
