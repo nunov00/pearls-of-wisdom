@@ -2,11 +2,13 @@
 
 Owner direction, 27 October 2026: refine two more pilots after exercise, starting with study memory, then financial breathing room. Once accepted, use all three as concrete examples alongside EDITORIAL.md. Preserve subject-specific judgement rather than copying every sentence or illustration layout.
 
+Current presentation, 31 October 2026: use one strong main image, followed by three text-only tinted idea cards. Optional guide imagery must explain something useful. Historical asset briefs below describe earlier iterations, not a current quota of three small images or a default colour palette. Follow EDITORIAL.md for the current image-quality and review requirements.
+
 | Article | Reference status | What it demonstrates |
 | --- | --- | --- |
-| Exercise foundations | Established benchmark from the Owner's iterative design review | Three clear illustrated ideas; inviting expansion; practical targets and contextual precautions beside the detailed advice; linked references. |
-| Remember more of what you study | Candidate — awaiting Owner review of this revision | A connected routine, with recall followed by correction and a later attempt; one worked example carried through the guide; illustrations that distinguish the three actions; honest limits on timing and overlap. |
-| Financial breathing room | Candidate — manual Codex/Claude PR review cycles in progress | Three illustrated ideas; a repair-bill example; essential debt priorities preserved in the overview; practical steps and checked support routes in the expanded guide. |
+| Exercise foundations | Established benchmark from the Owner's iterative design review | A strong main image and three clear text-only ideas; inviting expansion; practical targets and contextual precautions beside the detailed advice; linked references. |
+| Remember more of what you study | Candidate — awaiting Owner review of this revision | A connected routine, with recall followed by correction and a later attempt; one worked example carried through the guide; a strong main image and text-only cards that distinguish the three actions; honest limits on timing and overlap. |
+| Financial breathing room | Candidate — manual Codex/Claude PR review cycles in progress | A strong main image and three text-only ideas; a repair-bill example; essential debt priorities preserved in the overview; practical steps and checked support routes in the expanded guide. |
 
 ## Using the examples
 
@@ -14,7 +16,7 @@ Read the editorial standard first. Open an accepted reference article in both re
 
 A candidate is not yet an accepted editorial reference. Record the Owner's acceptance and the corresponding immutable commit when that happens; keep factual/source checks current for new articles instead of reusing references blindly. A later change can still require renewed content review. These examples do not replace the existing research, independent review or publication checks.
 
-## Study pilot design and assets
+## Historical study pilot design and assets
 
 The public route remains `/articles/remember-what-you-study/`, and the original publication date remains 19 October 2026. This is a revision of the existing article, not a duplicate or a new daily publication. Images use the shared illustration palette and true transparency, with 600px WebP delivery assets. They illustrate the routine rather than acting as scientific diagrams.
 
@@ -26,7 +28,7 @@ Built-in image generation was used on 27 October 2026. Prompt set (the productio
 
 ## Fresh visual direction — 27 October 2026
 
-Owner approved the consolidated feedback: a cleaner off-white/ink/blue site, contemporary illustrations with wider colour freedom, clearer study wording and an everyday language-learning example. Both refreshed pilots still await Owner review of this direction; finance remains the next pilot. The opening remains just the three ideas and expansion control; the hook stays within the guide.
+Owner approved the consolidated feedback: a cleaner off-white/ink/blue site, contemporary illustrations with wider colour freedom, clearer study wording and an everyday language-learning example. Both refreshed pilots still await Owner review of this direction; finance remains the next pilot. At that historical stage, the opening contained the three illustrated ideas and expansion control. The 31 October main-image/text-only-card direction above supersedes that layout.
 
 New built-in image-generation asset briefs, delivered as local 600px transparent WebP files (previous assets retained):
 
