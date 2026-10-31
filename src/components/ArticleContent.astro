@@ -15,8 +15,7 @@ const recommendationSources=(claimIds:string[])=>[...new Set(a.claims.filter(c=>
     <h1 id="article-title">{a.title}</h1>
   </header>
   <ol class="idea-overview" aria-label="Three ideas at a glance">
-    {a.recommendations.map((r,i)=><li id={`idea-${r.id}`}>
-      {r.overview?.image?<img src={r.overview.image.src} alt={r.overview.image.alt} width="144" height="144"/>:<span class="idea-number" aria-hidden="true">{String(i+1).padStart(2,'0')}</span>}
+    {a.recommendations.map(r=><li id={`idea-${r.id}`}>
       <div><h2>{r.overview?.heading??r.heading}</h2><p>{r.overview?.description??r.whyItMatters}</p></div>
     </li>)}
   </ol>

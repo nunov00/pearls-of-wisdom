@@ -178,12 +178,12 @@ test('citations stay with the preceding word at phone and desktop widths', async
 });
 
 
-test('study pilot connects the illustrated ideas to a usable routine', async ({page}, testInfo) => {
+test('study pilot connects text-only ideas to a usable routine', async ({page}, testInfo) => {
   await page.goto('/articles/remember-what-you-study/');
   await expect(page.locator('.full-guide')).not.toHaveAttribute('open', '');
   await expect(page.locator('.idea-overview h2')).toHaveText(['Try from memory', 'Check what you missed', 'Come back later']);
-  await expect(page.locator('.idea-overview img')).toHaveCount(3);
-  expect(await page.locator('.idea-overview img').evaluateAll(images => images.every(image => (image as HTMLImageElement).complete && (image as HTMLImageElement).naturalWidth > 0))).toBe(true);
+  await expect(page.locator('.idea-overview img')).toHaveCount(0);
+  await expect(page.locator('.article-main-image')).toBeVisible();
   await page.locator('.full-guide>summary').click();
   await expect(page.locator('.recommendation h2')).toHaveText(['Try from memory', 'Check what you missed', 'Come back later']);
   await expect(page.locator('#retrieve')).toContainText('Spanish');
@@ -195,16 +195,13 @@ test('study pilot connects the illustrated ideas to a usable routine', async ({p
 });
 
 
-test('finance pilot keeps priorities clear and its illustrated guide usable', async ({page}, testInfo) => {
+test('finance pilot keeps priorities clear and its text-only overview usable', async ({page}, testInfo) => {
   await page.goto('/articles/financial-breathing-room/');
   await expect(page.locator('.full-guide')).not.toHaveAttribute('open', '');
   await expect(page.locator('.idea-overview h2')).toHaveText(['See what is due', 'Keep a little in reserve', 'Reduce borrowing costs']);
   await expect(page.locator('.idea-overview')).toContainText('Keep essentials covered');
-  await expect(page.locator('.idea-overview img')).toHaveCount(3);
-  for (const image of await page.locator('.idea-overview img').all()) {
-    await expect(image).toBeVisible();
-    await expect.poll(() => image.evaluate(e => (e as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
-  }
+  await expect(page.locator('.idea-overview img')).toHaveCount(0);
+  await expect(page.locator('.article-main-image')).toBeVisible();
   await page.locator('.full-guide>summary').click();
   await expect(page.locator('.action')).toHaveCount(3);
   await expect(page.locator('#debt .what')).toContainText('local rules');
