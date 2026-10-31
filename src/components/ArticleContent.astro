@@ -10,6 +10,7 @@ const recommendationSources=(claimIds:string[])=>[...new Set(a.claims.filter(c=>
 ---
 <article class="reading wrap compact-article">
   <div class="hero-card" data-hero-card>
+  {a.mainImage&&<img class="article-main-image" src={a.mainImage.src} alt={a.mainImage.alt} width="1200" height="630" fetchpriority="high"/>}
   <header class="article-header">
     <h1 id="article-title">{a.title}</h1>
   </header>
