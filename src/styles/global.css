@@ -18,12 +18,12 @@
 .compact-article h1{font-size:clamp(34px,5vw,48px);margin:14px 0 24px}
 .compact-article .eyebrow{font-size:15px;color:var(--accent)}
 .idea-overview{list-style:none;margin:0 0 20px;padding:0}
-.idea-overview li{display:flex;align-items:center;gap:20px;padding:16px 0;border-bottom:1px solid var(--line)}
-.idea-overview img{width:104px;height:104px;object-fit:contain;flex:0 0 104px;border-radius:8px}
+.idea-overview li{display:block;padding:16px 0;border-bottom:1px solid var(--line)}
+
 .idea-overview li>div{min-width:0}
 .idea-overview h2{font-size:28px;margin:0 0 6px}
 .idea-overview p{font-size:20px;line-height:1.45;margin:0}
-.idea-number{font:28px var(--font-heading);color:var(--accent);min-width:34px}
+
 .full-guide>summary{display:block;list-style:none;background:var(--accent);color:var(--on-accent);border-radius:8px;padding:15px 22px;text-align:center;font-size:19px;font-weight:normal;min-height:54px}
 .full-guide>summary::-webkit-details-marker{display:none}
 .full-guide .when-open{display:none}
@@ -57,11 +57,11 @@
 .compact-article .share-row{font-size:16px;margin-top:20px}
 .compact-article .share-row .button{font-size:16px}
 .compact-article .share-row>a{display:inline-flex;align-items:center;min-height:44px}
-@media(max-width:720px){.compact-article{padding-block:28px}.compact-article h1{font-size:36px}.idea-overview li{gap:12px;padding:14px 0}.idea-overview img{width:84px;height:96px;flex-basis:84px}.idea-overview h2{font-size:25px}.idea-overview p{font-size:19px}.compact-article .recommendation h2{font-size:29px}.compact-article .article-intro{font-size:20px}}
-@media(max-width:370px){.compact-article h1{font-size:32px}.idea-overview img{width:70px;flex-basis:70px;height:90px}.idea-overview h2{font-size:23px}}
+@media(max-width:720px){.compact-article{padding-block:28px}.compact-article h1{font-size:36px}.idea-overview li{padding:14px 0}.idea-overview h2{font-size:25px}.idea-overview p{font-size:19px}.compact-article .recommendation h2{font-size:29px}.compact-article .article-intro{font-size:20px}}
+@media(max-width:370px){.compact-article h1{font-size:32px}.idea-overview h2{font-size:23px}}
 
 /* Reading polish: a single guide, quiet secondary actions and compact citations. */
-@media(min-width:721px){.idea-overview img{width:144px;height:144px;flex-basis:144px}}
+
 .compact-article .button-secondary{background:transparent;color:var(--ink);border:1px solid var(--border-button);padding:10px 20px}
 .compact-article .button-secondary:hover{background:var(--cream);color:var(--ink)}
 .compact-article .supporting-detail{font-size:18px;color:var(--ink-soft)}
@@ -92,9 +92,9 @@
 /* Fresh editorial direction: neutral paper, ink text and restrained blue controls. */
 .full-guide>summary,.button{background:var(--accent);color:var(--on-accent)}
 .compact-article .eyebrow{color:var(--accent)}
-.idea-overview img{border-radius:0}
-@media(max-width:720px){.idea-overview img{width:104px;flex-basis:104px;height:112px}.idea-overview h2{font-size:24px}.site-header .wordmark small{font-size:15px;letter-spacing:0}}
-@media(max-width:370px){.idea-overview img{width:88px;flex-basis:88px;height:100px}.idea-overview h2{font-size:23px}.site-header .wordmark small{display:none}}
+
+@media(max-width:720px){.idea-overview h2{font-size:24px}.site-header .wordmark small{font-size:15px;letter-spacing:0}}
+@media(max-width:370px){.idea-overview h2{font-size:23px}.site-header .wordmark small{display:none}}
 
 /* Short supporting paragraphs and checked help links keep detailed advice usable. */
 .compact-article .safety-note p{margin:0 0 12px}
@@ -111,18 +111,18 @@
 .compact-article:has(> .hero-card){padding-top:20px}
 @media(max-width:720px){.compact-article:has(> .hero-card){padding-top:14px}}
 .hero-card .idea-overview{display:grid;gap:10px;margin:0}
-.hero-card .idea-overview li{border:0;border-radius:16px;padding:10px 16px 10px 8px;gap:12px;transition:filter .15s}
+.hero-card .idea-overview li{border:0;border-radius:16px;padding:16px 20px;transition:filter .15s}
 .hero-card .idea-overview li:nth-child(3n+1){background:var(--tile-1)}
 .hero-card .idea-overview li:nth-child(3n+2){background:var(--tile-2)}
 .hero-card .idea-overview li:nth-child(3n){background:var(--tile-3)}
-.hero-card .idea-overview img{width:100px;height:108px;flex:0 0 100px;object-fit:cover;object-position:center}
+
 .hero-card .idea-overview h2{margin:0 0 2px}
 .hero-card:active .idea-overview li{filter:brightness(.97)}
 .compact-article .full-guide>summary{background:none;color:var(--accent);border:0;border-radius:8px;text-align:left;padding:14px 4px;margin-top:4px;min-height:52px;font-size:19px;font-weight:bold}
 .compact-article .full-guide>summary:hover,.compact-article:has(.hero-card:hover) .full-guide>summary{text-decoration:underline;text-underline-offset:4px}
 .share-row a{display:inline-flex;align-items:center;min-height:44px}
-@media(min-width:721px){.hero-card .idea-overview li{padding:12px 22px 12px 12px;gap:18px}.hero-card .idea-overview img{width:128px;height:136px;flex-basis:128px}}
-@media(max-width:370px){.hero-card .idea-overview li{padding-right:12px;gap:8px}.hero-card .idea-overview img{width:86px;height:94px;flex-basis:86px}}
+@media(min-width:721px){.hero-card .idea-overview li{padding:20px 24px}}
+@media(max-width:370px){.hero-card .idea-overview li{padding:16px 18px}}
 
 /* Night mode: follows the reader's device setting. Soft navy rather than
    black, warm off-white text, and muted versions of the idea tiles. */
