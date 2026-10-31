@@ -74,6 +74,8 @@ test('overview, references and return control work with accessible reading', asy
   await expect(page.locator('.safety-note')).toBeHidden();
   await page.locator('.hero-card .idea-overview h2').first().click();
   await expect(page.locator('.full-guide')).toHaveAttribute('open', '');
+  await expect(page.locator('.full-guide>summary')).toBeFocused();
+  await expect(page.locator('.full-guide>summary')).toBeInViewport();
   await page.locator('.full-guide>summary').click();
   await expect(page.locator('.full-guide')).not.toHaveAttribute('open', '');
   await page.locator('.full-guide>summary').focus();
