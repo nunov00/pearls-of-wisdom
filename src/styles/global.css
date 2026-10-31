@@ -106,6 +106,8 @@
    it, or the "Read more" control beneath, opens the full guide. */
 .hero-card{cursor:pointer;-webkit-tap-highlight-color:transparent}
 .hero-card .article-header h1{margin:0 0 18px}
+.article-main-image{display:block;width:100%;height:auto;aspect-ratio:1200/630;object-fit:cover;border-radius:16px;margin:0 0 20px}
+@media(max-width:720px){.article-main-image{margin-bottom:16px}}
 .compact-article:has(> .hero-card){padding-top:20px}
 @media(max-width:720px){.compact-article:has(> .hero-card){padding-top:14px}}
 .hero-card .idea-overview{display:grid;gap:10px;margin:0}

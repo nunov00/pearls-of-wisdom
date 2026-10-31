@@ -5,7 +5,7 @@ import ArticleContent from '../components/ArticleContent.astro';
 import {visibleArticles} from '../lib/catalogue';
 const articles=visibleArticles();const latest=articles[0];
 ---
-<Layout title={latest?.title} description={latest?.description}>
+<Layout title={latest?.title} description={latest?.description} image={latest?.mainImage?{src:latest.mainImage.shareSrc,alt:latest.mainImage.alt}:undefined}>
 {latest?<>
 <ArticleContent article={latest}/>
 <section class="wrap section-space"><div class="section-heading"><div><p class="eyebrow">A few more places to begin</p><h2>Good ideas for everyday life</h2></div><a class="text-link" href="/library/">Explore the library →</a></div><div class="card-grid">{articles.slice(1).map(a=><ArticleCard article={a}/>)}</div></section>

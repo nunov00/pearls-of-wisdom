@@ -13,6 +13,7 @@ export const articleSchema=z.object({
  claims:z.array(claim).min(1),
  sources:z.array(z.object({id,title:text,organisation:text,publicationYear:z.number().int().min(1900).max(2100).optional(),url,checkedAt:day,access:z.enum(['checked','partial','unavailable']),section:text,support:text,limitations:text}).strict()).min(1),
  figure:z.object({src:z.string().regex(/^\/figures\/[a-z0-9-]+\.(svg|png|jpg|webp)$/),alt:text,caption:text,description:text}).strict().optional(),
+ mainImage:z.object({src:z.string().regex(/^\/figures\/[a-z0-9-]+\.(png|jpg|webp)$/),shareSrc:z.string().regex(/^\/figures\/[a-z0-9-]+\.(png|jpg)$/),alt:text}).strict().optional(),
  limitations:text,revisionHistory:z.array(z.object({date:day,reason:text}).strict()),relatedIds:z.array(id),summary:z.object({title:text,recommendationIds:z.array(id).min(3)}).strict()
 }).strict().superRefine((a,ctx)=>{
  const issue=(message:string)=>ctx.addIssue({code:'custom',message});
