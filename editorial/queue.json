@@ -67,7 +67,7 @@
     "usefulness": "A concrete, bounded account-security task rather than a tour of every security feature.",
     "audienceInterest": "high",
     "practicalImpact": "high",
-    "preliminaryEvidence": "Initial author screen, 2026-10-28: https://www.ncsc.gov.uk/passkeys. Official guidance supports investigating passkeys and password/2SV alternatives; it does not verify individual providers' recovery behaviour. See docs/ideas/2026-10-28-shortlist.md. Claude re-review completed on e008403; see the shortlist review log for checks and remaining research gaps.",
+    "preliminaryEvidence": "Initial author screen, 2026-10-28: https://www.ncsc.gov.uk/passkeys. Official guidance supports investigating passkeys and password/2SV alternatives; it does not verify individual providers' recovery behaviour. See docs/ideas/2026-10-28-shortlist.md. Claude re-review completed on e008403; see the shortlist review log for checks and remaining research gaps. Sunday 1 November topic review at 12e3f7af0ab36bc29d931994535030c23655b92a consolidated; current disposition and unresolved research are in docs/ideas/2026-11-01-ranking.md. No finished article advice is certified.",
     "priority": 4,
     "type": "new",
     "status": "idea",
@@ -88,34 +88,10 @@
       {
         "date": "2026-10-28",
         "event": "Claude review consolidated: merit rank 1; Develop. Amended brief awaits re-review; no commission."
-      }
-    ]
-  },
-  {
-    "id": "topic-15",
-    "title": "Keep leftovers useful, not forgotten",
-    "description": "Make a repeatable plan for cooling, storing and using cooked leftovers.",
-    "category": "Everyday life",
-    "usefulness": "A small household routine with a visible next action and less guesswork.",
-    "audienceInterest": "unassessed",
-    "practicalImpact": "unassessed",
-    "preliminaryEvidence": "Initial author screen, 2026-10-28: https://www.gov.uk/government/publications/how-to-chill-freeze-and-defrost-food-safely/how-to-chill-freeze-and-defrost-food-safely. FSA guidance covers chilling and freezing; it is labelled for England, Northern Ireland and Wales. International applicability and food-specific exceptions remain open. See docs/ideas/2026-10-28-shortlist.md. Claude re-review completed on e008403; see the shortlist review log for checks and remaining research gaps.",
-    "priority": 5,
-    "type": "new",
-    "status": "idea",
-    "articleId": null,
-    "history": [
-      {
-        "date": "2026-10-28",
-        "event": "New candidate proposed by Codex during manual idea-queue trial; not reader feedback or independent review."
       },
       {
-        "date": "2026-10-28",
-        "event": "Proposed shortlist rank 4; author assessment only. Existing qualitative interest/impact estimates are not measured demand. Detailed scope, sources and gaps in docs/ideas/2026-10-28-shortlist.md; Claude review pending."
-      },
-      {
-        "date": "2026-10-28",
-        "event": "Claude review consolidated: merit rank 2; Develop; check food-specific exceptions and Scottish guidance. Amended brief awaits re-review; no commission."
+        "date": "2026-11-01",
+        "event": "Merit 1 among eligible future proposals; Develop. Selected as the sole commission for Pearls-2026-11-06: protect one personal email account while retaining recovery. Author usefulness/appeal 9/8; Claude 9/8. Existing priority retained on merit. No significant topic finding; research the one-device route, provider-specific recovery and phishing limits before article review. See docs/ideas/2026-11-01-ranking.md and #26 comment 6558543524."
       }
     ]
   },
@@ -127,8 +103,8 @@
     "usefulness": "A concrete recovery check rather than a promise that a cloud logo means everything is protected.",
     "audienceInterest": "unassessed",
     "practicalImpact": "unassessed",
-    "preliminaryEvidence": "Initial author screen, 2026-10-28: https://www.ncsc.gov.uk/collection/small-organisations-guide-to-cyber-security/backing-up-your-data. NCSC guidance discusses separate copies and checking restoration. It links to consumer backup/restore guides; their service-specific behaviour still needs verification. See docs/ideas/2026-10-28-shortlist.md. Claude re-review completed on e008403; see the shortlist review log for checks and remaining research gaps.",
-    "priority": 6,
+    "preliminaryEvidence": "Initial author screen, 2026-10-28: https://www.ncsc.gov.uk/collection/small-organisations-guide-to-cyber-security/backing-up-your-data. NCSC guidance discusses separate copies and checking restoration. It links to consumer backup/restore guides; their service-specific behaviour still needs verification. See docs/ideas/2026-10-28-shortlist.md. Claude re-review completed on e008403; see the shortlist review log for checks and remaining research gaps. Sunday 1 November topic review at 12e3f7af0ab36bc29d931994535030c23655b92a consolidated; current disposition and unresolved research are in docs/ideas/2026-11-01-ranking.md. No finished article advice is certified.",
+    "priority": 5,
     "type": "new",
     "status": "idea",
     "articleId": null,
@@ -144,6 +120,42 @@
       {
         "date": "2026-10-28",
         "event": "Claude review consolidated: merit rank 3; Develop; verify consumer service behaviour. Amended brief awaits re-review; no commission."
+      },
+      {
+        "date": "2026-11-01",
+        "event": "Merit 2 among eligible future proposals; Develop, not commissioned. Moved from priority 6 to 5 above leftovers after actual Claude review: inspected consumer deletion/sync documentation makes the recovery problem concrete; export/restore procedure remains unchecked. Author usefulness/appeal 9/9; Claude 8/8. See docs/ideas/2026-11-01-ranking.md and #26 comment 6558543524."
+      }
+    ]
+  },
+  {
+    "id": "topic-15",
+    "title": "Keep leftovers useful, not forgotten",
+    "description": "Make a repeatable plan for cooling, storing and using cooked leftovers.",
+    "category": "Everyday life",
+    "usefulness": "A small household routine with a visible next action and less guesswork.",
+    "audienceInterest": "unassessed",
+    "practicalImpact": "unassessed",
+    "preliminaryEvidence": "Initial author screen, 2026-10-28: https://www.gov.uk/government/publications/how-to-chill-freeze-and-defrost-food-safely/how-to-chill-freeze-and-defrost-food-safely. FSA guidance covers chilling and freezing; it is labelled for England, Northern Ireland and Wales. International applicability and food-specific exceptions remain open. See docs/ideas/2026-10-28-shortlist.md. Claude re-review completed on e008403; see the shortlist review log for checks and remaining research gaps. Sunday 1 November topic review at 12e3f7af0ab36bc29d931994535030c23655b92a consolidated; current disposition and unresolved research are in docs/ideas/2026-11-01-ranking.md. No finished article advice is certified.",
+    "priority": 6,
+    "type": "new",
+    "status": "idea",
+    "articleId": null,
+    "history": [
+      {
+        "date": "2026-10-28",
+        "event": "New candidate proposed by Codex during manual idea-queue trial; not reader feedback or independent review."
+      },
+      {
+        "date": "2026-10-28",
+        "event": "Proposed shortlist rank 4; author assessment only. Existing qualitative interest/impact estimates are not measured demand. Detailed scope, sources and gaps in docs/ideas/2026-10-28-shortlist.md; Claude review pending."
+      },
+      {
+        "date": "2026-10-28",
+        "event": "Claude review consolidated: merit rank 2; Develop; check food-specific exceptions and Scottish guidance. Amended brief awaits re-review; no commission."
+      },
+      {
+        "date": "2026-11-01",
+        "event": "Merit 3 among eligible future proposals; Revise, not commissioned. Moved from priority 5 to 6 below photos after actual Claude review. Important finding I1: explicitly choose UK scope or inspect a second national source and justify the rule before drafting. Author usefulness/appeal 8/8; Claude 7/6. Retained in backlog, not rejected. See docs/ideas/2026-11-01-ranking.md and #26 comment 6558543524."
       }
     ]
   },
