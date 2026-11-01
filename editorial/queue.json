@@ -67,7 +67,7 @@
     "usefulness": "A concrete, bounded account-security task rather than a tour of every security feature.",
     "audienceInterest": "high",
     "practicalImpact": "high",
-    "preliminaryEvidence": "Initial author screen, 2026-10-28: https://www.ncsc.gov.uk/passkeys. Official guidance supports investigating passkeys and password/2SV alternatives; it does not verify individual providers' recovery behaviour. See docs/ideas/2026-10-28-shortlist.md. Claude re-review completed on e008403; see the shortlist review log for checks and remaining research gaps.",
+    "preliminaryEvidence": "Initial author screen, 2026-10-28: https://www.ncsc.gov.uk/passkeys. Official guidance supports investigating passkeys and password/2SV alternatives; it does not verify individual providers' recovery behaviour. See docs/ideas/2026-10-28-shortlist.md. Claude re-review completed on e008403; see the shortlist review log for checks and remaining research gaps. Sunday 1 November topic review at 12e3f7af0ab36bc29d931994535030c23655b92a consolidated; current disposition and unresolved research are in docs/ideas/2026-11-01-ranking.md. No finished article advice is certified.",
     "priority": 4,
     "type": "new",
     "status": "idea",
@@ -88,34 +88,10 @@
       {
         "date": "2026-10-28",
         "event": "Claude review consolidated: merit rank 1; Develop. Amended brief awaits re-review; no commission."
-      }
-    ]
-  },
-  {
-    "id": "topic-15",
-    "title": "Keep leftovers useful, not forgotten",
-    "description": "Make a repeatable plan for cooling, storing and using cooked leftovers.",
-    "category": "Everyday life",
-    "usefulness": "A small household routine with a visible next action and less guesswork.",
-    "audienceInterest": "unassessed",
-    "practicalImpact": "unassessed",
-    "preliminaryEvidence": "Initial author screen, 2026-10-28: https://www.gov.uk/government/publications/how-to-chill-freeze-and-defrost-food-safely/how-to-chill-freeze-and-defrost-food-safely. FSA guidance covers chilling and freezing; it is labelled for England, Northern Ireland and Wales. International applicability and food-specific exceptions remain open. See docs/ideas/2026-10-28-shortlist.md. Claude re-review completed on e008403; see the shortlist review log for checks and remaining research gaps.",
-    "priority": 5,
-    "type": "new",
-    "status": "idea",
-    "articleId": null,
-    "history": [
-      {
-        "date": "2026-10-28",
-        "event": "New candidate proposed by Codex during manual idea-queue trial; not reader feedback or independent review."
       },
       {
-        "date": "2026-10-28",
-        "event": "Proposed shortlist rank 4; author assessment only. Existing qualitative interest/impact estimates are not measured demand. Detailed scope, sources and gaps in docs/ideas/2026-10-28-shortlist.md; Claude review pending."
-      },
-      {
-        "date": "2026-10-28",
-        "event": "Claude review consolidated: merit rank 2; Develop; check food-specific exceptions and Scottish guidance. Amended brief awaits re-review; no commission."
+        "date": "2026-11-01",
+        "event": "Merit 1 among eligible future proposals; Develop. Selected as the sole commission for Pearls-2026-11-06: protect one personal email account while retaining recovery. Author usefulness/appeal 9/8; Claude 9/8. Existing priority retained on merit. No significant topic finding; research the one-device route, provider-specific recovery and phishing limits before article review. See docs/ideas/2026-11-01-ranking.md and #26 comment 6558543524."
       }
     ]
   },
@@ -127,8 +103,8 @@
     "usefulness": "A concrete recovery check rather than a promise that a cloud logo means everything is protected.",
     "audienceInterest": "unassessed",
     "practicalImpact": "unassessed",
-    "preliminaryEvidence": "Initial author screen, 2026-10-28: https://www.ncsc.gov.uk/collection/small-organisations-guide-to-cyber-security/backing-up-your-data. NCSC guidance discusses separate copies and checking restoration. It links to consumer backup/restore guides; their service-specific behaviour still needs verification. See docs/ideas/2026-10-28-shortlist.md. Claude re-review completed on e008403; see the shortlist review log for checks and remaining research gaps.",
-    "priority": 6,
+    "preliminaryEvidence": "Initial author screen, 2026-10-28: https://www.ncsc.gov.uk/collection/small-organisations-guide-to-cyber-security/backing-up-your-data. NCSC guidance discusses separate copies and checking restoration. It links to consumer backup/restore guides; their service-specific behaviour still needs verification. See docs/ideas/2026-10-28-shortlist.md. Claude re-review completed on e008403; see the shortlist review log for checks and remaining research gaps. Sunday 1 November topic review at 12e3f7af0ab36bc29d931994535030c23655b92a consolidated; current disposition and unresolved research are in docs/ideas/2026-11-01-ranking.md. No finished article advice is certified.",
+    "priority": 5,
     "type": "new",
     "status": "idea",
     "articleId": null,
@@ -144,6 +120,42 @@
       {
         "date": "2026-10-28",
         "event": "Claude review consolidated: merit rank 3; Develop; verify consumer service behaviour. Amended brief awaits re-review; no commission."
+      },
+      {
+        "date": "2026-11-01",
+        "event": "Merit 2 among eligible future proposals; Develop, not commissioned. Moved from priority 6 to 5 above leftovers after actual Claude review: inspected consumer deletion/sync documentation makes the recovery problem concrete; export/restore procedure remains unchecked. Author usefulness/appeal 9/9; Claude 8/8. See docs/ideas/2026-11-01-ranking.md and #26 comment 6558543524."
+      }
+    ]
+  },
+  {
+    "id": "topic-15",
+    "title": "Keep leftovers useful, not forgotten",
+    "description": "Make a repeatable plan for cooling, storing and using cooked leftovers.",
+    "category": "Everyday life",
+    "usefulness": "A small household routine with a visible next action and less guesswork.",
+    "audienceInterest": "unassessed",
+    "practicalImpact": "unassessed",
+    "preliminaryEvidence": "Initial author screen, 2026-10-28: https://www.gov.uk/government/publications/how-to-chill-freeze-and-defrost-food-safely/how-to-chill-freeze-and-defrost-food-safely. FSA guidance covers chilling and freezing; it is labelled for England, Northern Ireland and Wales. International applicability and food-specific exceptions remain open. See docs/ideas/2026-10-28-shortlist.md. Claude re-review completed on e008403; see the shortlist review log for checks and remaining research gaps. Sunday 1 November topic review at 12e3f7af0ab36bc29d931994535030c23655b92a consolidated; current disposition and unresolved research are in docs/ideas/2026-11-01-ranking.md. No finished article advice is certified.",
+    "priority": 6,
+    "type": "new",
+    "status": "idea",
+    "articleId": null,
+    "history": [
+      {
+        "date": "2026-10-28",
+        "event": "New candidate proposed by Codex during manual idea-queue trial; not reader feedback or independent review."
+      },
+      {
+        "date": "2026-10-28",
+        "event": "Proposed shortlist rank 4; author assessment only. Existing qualitative interest/impact estimates are not measured demand. Detailed scope, sources and gaps in docs/ideas/2026-10-28-shortlist.md; Claude review pending."
+      },
+      {
+        "date": "2026-10-28",
+        "event": "Claude review consolidated: merit rank 2; Develop; check food-specific exceptions and Scottish guidance. Amended brief awaits re-review; no commission."
+      },
+      {
+        "date": "2026-11-01",
+        "event": "Merit 3 among eligible future proposals; Revise, not commissioned. Moved from priority 5 to 6 below photos after actual Claude review. Important finding I1: explicitly choose UK scope or inspect a second national source and justify the rule before drafting. Author usefulness/appeal 8/8; Claude 7/6. Retained in backlog, not rejected. See docs/ideas/2026-11-01-ranking.md and #26 comment 6558543524."
       }
     ]
   },
@@ -400,6 +412,150 @@
       {
         "date": "2026-10-28",
         "event": "Park for differentiation: distinguish adherence barriers from existing exercise foundations and check behavioural evidence; existing coverage does not force rejection. Retained in the idea pool; no independent rejection."
+      }
+    ]
+  },
+  {
+    "id": "topic-16",
+    "title": "The first minutes before the ambulance arrives",
+    "description": "Recognise a possible stroke, explore hands-only CPR and using a defibrillator before emergency help arrives.",
+    "category": "Health",
+    "usefulness": "Help a bystander recognise an emergency and understand a useful first response.",
+    "audienceInterest": "unassessed",
+    "practicalImpact": "unassessed",
+    "preliminaryEvidence": "Submitted notes report NHS stroke symptoms and BHF CPR pages checked; exact URLs, inspected sections and dates were not supplied. No independent source check in this intake. Before shortlisting, verify current guidance, adult/child applicability, emergency-service instructions and international differences; assess whether stroke and cardiac arrest are too broad for one article.",
+    "priority": 16,
+    "type": "new",
+    "status": "idea",
+    "articleId": null,
+    "history": [
+      {
+        "date": "2026-11-01",
+        "event": "Owner-submitted suggestion added at the Owner's request. Supplied ratings deliberately omitted: usefulness and appeal scoring, evidence screening and independent review remain pending. Appended priority is an intake position, not a merit ranking or commission."
+      },
+      {
+        "date": "2026-11-01",
+        "event": "Scope and safety review required before shortlisting; these are proposed approaches, not approved medical instructions."
+      }
+    ]
+  },
+  {
+    "id": "topic-17",
+    "title": "Pause before you pay: spotting a scam message",
+    "description": "Explore bank, delivery and 'hi Mum' scams through pausing, checking through a trusted channel and resisting pressure to move money.",
+    "category": "Everyday life",
+    "usefulness": "Help readers make a safer decision when a message demands urgent payment or action.",
+    "audienceInterest": "unassessed",
+    "practicalImpact": "unassessed",
+    "preliminaryEvidence": "Submitted notes report NCSC phishing guidance checked; Take Five access was blocked. Exact URLs, inspected sections and dates were not supplied. No independent source check in this intake. Verify accessible substantiation and jurisdiction-specific reporting routes before drafting.",
+    "priority": 17,
+    "type": "new",
+    "status": "idea",
+    "articleId": null,
+    "history": [
+      {
+        "date": "2026-11-01",
+        "event": "Owner-submitted suggestion added at the Owner's request. Supplied ratings deliberately omitted: usefulness and appeal scoring, evidence screening and independent review remain pending. Appended priority is an intake position, not a merit ranking or commission."
+      },
+      {
+        "date": "2026-11-01",
+        "event": "Overlap check: distinguish message/payment decisions from topic-07, which covers securing and recovering the main email account."
+      }
+    ]
+  },
+  {
+    "id": "topic-18",
+    "title": "What to say to someone who might be struggling",
+    "description": "Explore asking directly, listening and helping someone obtain support when concerned about their mental wellbeing or possible suicide risk.",
+    "category": "Wellbeing",
+    "usefulness": "Help readers begin a supportive conversation and recognise when further help is needed.",
+    "audienceInterest": "unassessed",
+    "practicalImpact": "unassessed",
+    "preliminaryEvidence": "Submitted notes report Samaritans guidance and the WHO suicide fact sheet checked; exact URLs, inspected sections and dates were not supplied. No independent source check in this intake. Before shortlisting, verify safe wording, scope, immediate-danger guidance and appropriate country-specific support routes.",
+    "priority": 18,
+    "type": "new",
+    "status": "idea",
+    "articleId": null,
+    "history": [
+      {
+        "date": "2026-11-01",
+        "event": "Owner-submitted suggestion added at the Owner's request. Supplied ratings deliberately omitted: usefulness and appeal scoring, evidence screening and independent review remain pending. Appended priority is an intake position, not a merit ranking or commission."
+      },
+      {
+        "date": "2026-11-01",
+        "event": "Sensitive topic: careful safety framing and source review required; distinguish supporting another person from diagnosis or treatment. Check overlap with topic-06 on everyday stress."
+      }
+    ]
+  },
+  {
+    "id": "topic-19",
+    "title": "Get more out of a short doctor's appointment",
+    "description": "Explore leading with the main concern, describing symptoms clearly and confirming the next step before leaving.",
+    "category": "Health",
+    "usefulness": "Help readers prepare for a short consultation and leave understanding the agreed next step.",
+    "audienceInterest": "unassessed",
+    "practicalImpact": "unassessed",
+    "preliminaryEvidence": "No source confirmed in submitted notes: the attempted NHS page had moved and AHRQ access was blocked. Find accessible guidance, record exact URLs and inspected sections, and check applicability across healthcare systems before shortlisting. No independent source check in this intake.",
+    "priority": 19,
+    "type": "new",
+    "status": "idea",
+    "articleId": null,
+    "history": [
+      {
+        "date": "2026-11-01",
+        "event": "Owner-submitted suggestion added at the Owner's request. Supplied ratings deliberately omitted: usefulness and appeal scoring, evidence screening and independent review remain pending. Appended priority is an intake position, not a merit ranking or commission."
+      },
+      {
+        "date": "2026-11-01",
+        "event": "Await evidence screening; distinguish routine appointment preparation from symptoms requiring urgent care."
+      }
+    ]
+  },
+  {
+    "id": "topic-20",
+    "title": "Check a viral claim in 60 seconds",
+    "description": "Explore lateral reading: investigate who is behind a claim before examining it closely.",
+    "category": "Learning",
+    "usefulness": "Help readers decide whether a viral claim deserves trust or further checking.",
+    "audienceInterest": "unassessed",
+    "practicalImpact": "unassessed",
+    "preliminaryEvidence": "Submitted notes report a Stanford/Inquiry Group lesson checked; related field-trial research was known but had not been read. Exact URLs, inspected sections and dates were not supplied. No independent source check in this intake. Locate and inspect the original research, check transfer to everyday claims and test whether the 60-second promise is realistic.",
+    "priority": 20,
+    "type": "new",
+    "status": "idea",
+    "articleId": null,
+    "history": [
+      {
+        "date": "2026-11-01",
+        "event": "Owner-submitted suggestion added at the Owner's request. Supplied ratings deliberately omitted: usefulness and appeal scoring, evidence screening and independent review remain pending. Appended priority is an intake position, not a merit ranking or commission."
+      },
+      {
+        "date": "2026-11-01",
+        "event": "Working title only: avoid implying that one minute can establish truth. Distinguish claim evaluation from scam/payment decisions and topic-07 account security."
+      }
+    ]
+  },
+  {
+    "id": "topic-21",
+    "title": "Find and cancel subscriptions you've forgotten",
+    "description": "Explore finding recurring subscriptions, checking whether they are still wanted and cancelling through the relevant provider.",
+    "category": "Finance",
+    "usefulness": "Help readers identify recurring spending they no longer value.",
+    "audienceInterest": "unassessed",
+    "practicalImpact": "unassessed",
+    "preliminaryEvidence": "No source check reported for this suggestion. Verify provider-specific cancellation routes, continuing obligations and jurisdiction limits before shortlisting. No independent source check in this intake.",
+    "priority": 21,
+    "type": "new",
+    "status": "idea",
+    "articleId": null,
+    "history": [
+      {
+        "date": "2026-11-01",
+        "event": "Owner-submitted suggestion added at the Owner's request. Supplied ratings deliberately omitted: usefulness and appeal scoring, evidence screening and independent review remain pending. Appended priority is an intake position, not a merit ranking or commission."
+      },
+      {
+        "date": "2026-11-01",
+        "event": "Submitted as a near miss, retained without a rating or rejection. Overlap check: topic-03 / article 003-money-buffer already covers financial breathing room; establish a distinct practical reader outcome before shortlisting."
       }
     ]
   }
