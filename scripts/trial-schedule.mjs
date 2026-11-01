@@ -18,10 +18,12 @@ export function trialSlot(role, now, {completedReviews} = {}) {
   const dates = ['2026-11-01','2026-11-02','2026-11-03','2026-11-04','2026-11-05'];
   const day = dates.indexOf(date);
   if (day < 0) return null;
-  if (role === 'queue') return day === 0 && time >= '19:13'
+  // Allow 30 minutes of early scheduler dispatch; prerequisites still govern handoffs.
+  // Keep original end boundaries, calendar dates and review budgets unchanged.
+  if (role === 'queue') return day === 0 && time >= '18:43'
     ? {date, stage:'select', action:'rank', slotNumber:0, reviewNumber:0, correctionRounds:0} : null;
-  const author = role === 'author' && time >= '09:13' && time < '14:17';
-  const reviewer = role === 'reviewer' && time >= '14:17' && (day !== 0 || time < '19:13');
+  const author = role === 'author' && time >= '08:43' && time < '14:17';
+  const reviewer = role === 'reviewer' && time >= '13:47' && (day !== 0 || time < '19:13');
   if (!author && !reviewer) return null;
   if (day === 0) return {date, stage:author?'select':'topic', action:author?'select':'topic', slotNumber:0, reviewNumber:0, correctionRounds:0};
   const number = nextArticleReview(completedReviews);

@@ -51,11 +51,23 @@ test('ambiguous, absent, duplicate, skipped and over-budget review histories fai
 });
 test('early, late, midnight, unknown roles and post-trial invocations never add a session or publish',()=>{
  for(const role of ['author','queue','reviewer','publish','unknown']) for(const date of ['2026-10-31T13:17:00Z','2026-11-06T08:13:00Z','2026-11-08T13:17:00Z','2027-11-01T13:17:00Z','invalid']) assert.equal(trialSlot(role,date,{completedReviews:[]}),null);
- assert.equal(trialSlot('author','2026-11-02T08:12:59Z',{completedReviews:[]}),null);
+ assert.equal(trialSlot('author','2026-11-02T07:42:59Z',{completedReviews:[]}),null);
  assert.equal(trialSlot('author','2026-11-02T13:17:00Z',{completedReviews:[]}),null);
- assert.equal(trialSlot('reviewer','2026-11-02T13:16:59Z',{completedReviews:[]}),null);
- assert.equal(trialSlot('queue','2026-11-01T18:12:59Z'),null);
+ assert.equal(trialSlot('reviewer','2026-11-02T12:46:59Z',{completedReviews:[]}),null);
+ assert.equal(trialSlot('queue','2026-11-01T17:42:59Z'),null);
  assert.equal(trialSlot('reviewer','2026-11-01T18:13:00Z'),null);
  assert.equal(trialSlot('queue','2026-11-01T23:00:00Z'),null);
  assert.equal(trialSlot('reviewer','2026-11-02T23:00:00Z',{completedReviews:[]}),null);
+});
+
+
+test('early dispatch grace accepts the reported 09:10 start and exact 30-minute boundaries', () => {
+ assert.equal(trialSlot('author','2026-11-01T08:10:00Z').action,'select');
+ for (const [role,stamp] of [['author','2026-11-02T07:43:00Z'],['reviewer','2026-11-02T12:47:00Z'],['queue','2026-11-01T17:43:00Z']]) {
+  assert.ok(trialSlot(role,stamp,{completedReviews:[]}));
+ }
+ // Later dispatch is already allowed until each existing handoff/day boundary.
+ assert.ok(trialSlot('author','2026-11-02T12:30:00Z',{completedReviews:[]}));
+ assert.ok(trialSlot('queue','2026-11-01T22:59:00Z'));
+ assert.equal(trialSlot('reviewer','2026-11-02T12:47:00Z',{completedReviews:[{reviewNumber:1,slotDate:'2026-11-02'}]}),null);
 });
