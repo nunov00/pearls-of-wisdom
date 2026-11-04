@@ -16,10 +16,10 @@
   "goal": "Protect one personal email account while retaining a usable recovery route",
   "audience": "For people managing their own personal email account, or helping someone with permission. Work and school accounts, special protection programmes, suspected compromise and coercive control need their own support; this is a preparation guide.",
   "assumptions": "You can currently sign in. Provider options differ; no purchase or second device is assumed.",
-  "introduction": "Your phone has disappeared. Your email still works somewhere—but the sign-in code goes to that phone. Before this becomes a real problem, spend a little time on the account you rely on most. A useful plan protects both sides: keeping other people out and keeping a way back in for you.",
+  "introduction": "Your phone is gone. You know your email password, but the sign-in screen asks for another check. Could you finish it without that phone? Prepare a way back in while you still have access, then make it harder for someone else to get in.",
   "publishedAt": "2026-11-06",
   "revisedAt": null,
-  "lastEvidenceCheckedAt": "2026-11-02",
+  "lastEvidenceCheckedAt": "2026-11-04",
   "selection": {
     "basis": "foundations",
     "rationale": "Recovery, stronger authentication and resisting deceptive access requests address different failure paths. They interact; this is not a universal measured ranking. Device security is retained as an essential prerequisite.",
@@ -50,12 +50,15 @@
       "whyItMatters": "A stronger sign-in is easier to live with when losing one device does not remove your only route back.",
       "consequence": "If every recovery option depends on the missing phone, the plan has the same weak point as the normal sign-in.",
       "safety": "Keep your working sign-in methods. Do not sign out, remove a device or delete a recovery option just to test this. Treat recovery codes as secrets; do not share them with someone offering help.",
-      "action": "Ask: “If this phone vanished, where would I get the next thing needed to sign in?” Check the answer in the provider’s own help before changing settings.",
-      "details": "Only one device? Look for an offline backup or recovery-code option. For a standard Google account with 2-Step Verification, a saved backup code can replace the second step—not a forgotten password. Each code works once; a new set cancels the old set. Keep it somewhere private, separate from the phone, where you can reach it when needed.\n\nMicrosoft offers a different recovery code. Its guidance says to keep it off the device used to sign in; making a new one invalidates the previous code. When two-step verification is on, Microsoft notes a 30-day delay before changes made through that recovery route take effect. It is not an instant way back in.\n\nIf your provider offers no suitable offline option, follow its documented alternatives. A recovery email helps only if you can reach that account too. Do not assume support can override lost verification methods.",
+      "action": "Open your provider’s security settings while you’re signed in. Check that any recovery number and email address are still yours and reachable. Can you reach that other inbox without the phone you usually use?",
+      "details": "Check what your usual sign-in needs. A text goes to a phone number: if you lose the handset but keep the number, ask your mobile provider about moving it to a replacement SIM. A code from an app, or a passkey stored only on the lost device, does not move with the number. Keep a separate route rather than relying on getting a new SIM straight away.\n\nOnly one device? Look for an offline backup or recovery-code option. For a standard Google account with 2-Step Verification, a saved backup code can replace the second step—not a forgotten password. Each code works once; a new set cancels the old set. Keep it somewhere private, separate from the phone, where you can reach it when needed.\n\nMicrosoft offers a different recovery code. Its guidance says to keep it off the device used to sign in; making a new one invalidates the previous code. When two-step verification is on, Microsoft notes a 30-day delay before changes made through that recovery route take effect. It is not an instant way back in.\n\nOther providers have their own recovery routes. For example, Apple has an account recovery process that can involve a wait. Check your provider’s guidance while you still have access; don’t assume support can override missing checks.",
       "claimIds": [
         "recover-benefit",
         "recover-consequence",
-        "recover-limits"
+        "recover-limits",
+        "recovery-contacts",
+        "phone-number",
+        "apple-route"
       ],
       "overview": {
         "heading": "Keep a way back in",
@@ -64,7 +67,7 @@
     },
     {
       "id": "signin",
-      "heading": "Strengthen the sign-in",
+      "heading": "Make sign-in safer",
       "whatToDo": "Use a passkey where your provider supports it. If you use a password, make it strong and unique and protect it with two-step verification.",
       "whyItMatters": "Passkeys resist fake sign-in pages. A unique password and an extra verification step also make a stolen password less useful.",
       "consequence": "Reusing a password can let a breach elsewhere put your email at risk too.",
@@ -74,10 +77,11 @@
       "claimIds": [
         "signin-benefit",
         "signin-consequence",
-        "passkey-limits"
+        "passkey-limits",
+        "device-care"
       ],
       "overview": {
-        "heading": "Strengthen the sign-in",
+        "heading": "Make sign-in safer",
         "description": "Make a stolen password less useful."
       }
     },
@@ -192,6 +196,53 @@
       ],
       "strength": "consensus-based",
       "strengthRationale": "Direct practical inference from the provider’s warning about account takeover; no effect size asserted."
+    },
+    {
+      "id": "recovery-contacts",
+      "text": "Keep recovery contact details current and accessible.",
+      "kind": "qualification",
+      "basis": "guideline",
+      "sourceIds": [
+        "google-recovery"
+      ],
+      "strength": "consensus-based",
+      "strengthRationale": "Checked primary provider guidance; actual account behaviour may vary."
+    },
+    {
+      "id": "phone-number",
+      "text": "A replacement SIM can restore access to a retained number, not to credentials kept only on the lost device.",
+      "kind": "qualification",
+      "basis": "guideline",
+      "sourceIds": [
+        "google-lost-phone",
+        "google-2sv",
+        "fido"
+      ],
+      "strength": "consensus-based",
+      "strengthRationale": "Checked primary provider guidance; actual account behaviour may vary."
+    },
+    {
+      "id": "apple-route",
+      "text": "Recovery procedures and delays vary by provider.",
+      "kind": "qualification",
+      "basis": "guideline",
+      "sourceIds": [
+        "apple-recovery"
+      ],
+      "strength": "consensus-based",
+      "strengthRationale": "Checked primary provider guidance; actual account behaviour may vary."
+    },
+    {
+      "id": "device-care",
+      "text": "Keep the device locked and its software up to date.",
+      "kind": "qualification",
+      "basis": "guideline",
+      "sourceIds": [
+        "google-security",
+        "google-passkey"
+      ],
+      "strength": "consensus-based",
+      "strengthRationale": "Checked primary provider guidance; actual account behaviour may vary."
     }
   ],
   "sources": [
@@ -282,9 +333,42 @@
       "section": "Screen locks, software updates, suspicious messages and activity",
       "support": "Device maintenance and avoiding requests for account secrets.",
       "limitations": "General consumer guidance read; no live Security Checkup or incident investigation performed."
+    },
+    {
+      "id": "google-recovery",
+      "title": "Set up recovery options",
+      "organisation": "Google",
+      "url": "https://support.google.com/accounts/answer/183723?hl=en",
+      "checkedAt": "2026-11-04",
+      "access": "checked",
+      "section": "Add or change recovery phone and email",
+      "support": "Use recovery details you control and can reach.",
+      "limitations": "Google-specific options and delays; no account settings tested."
+    },
+    {
+      "id": "google-lost-phone",
+      "title": "Fix common issues with 2-Step Verification",
+      "organisation": "Google",
+      "url": "https://support.google.com/accounts/answer/185834?hl=en",
+      "checkedAt": "2026-11-04",
+      "access": "checked",
+      "section": "My phone was lost or stolen",
+      "support": "A mobile provider may transfer your number to a replacement SIM; other methods depend on a device or separate credential.",
+      "limitations": "Transfer depends on the mobile provider; it does not restore device-bound credentials."
+    },
+    {
+      "id": "apple-recovery",
+      "title": "What to expect during account recovery",
+      "organisation": "Apple",
+      "url": "https://support.apple.com/en-us/118574",
+      "checkedAt": "2026-11-04",
+      "access": "checked",
+      "section": "What to expect",
+      "support": "Apple Account recovery has its own procedure and may involve a wait.",
+      "limitations": "Apple-specific guidance; no recovery attempt tested."
     }
   ],
-  "limitations": "These are complementary precautions, not a guarantee against lockout or takeover. Provider rules change; the examples were checked on 2 November 2026. If someone else controls your devices or account, obtain specialist support before making changes that could affect your safety. No account, recovery process or security product was tested for this guide.",
+  "limitations": "These are complementary precautions, not a guarantee against lockout or takeover. Provider rules change. Check your provider’s current instructions before changing your settings. If someone else controls your devices or account, obtain specialist support before making changes that could affect your safety. No account, recovery process or security product was tested for this guide.",
   "revisionHistory": [],
   "relatedIds": [],
   "summary": {
@@ -296,8 +380,8 @@
     ]
   },
   "mainImage": {
-    "src": "/figures/email-recovery-main-v1.webp",
-    "shareSrc": "/figures/email-recovery-main-v1.jpg",
-    "alt": "A hand puts a paper envelope into a drawer beside a phone displaying an email symbol, suggesting a recovery copy kept separately."
+    "src": "/figures/email-recovery-main-v2.webp",
+    "shareSrc": "/figures/email-recovery-main-v2.jpg",
+    "alt": "A hand places a card marked with a key in a lockbox beside a phone showing an email symbol."
   }
 }
