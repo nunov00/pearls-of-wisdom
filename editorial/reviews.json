@@ -415,5 +415,48 @@
         "detail": "Reviewer follow-up confirms these assets match the accepted main images. Cobalt is not a required house palette for future articles."
       }
     ]
+  },
+  {
+    "id": "email-protection-review-2-20261104",
+    "articleId": "004-email-protection",
+    "author": "Codex (OpenAI)",
+    "reviewer": "Claude (Anthropic)",
+    "reviewedCommit": "1ef9ee61ea22f3b1515e6ee29644324619e7ad18",
+    "articleSha256": "6b281c010a0771fe809f73d05e561b85be0b171b609d1d7a8aced7a33db42878",
+    "correctionRounds": 1,
+    "decision": "ready",
+    "authorScore": 9,
+    "reviewerScore": 9,
+    "reviewUrl": "https://github.com/nunov00/pearls-of-wisdom/issues/26#issuecomment-6631834528",
+    "illustrationSha256": {
+      "public/figures/email-recovery-main-v2.webp": "52e0ea192a5b7bb4ea9d745c053fa16fb77d458156dff18146b4d7f8290846db",
+      "public/figures/email-recovery-main-v2.jpg": "2cf2bf656f05904e1b4696b45ce2c8f30acb576f0dfddb292101d3faa6151b3c"
+    },
+    "findings": [
+      {
+        "id": "recovery-contacts-and-number",
+        "severity": "important",
+        "status": "resolved",
+        "detail": "Check recovery contact details and distinguish a retained phone number from credentials bound to the lost device."
+      },
+      {
+        "id": "recovery-citation-layout",
+        "severity": "minor",
+        "status": "open",
+        "detail": "The first recommendation has a dense group of citations that leaves the last word on its own line at 390px."
+      },
+      {
+        "id": "apple-preparation-example",
+        "severity": "minor",
+        "status": "open",
+        "detail": "The Apple example describes the potential wait for recovery. A preparation example would need additional source verification."
+      },
+      {
+        "id": "sms-strength-context",
+        "severity": "minor",
+        "status": "open",
+        "detail": "The article omits an optional comparison of the relative security of SMS and app- or passkey-based sign-in."
+      }
+    ]
   }
 ]

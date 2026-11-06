@@ -1,0 +1,387 @@
+{
+  "schemaVersion": 1,
+  "id": "004-email-protection",
+  "slug": "protect-your-email",
+  "title": "Protect your email without locking yourself out",
+  "description": "Keep a way back in, strengthen your sign-in and be careful what you approve.",
+  "category": "Everyday life",
+  "keywords": [
+    "email",
+    "account security",
+    "recovery",
+    "passkeys",
+    "passwords",
+    "verification"
+  ],
+  "goal": "Protect one personal email account while retaining a usable recovery route",
+  "audience": "For people managing their own personal email account, or helping someone with permission. Work and school accounts, special protection programmes, suspected compromise and coercive control need their own support; this is a preparation guide.",
+  "assumptions": "You can currently sign in. Provider options differ; no purchase or second device is assumed.",
+  "introduction": "Your phone is gone. You know your email password, but the sign-in screen asks for another check. Could you finish it without that phone? Prepare a way back in while you still have access, then make it harder for someone else to get in.",
+  "publishedAt": "2026-11-06",
+  "revisedAt": null,
+  "lastEvidenceCheckedAt": "2026-11-04",
+  "selection": {
+    "basis": "foundations",
+    "rationale": "Recovery, stronger authentication and resisting deceptive access requests address different failure paths. They interact; this is not a universal measured ranking. Device security is retained as an essential prerequisite.",
+    "alternatives": [
+      {
+        "candidate": "A separate password-manager recommendation",
+        "reason": "Useful for unique passwords and some passkeys, but a tool supporting sign-in rather than a separate outcome; its own recovery still matters."
+      },
+      {
+        "candidate": "A paid hardware security key for everyone",
+        "reason": "Can be valuable, especially at higher risk, but is not necessary for every reader and needs its own backup plan."
+      },
+      {
+        "candidate": "An account-activity and connected-app audit",
+        "reason": "Useful maintenance, but a detailed audit would widen this preparation guide; suspected compromise requires the provider’s incident guidance."
+      },
+      {
+        "candidate": "A full scam-message checklist",
+        "reason": "Payment and impersonation scams are a separate queued subject. Here the scope is sign-in codes, recovery secrets and approval prompts."
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "id": "recover",
+      "heading": "Keep a way back in",
+      "whatToDo": "While you can still sign in, open your provider’s security settings and prepare a recovery option you could use without your usual phone.",
+      "whyItMatters": "A stronger sign-in is easier to live with when losing one device does not remove your only route back.",
+      "consequence": "If every recovery option depends on the missing phone, the plan has the same weak point as the normal sign-in.",
+      "safety": "Keep your working sign-in methods. Do not sign out, remove a device or delete a recovery option just to test this. Treat recovery codes as secrets; do not share them with someone offering help.",
+      "action": "Open your provider’s security settings while you’re signed in. Check that any recovery number and email address are still yours and reachable. Can you reach that other inbox without the phone you usually use?",
+      "details": "Check what your usual sign-in needs. A text goes to a phone number: if you lose the handset but keep the number, ask your mobile provider about moving it to a replacement SIM. A code from an app, or a passkey stored only on the lost device, does not move with the number. Keep a separate route rather than relying on getting a new SIM straight away.\n\nOnly one device? Look for an offline backup or recovery-code option. For a standard Google account with 2-Step Verification, a saved backup code can replace the second step—not a forgotten password. Each code works once; a new set cancels the old set. Keep it somewhere private, separate from the phone, where you can reach it when needed.\n\nMicrosoft offers a different recovery code. Its guidance says to keep it off the device used to sign in; making a new one invalidates the previous code. When two-step verification is on, Microsoft notes a 30-day delay before changes made through that recovery route take effect. It is not an instant way back in.\n\nOther providers have their own recovery routes. For example, Apple has an account recovery process that can involve a wait. Check your provider’s guidance while you still have access; don’t assume support can override missing checks.",
+      "claimIds": [
+        "recover-benefit",
+        "recover-consequence",
+        "recover-limits",
+        "recovery-contacts",
+        "phone-number",
+        "apple-route"
+      ],
+      "overview": {
+        "heading": "Keep a way back in",
+        "description": "Plan for the day your usual phone is missing."
+      }
+    },
+    {
+      "id": "signin",
+      "heading": "Make sign-in safer",
+      "whatToDo": "Use a passkey where your provider supports it. If you use a password, make it strong and unique and protect it with two-step verification.",
+      "whyItMatters": "Passkeys resist fake sign-in pages. A unique password and an extra verification step also make a stolen password less useful.",
+      "consequence": "Reusing a password can let a breach elsewhere put your email at risk too.",
+      "safety": "Create passkeys only on devices you own and control. Keep the device locked and updated: someone able to unlock it may also be able to use its passkeys. Prepare recovery first.",
+      "action": "In the account’s security settings, check the available passkey or two-step verification options. Follow the provider’s instructions and retain working recovery methods.",
+      "details": "A passkey lets you sign in using your device’s unlock method, such as a fingerprint or PIN. It is not another password to invent. Some passkeys sync through a password manager; others stay on one device or security key. Check where yours is kept and how you would regain access to that manager or device.\n\nAdding a passkey does not necessarily remove the old password route. Keep any remaining password strong and unique, with two-step verification where supported. A password manager can help. This is one stronger sign-in arrangement, not a requirement to stack every available feature.",
+      "claimIds": [
+        "signin-benefit",
+        "signin-consequence",
+        "passkey-limits",
+        "device-care"
+      ],
+      "overview": {
+        "heading": "Make sign-in safer",
+        "description": "Make a stolen password less useful."
+      }
+    },
+    {
+      "id": "approve",
+      "heading": "Be careful what you approve",
+      "whatToDo": "Refuse sign-in prompts you did not request. Never give another person your password, verification code or recovery code.",
+      "whyItMatters": "A convincing request for a code or approval can be a request to let someone into the account.",
+      "consequence": "Sharing the very thing meant to verify you can undermine the protection you set up.",
+      "action": "If an unexpected message says your email needs attention, open the provider’s usual app or website yourself and check there. Do not use that message’s sign-in link.",
+      "details": "For example, someone claiming to be support asks you to read out a code “to stop a hack”. Do not give it to them. Google explicitly warns against sharing verification codes and says it will not call to verify one. If you receive a Google sign-in prompt you did not initiate, choose No.\n\nUse a code only in the genuine sign-in or recovery process you started. Passkeys improve sign-in security; they do not make every message trustworthy or prevent every kind of fraud. If you suspect someone already has access, use the provider’s official account-security help rather than treating this checklist as a complete recovery procedure.",
+      "claimIds": [
+        "approve-benefit",
+        "approve-consequence"
+      ],
+      "overview": {
+        "heading": "Be careful what you approve",
+        "description": "A request for a code can be a request for access."
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "recover-benefit",
+      "text": "Prepare usable recovery before losing the usual device.",
+      "kind": "benefit",
+      "basis": "guideline",
+      "sourceIds": [
+        "google-codes",
+        "microsoft-code"
+      ],
+      "strength": "consensus-based",
+      "strengthRationale": "Primary guidance supports the stated precaution; not a measured guarantee for every account."
+    },
+    {
+      "id": "recover-consequence",
+      "text": "Recovery that relies on the same unavailable device may be unusable.",
+      "kind": "consequence",
+      "basis": "editorial",
+      "sourceIds": [
+        "google-codes"
+      ],
+      "strength": "consensus-based",
+      "strengthRationale": "Dependency inference from the documented backup-code purpose, not a separately measured outcome."
+    },
+    {
+      "id": "recover-limits",
+      "text": "Provider recovery rules differ, and support cannot guarantee an override.",
+      "kind": "qualification",
+      "basis": "guideline",
+      "sourceIds": [
+        "microsoft-form",
+        "microsoft-code"
+      ],
+      "strength": "consensus-based",
+      "strengthRationale": "Primary guidance supports the stated precaution; not a measured guarantee for every account."
+    },
+    {
+      "id": "signin-benefit",
+      "text": "Use phishing-resistant sign-in or a unique password with an extra verification step.",
+      "kind": "benefit",
+      "basis": "guideline",
+      "sourceIds": [
+        "ncsc-email",
+        "google-passkey"
+      ],
+      "strength": "consensus-based",
+      "strengthRationale": "Primary guidance supports the stated precaution; not a measured guarantee for every account."
+    },
+    {
+      "id": "signin-consequence",
+      "text": "Password reuse creates a route from another breached service to email.",
+      "kind": "consequence",
+      "basis": "guideline",
+      "sourceIds": [
+        "ncsc-email"
+      ],
+      "strength": "consensus-based",
+      "strengthRationale": "Primary guidance supports the stated precaution; not a measured guarantee for every account."
+    },
+    {
+      "id": "passkey-limits",
+      "text": "Passkeys may sync or remain device-bound; device and recovery access still matter.",
+      "kind": "qualification",
+      "basis": "guideline",
+      "sourceIds": [
+        "fido",
+        "google-passkey"
+      ],
+      "strength": "consensus-based",
+      "strengthRationale": "Primary guidance supports the stated precaution; not a measured guarantee for every account."
+    },
+    {
+      "id": "approve-benefit",
+      "text": "Refuse unsolicited sign-in approvals and keep verification secrets private.",
+      "kind": "benefit",
+      "basis": "guideline",
+      "sourceIds": [
+        "google-2sv",
+        "google-security"
+      ],
+      "strength": "consensus-based",
+      "strengthRationale": "Primary guidance supports the stated precaution; not a measured guarantee for every account."
+    },
+    {
+      "id": "approve-consequence",
+      "text": "Handing over a verification secret can defeat its intended purpose.",
+      "kind": "consequence",
+      "basis": "editorial",
+      "sourceIds": [
+        "google-2sv"
+      ],
+      "strength": "consensus-based",
+      "strengthRationale": "Direct practical inference from the provider’s warning about account takeover; no effect size asserted."
+    },
+    {
+      "id": "recovery-contacts",
+      "text": "Keep recovery contact details current and accessible.",
+      "kind": "qualification",
+      "basis": "guideline",
+      "sourceIds": [
+        "google-recovery"
+      ],
+      "strength": "consensus-based",
+      "strengthRationale": "Checked primary provider guidance; actual account behaviour may vary."
+    },
+    {
+      "id": "phone-number",
+      "text": "A replacement SIM can restore access to a retained number, not to credentials kept only on the lost device.",
+      "kind": "qualification",
+      "basis": "guideline",
+      "sourceIds": [
+        "google-lost-phone",
+        "google-2sv",
+        "fido"
+      ],
+      "strength": "consensus-based",
+      "strengthRationale": "Checked primary provider guidance; actual account behaviour may vary."
+    },
+    {
+      "id": "apple-route",
+      "text": "Recovery procedures and delays vary by provider.",
+      "kind": "qualification",
+      "basis": "guideline",
+      "sourceIds": [
+        "apple-recovery"
+      ],
+      "strength": "consensus-based",
+      "strengthRationale": "Checked primary provider guidance; actual account behaviour may vary."
+    },
+    {
+      "id": "device-care",
+      "text": "Keep the device locked and its software up to date.",
+      "kind": "qualification",
+      "basis": "guideline",
+      "sourceIds": [
+        "google-security",
+        "google-passkey"
+      ],
+      "strength": "consensus-based",
+      "strengthRationale": "Checked primary provider guidance; actual account behaviour may vary."
+    }
+  ],
+  "sources": [
+    {
+      "id": "google-codes",
+      "title": "Sign in with backup codes",
+      "organisation": "Google",
+      "url": "https://support.google.com/accounts/answer/1187538?hl=en",
+      "checkedAt": "2026-11-02",
+      "access": "checked",
+      "section": "Purpose, conditions, generation and use",
+      "support": "Backup codes replace a Google second step; single-use and replacement rules.",
+      "limitations": "Consumer help inspected; excludes Advanced Protection. No live code generation or sign-in test."
+    },
+    {
+      "id": "microsoft-code",
+      "title": "How to get a Microsoft account recovery code",
+      "organisation": "Microsoft",
+      "url": "https://support.microsoft.com/en-us/accounts-billing/manage/how-to-get-a-microsoft-account-recovery-code",
+      "checkedAt": "2026-11-02",
+      "access": "checked",
+      "section": "Generate a code; storage; sign-in; waiting-period note",
+      "support": "Separate code storage, replacement and the two-step-verification delay.",
+      "limitations": "Provider guidance read, not a tested recovery. Other security-info changes have their own rules."
+    },
+    {
+      "id": "microsoft-form",
+      "title": "Help with the Microsoft account recovery form",
+      "organisation": "Microsoft",
+      "url": "https://support.microsoft.com/en-us/accounts-billing/manage/help-with-the-microsoft-account-recovery-form",
+      "checkedAt": "2026-11-02",
+      "access": "checked",
+      "section": "Important warning and recovery prerequisites",
+      "support": "Support cannot bypass two-step verification when alternate verification is unavailable.",
+      "limitations": "This concerns the recovery form; it does not negate separately documented recovery-code options."
+    },
+    {
+      "id": "ncsc-email",
+      "title": "Secure your email",
+      "organisation": "UK National Cyber Security Centre",
+      "url": "https://www.ncsc.gov.uk/collection/small-organisations-guide-to-cyber-security/secure-your-email",
+      "checkedAt": "2026-11-02",
+      "access": "checked",
+      "section": "Sign-in options, password reuse, remaining password routes",
+      "support": "Unique passwords, two-step verification and passkeys are complementary protections.",
+      "limitations": "Written for small organisations; only general account principles used, corroborated by consumer provider guidance. No business compliance advice transferred."
+    },
+    {
+      "id": "google-passkey",
+      "title": "Sign in with a passkey instead of a password",
+      "organisation": "Google",
+      "url": "https://support.google.com/accounts/answer/13548313?hl=en",
+      "checkedAt": "2026-11-02",
+      "access": "checked",
+      "section": "Requirements, setup warning and existing authentication factors",
+      "support": "Passkeys use device unlock; shared devices are unsuitable; old authentication factors remain.",
+      "limitations": "Provider documentation, not a device test. Availability and account settings vary."
+    },
+    {
+      "id": "fido",
+      "title": "Passkeys",
+      "organisation": "FIDO Alliance",
+      "url": "https://fidoalliance.org/passkeys/",
+      "checkedAt": "2026-11-02",
+      "access": "checked",
+      "section": "FAQ: what is a passkey; synced and device-bound credentials",
+      "support": "Passkeys can sync or remain bound to one device.",
+      "limitations": "Standards-organisation explanation only. Marketing statistics and comparative vendor claims were not used."
+    },
+    {
+      "id": "google-2sv",
+      "title": "Turn on 2-Step Verification",
+      "organisation": "Google",
+      "url": "https://support.google.com/accounts/answer/185839?hl=en",
+      "checkedAt": "2026-11-02",
+      "access": "checked",
+      "section": "Google prompts; verification-code and backup-code warnings",
+      "support": "Reject unrequested prompts and do not disclose codes to another person.",
+      "limitations": "Google-specific examples; not proof that other providers use identical prompts."
+    },
+    {
+      "id": "google-security",
+      "title": "Make your account more secure",
+      "organisation": "Google",
+      "url": "https://support.google.com/accounts/answer/46526?hl=en",
+      "checkedAt": "2026-11-02",
+      "access": "checked",
+      "section": "Screen locks, software updates, suspicious messages and activity",
+      "support": "Device maintenance and avoiding requests for account secrets.",
+      "limitations": "General consumer guidance read; no live Security Checkup or incident investigation performed."
+    },
+    {
+      "id": "google-recovery",
+      "title": "Set up recovery options",
+      "organisation": "Google",
+      "url": "https://support.google.com/accounts/answer/183723?hl=en",
+      "checkedAt": "2026-11-04",
+      "access": "checked",
+      "section": "Add or change recovery phone and email",
+      "support": "Use recovery details you control and can reach.",
+      "limitations": "Google-specific options and delays; no account settings tested."
+    },
+    {
+      "id": "google-lost-phone",
+      "title": "Fix common issues with 2-Step Verification",
+      "organisation": "Google",
+      "url": "https://support.google.com/accounts/answer/185834?hl=en",
+      "checkedAt": "2026-11-04",
+      "access": "checked",
+      "section": "My phone was lost or stolen",
+      "support": "A mobile provider may transfer your number to a replacement SIM; other methods depend on a device or separate credential.",
+      "limitations": "Transfer depends on the mobile provider; it does not restore device-bound credentials."
+    },
+    {
+      "id": "apple-recovery",
+      "title": "What to expect during account recovery",
+      "organisation": "Apple",
+      "url": "https://support.apple.com/en-us/118574",
+      "checkedAt": "2026-11-04",
+      "access": "checked",
+      "section": "What to expect",
+      "support": "Apple Account recovery has its own procedure and may involve a wait.",
+      "limitations": "Apple-specific guidance; no recovery attempt tested."
+    }
+  ],
+  "limitations": "These are complementary precautions, not a guarantee against lockout or takeover. Provider rules change. Check your provider’s current instructions before changing your settings. If someone else controls your devices or account, obtain specialist support before making changes that could affect your safety. No account, recovery process or security product was tested for this guide.",
+  "revisionHistory": [],
+  "relatedIds": [],
+  "summary": {
+    "title": "Protect your email without locking yourself out",
+    "recommendationIds": [
+      "recover",
+      "signin",
+      "approve"
+    ]
+  },
+  "mainImage": {
+    "src": "/figures/email-recovery-main-v2.webp",
+    "shareSrc": "/figures/email-recovery-main-v2.jpg",
+    "alt": "A hand places a card marked with a key in a lockbox beside a phone showing an email symbol."
+  }
+}
