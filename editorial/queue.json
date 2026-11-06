@@ -70,7 +70,7 @@
     "preliminaryEvidence": "Initial author screen, 2026-10-28: https://www.ncsc.gov.uk/passkeys. Official guidance supports investigating passkeys and password/2SV alternatives; it does not verify individual providers' recovery behaviour. See docs/ideas/2026-10-28-shortlist.md. Claude re-review completed on e008403; see the shortlist review log for checks and remaining research gaps. Sunday 1 November topic review at 12e3f7af0ab36bc29d931994535030c23655b92a consolidated; current disposition and unresolved research are in docs/ideas/2026-11-01-ranking.md. No finished article advice is certified.",
     "priority": 4,
     "type": "new",
-    "status": "draft",
+    "status": "release-ready",
     "articleId": "004-email-protection",
     "history": [
       {
@@ -96,6 +96,10 @@
       {
         "date": "2026-11-02",
         "event": "Initial article draft for Pearls-2026-11-06 prepared in existing trial PR #46; intended publishedAt 2026-11-06. No publication or independent article review implied."
+      },
+      {
+        "date": "2026-11-06",
+        "event": "Codex and Claude each scored the article and cover 9/10 on the same reviewed version after one correction. No blocker or important finding remained. Selected for manual release in PR #46; deployment outcome is tracked in #26."
       }
     ]
   },
