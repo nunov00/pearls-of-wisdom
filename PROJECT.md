@@ -6,11 +6,11 @@
 - **Manager:** ChatGPT (or designated manager)
 - **Governance template:** v0.3
 - **Stage:** Pilot
-- **Governance profile:** Lightweight
+- **Governance profile:** Standard
 - **Technology:** Astro, TypeScript, structured YAML, portable static output; optional narrow Cloudflare feedback adapter.
-- **Tests / required checks:** `npm run verify`; `Baseline / baseline` CI. No enforcement ruleset is claimed.
-- **Deployment:** Cloudflare Git integration configured; Owner authorised public access on 19 October 2026. Release preparation and CI are complete; public origin confirmed as https://pearls-of-wisdom.vitoria-nuno.workers.dev. Dashboard activation and live deployment remain unverified.
-- **Material paths:** `.github/**`, `scripts/release-*`, `scripts/trial-schedule.mjs`, `deploy/**`, `editorial/automation.json`
+- **Tests / required checks:** `npm run verify`; `baseline`, `privacy` and the `governance/approval` commit status. Verify the contexts and enforcement in the main ruleset before lifting the transition freeze. The workflow job `approval` only reports the status and is not a substitute.
+- **Deployment:** Cloudflare Git integration configured; Owner authorised public access on 19 October 2026. Release preparation and CI are complete; public origin confirmed as https://pearls-of-wisdom.vitoria-nuno.workers.dev. Cloudflare deploys from `main`; public deployment was verified in [trial #26](https://github.com/nunov00/pearls-of-wisdom/issues/26).
+- **Material paths:** `.github/**`, `scripts/release-*`, `scripts/trial-schedule.mjs`, `deploy/**`, `editorial/**`, `src/content/**`, `public/**`, `PROJECT.md`, `GOVERNANCE.md`, `AGENTS.md`, `templates/**`, `package.json`, `tests/**`
 - **Control overrides:** None
 - **Standing delegations:** Bounded one-off preparation/review trial only; see docs/pilots/2026-11-06-activation.md. No unattended publication.
 
@@ -18,12 +18,15 @@ Stage is one of PoC, Pilot or Production; profile is Lightweight, Standard or St
 
 Reassess the profile before the first production deployment. Changing this file does not configure GitHub rules, CI or Copilot; see `GOVERNANCE.md` → GitHub settings per profile.
 
+The Standard transition retains Pilot stage. Owner approved the move in [PR #48](https://github.com/nunov00/pearls-of-wisdom/pull/48). The approved design provides standing Friday release authority only after separate implementation and verified activation. Until then follow the manual publication policy. From transition merge, freeze all further merges to `main`, including content, and all releases until the ruleset and both probes are verified. Attempt the negative probe on a disposable material PR using the same authenticated, expected-head GitHub connector merge route used by the agents. Require a ruleset refusal while Baseline and Privacy are green and governance approval is missing. If that route bypasses the gate, remove the bypass or restrict it to pull requests only, then repeat the negative probe. Verify the same route accepts a harmless probe after valid exact-head approval and green checks. Keep the freeze if either result cannot be established.
+
 ## Profile history
 
 | Date | From → to | Stage | Reason | Approved by |
 |---|---|---|---|---|
 | 2026-10-19 | — → Lightweight | PoC | Approved implementation plan | Owner (chat) |
 | 2026-10-19 | Lightweight retained | Pilot | Initial manual public site; independent editorial release gates and green checks; feedback/schedules disabled | Owner: “Lightweight confirmed for now” (chat) |
+| 2026-11-07 | Lightweight → Standard | Pilot | Enforce independent review and green checks before weekly activation | [Owner decision in PR #48](https://github.com/nunov00/pearls-of-wisdom/pull/48) |
 
 ## Available AI and development tools
 
