@@ -20,6 +20,8 @@ Reassess the profile before the first production deployment. Changing this file 
 
 The Standard transition retains Pilot stage. Owner approved the move in [PR #48](https://github.com/nunov00/pearls-of-wisdom/pull/48). The approved design provides standing Friday release authority only after separate implementation and verified activation. Until then follow the manual publication policy. From transition merge, freeze all further merges to `main`, including content, and all releases until the ruleset and both probes are verified. Attempt the negative probe on a disposable material PR using the same authenticated, expected-head GitHub connector merge route used by the agents. Require a ruleset refusal while Baseline and Privacy are green and governance approval is missing. If that route bypasses the gate, remove the bypass or restrict it to pull requests only, then repeat the negative probe. Verify the same route accepts a harmless probe after valid exact-head approval and green checks. Keep the freeze if either result cannot be established.
 
+<!-- Standard ruleset verification probe. -->
+
 ## Profile history
 
 | Date | From → to | Stage | Reason | Approved by |
