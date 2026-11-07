@@ -6,11 +6,11 @@
 - **Manager:** ChatGPT (or designated manager)
 - **Governance template:** v0.3
 - **Stage:** Pilot
-- **Governance profile:** Lightweight
+- **Governance profile:** Standard
 - **Technology:** Astro, TypeScript, structured YAML, portable static output; optional narrow Cloudflare feedback adapter.
-- **Tests / required checks:** `npm run verify`; `Baseline / baseline` CI. No enforcement ruleset is claimed.
+- **Tests / required checks:** `npm run verify`; `Baseline / baseline`, `Privacy / privacy` and `governance/approval`. Verify actual check names and enforcement in the main ruleset before lifting the transition freeze.
 - **Deployment:** Cloudflare Git integration configured; Owner authorised public access on 19 October 2026. Release preparation and CI are complete; public origin confirmed as https://pearls-of-wisdom.vitoria-nuno.workers.dev. Dashboard activation and live deployment remain unverified.
-- **Material paths:** `.github/**`, `scripts/release-*`, `scripts/trial-schedule.mjs`, `deploy/**`, `editorial/automation.json`
+- **Material paths:** `.github/**`, `scripts/release-*`, `scripts/trial-schedule.mjs`, `deploy/**`, `editorial/**`, `src/content/**`, `public/**`
 - **Control overrides:** None
 - **Standing delegations:** Bounded one-off preparation/review trial only; see docs/pilots/2026-11-06-activation.md. No unattended publication.
 
@@ -18,12 +18,15 @@ Stage is one of PoC, Pilot or Production; profile is Lightweight, Standard or St
 
 Reassess the profile before the first production deployment. Changing this file does not configure GitHub rules, CI or Copilot; see `GOVERNANCE.md` → GitHub settings per profile.
 
+The Standard transition retains Pilot stage. Owner approved the move in [PR #48](https://github.com/nunov00/pearls-of-wisdom/pull/48). The approved design provides standing Friday release authority only after separate implementation and verified activation. Until then follow the manual publication policy. The transition freeze applies from merge until the required ruleset and positive and negative check probes are verified.
+
 ## Profile history
 
 | Date | From → to | Stage | Reason | Approved by |
 |---|---|---|---|---|
 | 2026-10-19 | — → Lightweight | PoC | Approved implementation plan | Owner (chat) |
 | 2026-10-19 | Lightweight retained | Pilot | Initial manual public site; independent editorial release gates and green checks; feedback/schedules disabled | Owner: “Lightweight confirmed for now” (chat) |
+| 2026-11-07 | Lightweight → Standard | Pilot | Enforce independent review and green checks before weekly activation | [Owner decision in PR #48](https://github.com/nunov00/pearls-of-wisdom/pull/48) |
 
 ## Available AI and development tools
 
