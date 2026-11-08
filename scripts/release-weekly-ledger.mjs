@@ -14,6 +14,14 @@ export function readWeeklyLedger(comments, account) {
   });
 }
 
+const endings = ['complete', 'abandoned'];
+
+function isOpenStart(entry, entries) {
+  return entry.type === 'start' && !entries.some((end) => endings.includes(end.type) &&
+    end.key === entry.key && end.runId === entry.runId && end.commentId > entry.commentId);
+}
+
+// The caller checks previous-cycle closure. Deleted comments are not observable.
 // readComments must fetch every page from the configured ledger issue.
 // A post or readback error is terminal for this dispatch.
 export async function startWeeklyStage({ readComments, appendComment, account, slot, runId }) {
@@ -23,10 +31,7 @@ export async function startWeeklyStage({ readComments, appendComment, account, s
   if (entries.some((entry) => entry.key === key || entry.runId === runId)) {
     throw new Error('Stage already recorded; reconcile before continuing');
   }
-  const openStart = entries.some((entry) => entry.type === 'start' && entry.key?.startsWith(slot.cycle + '/') &&
-    !entries.some((end) => ['complete', 'abandoned'].includes(end.type) &&
-      end.key === entry.key && end.runId === entry.runId && end.commentId > entry.commentId));
-  if (openStart) throw new Error('Earlier stage is incomplete');
+  if (entries.some((entry) => entry.key?.startsWith(slot.cycle + '/') && isOpenStart(entry, entries))) throw new Error('Earlier stage is incomplete');
 
   const created = await appendComment(prefix + JSON.stringify({ type: 'start', key, runId }));
   const readback = readWeeklyLedger(await readComments(), account);
@@ -35,5 +40,35 @@ export async function startWeeklyStage({ readComments, appendComment, account, s
       !Number.isSafeInteger(created?.id) || starts[0].commentId !== created.id) {
     throw new Error('Stage start is ambiguous; stop and reconcile');
   }
+  if (readback.some((entry) => entry.key !== key && entry.key?.startsWith(slot.cycle + '/') && isOpenStart(entry, readback))) {
+    throw new Error('Another stage is incomplete; stop and reconcile');
+  }
   return starts[0];
+}
+
+async function endWeeklyStage({ readComments, appendComment, account, start }, type) {
+  const entries = readWeeklyLedger(await readComments(), account);
+  const matches = entries.filter((entry) => entry.key === start.key && entry.runId === start.runId);
+  if (matches.length !== 1 || matches[0].type !== 'start' || matches[0].commentId !== start.commentId) {
+    throw new Error('Stage start is missing or already closed; stop and reconcile');
+  }
+  const created = await appendComment(prefix + JSON.stringify({ type, key: start.key, runId: start.runId }));
+  const readback = readWeeklyLedger(await readComments(), account);
+  const ends = readback.filter((entry) => entry.key === start.key && entry.runId === start.runId && endings.includes(entry.type));
+  if (ends.length !== 1 || ends[0].type !== type || !Number.isSafeInteger(created?.id) ||
+      ends[0].commentId !== created.id || created.id <= start.commentId ||
+      !readback.some((entry) => entry.type === 'start' && entry.key === start.key &&
+        entry.runId === start.runId && entry.commentId === start.commentId)) {
+    throw new Error('Stage closure is ambiguous; stop and reconcile');
+  }
+  return ends[0];
+}
+
+export function completeWeeklyStage(input) {
+  return endWeeklyStage(input, 'complete');
+}
+
+// The caller must first verify that the abandoned run made no mutation.
+export function abandonWeeklyStage(input) {
+  return endWeeklyStage(input, 'abandoned');
 }
