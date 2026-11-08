@@ -22,7 +22,7 @@ The Standard transition retains Pilot stage. Owner approved the move in [PR #48]
 
 The verdict workflow runs from the base branch. GitHub rulesets identify its check by name and source app. A separate workflow with `checks: write` could publish the same name as GitHub Actions. Treat all new or changed files under `.github/workflows/` as changes that can affect enforcement during independent review.
 
-<!-- Standard ruleset verification probe. -->
+<!-- Standard ruleset verification probe for Governance verdict. -->
 
 ## Profile history
 
