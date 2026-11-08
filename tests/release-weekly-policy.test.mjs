@@ -44,7 +44,7 @@ test('reservation keys separate stages and bound review slots', () => {
   assert.throws(() => weeklyReservationKey({ cycle, stage: 'article-review', reviewSlot: 5 }), /slot/);
 });
 
-test('validates an unchanged weekly intent alongside a manual release', () => {
+test('validates final weekly records alongside a manual release', () => {
   const manual = { id: 'manual', publishedAt: '2026-11-06', claims: [], sources: [] };
   const weekly = { id: articleId, publishedAt: date, claims: [], sources: [],
     mainImage: { src: '/figures/weekly.webp', shareSrc: '/figures/weekly.jpg' } };
@@ -54,13 +54,25 @@ test('validates an unchanged weekly intent alongside a manual release', () => {
     reviews: [{ id: 'manual-review', articleId: 'manual', decision: 'ready', author: 'A', reviewer: 'B',
       reviewedCommit: head, articleSha256: hashes.article, correctionRounds: 0, findings: [] }],
   };
-  assert.equal(validateWeeklyRelease(evidence, existing, paths.article), true);
-  assert.equal(existing.publications.length, 1);
-  assert.equal(existing.reviews.length, 1);
-  assert.throws(() => validateWeeklyRelease(evidence, existing, 'src/content/articles/other.yaml'), /image paths/);
-  assert.throws(() => validateWeeklyRelease(evidence, {
-    ...existing, articles: [manual, { ...weekly, mainImage: { ...weekly.mainImage, src: '/figures/other.webp' } }],
-  }, paths.article), /image paths/);
+  const ready = {
+    ...evidence, candidate: { ...candidate, reviewSlot: 3, correctionRounds: 2 },
+    receipts: evidence.receipts.map((entry) => ({ ...entry, reviewSlot: 3 })),
+  };
+  const recordPaths = ['editorial/reviews.json', 'editorial/publications.json'];
+  const publication = { articleId, state: 'published', publishedAt: date, reviewId: 'weekly-review' };
+  const weeklyReview = { id: publication.reviewId, articleId, decision: 'ready',
+    author: 'Codex (OpenAI)', reviewer: 'Claude (Anthropic)', reviewedCommit: head,
+    articleSha256: hashes.article, correctionRounds: 2, findings: [],
+    illustrationSha256: { [paths.cover]: hashes.cover, [paths.shareCover]: hashes.shareCover } };
+  const final = { ...existing, publications: [...existing.publications, publication],
+    reviews: [...existing.reviews, weeklyReview] };
+  assert.equal(validateWeeklyRelease(ready, final, paths.article, existing, recordPaths), true);
+  assert.throws(() => validateWeeklyRelease(evidence, final, paths.article, existing, recordPaths), /No technical/);
+  assert.throws(() => validateWeeklyRelease(ready, final, paths.article, existing, [...recordPaths, paths.article]), /Only publication/);
+  assert.throws(() => validateWeeklyRelease(ready, final, 'src/content/articles/other.yaml', existing, recordPaths), /image paths/);
+  assert.throws(() => validateWeeklyRelease(ready, {
+    ...final, reviews: [...existing.reviews, { ...weeklyReview, reviewedCommit: 'b'.repeat(40) }],
+  }, paths.article, existing, recordPaths), /records do not match/);
 });
 
 test('rejects invalid cycle dates, non-Monday release dates and mismatched receipts', () => {
