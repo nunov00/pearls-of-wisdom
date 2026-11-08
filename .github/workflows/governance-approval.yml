@@ -1,11 +1,12 @@
 # Governance approval check (Standard and Strict profiles).
-# Copy to .github/workflows/ and make `governance/approval` a required status check.
-# Reads the profile and material paths from PROJECT.md on the base branch, then
-# sets a commit status on the PR head. See GOVERNANCE.md → Approvals / Waivers.
+# Reads the profile and material paths from PROJECT.md on the base branch.
+# Publishes the approval verdict on the exact PR head, including after comments.
+# Verify the Governance verdict check in the ruleset before requiring it.
 name: Governance approval
 
 on:
-  pull_request:
+  # Use the base workflow and never check out or run PR code in this job.
+  pull_request_target:
     types: [opened, reopened, synchronize, edited, ready_for_review]
   issue_comment:
     types: [created, edited, deleted]
@@ -17,6 +18,7 @@ permissions:
   issues: read
   pull-requests: read
   statuses: write
+  checks: write
 
 concurrency:
   group: governance-approval-${{ github.event.pull_request.number || github.event.issue.number }}
@@ -26,7 +28,7 @@ jobs:
   approval:
     # Issue events only for waiver issues: re-check the open PRs that reference them.
     if: >-
-      github.event_name == 'pull_request' ||
+      github.event_name == 'pull_request_target' ||
       (github.event_name == 'issue_comment' && github.event.issue.pull_request) ||
       (github.event_name == 'issues' &&
         (contains(github.event.issue.labels.*.name, 'review-waiver') || github.event.label.name == 'review-waiver'))
@@ -42,11 +44,30 @@ jobs:
               const { data: pr } = await github.rest.pulls.get({ owner, repo, pull_number: number });
               const sha = pr.head.sha;
 
-              const setStatus = (state, description) =>
-                github.rest.repos.createCommitStatus({
+              const setStatus = async (state, description) => {
+                await github.rest.repos.createCommitStatus({
                   owner, repo, sha, state, context: 'governance/approval',
                   description: description.slice(0, 140),
                 });
+                const checkName = 'Governance verdict';
+                const externalId = `governance:${number}:${sha}`;
+                const checks = await github.paginate(github.rest.checks.listForRef, {
+                  owner, repo, ref: sha, check_name: checkName, filter: 'all', per_page: 100,
+                });
+                const previous = checks.find((check) =>
+                  check.app?.slug === 'github-actions' && check.external_id === externalId);
+                const verdict = {
+                  owner, repo, status: 'completed', conclusion: state,
+                  output: { title: checkName, summary: description },
+                };
+                if (previous) {
+                  await github.rest.checks.update({ ...verdict, check_run_id: previous.id });
+                } else {
+                  await github.rest.checks.create({
+                    ...verdict, name: checkName, head_sha: sha, external_id: externalId,
+                  });
+                }
+              };
 
               // --- Configuration from PROJECT.md on the base branch (a PR cannot change its own gate).
               let projectMd = '';
