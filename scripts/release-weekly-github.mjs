@@ -10,7 +10,7 @@ const sha = /^[a-f0-9]{40}$/;
 export async function checkWeeklyPullRequest({ github, context, core, trustedBase }) {
   const { owner, repo } = context.repo;
   const repoArgs = { owner, repo };
-  const number = context.payload.pull_request?.number ?? context.payload.issue?.number;
+  const number = context.payload.pull_request?.number ?? context.payload.issue?.number ?? Number(context.payload.inputs?.pull_request);
   const { data: pr } = await github.rest.pulls.get({ ...repoArgs, pull_number: number });
   if (pr.state !== 'open' || pr.base.ref !== 'main' || pr.head.repo?.full_name !== owner + '/' + repo) return;
 
@@ -62,7 +62,10 @@ export async function checkWeeklyPullRequest({ github, context, core, trustedBas
       const request = requests.at(-1);
       const candidate = request?.candidate;
       if (!candidate || typeof candidate.head !== 'string' || !sha.test(candidate.head) ||
-          !candidate.paths || !Object.values(candidate.paths).every((path) => typeof path === 'string' && !path.includes('..'))) {
+          !candidate.paths || Object.keys(candidate.paths).length !== 3 ||
+          !/^src\/content\/articles\/[a-z0-9-]+\.yaml$/.test(candidate.paths.article) ||
+          !/^public\/figures\/[a-z0-9-]+\.(png|jpg|webp)$/.test(candidate.paths.cover) ||
+          !/^public\/figures\/[a-z0-9-]+\.(png|jpg)$/.test(candidate.paths.shareCover)) {
         throw new Error('Missing or invalid weekly review request');
       }
       const receipts = entries.filter((entry) => entry.type === 'receipt' && entry.pr === number &&
