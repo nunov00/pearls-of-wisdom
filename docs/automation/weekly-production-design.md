@@ -8,7 +8,7 @@ Owner direction, 7 November 2026: “Sounds good. I guess you can make it the sa
 
 Use the [Five Minutes operating model](https://github.com/nunov00/five-minutes/blob/main/docs/automation/weekly-publication.md) for standing release authority. Codex authors, coordinates and handles Monday release or deferral. Claude independently reviews. The Owner sets the policy once. Routine qualifying releases need no Owner review or confirmation.
 
-Recommend Standard controls for unattended publication, with green checks and agent approval and no per-release Owner approval. The Owner must explicitly decide on Lightweight → Standard before a mandatory transition PR records that decision and the standing Monday release authority. Verify the ruleset before lifting the transition freeze. Policy, budget and reviewer changes, additional costs, clearing the publication pause and re-enabling tasks remain Owner decisions. Keep the Pearls editorial standards, release data, site, queue and Cloudflare integration.
+Standard governance was approved by the Owner and implemented in #49. The #52 connector probes verified that Protect main blocks an unapproved merge and accepts the same commit after independent approval. Policy, budget and reviewer changes, additional costs, clearing the publication pause and re-enabling tasks remain Owner decisions. Keep the Pearls editorial standards, release data, site, queue and Cloudflare integration.
 
 ## Weekly cadence
 
@@ -19,11 +19,12 @@ All times are nominal Europe/Zurich dispatch targets. Start on a future Tuesday 
 | Day | Codex | Claude |
 | --- | --- | --- |
 | Tuesday | 09:13 compare candidates and request review. 19:13 reconcile ranking and commission one candidate. | 14:17 independently assess topic merit and ranking. |
-| Wednesday–Sunday | 09:13 draft or revise the same candidate, validate and request the next eligible review. Freeze when qualified. | 14:17 review the exact eligible article and image bytes when requested. |
+| Wednesday–Saturday | 09:13 draft or revise the same candidate, validate and request the next eligible review. Freeze when qualified. | 14:17 review the exact eligible article and image bytes when requested. |
+| Sunday | No scheduled work. | |
 | Monday | 09:13 verify and publish or record deferral. | |
 
 
-Use one combined ChatGPT task for both Tuesday stages and the Wednesday–Monday morning stages. Test the actual saved schedule for precisely these seven weekly occurrences, including across Zurich daylight-saving changes. Use the actual local date, distinct Tuesday stage keys and bounded grace windows. On the Claude side, verify that a repeating routine can be configured and read back through the Claude Code scheduled routines interface. Record the saved ID, exact prompt, schedule expression, time zone and next occurrences. Verify both providers across Zurich daylight-saving transitions, preserving the author-to-reviewer handoff even if Claude stores UTC. The trial used five one-offs and does not establish recurring support. Do not create replacement one-offs indefinitely or use paid APIs. If the reviewer routine is unavailable, record the blocker and keep activation paused.
+Use one combined ChatGPT task for both Tuesday stages and the Wednesday–Saturday and Monday morning stages. Test the actual saved schedule for precisely these seven weekly occurrences, including across Zurich daylight-saving changes. Use the actual local date, distinct Tuesday stage keys and bounded grace windows. On the Claude side, verify that a repeating routine can be configured and read back through the Claude Code scheduled routines interface. Record the saved ID, exact prompt, schedule expression, time zone and next occurrences. Verify both providers across Zurich daylight-saving transitions, preserving the author-to-reviewer handoff even if Claude stores UTC. The trial used five one-offs and does not establish recurring support. Do not create replacement one-offs indefinitely or use paid APIs. If the reviewer routine is unavailable, record the blocker and keep activation paused.
 
 ## Evidence and publication
 
