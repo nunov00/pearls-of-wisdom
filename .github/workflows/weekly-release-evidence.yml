@@ -1,0 +1,48 @@
+name: Weekly release evidence
+on:
+  pull_request_target:
+    branches: [main]
+    types: [opened, reopened, synchronize, edited, ready_for_review]
+  issue_comment:
+    types: [created, edited, deleted]
+  workflow_dispatch:
+    inputs:
+      pull_request:
+        description: Pull request number to verify from trusted main
+        required: true
+        type: number
+
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  checks: write
+
+concurrency:
+  group: weekly-evidence-${{ github.event.pull_request.number || github.event.issue.number || inputs.pull_request }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    if: github.ref == 'refs/heads/main' && (github.event_name != 'issue_comment' || github.event.issue.pull_request || github.event.issue.number == 58)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      # Never check out the PR head in this workflow.
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const { pathToFileURL } = require('node:url');
+            const path = require('node:path');
+            const verifier = pathToFileURL(path.resolve('scripts/release-weekly-github.mjs'));
+            const { checkWeeklyPullRequest } = await import(verifier.href);
+            await checkWeeklyPullRequest({ github, context, core, trustedBase: context.sha });
