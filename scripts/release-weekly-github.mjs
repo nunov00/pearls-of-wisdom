@@ -10,7 +10,20 @@ const sha = /^[a-f0-9]{40}$/;
 export async function checkWeeklyPullRequest({ github, context, core, trustedBase }) {
   const { owner, repo } = context.repo;
   const repoArgs = { owner, repo };
+  if (context.eventName === 'issue_comment' && context.payload.issue.number === ledgerIssue &&
+      !context.payload.issue.pull_request) {
+    const open = await github.paginate(github.rest.pulls.list, { ...repoArgs, state: 'open', base: 'main' });
+    // Re-evaluate ordinary branches too, so deletion of their last request
+    // cannot hide a previously bound release PR from the invalidation run.
+    for (const pr of open) await checkPullRequest(github, core, repoArgs, trustedBase, pr.number);
+    return;
+  }
   const number = context.payload.pull_request?.number ?? context.payload.issue?.number ?? Number(context.payload.inputs?.pull_request);
+  await checkPullRequest(github, core, repoArgs, trustedBase, number);
+}
+
+async function checkPullRequest(github, core, repoArgs, trustedBase, number) {
+  const { owner, repo } = repoArgs;
   const { data: pr } = await github.rest.pulls.get({ ...repoArgs, pull_number: number });
   if (pr.state !== 'open' || pr.base.ref !== 'main' || pr.head.repo?.full_name !== owner + '/' + repo) return;
 
@@ -49,14 +62,23 @@ export async function checkWeeklyPullRequest({ github, context, core, trustedBas
 
   let summary;
   try {
+    const files = await github.paginate(github.rest.pulls.listFiles, { ...repoArgs, pull_number: number, per_page: 100 });
+    if (!Array.isArray(files) || files.length >= 3000 || files.length !== pr.changed_files) {
+      throw new Error('Cannot verify complete PR file list');
+    }
+    const weeklyBranch = pr.head.ref.startsWith('weekly-article/');
+    const recordChange = files.some(({ filename, previous_filename }) =>
+      recordPaths.includes(filename) || recordPaths.includes(previous_filename));
+    if (!weeklyBranch && !recordChange) {
+      await publish('success', 'No weekly branch or release-record changes');
+      return;
+    }
+
     const comments = await github.paginate(github.rest.issues.listComments, { ...repoArgs, issue_number: ledgerIssue });
     const entries = readWeeklyLedger(comments, owner);
     const requests = entries.filter((entry) => entry.type === 'review-request' && entry.pr === number);
-    if (!pr.head.ref.startsWith('weekly-article/') && !requests.length) {
-      if (!sha.test(trustedBase) || pr.base.sha !== trustedBase) throw new Error('Trusted base moved');
-      const paths = await changedPaths(trustedBase);
-      if (paths.some((path) => recordPaths.includes(path))) throw new Error('Manual release routing is pending; do not require this check yet');
-      summary = 'No weekly release or release-record changes';
+    if (!weeklyBranch && !requests.length) {
+      throw new Error('Manual release routing is pending; do not require this check yet');
     } else {
       if (!sha.test(trustedBase) || pr.base.sha !== trustedBase) throw new Error('Trusted base moved');
       const request = requests.at(-1);
@@ -100,6 +122,8 @@ export async function checkWeeklyPullRequest({ github, context, core, trustedBas
       }
       const articlePath = directory.data.find(({ path }) =>
         path === candidate.paths.article && bytesById[candidate.articleId]?.equals(bytes.article))?.path;
+      // This validates the intended date before release. Monday must verify the
+      // actual Zurich date, cycle uniqueness and a fresh successful run.
       const releaseSlot = { stage: 'release', cycle: candidate.cycle, date: candidate.publishedAt };
       validateWeeklyRelease({ candidate, releaseSlot, bytes, receipts }, {
         ...records, articles, bytesById,
