@@ -93,6 +93,7 @@ export function validateWeeklyRelease(evidence, existing, articlePath, baseRecor
   if (!isDeepStrictEqual([...changedAfterReview].sort(), recordPaths)) {
     throw new Error('Only publication and review records may change after editorial review');
   }
+  const findings = ['author', 'reviewer'].flatMap((role) => receipts.find((receipt) => receipt.role === role).findings);
   const publication = existing.publications.at(-1);
   const review = existing.reviews.at(-1);
   if (!isDeepStrictEqual(existing.publications.slice(0, -1), baseRecords.publications) ||
@@ -103,7 +104,7 @@ export function validateWeeklyRelease(evidence, existing, articlePath, baseRecor
       review.articleId !== candidate.articleId || review.reviewedCommit !== candidate.head ||
       review.articleSha256 !== candidate.hashes.article || review.correctionRounds !== candidate.correctionRounds ||
       review.author !== 'Codex (OpenAI)' || review.reviewer !== 'Claude (Anthropic)' ||
-      !isDeepStrictEqual(review.findings, receipts.flatMap(({ findings }) => findings)) ||
+      !isDeepStrictEqual(review.findings, findings) ||
       Object.entries(candidate.paths).some(([asset, path]) =>
         asset !== 'article' && review.illustrationSha256?.[path] !== candidate.hashes[asset])) {
     throw new Error('Final release records do not match the verified receipts');
