@@ -1,10 +1,12 @@
 # Governance approval check (Standard and Strict profiles).
+# Reads the profile and material paths from PROJECT.md on the base branch.
 # Publishes the approval verdict on the exact PR head, including after comments.
 # Verify the Governance verdict check in the ruleset before requiring it.
 name: Governance approval
 
 on:
-  pull_request:
+  # Use the base workflow and never check out or run PR code in this job.
+  pull_request_target:
     types: [opened, reopened, synchronize, edited, ready_for_review]
   issue_comment:
     types: [created, edited, deleted]
@@ -26,7 +28,7 @@ jobs:
   approval:
     # Issue events only for waiver issues: re-check the open PRs that reference them.
     if: >-
-      github.event_name == 'pull_request' ||
+      github.event_name == 'pull_request_target' ||
       (github.event_name == 'issue_comment' && github.event.issue.pull_request) ||
       (github.event_name == 'issues' &&
         (contains(github.event.issue.labels.*.name, 'review-waiver') || github.event.label.name == 'review-waiver'))
