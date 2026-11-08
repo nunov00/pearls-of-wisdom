@@ -1,5 +1,7 @@
 # Weekly article workflow — Sunday four-review trial
 
+For recurring production, see the [Monday release design](automation/weekly-production-design.md). This document records the historical Friday trial and its policies.
+
 Current Owner-approved direction, 30 October 2026; executable setup requires the independently reviewed/merged [v2 activation](pilots/2026-11-06-activation.md). It supersedes the former Monday–Friday two-review schedule. Earlier plan review history remains in PR #25; original activation in #27/#29. No ongoing recurrence or automatic publication is authorised.
 
 ## Roles, timetable and budgets
