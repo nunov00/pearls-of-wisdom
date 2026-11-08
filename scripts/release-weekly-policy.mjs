@@ -1,3 +1,4 @@
+import { isDeepStrictEqual } from 'node:util';
 import { digest, validateRelease } from './release-policy.mjs';
 
 const sha = /^[a-f0-9]{40}$/;
@@ -76,12 +77,9 @@ export function assertWeeklyRelease({ candidate, releaseSlot, bytes, receipts })
   }
 }
 
-/**
- * Validate a weekly intent alongside existing release records. The integration
- * must derive articlePath, parsed article data and bytes from the same Git head,
- * authenticate both receipts, and bind the intent to the reserved cycle.
- */
-export function validateWeeklyRelease(evidence, existing, articlePath) {
+// Inputs are fetched by trusted code from the base, reviewed and final Git
+// trees. The caller verifies exact-head technical approval and ledger identity.
+export function validateWeeklyRelease(evidence, existing, articlePath, baseRecords, changedAfterReview) {
   assertWeeklyRelease(evidence);
   const { candidate, bytes, receipts, releaseSlot } = evidence;
   const article = existing.articles.find(({ id }) => id === candidate.articleId);
@@ -90,20 +88,29 @@ export function validateWeeklyRelease(evidence, existing, articlePath) {
       candidate.paths.shareCover !== 'public' + article.mainImage?.shareSrc) {
     throw new Error('Weekly intent does not match the article and its image paths');
   }
-  const reviewId = `weekly:${candidate.cycle}:${candidate.articleId}`;
-  if (existing.reviews.some(({ id }) => id === reviewId)) throw new Error('Duplicate weekly review record');
+  if (candidate.reviewSlot >= 4) throw new Error('No technical review slot remains');
+  const recordPaths = ['editorial/publications.json', 'editorial/reviews.json'];
+  if (!isDeepStrictEqual([...changedAfterReview].sort(), recordPaths)) {
+    throw new Error('Only publication and review records may change after editorial review');
+  }
+  const publication = existing.publications.at(-1);
+  const review = existing.reviews.at(-1);
+  if (!isDeepStrictEqual(existing.publications.slice(0, -1), baseRecords.publications) ||
+      !isDeepStrictEqual(existing.reviews.slice(0, -1), baseRecords.reviews) ||
+      !publication || !review || !review.id || baseRecords.reviews.some(({ id }) => id === review.id) ||
+      publication.articleId !== candidate.articleId || publication.state !== 'published' ||
+      publication.publishedAt !== candidate.publishedAt || publication.reviewId !== review.id ||
+      review.articleId !== candidate.articleId || review.reviewedCommit !== candidate.head ||
+      review.articleSha256 !== candidate.hashes.article || review.correctionRounds !== candidate.correctionRounds ||
+      review.author !== 'Codex (OpenAI)' || review.reviewer !== 'Claude (Anthropic)' ||
+      !isDeepStrictEqual(review.findings, receipts.flatMap(({ findings }) => findings)) ||
+      Object.entries(candidate.paths).some(([asset, path]) =>
+        asset !== 'article' && review.illustrationSha256?.[path] !== candidate.hashes[asset])) {
+    throw new Error('Final release records do not match the verified receipts');
+  }
   return validateRelease({
     ...existing,
     today: releaseSlot.date,
     bytesById: { ...existing.bytesById, [candidate.articleId]: bytes.article },
-    publications: [...existing.publications, {
-      articleId: candidate.articleId, state: 'published', publishedAt: candidate.publishedAt, reviewId,
-    }],
-    reviews: [...existing.reviews, {
-      id: reviewId, articleId: candidate.articleId, author: 'Codex', reviewer: 'Claude',
-      reviewedCommit: candidate.head, articleSha256: candidate.hashes.article,
-      correctionRounds: candidate.correctionRounds, decision: 'ready',
-      findings: receipts.flatMap(({ findings }) => findings),
-    }],
   });
 }
