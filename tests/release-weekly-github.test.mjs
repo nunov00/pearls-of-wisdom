@@ -58,7 +58,7 @@ function fixture() {
     const context = { repo: { owner: 'owner', repo: 'repo' }, ...(ledgerEvent ?
       { eventName: 'issue_comment', payload: { issue: { number: 58 } } } :
       { eventName: 'pull_request_target', payload: { pull_request: { number: 1 } } }) };
-    await checkWeeklyPullRequest({ github, context, trustedBase: base, core: { setFailed: (error) => errors.push(error) } });
+    await checkWeeklyPullRequest({ github, context, trustedBase: base, instant: new Date('2026-11-17T08:00Z'), core: { setFailed: (error) => errors.push(error) } });
     assert.equal(results.at(-1).head_sha, head);
     return results.at(-1).conclusion;
   };
@@ -80,6 +80,21 @@ test('records without a classified request fail closed', async () => {
   f.pr.head.ref = 'manual';
   f.ledger.length = 0;
   assert.equal(await f.run(), 'failure');
+});
+
+test('valid manual release passes, but a changed image or stale confirmation fails', async () => {
+  const f = fixture();
+  f.pr.head.ref = 'manual';
+  f.ledger.length = 0;
+  f.approvals.push(comment(21, 'Manual release verified · commit ' + head));
+  assert.equal(await f.run(), 'success');
+  f.review.illustrationSha256[paths.cover] = hashes.shareCover;
+  assert.equal(await f.run(), 'failure');
+  assert.match(f.errors.at(-1), /image changed/);
+  f.review.illustrationSha256[paths.cover] = hashes.cover;
+  f.approvals[1] = comment(22, 'Manual release verified · commit ' + reviewed);
+  assert.equal(await f.run(), 'failure');
+  assert.match(f.errors.at(-1), /current head/);
 });
 
 test('valid weekly records pass and a later ledger deletion invalidates them', async () => {

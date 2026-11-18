@@ -1,4 +1,6 @@
+import { isDeepStrictEqual } from 'node:util';
 import { parse } from 'yaml';
+import { digest, validateRelease } from './release-policy.mjs';
 import { readWeeklyLedger } from './release-weekly-ledger.mjs';
 import { validateWeeklyRelease } from './release-weekly-policy.mjs';
 
@@ -7,7 +9,7 @@ const checkName = 'Weekly release evidence';
 const recordPaths = ['editorial/publications.json', 'editorial/reviews.json'];
 const sha = /^[a-f0-9]{40}$/;
 
-export async function checkWeeklyPullRequest({ github, context, core, trustedBase }) {
+export async function checkWeeklyPullRequest({ github, context, core, trustedBase, instant = new Date() }) {
   const { owner, repo } = context.repo;
   const repoArgs = { owner, repo };
   if (context.eventName === 'issue_comment' && context.payload.issue.number === ledgerIssue &&
@@ -15,14 +17,14 @@ export async function checkWeeklyPullRequest({ github, context, core, trustedBas
     const open = await github.paginate(github.rest.pulls.list, { ...repoArgs, state: 'open', base: 'main' });
     // Re-evaluate ordinary branches too, so deletion of their last request
     // cannot hide a previously bound release PR from the invalidation run.
-    for (const pr of open) await checkPullRequest(github, core, repoArgs, trustedBase, pr.number);
+    for (const pr of open) await checkPullRequest(github, core, repoArgs, trustedBase, pr.number, instant);
     return;
   }
   const number = context.payload.pull_request?.number ?? context.payload.issue?.number ?? Number(context.payload.inputs?.pull_request);
-  await checkPullRequest(github, core, repoArgs, trustedBase, number);
+  await checkPullRequest(github, core, repoArgs, trustedBase, number, instant);
 }
 
-async function checkPullRequest(github, core, repoArgs, trustedBase, number) {
+async function checkPullRequest(github, core, repoArgs, trustedBase, number, instant) {
   const { owner, repo } = repoArgs;
   const { data: pr } = await github.rest.pulls.get({ ...repoArgs, pull_number: number });
   if (pr.state !== 'open' || pr.base.ref !== 'main' || pr.head.repo?.full_name !== owner + '/' + repo) return;
@@ -60,6 +62,54 @@ async function checkPullRequest(github, core, repoArgs, trustedBase, number) {
     return data.files.map(({ filename }) => filename);
   }
 
+  async function readCatalogue() {
+    const directory = await github.rest.repos.getContent({ ...repoArgs, path: 'src/content/articles', ref: head });
+    if (!Array.isArray(directory.data)) throw new Error('Article directory unavailable');
+    const articles = [];
+    const bytesById = Object.create(null);
+    for (const { path } of directory.data.filter(({ name }) => name.endsWith('.yaml'))) {
+      const source = await readFile(path, head);
+      const article = parse(source.toString('utf8'));
+      if (Object.hasOwn(bytesById, article.id)) throw new Error('Duplicate article identity');
+      articles.push(article);
+      bytesById[article.id] = source;
+    }
+    return { articles, bytesById, directory };
+  }
+
+  async function checkManualRelease() {
+    const comments = await github.paginate(github.rest.issues.listComments, { ...repoArgs, issue_number: number });
+    if (!comments.some((comment) => comment.user?.login === owner && comment.created_at &&
+        comment.created_at === comment.updated_at &&
+        comment.body?.split(/\r?\n/).includes('Manual release verified · commit ' + head))) {
+      throw new Error('Manual release verification required on the current head');
+    }
+
+    const records = await readRecords(head);
+    const { articles, bytesById } = await readCatalogue();
+    const today = new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Zurich',
+      year: 'numeric', month: '2-digit', day: '2-digit' }).format(instant);
+    validateRelease({ ...records, articles, bytesById, today });
+    const baseRecords = await readRecords(trustedBase);
+    for (const publication of records.publications.filter(({ state }) => state === 'published')) {
+      const review = records.reviews.find(({ id }) => id === publication.reviewId);
+      const oldPublication = baseRecords.publications.find(({ articleId }) => articleId === publication.articleId);
+      const oldReview = baseRecords.reviews.find(({ id }) => id === oldPublication?.reviewId);
+      if (isDeepStrictEqual(publication, oldPublication) && isDeepStrictEqual(review, oldReview)) continue;
+      const article = articles.find(({ id }) => id === publication.articleId);
+      const imagePaths = [article.mainImage?.src, article.mainImage?.shareSrc];
+      if (imagePaths.some((path) => !/^\/figures\/[a-z0-9-]+\.(webp|png|jpg)$/.test(path ?? ''))) {
+        throw new Error('Invalid manual release image path');
+      }
+      for (const path of new Set(imagePaths)) {
+        const gitPath = 'public' + path;
+        if (review.illustrationSha256?.[gitPath] !== digest(await readFile(gitPath, head))) {
+          throw new Error('Manual release image changed after review');
+        }
+      }
+    }
+  }
+
   let summary;
   try {
     const files = await github.paginate(github.rest.pulls.listFiles, { ...repoArgs, pull_number: number, per_page: 100 });
@@ -78,7 +128,9 @@ async function checkPullRequest(github, core, repoArgs, trustedBase, number) {
     const entries = readWeeklyLedger(comments, owner);
     const requests = entries.filter((entry) => entry.type === 'review-request' && entry.pr === number);
     if (!weeklyBranch && !requests.length) {
-      throw new Error('Manual release routing is pending; do not require this check yet');
+      if (!sha.test(trustedBase) || pr.base.sha !== trustedBase) throw new Error('Trusted base moved');
+      await checkManualRelease();
+      summary = 'Verified manual release records and current-head confirmation';
     } else {
       if (!sha.test(trustedBase) || pr.base.sha !== trustedBase) throw new Error('Trusted base moved');
       const request = requests.at(-1);
@@ -109,17 +161,7 @@ async function checkPullRequest(github, core, repoArgs, trustedBase, number) {
         [asset, await readFile(path, head)])));
       const records = await readRecords(head);
       const baseRecords = await readRecords(trustedBase);
-      const directory = await github.rest.repos.getContent({ ...repoArgs, path: 'src/content/articles', ref: head });
-      if (!Array.isArray(directory.data)) throw new Error('Article directory unavailable');
-      const articles = [];
-      const bytesById = Object.create(null);
-      for (const { path } of directory.data.filter(({ name }) => name.endsWith('.yaml'))) {
-        const source = await readFile(path, head);
-        const article = parse(source.toString('utf8'));
-        if (Object.hasOwn(bytesById, article.id)) throw new Error('Duplicate article identity');
-        articles.push(article);
-        bytesById[article.id] = source;
-      }
+      const { articles, bytesById, directory } = await readCatalogue();
       const articlePath = directory.data.find(({ path }) =>
         path === candidate.paths.article && bytesById[candidate.articleId]?.equals(bytes.article))?.path;
       // This validates the intended date before release. Monday must verify the
