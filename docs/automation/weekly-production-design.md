@@ -1,6 +1,6 @@
 # Recurring Pearls of Wisdom production — design for independent review
 
-This proposal has no runtime authority. The completed [6 November trial](https://github.com/nunov00/pearls-of-wisdom/issues/26) remains historical. Record the implementation review, merge and scheduler readback in a new activation and cycle ledger before production work. Never repurpose a trial task or issue.
+The implemented operating contract is [weekly production](weekly-production.md). This design records the reviewed requirements. Production authority begins only with the separate activation and verified provider prompts required by that contract. The completed [6 November trial](https://github.com/nunov00/pearls-of-wisdom/issues/26) remains historical. Record the implementation review, merge and scheduler readback in a new activation and cycle ledger before production work. Never repurpose a trial task or issue.
 
 ## Authority and profile
 
