@@ -16,7 +16,7 @@ Read current main AGENTS.md, PROJECT.md, GOVERNANCE.md, docs/EDITORIAL.md, this 
 
 Reserve stage keys through release-weekly-ledger.mjs before any mutation. Use a unique provider run reference and confirm the posted start by readback. Reconcile duplicate, incomplete or uncertain starts against Git and generation history before retrying. Complete the stage only after its work and evidence have been verified. The issue API supplies procedural reconciliation, with no atomic-lock claim.
 
-Each new Tuesday requires exactly one valid prior terminal outcome and a verified latest live release. Reconcile pending deployment or missing closure before starting another candidate. Preserve unrelated queue edits and published article dates.
+The first activated Tuesday verifies the latest live release and requires no prior recurring-cycle outcome. Each later Tuesday requires exactly one valid prior terminal outcome and a verified latest live release. Reconcile pending deployment or missing closure before starting another candidate. Preserve unrelated queue edits and published article dates.
 
 ## Codex stages
 
