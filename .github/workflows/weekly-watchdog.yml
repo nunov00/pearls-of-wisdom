@@ -21,13 +21,13 @@ concurrency:
 
 jobs:
   check-closure:
-    if: github.ref == 'refs/heads/main'
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/verification/weekly-live-checks-2026-11-18'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.sha }}
+          ref: 1e453070ae4c6cf8455924633854edbb09cf7eb4
           persist-credentials: false
       - uses: actions/setup-node@v4
         with:
@@ -38,13 +38,37 @@ jobs:
             const { pathToFileURL } = require('node:url');
             const path = require('node:path');
             const { checkWeeklyClosure } = await import(pathToFileURL(path.resolve('scripts/weekly-watchdog.mjs')).href);
-            const dryRun = context.eventName === 'workflow_dispatch';
-            const value = context.payload.inputs?.check_at;
-            if (dryRun && !/(?:Z|[+-]\d{2}:\d{2})$/.test(value ?? '')) {
-              throw new Error('Replay requires a timestamp with a UTC offset');
+            // Synthetic activation is confined to this probe client. The real ledger is untouched.
+            const probeCycle = '2000-01-11';
+            const synthetic = [{ id: 1, user: { login: context.repo.owner },
+              created_at: '2000-01-11T00:00:00Z', updated_at: '2000-01-11T00:00:00Z',
+              body: 'pearls-weekly ' + JSON.stringify({ type: 'activation', firstCycle: probeCycle }) }];
+            let incident;
+            const client = {
+              paginate: async (endpoint, input) => {
+                if (input.issue_number === 58) return synthetic;
+                return github.paginate(endpoint, input);
+              },
+              rest: { issues: { ...github.rest.issues,
+                create: async (input) => {
+                  const response = await github.rest.issues.create({ ...input,
+                    title: '[Verification probe] ' + input.title,
+                    body: input.body + '\\n\\nDisposable live watchdog test. Synthetic cycle only. Production is inactive.' });
+                  incident = response.data.number;
+                  return response;
+                },
+              } },
+            };
+            try {
+              const args = { github: client, repo: context.repo, instant: new Date('2000-01-18T06:30:00Z') };
+              const first = await checkWeeklyClosure(args);
+              if (!incident || first !== 'incident created in #' + incident) throw new Error('Creation failed');
+              const second = await checkWeeklyClosure(args);
+              if (second !== 'incident already recorded in #' + incident) throw new Error('Deduplication failed');
+              const { data } = await github.rest.issues.get({ ...context.repo, issue_number: incident });
+              if (!data.labels.some(label => label.name === 'publication-paused') ||
+                  !data.assignees.some(user => user.login === context.repo.owner)) throw new Error('Delivery verification failed');
+              await core.summary.addRaw('Live GITHUB_TOKEN issue creation, pause label, owner assignment and duplicate suppression passed. Probe issue #' + incident + '.').write();
+            } finally {
+              if (incident) await github.rest.issues.update({ ...context.repo, issue_number: incident, state: 'closed', state_reason: 'completed' });
             }
-            const instant = dryRun ? new Date(value) : new Date();
-            if (!Number.isFinite(instant.getTime())) throw new Error('Invalid replay timestamp');
-            const result = await checkWeeklyClosure({ github, repo: context.repo, instant, dryRun });
-            core.info(result);
-            await core.summary.addRaw(result).write();
